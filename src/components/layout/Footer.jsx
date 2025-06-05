@@ -1,17 +1,13 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700">
-      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-start md:items-center">
+    <footer className="w-[2000px] bg-gray-100 text-gray-700">
+      <div className="w-full mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-start md:items-center">
         {/* Left Section */}
         <div className="mb-8 md:mb-0 max-w-lg">
           {/* Logo */}
           <div className="flex items-center gap-2 mb-4">
             {/* LOGO BURAYA EKLENECEK */}
-            <div className="w-10 h-10 bg-blue-500 rounded-full"></div>
-            <div>
-              <h3 className="text-xl font-semibold">BANKBOOKER</h3>
-              <p className="text-sm text-gray-500">мультивалютный бухгалтер</p>
-            </div>
+           logo 
           </div>
           <h2 className="text-2xl font-bold mb-2">
             Ready to Take Control Of Your Finances?

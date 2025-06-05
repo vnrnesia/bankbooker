@@ -50,18 +50,7 @@ const Info = () => {
           </div>
         </div>
 
-        {/* Accordion-like content */}
-        <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold mb-2">Vision</h4>
-          <p className="text-sm text-gray-600">
-            Our vision is empowering organizations and individuals to achieve sustainable growth, 
-            financial stability, and operational excellence
-          </p>
-        </div>
-
-        <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="text-lg font-semibold">Mission</h4>
-        </div>
+      
       </div>
     </section>
   );

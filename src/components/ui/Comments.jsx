@@ -9,15 +9,15 @@ const testimonials = [
     image: "/carlos.jpg",
   },
   {
-    text: "Their service exceeded our expectations. We saw immediate improvements in our processes and team efficiency.",
-    name: "Anna Petrova",
-    position: "RUS - CFO",
+    text: "lorem10",
+    name: "saddasda",
+    position: "asdasda",
     image: "/anna.jpg",
   },
   {
-    text: "Excellent experience from start to finish. Professional, dedicated, and results-driven.",
-    name: "Jean Moreau",
-    position: "FR - CTO",
+    text: "lorem10",
+    name: "asdasdas",
+    position: "asdasd",
     image: "/jean.jpg",
   },
 ];
