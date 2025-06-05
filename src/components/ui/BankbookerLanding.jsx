@@ -103,17 +103,17 @@ const BankbookerLanding = () => {
             <div className="mt-6 flex items-center gap-2">
               <div className="flex -space-x-2">
                 <img
-                  src="https://placehold.co/32x32"
+                 
                   className="w-8 h-8 rounded-full border-2 border-white"
                   alt=""
                 />
                 <img
-                  src="https://placehold.co/32x32"
+                
                   className="w-8 h-8 rounded-full border-2 border-white"
                   alt=""
                 />
                 <img
-                  src="https://placehold.co/32x32"
+                  
                   className="w-8 h-8 rounded-full border-2 border-white"
                   alt=""
                 />
