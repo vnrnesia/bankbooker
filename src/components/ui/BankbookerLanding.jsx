@@ -35,7 +35,9 @@ const BankbookerLanding = () => {
             </div>
             <div className="flex justify-center items-center gap-2 mt-2">
               <img src={telegram} alt="Telegram Icon" className="w-5" />
-              <span className="text-black text-sm font-sans">t.me/bankbooker</span>
+              <span className="text-black text-sm font-sans">
+                t.me/bankbooker
+              </span>
             </div>
           </div>
 
@@ -49,7 +51,7 @@ const BankbookerLanding = () => {
             ].map((item, idx) => (
               <span
                 key={idx}
-                className="font-[Manrope] bg-gradient-to-r from-[#8E8E8E] to-[#464646] text-white px-10 py-2 rounded text-sm"
+                className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-10 py-2 rounded text-sm"
               >
                 {item}
               </span>
@@ -163,14 +165,12 @@ const BankbookerLanding = () => {
               <div className="text-xs mt-1 leading-snug py-4">
                 Bankbooker Reliable seeds for business & financial growth. Our
                 consultants are the Best Today
-                
               </div>
-               <button className="border border-gray-300 px-5 py-2 rounded-lg text-xs text-white ">
+              <button className="border border-gray-300 px-5 py-2 rounded-lg text-xs text-white ">
                 Learn More
               </button>
             </div>
             <div className="mt-6">
-             
               <div className="flex items-center gap-2 mt-3 text-white">
                 <div className="w-6 h-6 rounded-full bg-white text-[#00A3FF] flex items-center justify-center">
                   <FontAwesomeIcon icon={faPlay} className="text-xs" />
