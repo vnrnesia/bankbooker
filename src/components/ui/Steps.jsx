@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 
 const steps = [
   {
@@ -29,34 +28,8 @@ const steps = [
 ];
 
 const Steps = () => {
-  const [reachedSteps, setReachedSteps] = useState([]);
-  const [lineWidth, setLineWidth] = useState(0);
-
-  useEffect(() => {
-    const totalDuration = 4000; // 4 seconds
-    const intervalTime = 40;
-    let elapsed = 0;
-
-    const interval = setInterval(() => {
-      elapsed += intervalTime;
-      const percent = Math.min((elapsed / totalDuration) * 100, 100);
-      setLineWidth(percent);
-
-      const stepIndex = Math.floor((percent / 100) * steps.length);
-      if (!reachedSteps.includes(stepIndex) && stepIndex < steps.length) {
-        setReachedSteps((prev) => [...prev, stepIndex]);
-      }
-
-      if (percent >= 100) {
-        clearInterval(interval);
-      }
-    }, intervalTime);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="bg-gray-50 py-16 px-4 md:px-8">
+    <section className="bg-gray-100 py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto text-center">
         <h3 className="text-gray-600 mb-2">Our Process</h3>
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
@@ -67,32 +40,18 @@ const Steps = () => {
           strategic planning, and effective implementation for lasting results.
         </p>
 
-        {/* Top Line and Step Circles */}
-        <div className="relative mb-10 md:mb-14">
-          {/* Dotted background line */}
-          <div className="absolute top-5 left-4 right-4 h-0.5 border-t border-dashed border-gray-300 z-0" />
-
-          {/* Animated blue line */}
-          <motion.div
-            className="absolute top-5 left-4 h-0.5 bg-blue-500 z-10 rounded-full transition-all duration-500 ease-in-out"
-            style={{
-              width: `calc(${lineWidth}% - 2rem)`,
-              maxWidth: "calc(100% - 2rem)",
-            }}
-          />
-
-          {/* Step Circles */}
-          <div className="relative z-20 flex gap-[300px] items-center px-4 md:px-12">
-            {steps.map((step, index) => (
-              <div
-                key={step.id}
-                className={`w-10 h-10 rounded-md flex items-center justify-center font-semibold text-sm transition-colors duration-300 ${
-                  reachedSteps.includes(index)
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-300 text-gray-800"
-                }`}
-              >
-                {step.id}
+        {/* Line + Step Circles (Aligned to cards) */}
+        <div className="relative mb-10 md:mb-14 px-4 md:px-12">
+          {/* Dotted line */}
+          <div className="absolute top-5 left-0 right-0 h-0.5 border-t border-dashed border-gray-300 z-0" />
+          
+          {/* Step Circles aligned via grid */}
+          <div className="relative z-20 grid grid-cols-1 md:grid-cols-4 gap-6">
+            {steps.map((step) => (
+              <div key={step.id} className="flex justify-center">
+                <div className="w-10 h-10 rounded-md flex items-center justify-center font-semibold text-sm bg-gray-200 text-black">
+                  {step.id}
+                </div>
               </div>
             ))}
           </div>
@@ -100,13 +59,10 @@ const Steps = () => {
 
         {/* Step Descriptions */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4 md:px-12">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div
               key={step.id}
-              className={`rounded-xl px-6 py-8 text-center transition-all duration-500 shadow-sm ${
-                reachedSteps.includes(index)
-                 
-              }`}
+              className="bg-white rounded-xl px-4 py-6 text-center shadow-sm"
             >
               <h4 className="text-lg font-semibold text-gray-800 mb-2">
                 {step.title}

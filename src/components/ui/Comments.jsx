@@ -1,24 +1,34 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import brand1 from "@/assets/Comment/brand1.png";
+import brand2 from "@/assets/Comment/brand2.png";
+import brand3 from "@/assets/Comment/brand3.png";
+import brand4 from "@/assets/Comment/brand4.png";
+import brand5 from "@/assets/Comment/brand5.png";
+import brand6 from "@/assets/Comment/brand6.png";
+import avatar1 from "@/assets/Avatar/avatar1.png";
+import avatar2 from "@/assets/Avatar/avatar2.png";
+import avatar3 from "@/assets/Avatar/avatar3.png";
+import avatar4 from "@/assets/Avatar/avatar4.png";
 
 const testimonials = [
   {
     text: "Bankbooker has been instrumental in our growth. Their team took the time to to truly understand our needs and helped us eliminate inefficiencies.",
     name: "Carlos Martines",
     position: "ABD - CEO",
-    image: "/carlos.jpg",
+    image: avatar1,
   },
   {
-    text: "lorem10",
-    name: "saddasda",
-    position: "asdasda",
-    image: "/anna.jpg",
+    text: "Thanks to Bankbooker, we’ve experienced a major transformation in our financial processes. Their professional approach and quick solutions saved us a great deal of time.",
+    name: "Elif Yıldız",
+    position: "NovaTech - CFO",
+    image: avatar2,
   },
   {
-    text: "lorem10",
-    name: "asdasdas",
-    position: "asdasd",
-    image: "/jean.jpg",
+    text: "They worked closely with our team and delivered solutions tailored to our specific needs. Bankbooker is definitely a trusted partner in business.",
+    name: "Mert Demir",
+    position: "BetaSoft - Operations Manager",
+    image: avatar3,
   },
 ];
 
@@ -33,9 +43,7 @@ const Comments = () => {
 
   const prevTestimonial = () => {
     setDirection(-1);
-    setIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const variants = {
@@ -53,7 +61,7 @@ const Comments = () => {
   };
 
   return (
-    <section className="bg-white py-16 px-4 md:px-8">
+    <section className="font-[Manrope] bg-white py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Content */}
         <div className="max-w-lg">
@@ -62,7 +70,7 @@ const Comments = () => {
             Client Experiences That <br />
             Speak for Themselves
           </h2>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full transition">
+          <button className="mt-16 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full transition">
             Read All Testimonials
           </button>
         </div>
@@ -148,6 +156,15 @@ const Comments = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="w-[1270px] mx-auto border-t border-gray-300 mt-14" />
+      <div className="flex justify-center items-center mt-6 gap-12">
+        <img src={brand1} alt="" />
+        <img src={brand2} alt="" />
+        <img src={brand3} alt="" />
+        <img src={brand4} alt="" />
+        <img src={brand5} alt="" />
+        <img src={brand6} alt="" />
       </div>
     </section>
   );

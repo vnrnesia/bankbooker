@@ -1,55 +1,77 @@
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { PiXLogoBold } from "react-icons/pi";
+import Logo from "@/assets/logo.png";
+import icon1 from "@/assets/LeftPanel/icon1.png";
+import icon2 from "@/assets/LeftPanel/icon2.png";
+import icon3 from "@/assets/LeftPanel/icon3.png";
+import icon4 from "@/assets/LeftPanel/icon4.png";
+
 const Footer = () => {
   return (
-    <footer className="w-[2000px] bg-gray-100 text-gray-700">
-      <div className="w-full mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-start md:items-center">
-        {/* Left Section */}
-        <div className="mb-8 md:mb-0 max-w-lg">
-          {/* Logo */}
-          <div className="flex items-center gap-2 mb-4">
-            {/* LOGO BURAYA EKLENECEK */}
-           logo 
-          </div>
-          <h2 className="text-2xl font-bold mb-2">
-            Ready to Take Control Of Your Finances?
-          </h2>
-          <p className="text-gray-600 mb-4">
-            We look forward to learning about your financial goals.
-          </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition">
-            Free Consultation
-          </button>
-        </div>
+    <>
+      {/* Üst Alan */}
+      <footer className="w-full h-[550px] bg-gray-100 text-gray-800 font-manrope">
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto px-6 pb-12 flex flex-col md:flex-row justify-between">
+            {/* Sol Alan */}
+            <div className="max-w-xl py-16">
+              <div className="flex items-center gap-2 mb-4 py">
+                <img
+                  src={Logo}
+                  alt="Bankbooker Logo"
+                  className="object-contain"
+                />
+              </div>
+              <h2 className="text-5xl font-medium leading-tight mb-3">
+                Ready to Take Control Of <br /> Your Finances?
+              </h2>
+              <p className="text-gray-400 font-sans font-light mb-5">
+                We look forward to learning about your financial goals.
+              </p>
+              <div className="pt-16">
+                <button className="bg-[#047EDF] hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition">
+                  Free Consultation
+                </button>
+              </div>
+            </div>
 
-        {/* Right Section */}
-        <div className="text-sm grid grid-cols-2 gap-6 md:gap-12 text-left">
-          <div>
-            <h4 className="font-semibold text-gray-800 mb-2">CONTACT US</h4>
-            <p className="mb-1">
-              <strong>Our Phone</strong><br />
-              +7 (917) 889 94-54
-            </p>
-            <p>
-              <strong>Our Email</strong><br />
-              info@bankbooker.com
-            </p>
-          </div>
-          <div>
-            <p className="mb-1">
-              <strong>Mon–Fri:</strong><br />
-              8:30am – 5:30pm
-            </p>
-            <p>
-              <strong>Moscow,</strong><br />
-              1140 Kremlin St, RU 13131
-            </p>
+            {/* Sağ Alan */}
+            <div className="grid grid-cols-2 gap-16 text-sm pt-36 text-gray-600">
+              <div className="space-y-4">
+                <h4 className="text-base font-semibold text-gray-800 tracking-wide mb-4">
+                  CONTACT US
+                </h4>
+                <div>
+                  <p className="text-lg font-medium text-gray-700">Our Phone</p>
+                  <p className="text-lg text-gray-600">+7 (917) 889 94–54</p>
+                </div>
+                <div>
+                  <p className="text-lg font-medium text-gray-700">Our Email</p>
+                  <p className="text-lg text-gray-600">info@bankbooker.com</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="pt-10">
+                  <p className="text-lg font-medium text-gray-700">Mon– Fri:</p>
+                  <p className="text-lg text-gray-600">8:30am – 5:30pm</p>
+                </div>
+                <div>
+                  <p className="text-lg font-medium text-gray-700">Moscow:</p>
+                  <p className="text-lg text-gray-600">
+                    1140 Kremlin St, RU 13131
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </footer>
 
-      {/* Bottom Navigation */}
-      <div className="border-t border-gray-300 mt-6 py-6 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-          <div className="flex flex-wrap gap-6 mb-4 md:mb-0">
+      {/* Menü Alanı */}
+      <div className="w-full border-t border-gray-300 bg-white mb-20">
+        <div className="max-w-8xl mx-auto px-6 py-6 flex justify-center">
+          <div className="flex flex-wrap justify-center gap-24 md:gap-[142px] text-gray-600 text-sm font-semibold text-center">
             <a href="#">Services</a>
             <a href="#">Who We Are</a>
             <a href="#">Insights</a>
@@ -58,21 +80,30 @@ const Footer = () => {
             <a href="#">Contact Us</a>
             <a href="#">FAQ</a>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-gray-500 text-sm">
+        </div>
+
+        {/* Ayırıcı çizgi */}
+        <div className="w-[1270px] mx-auto border-t border-gray-300" />
+
+        {/* Alt bilgi alanı */}
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          {/* Sol: Telif ve Politikalar */}
+          <div className="text-gray-600 flex flex-wrap items-center gap-4 mb-4 md:mb-0">
             <span>2025 Bankbooker. All right reserved.</span>
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
-            <div className="flex gap-3 ml-4">
-              {/* Sosyal Medya İkonları (yer tutucu kutular) */}
-              <div className="w-5 h-5 bg-black rounded"></div> {/* X */}
-              <div className="w-5 h-5 bg-black rounded"></div> {/* LinkedIn */}
-              <div className="w-5 h-5 bg-black rounded-full"></div> {/* Facebook */}
-              <div className="w-5 h-5 bg-black rounded"></div> {/* Instagram */}
-            </div>
+          </div>
+
+          {/* Sağ: Sosyal Medya */}
+          <div className="flex gap-6">
+            <img src={icon1} alt="X" className="w-6 h-6" />
+            <img src={icon2} alt="LinkedIn" className="w-6 h-6" />
+            <img src={icon3} alt="Facebook" className="w-6 h-6" />
+            <img src={icon4} alt="Instagram" className="w-6 h-6" />
           </div>
         </div>
       </div>
-    </footer>
+    </>
   );
 };
 

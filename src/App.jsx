@@ -14,20 +14,47 @@ function App() {
   return (
     <>
       <div className="mx-52">
-        <Header />
-        <Bankbooker />
-        <Brands />
-        <Services />
-        <Info />
-        <Steps />
-        <CtaCard />
-        <Pricing />
-        <Comments />
-        <Contact />
-        <Footer />
+        <div className="mb-10">
+          <Header />
+        </div>
+        <div className="mb-10">
+          <Bankbooker />
+        </div>
+        <div className="mb-10">
+          <Brands />
+        </div>
+        <div className="mb-24">
+          <Services />
+        </div>
+        <div className="mb-24">
+          <Info />
+        </div>
       </div>
+
+      <div className="">
+        <Steps />
+      </div>
+
+      <div className="mb-24">
+        <CtaCard />
+      </div>
+
+      <div className="mx-52">
+        <div className="mb-24">
+          <Pricing />
+        </div>
+        <div className="mb-36">
+          <Comments />
+        </div>
+        <div className="mb-10">
+          <Contact />
+        </div>
+      </div>
+
+      <Footer />
     </>
   );
 }
+
 
 export default App;

@@ -2,7 +2,7 @@ const icons = Array.from({ length: 10 }, (_, i) => `brand${i + 1}.png`);
 
 const Brands = () => {
   return (
-    <div className="py-20 px-6 max-w-7xl mx-auto text-center">
+    <div className="font-[Manrope] pt-20 px-6 max-w-7xl mx-auto text-center">
       <h3 className="text-md text-gray-500 font-medium mb-2">Partner</h3>
       <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4">
         Trusted By 550+ Companies Worldwide

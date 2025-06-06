@@ -57,7 +57,7 @@ const Services = () => {
         {services.slice(0, 3).map((service, index) => (
           <div
             key={index}
-            className="group border border-gray-200 rounded-2xl p-6 transition bg-white hover:bg-blue-600 hover:text-white flex flex-col justify-between"
+            className="font-[Manrope] group border border-gray-200 rounded-2xl p-6 transition bg-white hover:bg-blue-600 hover:text-white flex flex-col justify-between"
           >
             <img
               src={service.icon}
@@ -65,12 +65,12 @@ const Services = () => {
               className="h-10 w-10 mb-4 transition group-hover:brightness-0 group-hover:invert"
             />
             <h4 className="text-xl font-sans  mb-1">{service.title}</h4>
-            <p className="text-gray-500">{service.description}</p>
+            <p className="text-gray-500 transition group-hover:brightness-0 group-hover:invert">{service.description}</p>
           </div>
         ))}
 
         {/* Sonraki 2 kartı 2 sütuna yayıp ortalayalım */}
-        <div className="col-span-3 grid grid-cols-2 gap-6">
+        <div className="col-span-3 grid grid-cols-2 gap-6 font-[Manrope]">
           {services.slice(3).map((service, index) => (
             <div
               key={index + 3}
@@ -82,7 +82,7 @@ const Services = () => {
                 className="h-10 w-10 mb-4 transition group-hover:brightness-0 group-hover:invert"
               />
               <h4 className="text-xl font-sans  mb-1">{service.title}</h4>
-              <p className="text-gray-500">{service.description}</p>
+              <p className="transition group-hover:brightness-0 group-hover:invert text-gray-500">{service.description}</p>
             </div>
           ))}
         </div>
