@@ -108,7 +108,7 @@ const BankbookerLanding = () => {
         </div>
 
         {/* Info Boxes */}
-        <div className="flex gap-4 mt-[82px] ">
+        <div className="flex flex-col md:flex-row gap-4 mt-[82px] ">
           {/* Box 1 */}
           <div className="bg-[#0D7ECF] rounded-xl p-6 w-full md:w-[400px] h-[300px] text-white flex flex-col justify-between">
             <div className="flex flex-col items-center gap-2">
