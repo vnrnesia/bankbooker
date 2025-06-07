@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
 
             {/* Sağ Alan */}
-            <div className="grid grid-cols-2 gap-16 text-sm pt-36 text-gray-600">
+            <div className="hidden md:grid grid-cols-2 gap-16 text-sm pt-36 text-gray-600">
               <div className="space-y-4">
                 <h4 className="text-base font-semibold text-gray-800 tracking-wide mb-4">
                   CONTACT US
@@ -52,7 +52,7 @@ const Footer = () => {
               </div>
 
               <div className="space-y-4">
-                <div className="pt-10">
+                <div className="pt-0 md:pt-10">
                   <p className="text-lg font-medium text-gray-700">Mon– Fri:</p>
                   <p className="text-lg text-gray-600">8:30am – 5:30pm</p>
                 </div>
@@ -70,8 +70,8 @@ const Footer = () => {
 
       {/* Menü Alanı */}
       <div className="w-full border-t border-gray-300 bg-white mb-20">
-        <div className="max-w-8xl mx-auto px-6 py-6 flex justify-center">
-          <div className="flex flex-wrap justify-center gap-24 md:gap-[142px] text-gray-600 text-sm font-semibold text-center">
+        <div className="max-w-8xl mx-auto px-4 md:px-6 py-6">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-24 lg:gap-[142px] text-gray-600 text-sm font-semibold text-center">
             <a href="#">Services</a>
             <a href="#">Who We Are</a>
             <a href="#">Insights</a>
@@ -83,12 +83,12 @@ const Footer = () => {
         </div>
 
         {/* Ayırıcı çizgi */}
-        <div className="w-[1270px] mx-auto border-t border-gray-300" />
+        <div className="hidden md:block w-full max-w-[1270px] mx-auto border-t border-gray-300" />
 
         {/* Alt bilgi alanı */}
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           {/* Sol: Telif ve Politikalar */}
-          <div className="text-gray-600 flex flex-wrap items-center gap-4 mb-4 md:mb-0">
+          <div className="text-gray-600 flex flex-wrap items-center justify-center gap-4 mb-4 md:mb-0">
             <span>2025 Bankbooker. All right reserved.</span>
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>

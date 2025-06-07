@@ -9,13 +9,17 @@ import Comments from "@/components/ui/Comments.jsx";
 import Footer from "@/components/layout/Footer.jsx";
 import Contact from "@/components/ui/Contact.jsx";
 import CtaCard from "@/components/ui/CtaCard.jsx";
+import MobileHeader from "@/components/layout/MobileHeader.jsx";
 
 function App() {
   return (
     <>
-      <div className="mx-52">
+      <div className="mx-4 md:mx-52">
         <div className="mb-10">
           <Header />
+        </div>
+        <div>
+          <MobileHeader/>
         </div>
         <div className="mb-10">
           <Bankbooker />
@@ -31,15 +35,15 @@ function App() {
         </div>
       </div>
 
-      <div className="">
+      <div className="px-4 md:px-0">
         <Steps />
       </div>
 
-      <div className="mb-24">
+      <div className="mb-24 px-4 md:px-0">
         <CtaCard />
       </div>
 
-      <div className="mx-52">
+      <div className="mx-4 md:mx-52">
         <div className="mb-24">
           <Pricing />
         </div>

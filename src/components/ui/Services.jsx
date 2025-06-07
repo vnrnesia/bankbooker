@@ -34,7 +34,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="py-20 px-6 max-w-7xl mx-auto">
+    <div className="pt-20 px-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 text-center md:text-left">
         <div>
@@ -52,7 +52,7 @@ const Services = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* İlk 3 kart */}
         {services.slice(0, 3).map((service, index) => (
           <div
@@ -64,13 +64,13 @@ const Services = () => {
               alt={`icon-${index + 1}`}
               className="h-10 w-10 mb-4 transition group-hover:brightness-0 group-hover:invert"
             />
-            <h4 className="text-xl font-sans  mb-1">{service.title}</h4>
+            <h4 className="text-xl font-sans mb-1">{service.title}</h4>
             <p className="text-gray-500 transition group-hover:brightness-0 group-hover:invert">{service.description}</p>
           </div>
         ))}
 
         {/* Sonraki 2 kartı 2 sütuna yayıp ortalayalım */}
-        <div className="col-span-3 grid grid-cols-2 gap-6 font-[Manrope]">
+        <div className="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 font-[Manrope]">
           {services.slice(3).map((service, index) => (
             <div
               key={index + 3}
@@ -81,7 +81,7 @@ const Services = () => {
                 alt={`icon-${index + 1}`}
                 className="h-10 w-10 mb-4 transition group-hover:brightness-0 group-hover:invert"
               />
-              <h4 className="text-xl font-sans  mb-1">{service.title}</h4>
+              <h4 className="text-xl font-sans mb-1">{service.title}</h4>
               <p className="transition group-hover:brightness-0 group-hover:invert text-gray-500">{service.description}</p>
             </div>
           ))}

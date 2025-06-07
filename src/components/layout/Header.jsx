@@ -5,7 +5,7 @@ import icon4 from "@/assets/HeaderIcon/icon4.png";
 
 export default function Header() {
   return (
-    <div className=" py-10 h-[64px] mx-auto flex items-center justify-between text-sm text-[#333] font-sans">
+    <div className="hidden md:flex py-10 h-[64px] mx-auto items-center justify-between text-sm text-[#333] font-sans">
       <div className="flex items-center space-x-8">
         <div className="flex items-center space-x-2">
           <img src={icon1} alt="" />

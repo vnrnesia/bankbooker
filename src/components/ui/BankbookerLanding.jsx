@@ -18,9 +18,9 @@ import {
 
 const BankbookerLanding = () => {
   return (
-    <div className="font-[Manrope] mt-10 min-h-screen flex bg-white">
+    <div className="pt-16 md:pt-0 font-[Manrope] mt-10 min-h-screen flex bg-white">
       {/* Left Panel */}
-      <div className="w-[600px] h-[714px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-8 flex flex-col justify-between rounded-xl">
+      <div className="hidden w-[600px] h-[714px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-8 md:flex flex-col justify-between rounded-xl">
         <div>
           {/* Logo */}
           <div className="flex justify-center">
@@ -69,9 +69,9 @@ const BankbookerLanding = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="pt-0 pr-10 pb-10 pl-10 ">
+      <div className="pt-0 px-4 md:px-10 pb-10">
         {/* Nav */}
-        <div className="font-[Manrope] flex justify-end items-center gap-6 text-sm text-[#333]">
+        <div className="hidden font-[Manrope] md:flex justify-end items-center gap-6 text-sm text-[#333]">
           <a href="#">О сервисе</a>
           <a href="#">Услуги</a>
           <a href="#">Партнеры</a>
@@ -86,7 +86,7 @@ const BankbookerLanding = () => {
           <div className="text-sm font-medium text-gray-700">
             Welcome To Bankbooker
           </div>
-          <h1 className="text-4xl leading-tight mt-2 font-medium">
+          <h1 className="text-3xl md:text-4xl leading-tight mt-2 font-medium">
             International Payment Solutions
             <br />
             and Complex Services for Businesses
@@ -97,7 +97,7 @@ const BankbookerLanding = () => {
             ensures that your business.
           </p>
 
-          <div className="mt-6 flex gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded">
               Get Started
             </button>
@@ -108,9 +108,9 @@ const BankbookerLanding = () => {
         </div>
 
         {/* Info Boxes */}
-        <div className="flex gap-4 mt-[82px] flex-wrap ">
+        <div className="flex gap-4 mt-[82px] flex-wrap">
           {/* Box 1 */}
-          <div className="bg-[#0D7ECF] rounded-xl p-6 w-[400px] h-[300px] text-white flex flex-col justify-between">
+          <div className="bg-[#0D7ECF] rounded-xl p-6 w-full md:w-[400px] h-[300px] text-white flex flex-col justify-between">
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center gap-4 text-center">
                 <div className="text-4xl font-sans">120+</div>
@@ -157,7 +157,7 @@ const BankbookerLanding = () => {
           </div>
 
           {/* Box 2 */}
-          <div className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-6 w-[393px] h-[300px] text-white flex flex-col justify-between">
+          <div className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-6 md:w-[393px] h-[300px] text-white flex flex-col justify-between">
             <div>
               <div className="text-sm font-medium">
                 Proven Business & Financial Expertise

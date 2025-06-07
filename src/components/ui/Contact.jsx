@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section className="font-[Manrope] py-16 mb-36 text-center">
+    <section className="font-[Manrope] md:py-16 md:mb-36 text-center">
       <h3 className="text-gray-500 text-lg mb-1">Let’s Collaborate</h3>
       <h2 className="text-4xl font-medium mb-12">Ready To Work With Us</h2>
 

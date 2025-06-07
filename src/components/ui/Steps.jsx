@@ -40,13 +40,13 @@ const Steps = () => {
           strategic planning, and effective implementation for lasting results.
         </p>
 
-        {/* Line + Step Circles (Aligned to cards) */}
-        <div className="relative mb-10 md:mb-14 px-4 md:px-12">
+        {/* Desktop: Line + Step Circles */}
+        <div className="relative mb-10 md:mb-14 px-4 md:px-12 hidden md:block">
           {/* Dotted line */}
           <div className="absolute top-5 left-0 right-0 h-0.5 border-t border-dashed border-gray-300 z-0" />
           
           {/* Step Circles aligned via grid */}
-          <div className="relative z-20 grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="relative z-20 grid grid-cols-4 gap-6">
             {steps.map((step) => (
               <div key={step.id} className="flex justify-center">
                 <div className="w-10 h-10 rounded-md flex items-center justify-center font-semibold text-sm bg-gray-200 text-black">
@@ -57,17 +57,21 @@ const Steps = () => {
           </div>
         </div>
 
-        {/* Step Descriptions */}
+        {/* Steps Container */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4 md:px-12">
           {steps.map((step) => (
-            <div
-              key={step.id}
-              className="bg-white rounded-xl px-4 py-6 text-center shadow-sm"
-            >
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                {step.title}
-              </h4>
-              <p className="text-sm text-gray-600">{step.description}</p>
+            <div key={step.id} className="flex flex-col items-center">
+              {/* Number Circle - Only visible on mobile */}
+              <div className="w-10 h-10 rounded-md flex items-center justify-center font-semibold text-sm bg-gray-200 text-black mb-4 md:hidden">
+                {step.id}
+              </div>
+              {/* Step Content */}
+              <div className="bg-white rounded-xl px-4 py-6 text-center shadow-sm w-full">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                  {step.title}
+                </h4>
+                <p className="text-sm text-gray-600">{step.description}</p>
+              </div>
             </div>
           ))}
         </div>

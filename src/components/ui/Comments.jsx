@@ -19,7 +19,7 @@ const testimonials = [
     image: avatar1,
   },
   {
-    text: "Thanks to Bankbooker, we’ve experienced a major transformation in our financial processes. Their professional approach and quick solutions saved us a great deal of time.",
+    text: "Thanks to Bankbooker, we've experienced a major transformation in our financial processes. Their professional approach and quick solutions saved us a great deal of time.",
     name: "Elif Yıldız",
     position: "NovaTech - CFO",
     image: avatar2,
@@ -89,7 +89,7 @@ const Comments = () => {
               className="absolute top-0 left-0 right-0 bottom-0 p-8 h-[500px]"
             >
               <p className="text-gray-800 text-lg mb-6 italic">
-                “{testimonials[index].text}”
+                "{testimonials[index].text}"
               </p>
               <div className="flex items-center gap-4">
                 <img
@@ -157,14 +157,14 @@ const Comments = () => {
           </div>
         </div>
       </div>
-      <div className="w-[1270px] mx-auto border-t border-gray-300 mt-14" />
-      <div className="flex justify-center items-center mt-6 gap-12">
-        <img src={brand1} alt="" />
-        <img src={brand2} alt="" />
-        <img src={brand3} alt="" />
-        <img src={brand4} alt="" />
-        <img src={brand5} alt="" />
-        <img src={brand6} alt="" />
+      <div className="w-full md:w-[1270px] mx-auto border-t border-gray-300 mt-14" />
+      <div className="flex flex-wrap justify-center items-center mt-6 gap-6 md:gap-12 px-4">
+        <img src={brand1} alt="" className="w-24 md:w-auto" />
+        <img src={brand2} alt="" className="w-24 md:w-auto" />
+        <img src={brand3} alt="" className="w-24 md:w-auto" />
+        <img src={brand4} alt="" className="w-24 md:w-auto" />
+        <img src={brand5} alt="" className="w-24 md:w-auto" />
+        <img src={brand6} alt="" className="w-24 md:w-auto" />
       </div>
     </section>
   );
