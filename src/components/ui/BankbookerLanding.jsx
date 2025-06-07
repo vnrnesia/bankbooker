@@ -18,9 +18,9 @@ import {
 
 const BankbookerLanding = () => {
   return (
-    <div className="pt-16 md:pt-0 font-[Manrope] mt-10 min-h-screen flex bg-white">
+    <div className="pt-16 md:pt-16 font-[Manrope] mt-10 min-h-screen flex bg-white">
       {/* Left Panel */}
-      <div className="hidden w-[600px] h-[714px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-8 md:flex flex-col justify-between rounded-xl">
+      <div className="hidden w-[600px] h-[705px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-8 md:flex flex-col justify-between rounded-xl">
         <div>
           {/* Logo */}
           <div className="flex justify-center">
@@ -108,7 +108,7 @@ const BankbookerLanding = () => {
         </div>
 
         {/* Info Boxes */}
-        <div className="flex gap-4 mt-[82px] flex-wrap">
+        <div className="flex gap-4 mt-[82px] ">
           {/* Box 1 */}
           <div className="bg-[#0D7ECF] rounded-xl p-6 w-full md:w-[400px] h-[300px] text-white flex flex-col justify-between">
             <div className="flex flex-col items-center gap-2">
