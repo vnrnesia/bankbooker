@@ -50,7 +50,7 @@ function App() {
 
         {/* CTA Section */}
         <div className="">
-          <div className="my-16 md:my-24">
+          <div className="mb-16 md:mb-24">
             <CtaCard />
           </div>
         </div>
