@@ -80,7 +80,7 @@ const Footer = () => {
             <a href="#" className="hover:text-blue-600 transition-colors">Careers</a>
             <a href="#" className="hover:text-blue-600 transition-colors">Team</a>
             <a href="#" className="hover:text-blue-600 transition-colors">Contact Us</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">FAQ</a>
+          
           </div>
         </div>
 

@@ -182,13 +182,13 @@ const Comments = () => {
         </div>
 
         {/* Desktop: static logos */}
-        <div className="hidden md:flex flex-wrap justify-center items-center gap-6 md:gap-12 px-4">
+        <div className="hidden md:flex justify-center items-center gap-4 md:gap-8 px-4">
           {brandImages.map((brand, i) => (
             <img
               key={i}
               src={brand}
               alt={`Brand ${i + 1}`}
-              className="h-10 transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+              className="h-10 w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
             />
           ))}
         </div>
