@@ -10,18 +10,21 @@ import Footer from "@/components/layout/Footer.jsx";
 import Contact from "@/components/ui/Contact.jsx";
 import CtaCard from "@/components/ui/CtaCard.jsx";
 import MobileHeader from "@/components/layout/MobileHeader.jsx";
+import OffersGrid from "@/components/ui/OffersGrid.jsx";
+import DynamicTitle from "@/components/ui/DynamicTitle.jsx"
 
 function App() {
   return (
     <>
       <div className="mx-4 md:mx-52">
+        <DynamicTitle/>
         <div className="mb-10">
           <Header />
         </div>
         <div>
-          <MobileHeader/>
+          <MobileHeader />
         </div>
-        <div className="mb-10">
+        <div>
           <Bankbooker />
         </div>
         <div className="mb-10">
@@ -45,9 +48,10 @@ function App() {
 
       <div className="mx-4 md:mx-52">
         <div className="mb-24">
+          <OffersGrid />
           <Pricing />
         </div>
-        <div className="mb-36">
+        <div className="mb-12">
           <Comments />
         </div>
         <div className="mb-10">
@@ -59,6 +63,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;

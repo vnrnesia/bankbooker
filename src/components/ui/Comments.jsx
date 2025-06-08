@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+
 import brand1 from "@/assets/Comment/brand1.png";
 import brand2 from "@/assets/Comment/brand2.png";
 import brand3 from "@/assets/Comment/brand3.png";
 import brand4 from "@/assets/Comment/brand4.png";
 import brand5 from "@/assets/Comment/brand5.png";
 import brand6 from "@/assets/Comment/brand6.png";
+
 import avatar1 from "@/assets/Avatar/avatar1.png";
 import avatar2 from "@/assets/Avatar/avatar2.png";
 import avatar3 from "@/assets/Avatar/avatar3.png";
-import avatar4 from "@/assets/Avatar/avatar4.png";
 
 const testimonials = [
   {
@@ -32,9 +34,11 @@ const testimonials = [
   },
 ];
 
+const brandImages = [brand1, brand2, brand3, brand4, brand5, brand6];
+
 const Comments = () => {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1: forward, -1: backward
+  const [direction, setDirection] = useState(1);
 
   const nextTestimonial = () => {
     setDirection(1);
@@ -157,14 +161,37 @@ const Comments = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-[1270px] mx-auto border-t border-gray-300 mt-14" />
-      <div className="flex flex-wrap justify-center items-center mt-6 gap-6 md:gap-12 px-4">
-        <img src={brand1} alt="" className="w-24 md:w-auto" />
-        <img src={brand2} alt="" className="w-24 md:w-auto" />
-        <img src={brand3} alt="" className="w-24 md:w-auto" />
-        <img src={brand4} alt="" className="w-24 md:w-auto" />
-        <img src={brand5} alt="" className="w-24 md:w-auto" />
-        <img src={brand6} alt="" className="w-24 md:w-auto" />
+
+      {/* Divider */}
+      <div className="w-full border-t border-gray-300 mt-14" />
+
+      {/* Brand Logos */}
+      <div className="mt-6">
+        {/* Mobile: auto-scroll slider */}
+        <div className="overflow-hidden md:hidden">
+          <div className="comments-brand-slider">
+            {[...brandImages, ...brandImages].map((brand, i) => (
+              <img
+                key={i}
+                src={brand}
+                alt={`Brand ${i + 1}`}
+                className="h-12 mx-4 flex-shrink-0 grayscale hover:grayscale-0 transition-transform duration-300 hover:scale-105"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: static logos */}
+        <div className="hidden md:flex flex-wrap justify-center items-center gap-6 md:gap-12 px-4">
+          {brandImages.map((brand, i) => (
+            <img
+              key={i}
+              src={brand}
+              alt={`Brand ${i + 1}`}
+              className="h-10 transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

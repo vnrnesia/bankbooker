@@ -3,8 +3,8 @@ import handshake from "@/assets/handshake.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const AccordionItem = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const AccordionItem = ({ title, content, defaultOpen = false }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
     <div className="bg-white rounded-xl shadow p-6">
@@ -69,15 +69,15 @@ const Info = () => {
         {/* Stats */}
         <div className=" mt-10 grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
-            <p className="text-4xl font-semibold text-neutral-900">24+</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">24+</p>
             <p className="text-md text-gray-500 mt-1">Years of collective experience</p>
           </div>
           <div className="px-4">
-            <p className="text-4xl font-semibold text-neutral-900">95%</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">95%</p>
             <p className="text-md text-gray-500 mt-1">Remarkable client satisfaction rate</p>
           </div>
           <div>
-            <p className="text-4xl font-semibold text-neutral-900">500+</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">500+</p>
             <p className="text-md text-gray-500 mt-1">Successfully created projects</p>
           </div>
         </div>
@@ -102,6 +102,7 @@ const Info = () => {
         <AccordionItem
           title="Vision"
           content="Our vision is empowering organizations and individuals to achieve sustainable growth, financial stability, and operational excellence."
+          defaultOpen={true}
         />
         <AccordionItem
           title="Mission"

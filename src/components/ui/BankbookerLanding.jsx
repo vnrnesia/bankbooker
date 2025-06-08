@@ -61,10 +61,10 @@ const BankbookerLanding = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mt-8">
-          <img src={icon1} alt="X" className="w-6 h-6" />
-          <img src={icon2} alt="LinkedIn" className="w-6 h-6" />
-          <img src={icon3} alt="Facebook" className="w-6 h-6" />
-          <img src={icon4} alt="Instagram" className="w-6 h-6" />
+          <img src={icon1} alt="X" className="w-5 h-5" />
+          <img src={icon2} alt="LinkedIn" className="w-5 h-5" />
+          <img src={icon3} alt="Facebook" className="w-5 h-5" />
+          <img src={icon4} alt="Instagram" className="w-5 h-5" />
         </div>
       </div>
 
@@ -101,7 +101,7 @@ const BankbookerLanding = () => {
             <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded">
               Get Started
             </button>
-            <button className="border border-gray-300 px-6 py-2 rounded font-medium text-gray-700">
+            <button className="border border-gray-300 px-6 py-2 rounded font-medium text-gray-700 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer transition duration-300">
               Our Services
             </button>
           </div>
@@ -149,7 +149,7 @@ const BankbookerLanding = () => {
                     className="text-yellow-400"
                   />
                 </div>
-                <span className="text-white text-sm font-medium">
+                <span className="text-white text-sm font-medium opacity-70">
                   4.9/5 Rating
                 </span>
               </div>
@@ -159,26 +159,26 @@ const BankbookerLanding = () => {
           {/* Box 2 */}
           <div className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-6 md:w-[393px] h-[300px] text-white flex flex-col justify-between">
             <div>
-              <div className="text-sm font-medium">
+              <div className=" font-medium">
                 Proven Business & Financial Expertise
               </div>
-              <div className="text-xs mt-1 leading-snug py-4">
+              <div className="text-sm  mt-1 leading-snug py-4">
                 Bankbooker Reliable seeds for business & financial growth. Our
                 consultants are the Best Today
               </div>
-              <button className="border border-gray-300 px-5 py-2 rounded-lg text-xs text-white ">
+              <button className="border mt-4 border-gray-300 px-5 py-2 rounded-lg text-xs  text-white hover:bg-white hover:text-black transition duration-300 ">
                 Learn More
               </button>
             </div>
             <div className="mt-6">
               <div className="flex items-center gap-2 mt-3 text-white">
-                <div className="w-6 h-6 rounded-full bg-white text-[#00A3FF] flex items-center justify-center">
-                  <FontAwesomeIcon icon={faPlay} className="text-xs" />
+                <div className="w-10 h-10 rounded-full bg-white text-[#00A3FF] flex items-center justify-center">
+                  <FontAwesomeIcon icon={faPlay} className="text-md" />
                 </div>
-                <span className="text-xs">
+                <span className="text-sm">
                   How does it work?
                   <br />
-                  <span className="text-[10px] text-white/80">Play video</span>
+                  <span className="text-[13px] text-white/80">Play video</span>
                 </span>
               </div>
             </div>

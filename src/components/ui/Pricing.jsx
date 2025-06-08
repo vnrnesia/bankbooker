@@ -29,7 +29,7 @@ const packages = [
 
 const Prices = () => {
   return (
-    <div className=" font-[Manrope]py-16 px-6 max-w-7xl mx-auto font-sans">
+    <div className=" font-[Manrope] pt-16 px-6 ">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
         <div>
@@ -38,7 +38,7 @@ const Prices = () => {
             Flexible Pricing That Scales<br />With Your Business
           </h1>
         </div>
-        <p className="text-gray-500 font-medium max-w-md text-md leading-relaxed">
+        <p className="text-gray-500 font-medium font-[Manrope] max-w-md text-md leading-relaxed">
           У нас есть решения для бизнеса любого масштаба —<br />
           от стартапов до крупных компаний. Найдите тариф,<br />
           который отвечает вашим задачам и целям.

@@ -2,7 +2,7 @@ const icons = Array.from({ length: 10 }, (_, i) => `brand${i + 1}.png`);
 
 const Brands = () => {
   return (
-    <div className="font-[Manrope] pt-20 px-6 max-w-7xl mx-auto text-center">
+    <div className="font-[Manrope]  px-6 max-w-7xl mx-auto text-center">
       <h3 className="text-md text-gray-500 font-medium mb-2">Partner</h3>
       <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4">
         Trusted By 550+ Companies Worldwide
@@ -16,11 +16,12 @@ const Brands = () => {
         {icons.map((icon, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 shadow-sm hover:shadow-md transition"
+            className="group bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 shadow-sm hover:shadow-md transition"
           >
             <img
               src={`/assets/BrandIcon/${icon}`}
               alt={`Company logo ${index + 1}`}
+              className="w-[65%] filter grayscale group-hover:filter-none transition duration-300"
             />
           </div>
         ))}
