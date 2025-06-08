@@ -35,7 +35,7 @@ export default function Header() {
         ${
           showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
         }
-        bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[65%] 
+        bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[74%] 
         items-center justify-between text-sm text-[#333] font-sans`}
       >
         <div className="flex items-center space-x-8">
