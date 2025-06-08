@@ -12,55 +12,67 @@ import CtaCard from "@/components/ui/CtaCard.jsx";
 import MobileHeader from "@/components/layout/MobileHeader.jsx";
 import OffersGrid from "@/components/ui/OffersGrid.jsx";
 import DynamicTitle from "@/components/ui/DynamicTitle.jsx"
+import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx"
 
 function App() {
   return (
-    <>
-      <div className="mx-4 md:mx-52">
-        <DynamicTitle/>
-        <div className="mb-10">
-          <Header />
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <DynamicTitle/>
+          <div className="mb-6 md:mb-10">
+            <Header />
+          </div>
+          <div className="md:hidden">
+            <MobileHeader />
+          </div>
+          <div className="mb-8 md:mb-12">
+            <Bankbooker />
+          </div>
+          <div className="mb-8 md:mb-16">
+            <Brands />
+          </div>
+          <div className="mb-16 md:mb-24">
+            <Services />
+          </div>
+          <div className="mb-16 md:mb-24">
+            <Info />
+          </div>
         </div>
-        <div>
-          <MobileHeader />
-        </div>
-        <div>
-          <Bankbooker />
-        </div>
-        <div className="mb-10">
-          <Brands />
-        </div>
-        <div className="mb-24">
-          <Services />
-        </div>
-        <div className="mb-24">
-          <Info />
-        </div>
-      </div>
 
-      <div className="px-4 md:px-0">
-        <Steps />
-      </div>
+        {/* Steps Section */}
+        <div className="w-full bg-gray-50">
+          <div className="">
+            <Steps />
+          </div>
+        </div>
 
-      <div className="mb-24 px-4 md:px-0">
-        <CtaCard />
-      </div>
+        {/* CTA Section */}
+        <div className="">
+          <div className="my-16 md:my-24">
+            <CtaCard />
+          </div>
+        </div>
 
-      <div className="mx-4 md:mx-52">
-        <div className="mb-24">
-          <OffersGrid />
-          <Pricing />
+        {/* Offers and Pricing Section */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="mb-16 md:mb-24">
+            <OffersGrid />
+            <Pricing />
+          </div>
+          <div className="mb-12 md:mb-16">
+            <Comments />
+          </div>
+          <div className="mb-10 md:mb-16">
+            <Contact />
+          </div>
         </div>
-        <div className="mb-12">
-          <Comments />
-        </div>
-        <div className="mb-10">
-          <Contact />
-        </div>
-      </div>
+      </main>
 
       <Footer />
-    </>
+      <ToolbarMobile />
+    </div>
   );
 }
 
