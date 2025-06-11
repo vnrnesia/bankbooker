@@ -81,7 +81,7 @@ const BankbookerLanding = () => {
       {/* Right Panel */}
       <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10">
         {/* Nav */}
-        <nav className="pt-12 md:pt-20 px-5">
+        <nav className="pt-12 md:pt-0 px-5">
         <div className="flex justify-end items-center">
          
 
@@ -121,6 +121,7 @@ const BankbookerLanding = () => {
                     { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
                     { name: "Юридический департамент", path: "/legal" },
                     { name: "Налоговый консалтинг", path: "/consulting" },
+                    { name: "Банковские Продукты", path: "/products" },
                   ].map((item, idx) => (
                     <Link
                       key={idx}

@@ -10,32 +10,33 @@ import icon2 from "@/assets/Services/icon2.png";
 import icon3 from "@/assets/Services/icon3.png";
 import icon4 from "@/assets/Services/icon4.png";
 import icon5 from "@/assets/Services/icon5.png";
+import OffersGrid from "@/components/ui/OffersGrid.jsx";
 
 const homeServices = [
   {
     icon: icon1,
-    title: "Оплата инвойсов",
-    description: "Производим оплату в любую точку мира",
+    title: "Бухгалтерский аутсорсинг",
+    description: "Наши специалисты изучат финансовое положение вашей компании и помогут распланировать бухучет наперед.",
   },
   {
     icon: icon2,
-    title: "Банковские продукты",
-    description: "",
+    title: "Восстановление учета",
+    description: "Приведение в порядок всех финансовых документов, для того чтобы они соответствовали требованиям законодательства.",
   },
   {
     icon: icon3,
-    title: "Аутсоринг Бухгалтерии",
-    description: "Персонализированная система управленческого учета",
+    title: "Консультирование",
+    description: "Выявим и устраним ошибкив существующей системе, повысим эффективность бизнес-процессов и сократим затраты.",
   },
   {
     icon: icon4,
-    title: "Налоговый консалтинг",
-    description: "Сопровождение налоговых проверок",
+    title: "Нулевая отчетность",
+    description: "Компания «BankBooking» предлагает услуги по сдаче нулевой отчётности с соблюдением всех необходимых норм.",
   },
   {
     icon: icon5,
-    title: "Юридический департамент",
-    description: "Арбитраж, управляемое банкротство",
+    title: "Налоговое консультирование",
+    description: "Планируем, оптимизируем, консультируем.  Проведем экспресс-оценку налоговых рисков.",
   },
 ];
 
@@ -48,6 +49,8 @@ export default function Banking() {
           <div className="mb-8 md:mb-12">
             <Landing />
           </div>
+
+          <OffersGrid/>
 
           <div className="mb-16 md:mb-24">
             <Services
