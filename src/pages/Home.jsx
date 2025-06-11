@@ -54,9 +54,7 @@ function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <DynamicTitle />
 
-          <div className="md:hidden">
-            <MobileHeader />
-          </div>
+          
           <div className="mb-8 md:mb-12">
             <Bankbooker />
           </div>

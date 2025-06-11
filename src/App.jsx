@@ -4,7 +4,7 @@ import Banking from "@/pages/Banking.jsx";
 import Pagea from "@/pages/Pagea.jsx";
 import Pageb from "@/pages/Pageb.jsx";
 import Payment from "@/pages/Payment.jsx";
-import Header from "@/components/layout/Header.jsx";
+import MobileHeader from "@/components/layout/MobileHeader.jsx";
 import Footer from "@/components/layout/Footer.jsx";
 import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
 
@@ -13,7 +13,7 @@ function App() {
     <div className="min-h-screen flex flex-col">
       {/* Header her sayfada gösterilecek */}
       <div className="mb-6 md:mb-10">
-        <Header />
+        <MobileHeader />
       </div>
 
       {/* Ana içerik */}
