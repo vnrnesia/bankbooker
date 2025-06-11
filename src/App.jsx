@@ -7,6 +7,7 @@ import Payment from "@/pages/Payment.jsx";
 import MobileHeader from "@/components/layout/MobileHeader.jsx";
 import Footer from "@/components/layout/Footer.jsx";
 import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
+import Header from "@/components/layout/Header.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       {/* Header her sayfada gösterilecek */}
       <div className="mb-6 md:mb-10">
         <MobileHeader />
+        <Header/>
       </div>
 
       {/* Ana içerik */}
