@@ -69,8 +69,8 @@ export default function Banking() {
         </div>
       </main>
 
-      <Footer />
-      <ToolbarMobile />
+    
+    
     </div>
   );
 }
