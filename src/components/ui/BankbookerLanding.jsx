@@ -8,6 +8,10 @@ import avatar1 from "@/assets/Avatar/avatar1.png";
 import avatar2 from "@/assets/Avatar/avatar2.png";
 import avatar3 from "@/assets/Avatar/avatar3.png";
 import avatar4 from "@/assets/Avatar/avatar4.png";
+import { Link } from "react-router-dom";
+import Logo from "@/assets/logo.png";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,6 +21,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const BankbookerLanding = () => {
+    const [showServices, setShowServices] = useState(false);
+
   return (
     <div className="pt-24 md:pt-16 font-[Manrope] mt-6 md:mt-10 min-h-screen flex flex-col lg:flex-row bg-white lg:pl-0">
       {/* Left Panel */}
@@ -75,23 +81,70 @@ const BankbookerLanding = () => {
       {/* Right Panel */}
       <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10">
         {/* Nav */}
-        <div className="hidden font-[Manrope] md:flex justify-end items-center gap-4 lg:gap-6 text-sm text-[#333]">
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            О сервисе
-          </a>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Услуги
-          </a>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Партнеры
-          </a>
-          <a href="#" className="hover:text-blue-600 transition-colors">
-            Контакты
-          </a>
-          <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
-            Let's Talk
-          </button>
+        <nav className="pt-12 md:pt-20 px-5">
+        <div className="flex justify-end items-center">
+         
+
+          <div className="hidden font-[Manrope] md:flex items-center gap-4 lg:gap-6 text-sm text-[#333]">
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              О сервисе
+            </a>
+            {/* Accordion Start */}
+            <div className="relative">
+              <button
+                onClick={() => setShowServices(!showServices)}
+                className="hover:text-blue-600 transition-colors focus:outline-none flex items-center gap-1"
+              >
+                Услуги
+                {/* SVG Arrow Icon */}
+                <svg
+                  className={`w-4 h-4 transform transition-transform duration-300 ${
+                    showServices ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {showServices && (
+                <div className="text-center absolute top-full mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-all duration-300 animate-fade-in-down">
+                  {[
+                    { name: "Оплата инвойсов", path: "/payment" },
+                    { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
+                    { name: "Юридический департамент", path: "/legal" },
+                    { name: "Налоговый консалтинг", path: "/consulting" },
+                  ].map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className="block px-4 py-2 text-sm bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Партнеры
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Контакты
+            </a>
+            <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
+              Let's Talk
+            </button>
+          </div>
         </div>
+      </nav>
 
         {/* Hero Text */}
         <div className="mt-6 md:mt-10">
@@ -126,7 +179,7 @@ const BankbookerLanding = () => {
               </div>
 
               {/* Telegram Info */}
-              <div className="mt-[12px] text-center">
+              <div className="hidden md:block mt-[12px] text-center">
                 <div className="text-gray-400 text-sm">Community</div>
                 <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
                   Join To Telegram Channel
@@ -136,6 +189,12 @@ const BankbookerLanding = () => {
                   <span className="text-black text-sm font-sans">
                     t.me/bankbooker
                   </span>
+                </div>
+              </div>
+
+              <div>
+                <div className="block md:hidden pt-6 text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                  Join To Telegram Channel
                 </div>
               </div>
 
@@ -149,7 +208,7 @@ const BankbookerLanding = () => {
                 ].map((item, idx) => (
                   <span
                     key={idx}
-                    className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-sm whitespace-nowrap"
+                    className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-1 py-1.5 rounded text-xs whitespace-nowrap"
                   >
                     {item}
                   </span>

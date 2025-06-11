@@ -5,6 +5,7 @@ import icon1 from "@/assets/LeftPanel/icon1.png";
 import icon2 from "@/assets/LeftPanel/icon2.png";
 import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,14 +18,17 @@ const Footer = () => {
               {/* Left Area */}
               <div className="max-w-xl py-8 md:py-16">
                 <div className="flex items-center gap-2 mb-4">
-                  <img
-                    src={Logo}
-                    alt="Bankbooker Logo"
-                    className="h-12 w-auto object-contain"
-                  />
+                  <Link to="/" className="flex items-center gap-2 mb-4">
+                    <img
+                      src={Logo}
+                      alt="Bankbooker Logo"
+                      className="h-12 w-auto object-contain"
+                    />
+                  </Link>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Ready to Take Control Of <br className="hidden sm:block" /> Your Finances?
+                  Ready to Take Control Of <br className="hidden sm:block" />{" "}
+                  Your Finances?
                 </h2>
                 <p className="text-gray-400 font-sans font-light mb-5">
                   We look forward to learning about your financial goals.
@@ -43,22 +47,36 @@ const Footer = () => {
                     CONTACT US
                   </h4>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Our Phone</p>
-                    <p className="text-base md:text-lg text-gray-600">+7 (917) 889 94–54</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Our Phone
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      +7 (917) 889 94–54
+                    </p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Our Email</p>
-                    <p className="text-base md:text-lg text-gray-600">info@bankbooker.com</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Our Email
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      info@bankbooker.com
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Mon– Fri:</p>
-                    <p className="text-base md:text-lg text-gray-600">8:30am – 5:30pm</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Mon– Fri:
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      8:30am – 5:30pm
+                    </p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Moscow:</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Moscow:
+                    </p>
                     <p className="text-base md:text-lg text-gray-600">
                       1140 Kremlin St, RU 13131
                     </p>
@@ -74,13 +92,24 @@ const Footer = () => {
       <div className="w-full border-t border-gray-300 bg-white mb-10 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-[142px] text-gray-600 text-sm font-semibold text-center">
-            <a href="#" className="hover:text-blue-600 transition-colors">Services</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Who We Are</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Insights</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Careers</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Team</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Contact Us</a>
-          
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Services
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Who We Are
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Insights
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Careers
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Team
+            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">
+              Contact Us
+            </a>
           </div>
         </div>
 
@@ -94,8 +123,12 @@ const Footer = () => {
             <div className="text-gray-600 flex flex-wrap items-center justify-center gap-4">
               <span>2025 Bankbooker. All right reserved.</span>
               <div className="flex gap-4">
-                <a href="#" className="hover:text-blue-600 transition-colors">Terms & Conditions</a>
-                <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-blue-600 transition-colors">
+                  Terms & Conditions
+                </a>
+                <a href="#" className="hover:text-blue-600 transition-colors">
+                  Privacy Policy
+                </a>
               </div>
             </div>
 
@@ -105,13 +138,25 @@ const Footer = () => {
                 <img src={icon1} alt="X" className="w-5 h-5 md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src={icon2} alt="LinkedIn" className="w-5 h-5 md:w-6 md:h-6" />
+                <img
+                  src={icon2}
+                  alt="LinkedIn"
+                  className="w-5 h-5 md:w-6 md:h-6"
+                />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src={icon3} alt="Facebook" className="w-5 h-5 md:w-6 md:h-6" />
+                <img
+                  src={icon3}
+                  alt="Facebook"
+                  className="w-5 h-5 md:w-6 md:h-6"
+                />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src={icon4} alt="Instagram" className="w-5 h-5 md:w-6 md:h-6" />
+                <img
+                  src={icon4}
+                  alt="Instagram"
+                  className="w-5 h-5 md:w-6 md:h-6"
+                />
               </a>
             </div>
           </div>

@@ -101,6 +101,31 @@ export default function OffersGrid() {
                   <p className="font-medium">{offer.commission}</p>
                 </div>
               </div>
+              <div className="pt-2 min-w-full">
+                <div className="pt-2 w-full">
+                  <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm">
+                    <div className="flex-grow px-4 py-2 text-sm text-gray-400 bg-gray-100">
+                      На Сбер или в другой банк
+                    </div>
+                    <div className="flex items-center justify-center px-4 bg-green-600 hover:bg-green-700 transition-colors">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

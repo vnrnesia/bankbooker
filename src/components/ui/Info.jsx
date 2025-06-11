@@ -3,13 +3,11 @@ import handshake from "@/assets/handshake.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const AccordionItem = ({ title, content, defaultOpen = false }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
+const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="bg-white rounded-xl shadow p-6">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className="flex items-center justify-between w-full text-left focus:outline-none"
       >
         <h4 className="text-lg font-semibold">{title}</h4>
@@ -44,6 +42,29 @@ const AccordionItem = ({ title, content, defaultOpen = false }) => {
 };
 
 const Info = () => {
+  const [isVisionOpen, setVisionOpen] = useState(true);
+  const [isMissionOpen, setMissionOpen] = useState(false);
+
+  const handleVisionToggle = () => {
+    if (isVisionOpen) {
+      setVisionOpen(false);
+      setMissionOpen(true); // Vision kapanırsa Mission açılsın
+    } else {
+      setVisionOpen(true);
+      setMissionOpen(false); // Vision açılırsa Mission kapanabilir
+    }
+  };
+
+  const handleMissionToggle = () => {
+    if (isMissionOpen) {
+      setMissionOpen(false);
+      setVisionOpen(true); // Mission kapanırsa Vision açılsın
+    } else {
+      setMissionOpen(true);
+      setVisionOpen(false); // Mission açılırsa Vision kapanabilir
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope]">
       {/* Left Side */}
@@ -66,7 +87,6 @@ const Info = () => {
           Discover More
         </button>
 
-        {/* Stats */}
         <div className=" mt-10 grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
             <p className="text-2xl md:text-4xl font-semibold text-neutral-900">24+</p>
@@ -102,11 +122,14 @@ const Info = () => {
         <AccordionItem
           title="Vision"
           content="Our vision is empowering organizations and individuals to achieve sustainable growth, financial stability, and operational excellence."
-          defaultOpen={true}
+          isOpen={isVisionOpen}
+          onToggle={handleVisionToggle}
         />
         <AccordionItem
           title="Mission"
           content="Our mission is to provide innovative and tailored financial solutions that empower businesses to thrive in competitive markets."
+          isOpen={isMissionOpen}
+          onToggle={handleMissionToggle}
         />
       </div>
     </section>
