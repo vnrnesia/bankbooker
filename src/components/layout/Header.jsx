@@ -3,8 +3,9 @@ import icon1 from "@/assets/HeaderIcon/icon1.png";
 import icon2 from "@/assets/HeaderIcon/icon2.png";
 import icon3 from "@/assets/HeaderIcon/icon3.png";
 import icon4 from "@/assets/HeaderIcon/icon4.png";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "@/assets/logo.png";
 
 
 import rus from "@/assets/russia.png";
@@ -15,8 +16,9 @@ import eng from "@/assets/uk.png";
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [language, setLanguage] = useState("en"); // "en" | "ru" | "de"
+  const [language, setLanguage] = useState("en");
   const [showLangDropdown, setShowLangDropdown] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Menü paneli
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,14 +59,10 @@ export default function Header() {
     <>
       {/* Desktop Header */}
       <div
-        className={`hidden gap-4 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500
-         ${
-           showHeader
-             ? "opacity-100 translate-y-0"
-             : "opacity-0 -translate-y-10"
-         }
-         bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[74%]
-         items-center justify-between text-sm text-[#333] font-sans`}
+        className={`hidden gap-4 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+          showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+        } bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[74%]
+        items-center justify-between text-sm text-[#333] font-sans`}
       >
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
@@ -140,20 +138,57 @@ export default function Header() {
 
       {/* Scroll Buttons */}
       <div
-        className={`fixed top-4 right-4 z-40 hidden md:flex items-center space-x-6 transition-all duration-500 ease-in-out
-         ${
-           showHeader
-             ? "opacity-0 -translate-y-6 pointer-events-none"
-             : "opacity-100 translate-y-0"
-         }`}
+        className={`fixed top-4 right-4 z-40 hidden md:flex items-center space-x-6 transition-all duration-500 ease-in-out ${
+          showHeader
+            ? "opacity-0 -translate-y-6 pointer-events-none"
+            : "opacity-100 translate-y-0"
+        }`}
       >
         <div className="flex items-center gap-1">
           <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-5 py-[18px] rounded-full text-sm font-medium shadow-lg hover:bg-[#0668b6] transition-all duration-300">
             Contact Us
           </button>
-          <button className="bg-white px-4 py-[18px] rounded-full shadow-md border border-gray-200 hover:bg-gray-100 transition-all duration-300 flex items-center justify-center">
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="bg-white px-4 py-[18px] rounded-full shadow-md border border-gray-200 hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
+          >
             <Menu className="w-5 h-5 text-gray-800" />
           </button>
+        </div>
+      </div>
+
+      {/* Sidebar Menü */}
+      <div
+        className={`fixed top-0 right-0 h-full rounded-xl bg-white shadow-lg border-l border-gray-200 z-50 transition-transform duration-300 ease-in-out text-center ${
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
+        } w-1/7 min-w-[220px]`}
+      >
+        <div className="flex items-center justify-between px-4 py-4 border-b">
+           <img
+                        src={Logo}
+                        alt="Bankbooker Logo"
+                        className="h-12 w-auto object-contain"
+                      />
+          <button onClick={() => setIsSidebarOpen(false)}>
+            <X className="w-5 h-5 text-gray-600 hover:text-red-500" />
+          </button>
+        </div>
+        <div className="flex flex-col space-y-4 px-6 pt-6 text-sm font-medium text-gray-600 font-[Manrope]">
+          <Link to="/payment" onClick={() => setIsSidebarOpen(false)}>
+            Оплата инвойсов
+          </Link>
+          <Link to="/accounting" onClick={() => setIsSidebarOpen(false)}>
+            Аутсорсинг Бухгалтерии
+          </Link>
+          <Link to="/legal" onClick={() => setIsSidebarOpen(false)}>
+            Юридический департамент
+          </Link>
+          <Link to="/consulting" onClick={() => setIsSidebarOpen(false)}>
+            Налоговый консалтинг
+          </Link>
+           <Link to="/products" onClick={() => setIsSidebarOpen(false)}>
+            Банковские Продукты
+          </Link>
         </div>
       </div>
     </>

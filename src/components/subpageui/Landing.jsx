@@ -38,7 +38,7 @@ const pageContent = {
     description:
       "Бухгалтерское обслуживание, которое включает в себя бухучет, сбор и систематизирование данных об обязательствах, имуществе предприятия дает возможность получить максимально полное представление об эффективности его работы.",
   },
-   "/payment": {
+  "/payment": {
     title: "Оплата Инвойсов",
     description:
       "Бухгалтерское обслуживание, которое включает в себя бухучет, сбор и систематизирование данных об обязательствах, имуществе предприятия дает возможность получить максимально полное представление об эффективности его работы.",
@@ -165,22 +165,32 @@ function Landing() {
 
         {/* RIGHT: Telegram Box */}
 
-        <div className="hidden lg:flex min-w-[550px] w-[40px]  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
+        <div className="mt-10 px-4 lg:flex min-w-[550px] w-[40px]  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
           <div className="flex flex-col h-full">
             {/* Logo */}
             <div className="flex justify-center items-center w-full"></div>
 
             {/* Telegram Info */}
             <div className="mt-[50px] text-center">
-              <div className="text-gray-400 text-sm">Community</div>
-              <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
-                Join To Telegram Channel
-              </div>
-              <div className="flex justify-center items-center gap-2 mt-2">
-                <img src={telegram} alt="Telegram Icon" className="w-5" />
-                <span className="text-black text-sm font-sans">
-                  t.me/bankbooker
-                </span>
+              <div>
+                <div className="hidden md:block mt-[12px] text-center">
+                  <div className="text-gray-400 text-sm">Community</div>
+                  <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                    Join To Telegram Channel
+                  </div>
+                  <div className="flex justify-center items-center gap-2 mt-2">
+                    <img src={telegram} alt="Telegram Icon" className="w-5" />
+                    <span className="text-black text-sm font-sans">
+                      t.me/bankbooker
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="block md:hidden pt-6 text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                    Join To Telegram Channel
+                  </div>
+                </div>
               </div>
             </div>
 
