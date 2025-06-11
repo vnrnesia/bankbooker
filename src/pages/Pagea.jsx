@@ -5,6 +5,11 @@ import Pricing from "@/components/ui/Pricing.jsx";
 import Comments from "@/components/ui/Comments.jsx";
 import Info from "@/components/ui/Info.jsx";
 import Contact from "@/components/ui/Contact.jsx";
+import icon1 from "@/assets/Services/icon1.png";
+import icon2 from "@/assets/Services/icon2.png";
+import icon3 from "@/assets/Services/icon3.png";
+import icon4 from "@/assets/Services/icon4.png";
+import icon5 from "@/assets/Services/icon5.png";
 
 const homeServices = [
   {
