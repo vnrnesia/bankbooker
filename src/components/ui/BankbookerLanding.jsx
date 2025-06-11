@@ -24,7 +24,11 @@ const BankbookerLanding = () => {
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex justify-center items-center w-full">
-            <img src={logo} alt="Bankbooker Logo" className="h-16 md:h-20 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="Bankbooker Logo"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
           </div>
 
           {/* Telegram Info */}
@@ -72,10 +76,18 @@ const BankbookerLanding = () => {
       <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10">
         {/* Nav */}
         <div className="hidden font-[Manrope] md:flex justify-end items-center gap-4 lg:gap-6 text-sm text-[#333]">
-          <a href="#" className="hover:text-blue-600 transition-colors">О сервисе</a>
-          <a href="#" className="hover:text-blue-600 transition-colors">Услуги</a>
-          <a href="#" className="hover:text-blue-600 transition-colors">Партнеры</a>
-          <a href="#" className="hover:text-blue-600 transition-colors">Контакты</a>
+          <a href="#" className="hover:text-blue-600 transition-colors">
+            О сервисе
+          </a>
+          <a href="#" className="hover:text-blue-600 transition-colors">
+            Услуги
+          </a>
+          <a href="#" className="hover:text-blue-600 transition-colors">
+            Партнеры
+          </a>
+          <a href="#" className="hover:text-blue-600 transition-colors">
+            Контакты
+          </a>
           <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
             Let's Talk
           </button>
@@ -105,10 +117,59 @@ const BankbookerLanding = () => {
               Our Services
             </button>
           </div>
+        <div className="block md:hidden pt-6">
+            <div className="  w-auto  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4   rounded-xl">
+            <div className="flex flex-col">
+              {/* Logo */}
+              <div className="flex justify-center items-center w-full">
+              
+              </div>
+
+              {/* Telegram Info */}
+              <div className="mt-[12px] text-center">
+                <div className="text-gray-400 text-sm">Community</div>
+                <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                  Join To Telegram Channel
+                </div>
+                <div className="flex justify-center items-center gap-2 mt-2">
+                  <img src={telegram} alt="Telegram Icon" className="w-5" />
+                  <span className="text-black text-sm font-sans">
+                    t.me/bankbooker
+                  </span>
+                </div>
+              </div>
+
+              {/* Tags */}
+              <div className="mt-12 flex flex-wrap justify-center gap-2 font-[Manrope]">
+                {[
+                  "Оплата инвойсов",
+                  "Аутсорсинг Бухгалтерии",
+                  "Юридический департамент",
+                  "Налоговый консалтинг",
+                ].map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-sm whitespace-nowrap"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex justify-center gap-4 mt-4">
+              <img src={icon1} alt="X" className="w-5 h-5" />
+              <img src={icon2} alt="LinkedIn" className="w-5 h-5" />
+              <img src={icon3} alt="Facebook" className="w-5 h-5" />
+              <img src={icon4} alt="Instagram" className="w-5 h-5" />
+            </div>
+          </div>
+        </div>
         </div>
 
         {/* Info Boxes */}
-        <div className="flex flex-col lg:flex-row gap-4 mt-12 md:mt-[82px]">
+        <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[82px]">
           {/* Box 1 */}
           <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
             <div className="flex flex-col items-center gap-2">

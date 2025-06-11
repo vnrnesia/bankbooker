@@ -188,7 +188,7 @@ const Comments = () => {
               key={i}
               src={brand}
               alt={`Brand ${i + 1}`}
-              className="h-10 w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+              className="h-10 md:h-[54px] w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
             />
           ))}
         </div>

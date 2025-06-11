@@ -21,7 +21,7 @@ const Brands = () => {
             <img
               src={`/assets/BrandIcon/${icon}`}
               alt={`Company logo ${index + 1}`}
-              className="w-[65%] filter grayscale group-hover:filter-none transition duration-300"
+              className="w-[100%] md:w-[65%] "
             />
           </div>
         ))}
