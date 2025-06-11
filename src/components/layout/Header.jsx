@@ -4,6 +4,7 @@ import icon2 from "@/assets/HeaderIcon/icon2.png";
 import icon3 from "@/assets/HeaderIcon/icon3.png";
 import icon4 from "@/assets/HeaderIcon/icon4.png";
 import { Menu } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
@@ -73,8 +74,8 @@ export default function Header() {
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white shadow-md px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src={icon1} alt="" className="w-5 h-5" />
-            <span className="text-black font-medium text-sm">Bankbooker</span>
+            <img src={logo} alt="" className="w-40" />
+            
           </div>
           
           <div className="flex items-center space-x-3">
