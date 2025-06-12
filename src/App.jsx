@@ -10,6 +10,9 @@ import Footer from "@/components/layout/Footer.jsx";
 import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
 import Header from "@/components/layout/Header.jsx";
 import ScrollToTop from "@/components/layout/ScrollToTop.jsx";
+import Contact from "@/pages/Contact.jsx";
+import About from "@/pages/About.jsx";
+
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
           <Route path="/consulting" element={<Consulting />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
 
