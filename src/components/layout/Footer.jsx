@@ -1,13 +1,32 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { PiXLogoBold } from "react-icons/pi";
+import { useState, useEffect } from "react";
+import { FiChevronUp } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Logo from "@/assets/logo.png";
 import icon1 from "@/assets/LeftPanel/icon1.png";
 import icon2 from "@/assets/LeftPanel/icon2.png";
 import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 3500) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       {/* Main Footer Area */}
@@ -27,8 +46,8 @@ const Footer = () => {
                   </Link>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Ready to Take Control Of <br className="hidden sm:block" />{" "}
-                  Your Finances?
+                  Ready to Take Control Of <br className="hidden sm:block" /> Your
+                  Finances?
                 </h2>
                 <p className="text-gray-400 font-sans font-light mb-5">
                   We look forward to learning about your financial goals.
@@ -69,9 +88,7 @@ const Footer = () => {
                     <p className="text-base md:text-lg font-medium text-gray-700">
                       Mon– Fri:
                     </p>
-                    <p className="text-base md:text-lg text-gray-600">
-                      8:30am – 5:30pm
-                    </p>
+                    <p className="text-base md:text-lg text-gray-600">8:30am – 5:30pm</p>
                   </div>
                   <div>
                     <p className="text-base md:text-lg font-medium text-gray-700">
@@ -138,30 +155,37 @@ const Footer = () => {
                 <img src={icon1} alt="X" className="w-5 h-5 md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img
-                  src={icon2}
-                  alt="LinkedIn"
-                  className="w-5 h-5 md:w-6 md:h-6"
-                />
+                <img src={icon2} alt="LinkedIn" className="w-5 h-5 md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img
-                  src={icon3}
-                  alt="Facebook"
-                  className="w-5 h-5 md:w-6 md:h-6"
-                />
+                <img src={icon3} alt="Facebook" className="w-5 h-5 md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:opacity-75 transition-opacity">
-                <img
-                  src={icon4}
-                  alt="Instagram"
-                  className="w-5 h-5 md:w-6 md:h-6"
-                />
+                <img src={icon4} alt="Instagram" className="w-5 h-5 md:w-6 md:h-6" />
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50
+          bg-blue-600 hover:bg-blue-700
+          text-white p-3 rounded-full
+          shadow-lg
+          flex items-center justify-center
+          w-10 h-10
+          pointer-events-auto
+          transition-all duration-300 ease-in-out
+          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}
+        `}
+        style={{ willChange: "opacity, transform" }}
+      >
+        <FiChevronUp size={24} />
+      </button>
     </>
   );
 };
