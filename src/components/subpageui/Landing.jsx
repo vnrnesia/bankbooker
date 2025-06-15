@@ -6,6 +6,12 @@ import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
 import telegram from "@/assets/telegram.png";
 
+import navbarIcon1 from "@/assets/Services/icon1.png";
+import navbarIcon2 from "@/assets/Services/icon2.png";
+import navbarIcon3 from "@/assets/Services/icon3.png";
+import navbarIcon4 from "@/assets/Services/icon4.png";
+import navbarIcon5 from "@/assets/Services/icon5.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -50,6 +56,14 @@ const pageContent = {
   },
 };
 
+const services = [
+  { name: "Оплата инвойсов", path: "/payment", icon: navbarIcon1 },
+  { name: "Аутсорсинг Бухгалтерии", path: "/accounting", icon: navbarIcon2 },
+  { name: "Юридический департамент", path: "/legal", icon: navbarIcon3 },
+  { name: "Налоговый консалтинг", path: "/consulting", icon: navbarIcon4 },
+  { name: "Банковские Продукты", path: "/products", icon: navbarIcon5 },
+];
+
 const { title, description } =
   pageContent[location.pathname] || pageContent["/"];
 
@@ -74,13 +88,12 @@ function Landing() {
               О сервисе
             </a>
             {/* Accordion Start */}
-            <div className="relative">
+            <div className="relative flex items-center">
               <button
                 onClick={() => setShowServices(!showServices)}
                 className="hover:text-blue-600 transition-colors focus:outline-none flex items-center gap-1"
               >
                 Услуги
-                {/* SVG Arrow Icon */}
                 <svg
                   className={`w-4 h-4 transform transition-transform duration-300 ${
                     showServices ? "rotate-180" : ""
@@ -98,31 +111,37 @@ function Landing() {
                   />
                 </svg>
               </button>
+
               {showServices && (
-                <div className="text-center absolute top-full mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-all duration-300 animate-fade-in-down">
-                  {[
-                    { name: "Оплата инвойсов", path: "/payment" },
-                    { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
-                    { name: "Юридический департамент", path: "/legal" },
-                    { name: "Налоговый консалтинг", path: "/consulting" },
-                  ].map((item, idx) => (
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-all duration-300">
+                  {services.map((item, idx) => (
                     <Link
                       key={idx}
                       to={item.path}
-                      className="block px-4 py-2 text-sm bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
+                      className="group flex items-center gap-2 px-4 py-2 text-xs bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
                     >
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-4 h-4 transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
+                      />
                       {item.name}
                     </Link>
                   ))}
                 </div>
               )}
             </div>
+
             <a href="#" className="hover:text-blue-600 transition-colors">
               Партнеры
             </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <Link
+              to="/contact"
+              className="hover:text-blue-600 transition-colors"
+            >
               Контакты
-            </a>
+            </Link>
+
             <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
               Let's Talk
             </button>
@@ -187,8 +206,8 @@ function Landing() {
                 </div>
 
                 <div>
-                  <div className="block md:hidden pt-6 text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
-                    Join To Telegram Channel
+                  <div className="block md:hidden text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                    Our Services
                   </div>
                 </div>
               </div>
@@ -221,6 +240,7 @@ function Landing() {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }

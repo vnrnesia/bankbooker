@@ -6,7 +6,11 @@ import icon4 from "@/assets/HeaderIcon/icon4.png";
 import { Menu, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "@/assets/logo.png";
-
+import navbarIcon1 from "@/assets/Services/icon1.png";
+import navbarIcon2 from "@/assets/Services/icon2.png";
+import navbarIcon3 from "@/assets/Services/icon3.png";
+import navbarIcon4 from "@/assets/Services/icon4.png";
+import navbarIcon5 from "@/assets/Services/icon5.png";
 
 import rus from "@/assets/russia.png";
 import tur from "@/assets/turkey.png";
@@ -159,36 +163,63 @@ export default function Header() {
 
       {/* Sidebar Menü */}
       <div
-        className={`fixed top-0 right-0 h-full rounded-xl bg-white shadow-lg border-l border-gray-200 z-50 transition-transform duration-300 ease-in-out text-center ${
+        className={`fixed top-0 right-0 h-full rounded-xl bg-white shadow-lg border-l border-gray-200 z-50 transition-transform duration-300 ease-in-out text-left ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } w-1/7 min-w-[220px]`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
-           <img
-                        src={Logo}
-                        alt="Bankbooker Logo"
-                        className="h-12 w-auto object-contain"
-                      />
+          <img
+            src={Logo}
+            alt="Bankbooker Logo"
+            className="h-12 w-auto object-contain"
+          />
           <button onClick={() => setIsSidebarOpen(false)}>
             <X className="w-5 h-5 text-gray-600 hover:text-red-500" />
           </button>
         </div>
-        <div className="flex flex-col space-y-4 px-6 pt-6 text-sm font-medium text-gray-600 font-[Manrope]">
-          <Link to="/payment" onClick={() => setIsSidebarOpen(false)}>
-            Оплата инвойсов
-          </Link>
-          <Link to="/accounting" onClick={() => setIsSidebarOpen(false)}>
-            Аутсорсинг Бухгалтерии
-          </Link>
-          <Link to="/legal" onClick={() => setIsSidebarOpen(false)}>
-            Юридический департамент
-          </Link>
-          <Link to="/consulting" onClick={() => setIsSidebarOpen(false)}>
-            Налоговый консалтинг
-          </Link>
-           <Link to="/products" onClick={() => setIsSidebarOpen(false)}>
-            Банковские Продукты
-          </Link>
+
+        <div className="flex flex-col space-y-3 px-4 pt-6 text-sm font-medium text-gray-600 font-[Manrope]">
+          {[
+            {
+              name: "Оплата инвойсов",
+              path: "/payment",
+              icon: navbarIcon1,
+            },
+            {
+              name: "Аутсорсинг Бухгалтерии",
+              path: "/accounting",
+              icon: navbarIcon3,
+            },
+            {
+              name: "Юридический департамент",
+              path: "/legal",
+              icon: navbarIcon5,
+            },
+            {
+              name: "Налоговый консалтинг",
+              path: "/consulting",
+              icon: navbarIcon4,
+            },
+            {
+              name: "Банковские Продукты",
+              path: "/products",
+              icon: navbarIcon2,
+            },
+          ].map((item, idx) => (
+            <Link
+              key={idx}
+              to={item.path}
+              onClick={() => setIsSidebarOpen(false)}
+              className="group flex items-center gap-3 rounded-2xl py-2 px-3 hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition duration-300"
+            >
+              <img
+                src={item.icon}
+                alt=""
+                className="w-4 h-4 object-contain transition duration-300 group-hover:invert group-hover:brightness-0"
+              />
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </>

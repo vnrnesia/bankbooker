@@ -1,6 +1,19 @@
 import Logo from "@/assets/logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import navbarIcon1 from "@/assets/Services/icon1.png";
+import navbarIcon2 from "@/assets/Services/icon2.png";
+import navbarIcon3 from "@/assets/Services/icon3.png";
+import navbarIcon4 from "@/assets/Services/icon4.png";
+import navbarIcon5 from "@/assets/Services/icon5.png";
+
+const services = [
+  { name: "Оплата инвойсов", path: "/payment", icon: navbarIcon1 },
+  { name: "Аутсорсинг Бухгалтерии", path: "/accounting", icon: navbarIcon2 },
+  { name: "Юридический департамент", path: "/legal", icon: navbarIcon3 },
+  { name: "Налоговый консалтинг", path: "/consulting", icon: navbarIcon4 },
+  { name: "Банковские Продукты", path: "/products", icon: navbarIcon5 },
+];
 
 export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
@@ -48,20 +61,20 @@ export default function Navbar() {
                 />
               </svg>
             </button>
+
             {showServices && (
-              <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden">
-                {[
-                  { name: "Оплата инвойсов", path: "/payment" },
-                  { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
-                  { name: "Юридический департамент", path: "/legal" },
-                  { name: "Налоговый консалтинг", path: "/consulting" },
-                  { name: "Банковские Продукты", path: "/products" },
-                ].map((item, idx) => (
+              <div className="absolute left-[-35px] mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden">
+                {services.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.path}
-                    className="block px-4 py-2 text-sm hover:bg-blue-50 transition"
+                    className="group flex items-center gap-2 px-4 py-2 text-sm hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition-colors"
                   >
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="w-4 h-4 transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
+                    />
                     {item.name}
                   </Link>
                 ))}

@@ -13,6 +13,13 @@ import Logo from "@/assets/logo.png";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import navbarIcon1 from "@/assets/Services/icon1.png";
+import navbarIcon2 from "@/assets/Services/icon2.png";
+import navbarIcon3 from "@/assets/Services/icon3.png";
+import navbarIcon4 from "@/assets/Services/icon4.png";
+import navbarIcon5 from "@/assets/Services/icon5.png";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -22,6 +29,13 @@ import {
 
 const BankbookerLanding = () => {
   const [showServices, setShowServices] = useState(false);
+
+  const services = [
+    { name: "Оплата инвойсов", path: "/payment" },
+    { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
+    { name: "Юридический департамент", path: "/legal" },
+    { name: "Налоговый консалтинг", path: "/consulting" },
+  ];
 
   return (
     <div className="pt-24 md:pt-16 font-[Manrope] mt-6 md:mt-10 min-h-screen flex flex-col lg:flex-row bg-white lg:pl-0">
@@ -52,19 +66,13 @@ const BankbookerLanding = () => {
           </div>
 
           {/* Tags */}
-          <div className="mt-12 flex flex-wrap justify-center gap-2 font-[Manrope]">
-            {[
-              "Оплата инвойсов",
-              "Аутсорсинг Бухгалтерии",
-              "Юридический департамент",
-              "Налоговый консалтинг",
-            ].map((item, idx) => (
-              <span
-                key={idx}
-                className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-sm whitespace-nowrap"
-              >
-                {item}
-              </span>
+          <div className="mt-12 flex flex-wrap justify-center gap-y-2 gap-x-1 font-[Manrope]">
+            {services.map((item, idx) => (
+              <Link to={item.path} key={idx} className="inline-block">
+                <span className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-sm whitespace-nowrap">
+                  {item.name}
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -81,7 +89,7 @@ const BankbookerLanding = () => {
       {/* Right Panel */}
       <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10">
         {/* Nav */}
-        <nav className="pt-12 md:pt-0 px-5">
+        <nav className=" md:pt-0 px-5">
           <div className="flex justify-end items-center">
             <div className="hidden font-[Manrope] md:flex items-center gap-4 lg:gap-6 text-sm text-[#333]">
               <Link
@@ -116,19 +124,48 @@ const BankbookerLanding = () => {
                   </svg>
                 </button>
                 {showServices && (
-                  <div className="text-center absolute top-full mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-all duration-300 animate-fade-in-down">
+                  <div
+                    className={`absolute left-[-40px] top-full mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-opacity duration-300 opacity-0 ${
+                      showServices ? "opacity-100 animate-fadein" : ""
+                    }`}
+                  >
                     {[
-                      { name: "Оплата инвойсов", path: "/payment" },
-                      { name: "Аутсорсинг Бухгалтерии", path: "/accounting" },
-                      { name: "Юридический департамент", path: "/legal" },
-                      { name: "Налоговый консалтинг", path: "/consulting" },
-                      { name: "Банковские Продукты", path: "/products" },
+                      {
+                        name: "Оплата инвойсов",
+                        path: "/payment",
+                        icon: navbarIcon1,
+                      },
+                      {
+                        name: "Аутсорсинг Бухгалтерии",
+                        path: "/accounting",
+                        icon: navbarIcon2,
+                      },
+                      {
+                        name: "Юридический департамент",
+                        path: "/legal",
+                        icon: navbarIcon3,
+                      },
+                      {
+                        name: "Налоговый консалтинг",
+                        path: "/consulting",
+                        icon: navbarIcon4,
+                      },
+                      {
+                        name: "Банковские Продукты",
+                        path: "/products",
+                        icon: navbarIcon5,
+                      },
                     ].map((item, idx) => (
                       <Link
                         key={idx}
                         to={item.path}
-                        className="block px-4 py-2 text-sm bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
+                        className="group flex items-center gap-3 px-4 py-2 text-xs hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
                       >
+                        <img
+                          src={item.icon}
+                          alt={`${item.name} icon`}
+                          className="w-4 h-4 transition duration-300 group-hover:invert group-hover:brightness-0"
+                        />
                         {item.name}
                       </Link>
                     ))}
@@ -152,22 +189,24 @@ const BankbookerLanding = () => {
         </nav>
 
         {/* Hero Text */}
-        <div className="mt-6 md:mt-10">
-          <div className="text-sm font-medium text-gray-700">
-            Welcome To Bankbooker
+        <div className=" md:mt-10">
+          <div className="pl-6">
+            <div className="text-sm font-medium text-gray-700">
+              Welcome To Bankbooker
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">
+              International Payment Solutions
+              <br className="hidden sm:block" />
+              and Complex Services for Businesses
+            </h1>
+            <p className="text-sm font-[Manrope] text-gray-600 mt-4 max-w-[500px]">
+              At Bankbooker, we embrace innovation as the driving force behind
+              every solution. Our commitment to staying ahead of industry trends
+              ensures that your business.
+            </p>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">
-            International Payment Solutions
-            <br className="hidden sm:block" />
-            and Complex Services for Businesses
-          </h1>
-          <p className="text-sm font-[Manrope] text-gray-600 mt-4 max-w-[500px]">
-            At Bankbooker, we embrace innovation as the driving force behind
-            every solution. Our commitment to staying ahead of industry trends
-            ensures that your business.
-          </p>
 
-          <div className="mt-6 flex flex-wrap gap-4">
+          <div className="mt-6 pl-5 flex flex-wrap gap-4">
             <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded hover:from-[#0786E2] hover:to-[#0FA9E9] transition-all duration-300">
               Get Started
             </button>
@@ -176,7 +215,7 @@ const BankbookerLanding = () => {
             </button>
           </div>
           <div className="block md:hidden pt-6">
-            <div className="  w-auto  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4   rounded-xl">
+            <div className="  w-auto  bg-white shadow-xl md:bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4   rounded-xl">
               <div className="flex flex-col">
                 {/* Logo */}
                 <div className="flex justify-center items-center w-full"></div>
@@ -197,30 +236,26 @@ const BankbookerLanding = () => {
 
                 <div>
                   <div className="block md:hidden pt-6 text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
-                    Join To Telegram Channel
+                    Our Services
                   </div>
                 </div>
 
                 {/* Tags */}
-                <div className="mt-12 flex flex-wrap justify-center gap-2 font-[Manrope]">
-                  {[
-                    "Оплата инвойсов",
-                    "Аутсорсинг Бухгалтерии",
-                    "Юридический департамент",
-                    "Налоговый консалтинг",
-                  ].map((item, idx) => (
-                    <span
+                <div className="w-full mt-4 grid grid-cols-2 flex-wrap md:flex-row gap-2 justify-start font-[Manrope] items-start">
+                  {services.map((item, idx) => (
+                    <Link
                       key={idx}
-                      className="font-[Manrope] bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-1 py-1.5 rounded text-xs whitespace-nowrap"
+                      to={item.path}
+                      className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-2 py-1.5 rounded text-xs whitespace-nowrap hover:opacity-90 transition"
                     >
-                      {item}
-                    </span>
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               </div>
 
               {/* Social Icons */}
-              <div className="flex justify-center gap-4 mt-4">
+              <div className="hidden md:block justify-center gap-4 mt-4">
                 <img src={icon1} alt="X" className="w-5 h-5" />
                 <img src={icon2} alt="LinkedIn" className="w-5 h-5" />
                 <img src={icon3} alt="Facebook" className="w-5 h-5" />

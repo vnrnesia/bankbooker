@@ -58,8 +58,8 @@ const Prices = () => {
                 rounded-xl py-10 px-4 transition-colors duration-300
                 ${
                   pkg.highlighted
-                    ? "bg-[#047EDF] group-hover:bg-[#0368c1]"
-                    : "bg-gray-100 group-hover:bg-[#047EDF]"
+                    ? "bg-[#047EDF] group-hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2]"
+                    : "bg-gray-100 group-hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2]"
                 }
               `}
             >
@@ -113,7 +113,7 @@ const Prices = () => {
                 ))}
               </ul>
 
-              <button className="mt-6 w-full py-2 rounded-full text-sm font-semibold transition bg-blue-600 text-white hover:bg-blue-700">
+              <button className="mt-6 w-full py-2 rounded-full text-sm font-semibold transition bg-blue-600 text-white hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2]">
                 Select Package
               </button>
             </div>
