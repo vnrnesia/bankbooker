@@ -44,7 +44,7 @@ const Services = ({
             {services.slice(3).map((service, index) => (
               <div
                 key={index + 3}
-                className="group border border-gray-200 rounded-2xl p-4 sm:p-6 transition bg-white hover:bg-blue-600 hover:text-white flex flex-col justify-between h-full"
+                className="group border border-gray-200 rounded-2xl p-4 sm:p-6 transition bg-white  hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white flex flex-col justify-between h-full"
               >
                 <img
                   src={service.icon}

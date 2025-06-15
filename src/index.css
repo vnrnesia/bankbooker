@@ -65,8 +65,4 @@ body {
   animation: fade-in-down 0.3s ease-out;
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-  body {
-    zoom: 0.9;
-  }
-}
+

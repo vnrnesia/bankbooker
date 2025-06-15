@@ -61,7 +61,7 @@ const services = [
   { name: "Аутсорсинг Бухгалтерии", path: "/accounting", icon: navbarIcon2 },
   { name: "Юридический департамент", path: "/legal", icon: navbarIcon3 },
   { name: "Налоговый консалтинг", path: "/consulting", icon: navbarIcon4 },
-  { name: "Банковские Продукты", path: "/products", icon: navbarIcon5 },
+  
 ];
 
 const { title, description } =
@@ -149,7 +149,7 @@ function Landing() {
         </div>
       </nav>
 
-      <div className="flex flex-col md:flex-row justify-between items-center px-6  py-16 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center px-6  pt-16 md:py-16 max-w-7xl mx-auto">
         {/* LEFT: Text + CTA */}
 
         <div className="mt-6 md:mt-10">
@@ -184,8 +184,8 @@ function Landing() {
 
         {/* RIGHT: Telegram Box */}
 
-        <div className="mt-10 px-4 lg:flex min-w-[550px] w-[40px]  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
-          <div className="flex flex-col h-full">
+        <div className="hidden mt-10 px-4 lg:flex min-w-[550px] w-[40px]  bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
+          <div className="md:flex flex-col h-full">
             {/* Logo */}
             <div className="flex justify-center items-center w-full"></div>
 
@@ -240,6 +240,56 @@ function Landing() {
           </div>
         </div>
       </div>
+
+         <div className="block md:hidden">
+            <div className="  w-auto  bg-white shadow-xl md:bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4   rounded-xl">
+              <div className="flex flex-col">
+                {/* Logo */}
+                <div className="flex justify-center items-center w-full"></div>
+
+                {/* Telegram Info */}
+                <div className="hidden md:block mt-[12px] text-center">
+                  <div className="text-gray-400 text-sm">Community</div>
+                  <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                    Join To Telegram Channel
+                  </div>
+                  <div className="flex justify-center items-center gap-2 mt-2">
+                    <img src={telegram} alt="Telegram Icon" className="w-5" />
+                    <span className="text-black text-sm font-sans">
+                      t.me/bankbooker
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="block md:hidden pt-6 text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
+                    Our Services
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="w-full mt-4 grid grid-cols-2 flex-wrap md:flex-row gap-2 justify-start font-[Manrope] items-start">
+                  {services.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-2 py-1.5 rounded text-xs whitespace-nowrap hover:opacity-90 transition"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Social Icons */}
+              <div className="hidden md:block justify-center gap-4 mt-4">
+                <img src={icon1} alt="X" className="w-5 h-5" />
+                <img src={icon2} alt="LinkedIn" className="w-5 h-5" />
+                <img src={icon3} alt="Facebook" className="w-5 h-5" />
+                <img src={icon4} alt="Instagram" className="w-5 h-5" />
+              </div>
+            </div>
+          </div>
       
     </section>
   );
