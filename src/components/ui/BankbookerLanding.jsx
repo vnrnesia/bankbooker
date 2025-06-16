@@ -38,7 +38,7 @@ const BankbookerLanding = () => {
   ];
 
   return (
-    <div className="pt-24 3xl:ml-[4vw] md:ml-[10vw] 2xl:ml-[4vw] md:pt-16 font-[Manrope] mt-6 md:mt-10 min-h-screen flex flex-col lg:flex-row bg-white lg:pl-0">
+    <div className="pt-24 3xl:ml-[4vw] md:ml-[10vw] 2xl:ml-[4vw] md:pt-6 font-[Manrope] mt-6 md:mt-10 min-h-screen flex flex-col lg:flex-row bg-white lg:pl-0">
       {/* Left Panel */}
       <div className=" hidden lg:flex min-w-[22vw] w-[40px] h-[720px] lg:h-[767px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
         <div className="flex flex-col h-full">
