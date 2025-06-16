@@ -12,11 +12,11 @@ const Footer = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 3500) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+      const scrollThreshold = pageHeight * 0.9;
+
+      setVisible(scrollPosition >= scrollThreshold);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -46,8 +46,7 @@ const Footer = () => {
                   </Link>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Ready to Take Control Of <br className="hidden sm:block" /> Your
-                  Finances?
+                  Ready to Take Control Of <br className="hidden sm:block" /> Your Finances?
                 </h2>
                 <p className="text-gray-400 font-sans font-light mb-5">
                   We look forward to learning about your financial goals.
@@ -66,34 +65,22 @@ const Footer = () => {
                     CONTACT US
                   </h4>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">
-                      Our Phone
-                    </p>
-                    <p className="text-base md:text-lg text-gray-600">
-                      +7 (917) 889 94–54
-                    </p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">Our Phone</p>
+                    <p className="text-base md:text-lg text-gray-600">+7 (917) 889 94–54</p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">
-                      Our Email
-                    </p>
-                    <p className="text-base md:text-lg text-gray-600">
-                      info@bankbooker.com
-                    </p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">Our Email</p>
+                    <p className="text-base md:text-lg text-gray-600">info@bankbooker.com</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">
-                      Mon– Fri:
-                    </p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">Mon– Fri:</p>
                     <p className="text-base md:text-lg text-gray-600">8:30am – 5:30pm</p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">
-                      Moscow:
-                    </p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">Moscow:</p>
                     <p className="text-base md:text-lg text-gray-600">
                       1140 Kremlin St, RU 13131
                     </p>
@@ -109,24 +96,12 @@ const Footer = () => {
       <div className="w-full border-t border-gray-300 bg-white mb-10 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-[142px] text-gray-600 text-sm font-semibold text-center">
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Services
-            </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Who We Are
-            </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Insights
-            </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Careers
-            </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Team
-            </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Contact Us
-            </a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Services</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Who We Are</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Insights</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Careers</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Team</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Contact Us</a>
           </div>
         </div>
 
@@ -136,20 +111,15 @@ const Footer = () => {
         {/* Bottom Info Area */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            {/* Left: Copyright and Policies */}
             <div className="text-gray-600 flex flex-wrap items-center justify-center gap-4">
               <span>2025 Bankbooker. All right reserved.</span>
               <div className="flex gap-4">
-                <a href="#" className="hover:text-blue-600 transition-colors">
-                  Terms & Conditions
-                </a>
-                <a href="#" className="hover:text-blue-600 transition-colors">
-                  Privacy Policy
-                </a>
+                <a href="#" className="hover:text-blue-600 transition-colors">Terms & Conditions</a>
+                <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
               </div>
             </div>
 
-            {/* Right: Social Media */}
+            {/* Social Media */}
             <div className="flex gap-6">
               <a href="#" className="hover:opacity-75 transition-opacity">
                 <img src={icon1} alt="X" className="w-5 h-5 md:w-6 md:h-6" />

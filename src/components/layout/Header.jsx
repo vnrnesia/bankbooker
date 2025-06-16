@@ -151,7 +151,7 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center gap-1">
-          <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-5 py-[18px] rounded-full text-sm font-medium shadow-lg hover:bg-[#0668b6] transition-all duration-300">
+          <button className=" hidden 3xl:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-5 py-[18px] rounded-full text-sm font-medium shadow-lg hover:bg-[#0668b6] transition-all duration-300">
             Contact Us
           </button>
           <button
