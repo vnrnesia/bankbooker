@@ -38,9 +38,9 @@ const BankbookerLanding = () => {
   ];
 
   return (
-    <div className="pt-24 3xl:ml-[4vw] md:ml-[10vw] 2xl:ml-[4vw] md:pt-6 font-[Manrope] mt-6 md:mt-10 min-h-screen flex flex-col lg:flex-row bg-white lg:pl-0">
+    <div className="pt-24 3xl:ml-[4vw] sm:ml-[5vw] md:ml-[12vw] 2xl:ml-[4vw] md:pt-6 font-[Manrope] items-stretch mt-6 md:mt-10 min-h-screen flex flex-row lg:flex-row bg-white lg:pl-0">
       {/* Left Panel */}
-      <div className=" hidden lg:flex min-w-[22vw] w-[40px] h-[720px] lg:h-[767px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
+      <div className=" hidden md:flex min-w-[22vw] w-[40px] md:h-[980px] lg:h-[815px] xl:h-[767px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex justify-center items-center w-full">
@@ -69,7 +69,7 @@ const BankbookerLanding = () => {
           <div className="mt-12 flex flex-wrap justify-center gap-y-2 gap-x-1 font-[Manrope]">
             {services.map((item, idx) => (
               <Link to={item.path} key={idx} className="inline-block">
-                <span className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-sm whitespace-nowrap">
+                <span className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap">
                   {item.name}
                 </span>
               </Link>
@@ -87,7 +87,7 @@ const BankbookerLanding = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10">
+      <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10 sm:max-w-[60vw]">
         {/* Nav */}
         <nav className=" md:pt-0 px-5">
           <div className="flex justify-end items-center">
@@ -279,7 +279,7 @@ const BankbookerLanding = () => {
               <div className="h-[1px] w-full bg-gray-300 mt-2" />
             </div>
 
-            <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="mt-4  md:space-y-2  flex sm:flex-col xl:flex-row items-center justify-center gap-4 ">
               {/* Avatars */}
               <div className="flex -space-x-2">
                 {[avatar1, avatar2, avatar3, avatar4].map((avatar, i) => (

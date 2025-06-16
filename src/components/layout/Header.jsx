@@ -84,7 +84,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <div className="text-gray-400 whitespace-nowrap lg:block">
           Bankbooker - for all{" "}
           <span className="text-black font-medium">your business</span>
