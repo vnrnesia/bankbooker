@@ -21,7 +21,9 @@ const Brands = () => {
             <img
               src={`/assets/BrandIcon/${icon}`}
               alt={`Company logo ${index + 1}`}
-              className="w-[100%] md:w-[65%] "
+              className={`${
+                index === 4 ? "w-[80%] md:w-[45%]" : "w-[100%] md:w-[65%]"
+              }`}
             />
           </div>
         ))}

@@ -87,7 +87,7 @@ const BankbookerLanding = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10 sm:max-w-[60vw]">
+      <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10 sm:max-w-[67vw]">
         {/* Nav */}
         <nav className=" md:pt-0 px-5">
           <div className="flex justify-end items-center">
