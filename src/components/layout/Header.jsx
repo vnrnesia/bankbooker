@@ -71,7 +71,7 @@ export default function Header() {
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
             <img src={icon1} alt="" className="w-6 h-5" />
-            <span className="text-[clamp(0.8rem,0.9vw,0.9rem)]">
+            <span className="text-[clamp(0.8rem,4vw,0.9rem)]">
               info@bankbooker.com
             </span>
           </div>
@@ -151,7 +151,7 @@ export default function Header() {
         }`}
       >
         <div className="flex items-center gap-1">
-          <button className=" hidden 3xl:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-5 py-[18px] rounded-full text-sm font-medium shadow-lg hover:bg-[#0668b6] transition-all duration-300">
+          <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-5 py-[18px] rounded-full text-sm font-medium shadow-lg hover:bg-[#0668b6] transition-all duration-300">
             Contact Us
           </button>
           <button
