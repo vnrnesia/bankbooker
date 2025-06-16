@@ -20,7 +20,7 @@ import icon4 from "@/assets/Services/icon4.png";
 import icon5 from "@/assets/Services/icon5.png";
 
 const homeServices = [
-    {
+  {
     icon: icon1,
     title: "Оплата инвойсов",
     description: "Производим оплату в любую точку мира",
@@ -59,7 +59,6 @@ function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <DynamicTitle />
 
-          
           <div className="mb-8 md:mb-12">
             <Bankbooker />
           </div>
@@ -73,6 +72,7 @@ function Home() {
               description="Discover service excellence. We craft tailored solutions to meet your unique needs and fuel success"
               services={homeServices}
             />
+            <OffersGrid />
           </div>
           <div className="mb-16 md:mb-24">
             <Info />
@@ -88,7 +88,6 @@ function Home() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <OffersGrid />
           <Pricing />
           <Comments />
           <Contact />

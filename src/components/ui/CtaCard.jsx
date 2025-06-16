@@ -5,10 +5,10 @@ import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
 const WhyChooseUs = () => {
   return (
-    <section className="mt-24 max-w-[1100px] mx-auto font-[Manrope] min-h-[550px] bg-gradient-to-r from-sky-500 to-blue-600 px-4 flex items-center rounded-xl">
+    <section className="m max-w- mx-auto font-[Manrope] min-h-[550px] bg-gradient-to-r from-sky-500 to-blue-600 px-4 flex items-center">
       <div className="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-4 md:pt-0 gap-8 justify-center items-center ">
         {/* Left Card */}
-        <div className="rounded-xl border-4 h-[500px] w-[550px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none">
+        <div className="rounded-xl border-4 h-[500px] w-auto 3xl:min-w-[900px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none">
           <p className="text-gray-700 font-medium text-md text-center mb-2">
             There Are Some Results We Have <br /> Already Achieved Together
           </p>

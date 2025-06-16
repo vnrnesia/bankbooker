@@ -65,29 +65,31 @@ export default function Header() {
       <div
         className={`hidden gap-4 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
           showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        } bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[74%]
+        } bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[85vw] max-w-screen-xl
         items-center justify-between text-sm text-[#333] font-sans`}
       >
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
             <img src={icon1} alt="" className="w-6 h-5" />
-            <span className="text-gray-700 font-medium hidden 2xl:inline">
+            <span className="text-[clamp(0.8rem,0.9vw,0.9rem)]">
               info@bankbooker.com
             </span>
           </div>
           <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
           <div className="flex items-center space-x-2">
             <img src={icon2} alt="" className="w-5 h-5" />
-            <span className="text-gray-800 font- hidden 2xl:inline">
+            <span className="text-[clamp(0.2rem,1.4vw,0.9rem)] whitespace-nowrap">
               +7 (917) 889–94–57
             </span>
           </div>
         </div>
 
-        <div className="text-gray-400 whitespace-nowrap lg:block">
+        <div className="hidden lg:block">
+          <div className="text-gray-400 whitespace-nowrap lg:block">
           Bankbooker - for all{" "}
           <span className="text-black font-medium">your business</span>
           <span className="text-gray-400"> endeavors</span>
+        </div>
         </div>
 
         <div className="flex items-center space-x-8 relative">
@@ -98,7 +100,7 @@ export default function Header() {
               onClick={toggleLanguage}
             >
               <img src={icon3} alt="" className="w-5 h-5" />
-              <span className="hidden 2xl:inline">
+              <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">
                 {languageLabels[language]}
               </span>
               <ChevronDown
@@ -135,7 +137,7 @@ export default function Header() {
           <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
           <div className="flex items-center space-x-2">
             <img src={icon4} alt="" className="w-5 h-5" />
-            <span className="hidden 2xl:inline">10:00am – 06.00pm</span>
+            <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">10:00am – 06.00pm</span>
           </div>
         </div>
       </div>
