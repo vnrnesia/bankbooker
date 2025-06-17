@@ -195,7 +195,7 @@ const BankbookerLanding = () => {
 
         {/* Hero Text */}
         <div className=" md:mt-10">
-          <div className="pl-4 ml-[-10px]">
+          <div className="pl-6  ml-[-10px]">
             <div className="text-sm font-medium text-gray-700">
               Welcome To Bankbooker
             </div>
@@ -211,7 +211,7 @@ const BankbookerLanding = () => {
             </p>
           </div>
 
-          <div className="mt-6 pl-4  ml-[-14px] flex flex-wrap gap-4">
+          <div className="mt-6 pl-7  ml-[-14px] flex flex-wrap gap-4">
             <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded hover:from-[#0786E2] hover:to-[#0FA9E9] transition-all duration-300">
               Get Started
             </button>
