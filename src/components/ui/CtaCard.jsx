@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Card */}
-        <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl">
+        <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl text-center lg:text-start">
           <div>
             <p className="text-white text-sm font-light mb-2">Why Choose Us</p>
             <h2 className="text-2xl lg:text-3xl font-semibold leading-snug mb-4">
@@ -73,9 +73,11 @@ const WhyChooseUs = () => {
             <p>✔ Consultant Experts In Their Field</p>
           </div>
 
-          <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit">
+        <div className="flex lg:block justify-center lg:items-start ">
+            <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit  ">
             Contact With Us
           </button>
+        </div>
         </div>
       </div>
     </section>

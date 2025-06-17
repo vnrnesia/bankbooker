@@ -83,7 +83,7 @@ const Info = () => {
           outcomes.
         </p>
 
-        <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
+        <button className="hidden lg:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
           Discover More
         </button>
 
@@ -101,6 +101,11 @@ const Info = () => {
             <p className="text-md text-gray-500 mt-1">Successfully created projects</p>
           </div>
         </div>
+       <div className="pt-10 justify-center items-center flex">
+          <button className="block lg:hidden bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
+          Discover More
+        </button>
+       </div>
       </div>
 
       {/* Right Side */}

@@ -12,6 +12,8 @@ import Header from "@/components/layout/Header.jsx";
 import ScrollToTop from "@/components/layout/ScrollToTop.jsx";
 import Contact from "@/pages/Contact.jsx";
 import About from "@/pages/About.jsx";
+import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
+
 
 
 function App() {
@@ -34,7 +36,6 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
@@ -42,6 +43,7 @@ function App() {
       {/* Footer her sayfada gösterilecek */}
       <Footer />
       <ToolbarMobile />
+      <BotpressChatWidget/>
     </div>
   );
 }

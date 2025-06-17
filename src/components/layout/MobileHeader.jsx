@@ -10,7 +10,14 @@ export default function MobileHeader() {
     <header className="md:hidden fixed top-0 left-0 w-full z-50">
       {/* Üst Bar */}
       <div className="bg-white px-4 py-6 shadow flex items-center justify-between relative z-50">
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => {
+            setIsMenuOpen(false);
+            setShowServices(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <img src={logo} alt="Logo" className="h-auto w-[200px]" />
         </Link>
 
@@ -48,7 +55,11 @@ export default function MobileHeader() {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <a href="#about" onClick={() => setIsMenuOpen(false)} className="w-full">
+        <a
+          href="#about"
+          onClick={() => setIsMenuOpen(false)}
+          className="w-full"
+        >
           О сервисе
         </a>
 
@@ -124,10 +135,18 @@ export default function MobileHeader() {
           </div>
         </div>
 
-        <a href="#partners" onClick={() => setIsMenuOpen(false)} className="w-full ">
+        <a
+          href="#partners"
+          onClick={() => setIsMenuOpen(false)}
+          className="w-full "
+        >
           Партнеры
         </a>
-        <a href="#contact" onClick={() => setIsMenuOpen(false)} className="w-full pt-2">
+        <a
+          href="#contact"
+          onClick={() => setIsMenuOpen(false)}
+          className="w-full pt-2"
+        >
           Контакты
         </a>
       </div>

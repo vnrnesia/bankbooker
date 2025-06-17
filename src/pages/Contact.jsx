@@ -48,8 +48,8 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto py-16 md:pb-64 px-5 font-[Manrope]">
-        <div className="flex flex-col md:flex-row justify-between gap-10 items-start">
+      <div className="max-w-5xl mx-auto py-16 md:pb-64 px-5 font-[Manrope]">
+        <div className="flex flex-col md:flex-row justify-between items-start">
           {/* Left: Form */}
           <div className="w-full md:w-auto md:min-w-[525px] space-y-6">
             <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -143,7 +143,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Info */}
-          <div className="w-full md:w-1/3 space-y-8 text-gray-700 text-sm">
+          <div className="w-full md:w-1/3  space-y-[67px] text-gray-700 text-sm">
             <div>
               <h3 className="font-semibold">Chat With Us</h3>
               <ul className="space-y-3 mt-2">

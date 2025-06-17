@@ -120,7 +120,7 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 pb-10 md:pb-0">
               <a href="#" className="hover:opacity-75 transition-opacity">
                 <img src={icon1} alt="X" className="w-5 h-5 md:w-6 md:h-6" />
               </a>

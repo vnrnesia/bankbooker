@@ -19,7 +19,6 @@ import navbarIcon3 from "@/assets/Services/icon3.png";
 import navbarIcon4 from "@/assets/Services/icon4.png";
 import navbarIcon5 from "@/assets/Services/icon5.png";
 
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -40,7 +39,7 @@ const BankbookerLanding = () => {
   return (
     <div className="pt-24 3xl:ml-[4vw] sm:ml-[5vw]  md:ml-[10vw] lg:ml-[11vw]  2xl:ml-[4vw] md:pt-6 font-[Manrope] items-stretch mt-6 md:mt-10 min-h-screen flex flex-row lg:flex-row bg-white lg:pl-0">
       {/* Left Panel */}
-      <div className=" hidden md:flex min-w-[22vw] w-[40px] md:h-[980px] lg:h-[815px] xl:h-[767px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
+      <div className="hidden md:flex min-w-[22vw] w-[40px] md:h-[980px] lg:h-[815px] xl:h-[767px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] p-4 2xl:flex flex-col justify-between rounded-xl overflow-hidden lg:-ml-24">
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex justify-center items-center w-full">
@@ -66,23 +65,29 @@ const BankbookerLanding = () => {
           </div>
 
           {/* Tags */}
-          <div className="mt-12 flex flex-wrap justify-center gap-y-2 gap-x-1 font-[Manrope]">
-            {services.map((item, idx) => (
-              <Link to={item.path} key={idx} className="inline-block">
-                <span className="inline-block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap">
-                  {item.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
 
-        {/* Social Icons */}
-        <div className="flex justify-center gap-4 mt-4">
-          <img src={icon1} alt="X" className="w-5 h-5" />
-          <img src={icon2} alt="LinkedIn" className="w-5 h-5" />
-          <img src={icon3} alt="Facebook" className="w-5 h-5" />
-          <img src={icon4} alt="Instagram" className="w-5 h-5" />
+          <div className="flex flex-col justify-end h-full">
+            <p className="mb-2 2xl:text-[0.9vw] text-[1vw]  ">
+              <span className="text-[#0FA9E9] ">Bank</span>Booker - a solution
+              for your business
+            </p>
+
+            <div className="flex flex-wrap max-w-[24vw] justify-center gap-y-2 gap-x-1 font-[Manrope] mb-5">
+              {services.map((item, idx) => (
+                <Link to={item.path} key={idx} className="inline-block">
+                  <span
+                    className={`inline-block px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap ${
+                      idx < 2
+                        ? "bg-gradient-to-r from-[#0FA9E9] to-[#0786E2] text-white"
+                        : "bg-gradient-to-r from-[#8E8E8E] to-[#464646] text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -190,7 +195,7 @@ const BankbookerLanding = () => {
 
         {/* Hero Text */}
         <div className=" md:mt-10">
-          <div className="pl-6">
+          <div className="pl-4 ml-[-10px]">
             <div className="text-sm font-medium text-gray-700">
               Welcome To Bankbooker
             </div>
@@ -206,7 +211,7 @@ const BankbookerLanding = () => {
             </p>
           </div>
 
-          <div className="mt-6 pl-5 flex flex-wrap gap-4">
+          <div className="mt-6 pl-4  ml-[-14px] flex flex-wrap gap-4">
             <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded hover:from-[#0786E2] hover:to-[#0FA9E9] transition-all duration-300">
               Get Started
             </button>
