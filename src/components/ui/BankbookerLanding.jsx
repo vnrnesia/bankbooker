@@ -54,7 +54,7 @@ const BankbookerLanding = () => {
           </div>
 
           {/* Telegram Info */}
-          <div className="mt-[170px] flex flex-col items-center justify-center text-center">
+          <div className="mt-[200px] flex flex-col items-center justify-center text-center">
             <div className="text-gray-400 text-sm">Community</div>
             <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
               Join To Telegram Channel
