@@ -54,7 +54,7 @@ const BankbookerLanding = () => {
           </div>
 
           {/* Telegram Info */}
-          <div className="mt-[120px] text-center">
+          <div className="mt-[170px] flex flex-col items-center justify-center text-center">
             <div className="text-gray-400 text-sm">Community</div>
             <div className="text-2xl lg:text-3xl font-medium text-gray-800 mt-1">
               Join To Telegram Channel
@@ -162,7 +162,7 @@ const BankbookerLanding = () => {
                       showServices ? "opacity-100 animate-fadein" : ""
                     }`}
                   >
-                    <div className="flex flex-col px-4 py-4 gap-2">
+                    <div className="flex flex-col px-4 py-4 gap-1">
                       {[
                         {
                           name: "Оплата инвойсов",
