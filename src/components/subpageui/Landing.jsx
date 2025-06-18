@@ -116,12 +116,12 @@ function Landing() {
               </button>
 
               {showServices && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-all duration-300">
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-52 bg-white border border-gray-200 rounded-2xl shadow-md space-y-4  z-50 overflow-hidden transition-all duration-300">
                   {services.map((item, idx) => (
                     <Link
                       key={idx}
                       to={item.path}
-                      className="group flex items-center gap-2 px-4 py-2 text-xs bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
+                      className="mt-2 group flex items-center gap-3 px-4 py-2 text-sm bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
                     >
                       <img
                         src={item.icon}

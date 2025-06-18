@@ -36,6 +36,9 @@ const BankbookerLanding = () => {
     { name: "Налоговый консалтинг", path: "/consulting" },
   ];
 
+  const blueItems = services.slice(0, 2);
+  const grayItems = services.slice(2);
+
   return (
     <div className="pt-24 3xl:ml-[4vw] sm:ml-[5vw]  md:ml-[10vw] lg:ml-[11vw]  2xl:ml-[4vw] md:pt-6 font-[Manrope] items-stretch mt-6 md:mt-10 min-h-screen flex flex-row lg:flex-row bg-white lg:pl-0">
       {/* Left Panel */}
@@ -71,21 +74,46 @@ const BankbookerLanding = () => {
               <span className="text-[#0FA9E9] ">Bank</span>Booker - a solution
               for your business
             </p>
+            <div className="overflow-hidden max-w-[24vw] mx-auto mb-5 font-[Manrope]">
+              {/* Üst satır - mavi, sola kayan */}
+              <div className="relative w-full overflow-hidden">
+                <div
+                  className="flex whitespace-nowrap gap-x-2 animate-marquee"
+                  style={{ width: "max-content" }}
+                >
+                  {[...blueItems, ...blueItems].map((item, idx) => (
+                    <Link
+                      to={item.path}
+                      key={`blue-${idx}`}
+                      className="inline-block"
+                    >
+                      <span className="inline-block px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap bg-gradient-to-r from-[#0FA9E9] to-[#0786E2] text-white">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
-            <div className="flex flex-wrap max-w-[24vw] justify-center gap-y-2 gap-x-1 font-[Manrope] mb-5">
-              {services.map((item, idx) => (
-                <Link to={item.path} key={idx} className="inline-block">
-                  <span
-                    className={`inline-block px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap ${
-                      idx < 2
-                        ? "bg-gradient-to-r from-[#0FA9E9] to-[#0786E2] text-white"
-                        : "bg-gradient-to-r from-[#8E8E8E] to-[#464646] text-white"
-                    }`}
-                  >
-                    {item.name}
-                  </span>
-                </Link>
-              ))}
+              {/* Alt satır - gri, sağa kayan */}
+              <div className="relative w-full overflow-hidden mt-2">
+                <div
+                  className="flex whitespace-nowrap gap-x-2 animate-marqueeReverse"
+                  style={{ width: "max-content" }}
+                >
+                  {[...grayItems, ...grayItems].map((item, idx) => (
+                    <Link
+                      to={item.path}
+                      key={`gray-${idx}`}
+                      className="inline-block"
+                    >
+                      <span className="inline-block px-4 py-1.5 rounded text-[1.1vw] lg:text-[0.9vw] 2xl:text-[0.7vw] whitespace-nowrap bg-gradient-to-r from-[#8E8E8E] to-[#464646] text-white">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -94,7 +122,7 @@ const BankbookerLanding = () => {
       {/* Right Panel */}
       <div className="flex-1 pt-0 px-4 sm:px-6 lg:px-10 pb-10 sm:max-w-[67vw]">
         {/* Nav */}
-        <nav className=" md:pt-0 px-5">
+        <nav className="md:pt-0 px-5">
           <div className="flex justify-end items-center">
             <div className="hidden font-[Manrope] md:flex items-center gap-4 lg:gap-6 text-sm text-[#333]">
               <Link
@@ -110,7 +138,6 @@ const BankbookerLanding = () => {
                   className="hover:text-blue-600 transition-colors focus:outline-none flex items-center gap-1"
                 >
                   Услуги
-                  {/* SVG Arrow Icon */}
                   <svg
                     className={`w-4 h-4 transform transition-transform duration-300 ${
                       showServices ? "rotate-180" : ""
@@ -128,55 +155,59 @@ const BankbookerLanding = () => {
                     />
                   </svg>
                 </button>
+
                 {showServices && (
                   <div
-                    className={`absolute left-[-40px] top-full mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-opacity duration-300 opacity-0 ${
+                    className={`absolute right-[-95px] top-full mt-2 w-64 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-opacity duration-300 opacity-0 ${
                       showServices ? "opacity-100 animate-fadein" : ""
                     }`}
                   >
-                    {[
-                      {
-                        name: "Оплата инвойсов",
-                        path: "/payment",
-                        icon: navbarIcon1,
-                      },
-                      {
-                        name: "Аутсорсинг Бухгалтерии",
-                        path: "/accounting",
-                        icon: navbarIcon2,
-                      },
-                      {
-                        name: "Юридический департамент",
-                        path: "/legal",
-                        icon: navbarIcon3,
-                      },
-                      {
-                        name: "Налоговый консалтинг",
-                        path: "/consulting",
-                        icon: navbarIcon4,
-                      },
-                      {
-                        name: "Банковские Продукты",
-                        path: "/products",
-                        icon: navbarIcon5,
-                      },
-                    ].map((item, idx) => (
-                      <Link
-                        key={idx}
-                        to={item.path}
-                        className="group flex items-center gap-3 px-4 py-2 text-xs hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
-                      >
-                        <img
-                          src={item.icon}
-                          alt={`${item.name} icon`}
-                          className="w-4 h-4 transition duration-300 group-hover:invert group-hover:brightness-0"
-                        />
-                        {item.name}
-                      </Link>
-                    ))}
+                    <div className="flex flex-col px-4 py-4 gap-2">
+                      {[
+                        {
+                          name: "Оплата инвойсов",
+                          path: "/payment",
+                          icon: navbarIcon1,
+                        },
+                        {
+                          name: "Аутсорсинг Бухгалтерии",
+                          path: "/accounting",
+                          icon: navbarIcon2,
+                        },
+                        {
+                          name: "Юридический департамент",
+                          path: "/legal",
+                          icon: navbarIcon3,
+                        },
+                        {
+                          name: "Налоговый консалтинг",
+                          path: "/consulting",
+                          icon: navbarIcon4,
+                        },
+                        {
+                          name: "Банковские Продукты",
+                          path: "/products",
+                          icon: navbarIcon5,
+                        },
+                      ].map((item, idx) => (
+                        <Link
+                          key={idx}
+                          to={item.path}
+                          className="group flex items-center gap-3 px-5 py-3 text-sm hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r rounded-xl"
+                        >
+                          <img
+                            src={item.icon}
+                            alt={`${item.name} icon`}
+                            className="w-5 h-5 transition duration-300 group-hover:invert group-hover:brightness-0"
+                          />
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
+
               <a href="#" className="hover:text-blue-600 transition-colors">
                 Партнеры
               </a>

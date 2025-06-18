@@ -1,9 +1,9 @@
 export default function FixedIcons() {
   return (
-    <div className="fixed right-5 bottom-24 flex flex-col items-center space-y-3 z-50">
+    <div className="fixed right-5 bottom-[350px] flex flex-col items-center space-y- z-50">
       <svg
-        width="24"
-        height="24"
+        width="36"
+        height="36"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +20,8 @@ export default function FixedIcons() {
       <div className="w-8 h-8 text-gray-600 hover:text-gray-800 cursor-pointer transition-colors"></div>
 
       <svg
-        width="24"
-        height="24"
+        width="36"
+        height="36"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

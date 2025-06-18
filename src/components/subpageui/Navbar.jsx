@@ -63,12 +63,12 @@ export default function Navbar() {
             </button>
 
             {showServices && (
-              <div className="absolute left-[-35px] mt-2 w-36 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden">
+              <div className="absolute left-[-35px] mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden">
                 {services.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.path}
-                    className="group flex items-center gap-2 px-4 py-2 text-sm hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition-colors"
+                    className=" flex flex-row  py-5  group  items-center gap-3 px-4  text-sm hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition-colors"
                   >
                     <img
                       src={item.icon}
