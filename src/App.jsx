@@ -13,6 +13,7 @@ import ScrollToTop from "@/components/layout/ScrollToTop.jsx";
 import Contact from "@/pages/Contact.jsx";
 import About from "@/pages/About.jsx";
 import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
+import FixedIcons from "@/components/layout/FixedIcons.jsx";
 
 
 
@@ -44,6 +45,7 @@ function App() {
       <Footer />
       <ToolbarMobile />
       <BotpressChatWidget/>
+      <FixedIcons/>
     </div>
   );
 }
