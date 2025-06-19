@@ -11,7 +11,6 @@ import navbarIcon2 from "@/assets/Services/icon2.png";
 import navbarIcon3 from "@/assets/Services/icon3.png";
 import navbarIcon4 from "@/assets/Services/icon4.png";
 import navbarIcon5 from "@/assets/Services/icon5.png";
-
 import rus from "@/assets/russia.png";
 import tur from "@/assets/turkey.png";
 import ger from "@/assets/germany.png";
@@ -22,7 +21,7 @@ export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [language, setLanguage] = useState("en");
   const [showLangDropdown, setShowLangDropdown] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Menü paneli
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,10 +62,9 @@ export default function Header() {
     <>
       {/* Desktop Header */}
       <div
-        className={`hidden gap-4 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-          showHeader ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        } bg-white top-4 shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[85vw] max-w-screen-xl
-        items-center justify-between text-sm text-[#333] font-sans`}
+        className={`hidden mt-5 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+          showHeader ? "opacity-100 translate-y-0" : " opacity-0 -translate-y-10"
+        } bg-white shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[90vw]   xl:w-[90vw] 2xl:w-[1180px] 3xl:w-[62vw] max-w-screen-xl items-center justify-between text-sm text-[#333] font-sans`}
       >
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
@@ -86,14 +84,13 @@ export default function Header() {
 
         <div className="hidden xl:block">
           <div className="text-gray-400 whitespace-nowrap lg:block">
-          Bankbooker - for all{" "}
-          <span className="text-black font-medium">your business</span>
-          <span className="text-gray-400"> endeavors</span>
-        </div>
+            Bankbooker - for all{" "}
+            <span className="text-black font-medium">your business</span>
+            <span className="text-gray-400"> endeavors</span>
+          </div>
         </div>
 
         <div className="flex items-center space-x-8 relative">
-          {/* Language Switcher */}
           <div className="relative flex flex-col items-center">
             <div
               className="flex items-center space-x-2 cursor-pointer select-none"
@@ -137,7 +134,9 @@ export default function Header() {
           <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
           <div className="flex items-center space-x-2">
             <img src={icon4} alt="" className="w-5 h-5" />
-            <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">10:00am – 06.00pm</span>
+            <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">
+              10:00am – 06.00pm
+            </span>
           </div>
         </div>
       </div>
@@ -167,7 +166,7 @@ export default function Header() {
       <div
         className={`fixed top-0 right-0 h-full rounded-xl bg-white shadow-lg border-l border-gray-200 z-50 transition-transform duration-300 ease-in-out text-left ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        } w-1/7 min-w-[220px]`}
+        } w-[220px]`} // Fixed width for sidebar
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <img
@@ -182,11 +181,7 @@ export default function Header() {
 
         <div className="flex flex-col space-y-3 px-4 pt-6 text-sm font-medium text-gray-600 font-[Manrope]">
           {[
-            {
-              name: "Оплата инвойсов",
-              path: "/payment",
-              icon: navbarIcon1,
-            },
+            { name: "Оплата инвойсов", path: "/payment", icon: navbarIcon1 },
             {
               name: "Аутсорсинг Бухгалтерии",
               path: "/accounting",
