@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "@/pages/Home.jsx";
 import Legal from "@/pages/Legal.jsx";
 import Accounting from "@/pages/Accounting.jsx";
@@ -15,19 +15,18 @@ import About from "@/pages/About.jsx";
 import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
 import FixedIcons from "@/components/layout/FixedIcons.jsx";
 
-
-
 function App() {
+  const location = useLocation();
+
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      {/* Header her sayfada gösterilecek */}
+
       <div className="mb-6 md:mb-10">
         <MobileHeader />
-        <Header />
+        {location.pathname !== "/" && <Header />}
       </div>
 
-      {/* Ana içerik */}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,11 +40,10 @@ function App() {
         </Routes>
       </main>
 
-      {/* Footer her sayfada gösterilecek */}
       <Footer />
       <ToolbarMobile />
-      <BotpressChatWidget/>
-      <FixedIcons/>
+      <BotpressChatWidget />
+      <FixedIcons />
     </div>
   );
 }
