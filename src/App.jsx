@@ -23,9 +23,11 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <div className="md:hidden flex justify-center pt-24">
-        <TradingviewWidget />
-      </div>
+      {location.pathname === "/" && (
+        <div className="flex justify-center pt-24 md:pt-10">
+          <TradingviewWidget />
+        </div>
+      )}
       <div className="mb-6 md:mb-10">
         <MobileHeader />
         {location.pathname !== "/" && <Header />}

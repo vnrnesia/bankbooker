@@ -40,7 +40,7 @@ const BankbookerLanding = () => {
       <div className="max-w-screen-xl mx-auto px-4">
         <Header />
       
-        <div className="pt-[10px] md:pt-[70px] flex justify-center items-center">
+        <div className="pt-[10px] md:mt-[-25px] flex justify-center items-center">
           <div className="w-full flex flex-col md:flex-row gap-8">
             {/* Left Panel */}
             <div className="hidden md:flex min-w-[220px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] py-4 rounded-xl flex-col justify-between lg:max-h-[770px]">

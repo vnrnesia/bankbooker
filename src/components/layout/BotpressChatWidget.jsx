@@ -13,23 +13,29 @@ export default function BotpressChatWidget() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkScreenSizeAndInit = () => {
+    // Sadece ekran boyutuna göre isMobile durumunu güncellemek için fonksiyon
+    const handleResize = () => {
       const isMobileView = window.innerWidth < 768;
       setIsMobile(isMobileView);
-
-      if (!isMobileView) {
-        const timer = setTimeout(() => {
-          setIsOpen(true);
-        }, 2000);
-        return () => clearTimeout(timer);
-      }
     };
 
-    checkScreenSizeAndInit();
-    window.addEventListener("resize", checkScreenSizeAndInit);
+    // Sayfa ilk yüklendiğinde isMobile'ı ayarla
+    const isMobileViewInitial = window.innerWidth < 768;
+    setIsMobile(isMobileViewInitial);
+
+    // Mobil değilse 2 saniye sonra chat'i aç
+    if (!isMobileViewInitial) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+
+    // Resize olayını dinle ve sadece isMobile'ı güncelle
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", checkScreenSizeAndInit);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -61,8 +67,7 @@ export default function BotpressChatWidget() {
         aria-label="Open Chat"
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "scale(1.1)";
-          e.currentTarget.style.boxShadow =
-            "0 12px 24px rgba(0, 123, 255, 0.5)";
+          e.currentTarget.style.boxShadow = "0 12px 24px rgba(0, 123, 255, 0.5)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = "scale(1)";

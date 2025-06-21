@@ -41,7 +41,7 @@ export default function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowWidget((prev) => !prev);
-    }, 1000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
@@ -91,8 +91,8 @@ export default function Header() {
                 : "translate-x-0 opacity-100 w-auto delay-200"
             }`}
           >
-            <img src={icon1} alt="" className="w-6 h-5" />
-            <span className="text-[clamp(0.8rem,4vw,0.9rem)]">
+            <img src={icon1} alt="" className="w-6 h-5 hidden lg:flex " />
+            <span className="hidden lg:flex text-[clamp(0.8rem,4vw,0.9rem)]">
               info@bankbooker.com
             </span>
           </div>
@@ -193,8 +193,8 @@ export default function Header() {
                 : "translate-x-0 opacity-100 w-auto delay-200"
             }`}
           >
-            <img src={icon4} alt="" className="w-5 h-5" />
-            <span className="text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
+            <img src={icon4} alt="" className="w-5 h-5 hidden lg:flex " />
+            <span className="hidden lg:flex text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
               10:00am – 06.00pm
             </span>
           </div>

@@ -1,12 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const TradingViewWidget = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
+    if (!containerRef.current) return;
+
+    containerRef.current.innerHTML = ""; // temizle
+
     const script = document.createElement("script");
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
     script.async = true;
-    script.innerHTML = JSON.stringify({
+    script.type = "text/javascript";
+
+    // Embed config JSON'u script'in textContent olarak eklenmeli
+    script.text = JSON.stringify({
       symbols: [
         { proName: "FX_IDC:USDTRY", title: "USD/TRY" },
         { proName: "FX_IDC:EURTRY", title: "EUR/TRY" },
@@ -21,16 +30,15 @@ const TradingViewWidget = () => {
       hideSymbolVolume: true,
       locale: "tr"
     });
-    const container = document.getElementById("tv-widget");
-    container.innerHTML = ""; 
-    container.appendChild(script);
+
+    containerRef.current.appendChild(script);
   }, []);
 
   return (
     <div
-      id="tv-widget"
-      className="w-full overflow-x-auto"
-      style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
+      ref={containerRef}
+      className="w-full md:w-[300px] md:overflow-x-auto md:rounded-full"
+      
     />
   );
 };
