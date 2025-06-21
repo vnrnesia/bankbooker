@@ -37,13 +37,33 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
-  // Toggle TradingviewWidget visibility every 10 seconds
+  // Toggle TradingviewWidget: 6 seconds text on load, then 10 seconds widget, 3 seconds text
   useEffect(() => {
-    const interval = setInterval(() => {
-      setShowWidget((prev) => !prev);
-    }, 7000);
+    const initialTextDuration = 6000; // 6 seconds for initial text
+    const showWidgetDuration = 10000; // 10 seconds for widget
+    const showTextDuration = 3000; // 3 seconds for text in cycle
 
-    return () => clearInterval(interval);
+    // Show text for 6 seconds on initial load
+    setShowWidget(false);
+    const initialTimeout = setTimeout(() => {
+      // After initial text, start widget
+      setShowWidget(true);
+
+      // Start the regular cycle: 10s widget, 3s text
+      const toggleWidget = () => {
+        setTimeout(() => {
+          setShowWidget(false); // Show text
+          setTimeout(() => {
+            setShowWidget(true); // Show widget
+            toggleWidget(); // Continue cycle
+          }, showTextDuration);
+        }, showWidgetDuration);
+      };
+
+      toggleWidget();
+    }, initialTextDuration);
+
+    return () => clearTimeout(initialTimeout);
   }, []);
 
   const toggleLanguage = () => setShowLangDropdown((prev) => !prev);

@@ -81,7 +81,7 @@ function Landing() {
     <section>
       <Navbar/>
 
-      <div className="flex flex-col md:flex-row justify-between px-4  max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row pt-24 justify-between px-4  max-w-7xl mx-auto">
         <div className="mt-6 md:mt-10">
           <div className="text-sm font-medium text-gray-700">
             Welcome To Bankbooker

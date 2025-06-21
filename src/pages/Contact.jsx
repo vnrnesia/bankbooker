@@ -39,7 +39,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Main Content */}
-      <div className="justify-center items-center text-center md:mt-24 md:mb-12 font-[Manrope]">
+      <div className="justify-center items-center text-center mt-24 md:mb-12 font-[Manrope]">
         <h2 className="text-5xl font-medium text-gray-600 pb-4 px-4">
           Talk To Our Friendly Sales Team
         </h2>
