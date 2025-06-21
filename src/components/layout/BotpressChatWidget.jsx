@@ -95,7 +95,7 @@ export default function BotpressChatWidget() {
         <div
           style={{
             position: "fixed",
-            bottom: isMobile ? 140 : 90,
+            bottom: isMobile ? 140 : 100,
             right: isMobile ? "5vw" : 20,
             width: isMobile ? "70vw" : 360,
             height: 560,
