@@ -19,6 +19,7 @@ import navbarIcon5 from "@/assets/Services/icon5.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
 
+
 const BankbookerLanding = () => {
   const [showServices, setShowServices] = useState(false);
 
@@ -36,7 +37,7 @@ const BankbookerLanding = () => {
     <div className="w-full min-h-screen bg-white">
       <div className="max-w-screen-xl mx-auto px-4">
         <Header />
-        <div className="pt-[80px] md:pt-[70px] flex justify-center items-center">
+        <div className="pt-[120px] md:pt-[70px] flex justify-center items-center">
           <div className="w-full flex flex-col md:flex-row gap-8">
             {/* Left Panel */}
             <div className="hidden md:flex min-w-[220px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] py-4 rounded-xl flex-col justify-between lg:max-h-[770px]">
@@ -222,6 +223,7 @@ const BankbookerLanding = () => {
                     <br className="hidden sm:block" />
                     and Complex Services for Businesses
                   </h1>
+                 
                   <p className="text-sm font-[Manrope] text-gray-genic mt-4 max-w-[500px]">
                     At Bankbooker, we embrace innovation as the driving force
                     behind every solution. Our commitment to staying ahead of

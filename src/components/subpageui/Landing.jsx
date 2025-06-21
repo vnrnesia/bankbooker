@@ -11,6 +11,8 @@ import navbarIcon2 from "@/assets/Services/icon2.png";
 import navbarIcon3 from "@/assets/Services/icon3.png";
 import navbarIcon4 from "@/assets/Services/icon4.png";
 import navbarIcon5 from "@/assets/Services/icon5.png";
+import Navbar from "@/components/subpageui/Navbar.jsx";
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -77,80 +79,7 @@ function Landing() {
 
   return (
     <section>
-      <nav className="pt-12 md:pt-20 px-5">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="md:flex items-center gap-2 mb-4 hidden">
-            <img
-              src={Logo}
-              alt="Bankbooker Logo"
-              className="h-12 w-auto object-contain"
-            />
-          </Link>
-
-          <div className="hidden font-[Manrope] md:flex items-center gap-4 lg:gap-6 text-sm text-[#333]">
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              О сервисе
-            </a>
-            <div className="relative flex items-center">
-              <button
-                onClick={() => setShowServices(!showServices)}
-                className="hover:text-blue-600 transition-colors focus:outline-none flex items-center gap-1"
-              >
-                Услуги
-                <svg
-                  className={`w-4 h-4 transform transition-transform duration-300 ${
-                    showServices ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              {showServices && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-52 bg-white border border-gray-200 rounded-2xl shadow-md space-y-4  z-50 overflow-hidden transition-all duration-300">
-                  {services.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className="mt-2 group flex items-center gap-3 px-4 py-2 text-sm bg-white hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300 cursor-pointer bg-gradient-to-r"
-                    >
-                      <img
-                        src={item.icon}
-                        alt=""
-                        className="w-4 h-4 transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
-                      />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <a href="#" className="hover:text-blue-600 transition-colors">
-              Партнеры
-            </a>
-            <Link
-              to="/contact"
-              className="hover:text-blue-600 transition-colors"
-            >
-              Контакты
-            </Link>
-
-            <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
-              Let's Talk
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Navbar/>
 
       <div className="flex flex-col md:flex-row justify-between items-center px-4  pt-16 md:py-16 max-w-7xl mx-auto">
         <div className="mt-6 md:mt-10">

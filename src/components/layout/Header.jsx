@@ -15,24 +15,36 @@ import rus from "@/assets/russia.png";
 import tur from "@/assets/turkey.png";
 import ger from "@/assets/germany.png";
 import eng from "@/assets/uk.png";
+import TradingviewWidget from "@/components/ui/TradinviewWidget.jsx";
 
 export default function Header() {
-  const [showHeader, setShowHeader] = useState(true);
+  const [isShrunk, setIsShrunk] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [language, setLanguage] = useState("en");
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showWidget, setShowWidget] = useState(true);
 
+  // Handle scroll for header shrink/expand
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      setShowHeader(currentScrollPos < 50 || currentScrollPos < prevScrollPos);
+      setIsShrunk(currentScrollPos > 50 && currentScrollPos > prevScrollPos);
       setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
+
+  // Toggle TradingviewWidget visibility every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowWidget((prev) => !prev);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const toggleLanguage = () => setShowLangDropdown((prev) => !prev);
   const changeLanguage = (lang) => {
@@ -62,42 +74,84 @@ export default function Header() {
     <>
       {/* Desktop Header */}
       <div
-        className={`hidden mt-5 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-          showHeader ? "opacity-100 translate-y-0" : " opacity-0 -translate-y-10"
-        } bg-white shadow-md border border-gray-200 rounded-full px-4 py-4 h-[64px] w-[90vw]   xl:w-[90vw] 2xl:w-[1180px] 3xl:w-[62vw] max-w-screen-xl items-center justify-between text-sm text-[#333] font-sans`}
+        className={`hidden mt-5 md:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 bg-white shadow-md border border-gray-200 rounded-full h-[64px] items-center justify-between text-sm text-[#333] font-sans
+          ${isShrunk ? "w-[350px] px-4 py-4 opacity-90" : "w-[90vw] xl:w-[90vw] 2xl:w-[1180px] 3xl:w-[62vw] max-w-screen-xl px-4 py-4"}`}
       >
-        <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
+        <div
+          className={`flex items-center space-x-8 transition-all duration-500 ease-in-out transform ${
+            isShrunk
+              ? "-translate-x-48 opacity-0 w-0 overflow-hidden delay-0"
+              : "translate-x-0 opacity-100 w-auto delay-0"
+          }`}
+        >
+          <div
+            className={`flex items-center space-x-2 transition-all duration-500 ease-in-out transform ${
+              isShrunk
+                ? "-translate-x-32 opacity-0 w-0 overflow-hidden delay-0"
+                : "translate-x-0 opacity-100 w-auto delay-200"
+            }`}
+          >
             <img src={icon1} alt="" className="w-6 h-5" />
             <span className="text-[clamp(0.8rem,4vw,0.9rem)]">
               info@bankbooker.com
             </span>
           </div>
-          <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
-          <div className="flex items-center space-x-2">
+          <div className="h-[1px] w-12 bg-gray-800 hidden lg:block"></div>
+          <div
+            className={`flex items-center space-x-2 transition-all duration-500 ease-in-out transform ${
+              isShrunk
+                ? "-translate-x-24 opacity-0 w-0 overflow-hidden delay-200"
+                : "translate-x-0 opacity-100 w-auto delay-0"
+            }`}
+          >
             <img src={icon2} alt="" className="w-5 h-5" />
-            <span className="text-[clamp(0.2rem,1.4vw,0.9rem)] whitespace-nowrap">
-              +7 (917) 889–94–57
+            <span className="text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
+              +7 (917) 755–94–57
             </span>
           </div>
         </div>
 
-        <div className="hidden xl:block">
-          <div className="text-gray-400 whitespace-nowrap lg:block">
+        <div className="flex flex-col items-center relative min-h-[24px]">
+          <div
+            className={`absolute top-0 left-1/2 -translate-x-1/2 transition-all duration-600 ease-in-out ${
+              showWidget
+                ? "opacity-100 translate-y-[-13px]"
+                : "opacity-0 -translate-y-2 h-2"
+            }`}
+          >
+            <TradingviewWidget />
+          </div>
+          <div
+            className={`text-gray-400 whitespace-nowrap lg:block transition-all duration-700 ease-in-out ${
+              showWidget ? "opacity-0 translate-y-6" : "opacity-100 translate-y-[3px]"
+            }`}
+          >
             Bankbooker - for all{" "}
             <span className="text-black font-medium">your business</span>
             <span className="text-gray-400"> endeavors</span>
           </div>
         </div>
 
-        <div className="flex items-center space-x-8 relative">
-          <div className="relative flex flex-col items-center">
+        <div
+          className={`flex items-center space-x-8 transition-all duration-500 ease-in-out transform relative ${
+            isShrunk
+              ? "translate-x-48 opacity-0 w-0 overflow-hidden delay-200"
+              : "translate-x-0 opacity-100 w-auto delay-200"
+          }`}
+        >
+          <div
+            className={`relative flex flex-col items-center transition-all duration-500 ease-in-out transform ${
+              isShrunk
+                ? "translate-x-24 opacity-0 w-0 overflow-hidden delay-200"
+                : "translate-x-0 opacity-100 w-auto delay-0"
+            }`}
+          >
             <div
               className="flex items-center space-x-2 cursor-pointer select-none"
               onClick={toggleLanguage}
             >
               <img src={icon3} alt="" className="w-5 h-5" />
-              <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">
+              <span className="text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
                 {languageLabels[language]}
               </span>
               <ChevronDown
@@ -132,9 +186,15 @@ export default function Header() {
           </div>
 
           <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
-          <div className="flex items-center space-x-2">
+          <div
+            className={`flex items-center space-x-2 transition-all duration-500 ease-in-out transform ${
+              isShrunk
+                ? "translate-x-32 opacity-0 w-0 overflow-hidden delay-0"
+                : "translate-x-0 opacity-100 w-auto delay-200"
+            }`}
+          >
             <img src={icon4} alt="" className="w-5 h-5" />
-            <span className="text-[clamp(0.1rem,1.4vw,0.9rem)] whitespace-nowrap">
+            <span className="text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
               10:00am – 06.00pm
             </span>
           </div>
@@ -144,9 +204,9 @@ export default function Header() {
       {/* Scroll Buttons */}
       <div
         className={`fixed top-4 right-4 z-40 hidden md:flex items-center space-x-6 transition-all duration-500 ease-in-out ${
-          showHeader
-            ? "opacity-0 -translate-y-6 pointer-events-none"
-            : "opacity-100 translate-y-0"
+          isShrunk
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
         <div className="flex items-center gap-1">
@@ -166,7 +226,7 @@ export default function Header() {
       <div
         className={`fixed top-0 right-0 h-full rounded-xl bg-white shadow-lg border-l border-gray-200 z-50 transition-transform duration-300 ease-in-out text-left ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        } w-[220px]`} // Fixed width for sidebar
+        } w-[220px]`}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b">
           <img

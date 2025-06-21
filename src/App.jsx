@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact.jsx";
 import About from "@/pages/About.jsx";
 import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
 import FixedIcons from "@/components/layout/FixedIcons.jsx";
+import Partner from "@/pages/Partner.jsx";
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/partner" element={<Partner />} />
         </Routes>
       </main>
 

@@ -19,11 +19,11 @@ export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
 
   return (
-    <nav className="pt-6 md:pt-24 w-full bg-white">
-      <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+    <nav className="pt-6 md:pt-[29px] w-full bg-white">
+      <div className="max-w-[1220px] mx-auto px-5 py-4 flex justify-between items-center">
         {/* Left: Logo */}
         <div className="flex-shrink-0">
-          <Link to="/" className="md:flex items-center gap-2 mb-4 hidden ">
+          <Link to="/" className="md:flex items-center gap-2 mb-4 hidden mt-4">
             <img
               src={Logo}
               alt="Bankbooker Logo"
@@ -34,9 +34,9 @@ export default function Navbar() {
 
         {/* Right: Navbar */}
         <div className="hidden font-[Manrope] md:flex items-center gap-4 lg:gap-6 text-sm text-[#333]">
-          <a href="#" className="hover:text-blue-600 transition-colors">
+          <Link to="/about" className="hover:text-blue-600 transition-colors">
             О сервисе
-          </a>
+          </Link>
 
           {/* Dropdown */}
           <div className="relative">
@@ -82,12 +82,12 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#" className="hover:text-blue-600 transition-colors">
+          <Link to="/partner" className="hover:text-blue-600 transition-colors">
             Партнеры
-          </a>
-          <a href="#" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link to="/contact" className="hover:text-blue-600 transition-colors">
             Контакты
-          </a>
+          </Link>
           <button className="border border-gray-300 rounded-full px-4 py-1 text-sm font-medium hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
             Let's Talk
           </button>
