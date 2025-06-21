@@ -23,7 +23,7 @@ export default function Header() {
   const [language, setLanguage] = useState("en");
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [showWidget, setShowWidget] = useState(true);
+  const [showWidget, setShowWidget] = useState(false);
 
   // Handle scroll for header shrink/expand
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowWidget((prev) => !prev);
-    }, 7000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);

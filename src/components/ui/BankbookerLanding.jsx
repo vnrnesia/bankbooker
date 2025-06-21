@@ -18,6 +18,8 @@ import navbarIcon4 from "@/assets/Services/icon4.png";
 import navbarIcon5 from "@/assets/Services/icon5.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt, faPlay } from "@fortawesome/free-solid-svg-icons";
+import TradingviewWidget from "@/components/ui/TradinviewWidget.jsx";
+
 
 
 const BankbookerLanding = () => {
@@ -37,7 +39,8 @@ const BankbookerLanding = () => {
     <div className="w-full min-h-screen bg-white">
       <div className="max-w-screen-xl mx-auto px-4">
         <Header />
-        <div className="pt-[120px] md:pt-[70px] flex justify-center items-center">
+      
+        <div className="pt-[10px] md:pt-[70px] flex justify-center items-center">
           <div className="w-full flex flex-col md:flex-row gap-8">
             {/* Left Panel */}
             <div className="hidden md:flex min-w-[220px] bg-gradient-to-b from-[#BEC0C4] to-[#DFE2E7] py-4 rounded-xl flex-col justify-between lg:max-h-[770px]">
@@ -153,7 +156,7 @@ const BankbookerLanding = () => {
                             showServices ? "opacity-100 animate-fadein" : "opacity-0"
                           }`}
                         >
-                          <div className="flex flex-col px-4 py-4 gap-1">
+                          <div className="flex flex-col  gap-1">
                             {[
                               {
                                 name: "Оплата инвойсов",
@@ -216,6 +219,7 @@ const BankbookerLanding = () => {
               <div className="md:mt-10">
                 <div className="pl-0 ml-0">
                   <div className="text-sm font-medium text-gray-700">
+                    
                     Welcome To Bankbooker
                   </div>
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">

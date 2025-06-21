@@ -19,8 +19,8 @@ export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
 
   return (
-    <nav className="pt-6 md:pt-[29px] w-full bg-white">
-      <div className="max-w-[1220px] mx-auto px-5 py-4 flex justify-between items-center">
+    <nav className="md:pt-[29px] w-full bg-white">
+      <div className="max-w-[1220px] mx-auto px-5 md:py-4 flex justify-between items-center">
         {/* Left: Logo */}
         <div className="flex-shrink-0">
           <Link to="/" className="md:flex items-center gap-2 mb-4 hidden mt-4">
@@ -63,17 +63,17 @@ export default function Navbar() {
             </button>
 
             {showServices && (
-              <div className="absolute left-[-35px] mt-2 w-56 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden">
+              <div className="absolute right-[-95px] top-full mt-2 w-64 bg-white border border-gray-200 rounded-2xl shadow-md z-50 overflow-hidden transition-opacity duration-300">
                 {services.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.path}
-                    className=" flex flex-row  py-5  group  items-center gap-3 px-4  text-sm hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition-colors"
+                    className=" flex flex-row  py-2  group  items-center gap-3 px-4  rounded-xl text-bas hover:bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:text-white transition-colors"
                   >
                     <img
                       src={item.icon}
                       alt=""
-                      className="w-4 h-4 transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
+                      className="w-6 h-6 transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0"
                     />
                     {item.name}
                   </Link>

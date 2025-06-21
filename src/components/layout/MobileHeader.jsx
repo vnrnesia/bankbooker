@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import navbarIcon1 from "@/assets/Services/icon1.png";
+import navbarIcon2 from "@/assets/Services/icon2.png";
+import navbarIcon3 from "@/assets/Services/icon3.png";
+import navbarIcon4 from "@/assets/Services/icon4.png";
+import navbarIcon5 from "@/assets/Services/icon5.png";
 
 export default function MobileHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,13 +60,15 @@ export default function MobileHeader() {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <a
-          href="#about"
-          onClick={() => setIsMenuOpen(false)}
-          className="w-full"
+        <Link
+          to="/about"
+          onClick={() => {
+            setIsMenuOpen(false);
+            setShowServices(false);
+          }}
         >
           О сервисе
-        </a>
+        </Link>
 
         {/* Услуги ve alt menü */}
         <div className="w-full">
@@ -102,7 +109,9 @@ export default function MobileHeader() {
                 setIsMenuOpen(false);
                 setShowServices(false);
               }}
+              className="flex items-center gap-2"
             >
+              <img src={navbarIcon1} alt="Payment Icon" className="w-5 h-5" />
               Оплата инвойсов
             </Link>
             <Link
@@ -111,7 +120,9 @@ export default function MobileHeader() {
                 setIsMenuOpen(false);
                 setShowServices(false);
               }}
+              className="flex items-center gap-2"
             >
+              <img src={navbarIcon3} alt="Accounting Icon" className="w-5 h-5" />
               Аутсорсинг Бухгалтерии
             </Link>
             <Link
@@ -120,7 +131,9 @@ export default function MobileHeader() {
                 setIsMenuOpen(false);
                 setShowServices(false);
               }}
+              className="flex items-center gap-2"
             >
+              <img src={navbarIcon5} alt="Legal Icon" className="w-5 h-5" />
               Юридический департамент
             </Link>
             <Link
@@ -129,26 +142,43 @@ export default function MobileHeader() {
                 setIsMenuOpen(false);
                 setShowServices(false);
               }}
+              className="flex items-center gap-2"
             >
+              <img src={navbarIcon4} alt="Consulting Icon" className="w-5 h-5" />
               Налоговый консалтинг
+            </Link>
+             <Link
+              to="/products"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setShowServices(false);
+              }}
+              className="flex items-center gap-2"
+            >
+              <img src={navbarIcon2} alt="Payment Icon" className="w-5 h-5" />
+              Банковские Продукты
             </Link>
           </div>
         </div>
 
-        <a
-          href="#partners"
-          onClick={() => setIsMenuOpen(false)}
-          className="w-full "
+        <Link
+          to="/partner"
+          onClick={() => {
+            setIsMenuOpen(false);
+            setShowServices(false);
+          }}
         >
           Партнеры
-        </a>
-        <a
-          href="#contact"
-          onClick={() => setIsMenuOpen(false)}
-          className="w-full pt-2"
+        </Link>
+        <Link
+          to="/contact"
+          onClick={() => {
+            setIsMenuOpen(false);
+            setShowServices(false);
+          }}
         >
-          Контакты
-        </a>
+          Контакт
+        </Link>
       </div>
     </header>
   );

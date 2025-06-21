@@ -13,21 +13,23 @@ export default function BotpressChatWidget() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000);
+    const checkScreenSizeAndInit = () => {
+      const isMobileView = window.innerWidth < 768;
+      setIsMobile(isMobileView);
 
-    // Ekran boyutunu kontrol et
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (!isMobileView) {
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+        }, 2000);
+        return () => clearTimeout(timer);
+      }
     };
 
-    checkMobile(); // İlk render'da kontrol et
-    window.addEventListener("resize", checkMobile);
+    checkScreenSizeAndInit();
+    window.addEventListener("resize", checkScreenSizeAndInit);
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("resize", checkScreenSizeAndInit);
     };
   }, []);
 
@@ -64,8 +66,7 @@ export default function BotpressChatWidget() {
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.boxShadow =
-            "0 8px 20px rgba(0, 123, 255, 0.4)";
+          e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 123, 255, 0.4)";
         }}
       >
         {/* Chat icon SVG */}
@@ -90,8 +91,8 @@ export default function BotpressChatWidget() {
           style={{
             position: "fixed",
             bottom: isMobile ? 140 : 90,
-            right: 20,
-            width: 360,
+            right: isMobile ? "5vw" : 20,
+            width: isMobile ? "70vw" : 360,
             height: 560,
             zIndex: 9999,
             boxShadow: "0 0 15px rgba(0,0,0,0.3)",

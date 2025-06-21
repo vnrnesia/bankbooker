@@ -22,14 +22,14 @@ const TradingViewWidget = () => {
       locale: "tr"
     });
     const container = document.getElementById("tv-widget");
-    container.innerHTML = ""; // önce temizle
+    container.innerHTML = ""; 
     container.appendChild(script);
   }, []);
 
   return (
     <div
       id="tv-widget"
-      className="  w-[300px] overflow-x-auto rounded-full "
+      className="w-full overflow-x-auto"
       style={{ whiteSpace: 'nowrap', overflowX: 'auto' }}
     />
   );

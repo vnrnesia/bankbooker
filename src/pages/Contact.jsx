@@ -39,7 +39,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Main Content */}
-      <div className="justify-center items-center text-center mt-24 mb-12 font-[Manrope]">
+      <div className="justify-center items-center text-center md:mt-24 md:mb-12 font-[Manrope]">
         <h2 className="text-5xl font-medium text-gray-600 pb-4 px-4">
           Talk To Our Friendly Sales Team
         </h2>
@@ -143,7 +143,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Info */}
-          <div className="w-full md:w-1/3  space-y-[67px] text-gray-700 text-sm">
+          <div className="w-full md:w-1/3 mt-6 md:mt-0  space-y-[67px] text-gray-700 text-sm">
             <div>
               <h3 className="font-semibold">Chat With Us</h3>
               <ul className="space-y-3 mt-2">

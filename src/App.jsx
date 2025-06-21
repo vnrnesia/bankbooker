@@ -15,6 +15,7 @@ import About from "@/pages/About.jsx";
 import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
 import FixedIcons from "@/components/layout/FixedIcons.jsx";
 import Partner from "@/pages/Partner.jsx";
+import TradingviewWidget from "@/components/ui/TradinviewWidget.jsx";
 
 function App() {
   const location = useLocation();
@@ -22,7 +23,9 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-
+      <div className="md:hidden flex justify-center pt-24">
+        <TradingviewWidget />
+      </div>
       <div className="mb-6 md:mb-10">
         <MobileHeader />
         {location.pathname !== "/" && <Header />}
