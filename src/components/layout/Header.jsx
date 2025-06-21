@@ -91,12 +91,12 @@ export default function Header() {
                 : "translate-x-0 opacity-100 w-auto delay-200"
             }`}
           >
-            <img src={icon1} alt="" className="w-6 h-5 hidden lg:flex " />
-            <span className="hidden lg:flex text-[clamp(0.8rem,4vw,0.9rem)]">
+            <img src={icon1} alt="" className="w-6 h-5 hidden xl:flex " />
+            <span className="hidden xl:flex text-[clamp(0.8rem,4vw,0.9rem)]">
               info@bankbooker.com
             </span>
           </div>
-          <div className="h-[1px] w-12 bg-gray-800 hidden lg:block"></div>
+          <div className="h-[1px] w-12 bg-gray-800 hidden xl:block"></div>
           <div
             className={`flex items-center space-x-2 transition-all duration-500 ease-in-out transform ${
               isShrunk
@@ -185,7 +185,7 @@ export default function Header() {
             )}
           </div>
 
-          <div className="h-[1px] w-12 bg-gray-300 hidden lg:block"></div>
+          <div className="h-[1px] w-12 bg-gray-300 hidden xl:block"></div>
           <div
             className={`flex items-center space-x-2 transition-all duration-500 ease-in-out transform ${
               isShrunk
@@ -193,8 +193,8 @@ export default function Header() {
                 : "translate-x-0 opacity-100 w-auto delay-200"
             }`}
           >
-            <img src={icon4} alt="" className="w-5 h-5 hidden lg:flex " />
-            <span className="hidden lg:flex text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
+            <img src={icon4} alt="" className="w-5 h-5 hidden xl:flex " />
+            <span className="hidden xl:flex text-[clamp(0.8rem,4vw,0.9rem)] whitespace-nowrap">
               10:00am – 06.00pm
             </span>
           </div>
