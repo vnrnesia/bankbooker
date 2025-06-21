@@ -17,11 +17,11 @@ const TradingViewWidget = () => {
     // Embed config JSON'u script'in textContent olarak eklenmeli
     script.text = JSON.stringify({
       symbols: [
-        { proName: "FX_IDC:USDTRY", title: "USD/TRY" },
-        { proName: "FX_IDC:EURTRY", title: "EUR/TRY" },
-        { proName: "FX_IDC:CNYTRY", title: "CNY/TRY" },
-        { proName: "FX_IDC:AEDTRY", title: "AED/TRY" },
-        { proName: "FX_IDC:RUBTRY", title: "RUB/TRY" }
+    { proName: "FX_IDC:USDRUB", title: "USD/RUB" },
+  { proName: "FX_IDC:EURRUB", title: "EUR/RUB" },
+  { proName: "FX_IDC:CNYRUB", title: "CNY/RUB" }, // May not be available; verify with TradingView
+  { proName: "FX_IDC:AEDRUB", title: "AED/RUB" }, // May not be available; verify with TradingView
+  { proName: "FX_IDC:TRYRUB", title: "TRY/RUB" }  // Represents TRY value in RUB
       ],
       colorTheme: "light",
       isTransparent: false,
