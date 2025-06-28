@@ -47,7 +47,7 @@ function App() {
         </Routes>
       </main>
 
-      <Footer />
+      {location.pathname !== "/contact" && <Footer />}
       <ToolbarMobile />
       <BotpressChatWidget />
       <FixedIcons />
