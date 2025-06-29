@@ -6,11 +6,11 @@ import Socialicon2 from "@/assets/LeftPanel/icon2.png";
 import Socialicon3 from "@/assets/LeftPanel/icon3.png";
 import Socialicon4 from "@/assets/LeftPanel/icon4.png";
 
-import contactIcon1 from "@/assets/ContactImg/icon1.png";
-import contactIcon2 from "@/assets/ContactImg/icon2.png";
-import contactIcon3 from "@/assets/ContactImg/icon3.png";
-import contactIcon4 from "@/assets/ContactImg/icon4.png";
-import contactIcon5 from "@/assets/ContactImg/icon5.png";
+import contactIcon1 from "@/assets/Contactimage/icon1.png";
+import contactIcon2 from "@/assets/Contactimage/icon2.png";
+import contactIcon3 from "@/assets/Contactimage/icon3.png";
+import contactIcon4 from "@/assets/Contactimage/icon4.png";
+import contactIcon5 from "@/assets/Contactimage/icon5.png";
 
 const services = [
   { id: 1, label: "Оплата инвойсов" },
