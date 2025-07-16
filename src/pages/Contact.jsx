@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <div className="flex gap-10 justify-center flex-col md:flex-row font-[Manrope] max-w-6xl mx-auto py-12 px-4 md:px-8">
+      <div className="flex gap-10  justify-center flex-col md:flex-row font-[Manrope] max-w-6xl mx-auto py-12 px-4 md:px-8">
         {/* Left Form */}
         <div className="w-full md:w-[470px] space-y-6">
           <h2 className="text-3xl font-semibold text-gray-800">
