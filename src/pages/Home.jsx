@@ -1,18 +1,14 @@
-import Bankbooker from "@/components/ui/BankbookerLanding.jsx";
-import Header from "@/components/layout/Header.jsx";
+import HeroSection from "@/components/ui/BankbookerLanding.jsx";
 import Pricing from "@/components/ui/Pricing.jsx";
 import Brands from "@/components/ui/Brands.jsx";
 import ServicesMain from "@/components/ui/ServicesMain.jsx";
 import Info from "@/components/ui/Info.jsx";
 import Steps from "@/components/ui/Steps.jsx";
 import Comments from "@/components/ui/Comments.jsx";
-import Footer from "@/components/layout/Footer.jsx";
 import Contact from "@/components/ui/Contact.jsx";
 import CtaCard from "@/components/ui/CtaCard.jsx";
 import MobileHeader from "@/components/layout/MobileHeader.jsx";
 import OffersGrid from "@/components/ui/OffersGrid.jsx";
-import DynamicTitle from "@/components/ui/DynamicTitle.jsx";
-import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
 import icon1 from "@/assets/Services/icon1.png";
 import icon2 from "@/assets/Services/icon2.png";
 import icon3 from "@/assets/Services/icon3.png";
@@ -57,10 +53,10 @@ function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DynamicTitle />
+          
 
           <div className="mb-8 md:mb-12">
-            <Bankbooker />
+            <HeroSection/>
           </div>
           <div className="mb-8 md:mb-16">
             <Brands />

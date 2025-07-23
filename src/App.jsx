@@ -5,17 +5,13 @@ import Accounting from "@/pages/Accounting.jsx";
 import Consulting from "@/pages/Consulting.jsx";
 import Payment from "@/pages/Payment.jsx";
 import Products from "@/pages/Products.jsx";
-import MobileHeader from "@/components/layout/MobileHeader.jsx";
 import Footer from "@/components/layout/Footer.jsx";
-import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
-import Header from "@/components/layout/Header.jsx";
 import ScrollToTop from "@/components/layout/ScrollToTop.jsx";
 import Contact from "@/pages/Contact.jsx";
 import About from "@/pages/About.jsx";
-import BotpressChatWidget from "@/components/layout/BotpressChatWidget.jsx";
 import FixedIcons from "@/components/layout/FixedIcons.jsx";
 import Partner from "@/pages/Partner.jsx";
-import TradingviewWidget from "@/components/ui/TradinviewWidget.jsx";
+import Navbar from "./components/layout/Navbar/Navbar";
 
 function App() {
   const location = useLocation();
@@ -23,15 +19,9 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      {location.pathname === "/" && (
-        <div className="flex justify-center pt-24 md:pt-10">
-          <TradingviewWidget />
-        </div>
-      )}
-      <div className="mb-6 md:mb-10">
-        <MobileHeader />
-        {location.pathname !== "/" && <Header />}
-      </div>
+      <Navbar/>
+     
+  
 
       <main className="flex-grow">
         <Routes>
@@ -48,8 +38,7 @@ function App() {
       </main>
 
       {location.pathname !== "/contact" && <Footer />}
-      <ToolbarMobile />
-      <BotpressChatWidget />
+      
       <FixedIcons />
     </div>
   );
