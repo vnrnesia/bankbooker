@@ -6,6 +6,7 @@ import navbarIcon2 from "@/assets/Services/icon2.png";
 import navbarIcon3 from "@/assets/Services/icon3.png";
 import navbarIcon4 from "@/assets/Services/icon4.png";
 import navbarIcon5 from "@/assets/Services/icon5.png";
+import Currency from "../ui/Currency";
 
 const services = [
   { name: "Оплата инвойсов", path: "/payment", icon: navbarIcon1 },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
 
   return (
+    <>
     <nav className="md:pt-[29px] w-full bg-white">
       <div className="max-w-[1220px] mx-auto px-5 md:py-4 flex justify-between items-center">
         {/* Left: Logo */}
@@ -94,5 +96,7 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+   
+    </>
   );
 }

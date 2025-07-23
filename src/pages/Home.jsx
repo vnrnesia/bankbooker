@@ -18,6 +18,7 @@ import Calculator from "../components/ui/Calculator";
 import Currency from "../components/ui/Currency";
 
 
+
 const homeServices = [
   {
     icon: icon1,
@@ -54,10 +55,8 @@ const homeServices = [
 function Home() {
   return (
     <>
-      <div className="pt-[140px] md:pt-[124px]">
-        <Currency />
-      </div>
 
+ 
       <div className="min-h-screen  flex flex-col md:max-w-[100%] mx-auto">
         <main className="flex-grow">
           <div className="container mx-auto  max-w-7xl">

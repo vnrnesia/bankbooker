@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Banner from "./Banner";
 import ProductsDropdown from "./ProductsDropdown";
 import MobileDropdownProductsFull from "./MobileProductsDropdown";
+import Currency from "../../ui/Currency";
 
 const Navbar = () => {
   const [bannerOpen, setBannerOpen] = useState(true);
@@ -50,12 +51,15 @@ const Navbar = () => {
 
   const isBackdropVisible = mobileMenuOpen || mobileProductsOpen || desktopProductsOpen;
 
+  // bannerOpen durumuna göre padding-top'u belirliyoruz
+  const currencyPaddingClass = bannerOpen ? "pt-[140px] md:pt-[122px]" : "pt-[95px] md:pt-[78px]";
+
   return (
     <>
       {bannerOpen && <Banner onClose={() => setBannerOpen(false)} />}
 
       <div
-        className="fixed top-0 left-0 w-full h-full  z-40 transition-none"
+        className="fixed top-0 left-0 w-full h-full z-40 transition-none"
         style={{
           opacity: isBackdropVisible ? 1 : 0,
           pointerEvents: isBackdropVisible ? "auto" : "none",
@@ -191,6 +195,10 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+
+      <div className={currencyPaddingClass}>
+        <Currency />
+      </div>
     </>
   );
 };
