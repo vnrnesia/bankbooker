@@ -96,9 +96,8 @@ const MobileDropdownProductsFull = ({ onClose }) => {
     <section className="mb-6">
       {title && <h3 className="text-lg font-semibold mb-2">{title}</h3>}
       <div
-        className={`flex flex-col space-y-4 ${
-          scrollable ? "max-h-48 overflow-y-auto pr-2" : ""
-        }`}
+        className={`flex flex-col space-y-4 ${scrollable ? "max-h-48 overflow-y-auto pr-2" : ""
+          }`}
       >
         {items.map((item) => (
           <Link
@@ -125,7 +124,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
   );
 
   return (
-    <div className="px-4 pb-6">
+    <div className="px-4 pb-6 overflow-y-auto max-h-[70vh]" style={{ WebkitOverflowScrolling: "touch" }}>
       <Section title="" items={products} scrollable={true} />
       <Section title="Connect with Bankbooker" items={connectWithBankbooker} />
       <Section title="Resource Center" items={resourceCenter} />

@@ -36,8 +36,8 @@ const Navbar = () => {
         className={`fixed w-full bg-white/70 backdrop-blur-xs shadow-sm z-50 transition-all duration-300 ease-in-out ${bannerOpen ? "top-11" : "top-0"
           }`}
       >
-        <div className="mx-auto max-w-7xl flex items-center justify-between py-4">
-          <div className="flex items-center">
+        <div className="mx-auto max-w-md px-4 md:px-0 md:max-w-7xl flex items-center justify-between py-4">
+          <div className="flex items-cenmd:max-w-[100%]ter">
             <Link to="/">
               <img
                 src="/bankbooker.png"

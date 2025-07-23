@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  @apply overflow-x-hidden;
+}
+
+
 body {
-  @apply font-sans;
+  @apply font-[Manrope];
 }
 
 

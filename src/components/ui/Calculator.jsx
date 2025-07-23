@@ -98,7 +98,7 @@ const Calculator = () => {
                         </div>
 
                         {/* Name and Phone Number side by side */}
-                        <div className="flex gap-4 mb-4 max-w-md">
+                        <div className="flex flex-col md:flex-row gap-4 mb-4 max-w-md">
                             <input
                                 type="text"
                                 placeholder="Name"
