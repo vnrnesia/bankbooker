@@ -64,7 +64,7 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
+        className="absolute right-2 -translate-y-1/2 cursor-pointer"
         onClick={handleCloseClick}
         aria-label="Close banner"
       >

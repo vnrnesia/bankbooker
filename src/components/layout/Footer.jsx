@@ -167,20 +167,22 @@ const Footer = () => {
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className={`fixed bottom-6 right-6 z-50
-          bg-blue-600 hover:bg-blue-700
-          text-white p-3 rounded-full
-          shadow-lg
-          flex items-center justify-center
-          w-10 h-10
-          pointer-events-auto
-          transition-all duration-300 ease-in-out
-          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}
-        `}
+        className={`fixed bottom-5 left-1/2 z-50
+    bg-blue-600 hover:bg-blue-700
+    text-white p-3 rounded-full
+    shadow-lg
+    flex items-center justify-center
+    w-10 h-10
+    pointer-events-auto
+    transition-all duration-300 ease-in-out
+    ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}
+    transform -translate-x-1/2 -translate-y-1/2
+  `}
         style={{ willChange: "opacity, transform" }}
       >
         <FiChevronUp size={24} />
       </button>
+
     </>
   );
 };
