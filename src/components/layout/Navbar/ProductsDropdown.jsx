@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProductsItem from "./ProductsItem";
 import { MoveRight, ChevronDown } from "lucide-react";
+import Currency from "../../ui/Currency";
 
 const dropdownVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -83,9 +84,8 @@ const ProductsDropdown = ({ bannerOpen }) => {
         Products
         <ChevronDown
           size={20}
-          className={`ml-1 transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate-180 text-blue-700" : ""
-          }`}
+          className={`ml-1 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180 text-blue-700" : ""
+            }`}
         />
       </button>
 
@@ -96,9 +96,8 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
             <motion.div
               ref={dropdownRef}
-              className={`fixed left-0 w-screen ${
-                bannerOpen ? "top-[110px]" : "top-[75px]"
-              } bg-white shadow-lg rounded p-6 z-40`}
+              className={`fixed left-0 w-screen ${bannerOpen ? "top-[77px]" : "top-[75px]"
+                } bg-white shadow-lg rounded pt-6 z-40`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               variants={dropdownVariants}
@@ -237,7 +236,12 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   </div>
                 </div>
               </div>
+              <div className="pt-4">
+                <Currency />
+              </div>
+
             </motion.div>
+
           </>
         )}
       </AnimatePresence>

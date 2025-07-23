@@ -15,6 +15,7 @@ import icon3 from "@/assets/Services/icon3.png";
 import icon4 from "@/assets/Services/icon4.png";
 import icon5 from "@/assets/Services/icon5.png";
 import Calculator from "../components/ui/Calculator";
+import Currency from "../components/ui/Currency";
 
 
 const homeServices = [
@@ -52,45 +53,52 @@ const homeServices = [
 
 function Home() {
   return (
-    <div className="min-h-screen  flex flex-col md:max-w-[100%] mx-auto">
-      <main className="flex-grow">
-        <div className="container mx-auto  max-w-7xl">
+    <>
+      <div className="pt-[140px] md:pt-[124px]">
+        <Currency />
+      </div>
+
+      <div className="min-h-screen  flex flex-col md:max-w-[100%] mx-auto">
+        <main className="flex-grow">
+          <div className="container mx-auto  max-w-7xl">
 
 
-          <div className="mb-8 pt-10 md:pt-0  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
-            <HeroSection />
-          </div>
-          <div className="mx-auto px-4 md:px-0 max-w-sm md:max-w-[100%] mb-8 md:mb-16">
-            <Brands />
-          </div>
-          <div className="mb-16 md:mb-24">
-            <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
-              <Calculator />
+
+            <div className="mb-8 pt-10 md:pt-0  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
+              <HeroSection />
             </div>
-            <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-[100%]"> 
-              <OffersGrid />
+            <div className="mx-auto px-4 md:px-0 max-w-sm md:max-w-[100%] mb-8 md:mb-16">
+              <Brands />
+            </div>
+            <div className="mb-16 md:mb-24">
+              <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
+                <Calculator />
+              </div>
+              <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-[100%]">
+                <OffersGrid />
+              </div>
+            </div>
+            <div className="mb-16 md:mb-24">
+
             </div>
           </div>
-          <div className="mb-16 md:mb-24">
 
+          <div className="w-full bg-gray-50">
+            <Steps />
           </div>
-        </div>
 
-        <div className="w-full bg-gray-50">
-          <Steps />
-        </div>
+          <div className="mb-16 md:mb-24">
+            <CtaCard />
+          </div>
 
-        <div className="mb-16 md:mb-24">
-          <CtaCard />
-        </div>
-
-        <div className="max-w-sm px-4 md:px-0 md:max-w-[100%] container mx-auto ">
-          <Info />
-          <Comments />
-          <Contact />
-        </div>
-      </main>
-    </div>
+          <div className="max-w-sm px-4 md:px-0 md:max-w-[100%] container mx-auto ">
+            <Info />
+            <Comments />
+            <Contact />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
 

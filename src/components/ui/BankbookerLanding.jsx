@@ -5,7 +5,7 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 const HeroSection = () => {
   return (
     <div className="px-4 md:px-0 w-full min-h-screen bg-white max-w-7xl">
-      <div className="mx-auto pt-24 ">
+      <div className="mx-auto ">
         <nav className="md:pt-0">
           <div className="flex justify-end items-center py-4"></div>
         </nav>

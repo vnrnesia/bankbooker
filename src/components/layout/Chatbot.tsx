@@ -218,7 +218,7 @@ export default function Chatbot() {
         <div
           style={{
             position: "fixed",
-            bottom: 94,
+            bottom: 150,
             right: 24,
             width: 360,
             height: 500,
