@@ -15,7 +15,7 @@ export default function AccordionMenu() {
       <h2 className="text-4xl font-medium ">Frequently Asked Questions</h2>
     
      </div>
-      <div className="grid max-w-6xl px-10 mx-auto mt-10">
+      <div className="grid max-w-6xl md:px-10 mx-auto mt-10">
 
 
         <Accordion defaultValue={['item-1']} multiple>
