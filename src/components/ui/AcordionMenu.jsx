@@ -15,7 +15,7 @@ export default function AccordionMenu() {
       <h2 className="text-4xl font-medium ">Frequently Asked Questions</h2>
     
      </div>
-      <div className="max-w-xl mx-auto mt-10">
+      <div className="grid max-w-6xl px-10 mx-auto mt-10">
 
 
         <Accordion defaultValue={['item-1']} multiple>
@@ -45,6 +45,8 @@ export default function AccordionMenu() {
               Yes! You can schedule a live demo with our sales team using the "Schedule Demo" option in the chat or homepage.
             </AccordionPanel>
           </AccordionItem>
+         
+          
         </Accordion>
       </div>
     </>

@@ -94,7 +94,9 @@ function Home() {
           <div className="max-w-sm px-4 md:px-0 md:max-w-[100%] container mx-auto ">
             <Info />
             <Comments />
-            <AccordionMenu/>
+            <div className="py-16">
+              <AccordionMenu/>
+            </div>
             <Contact />
           </div>
         </main>
