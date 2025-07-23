@@ -11,7 +11,7 @@ const Currency = () => {
 
     return (
         <div className="mx-auto ">
-            <div className="flex w-full fixed">
+            <div className="flex w-full fixed z-50">
                 {rates.map((rate, index) => (
                     <div key={index} className="flex-1 bg-gray-100 p-2 text-center ">
                         <div className="flex justify-center gap-1">

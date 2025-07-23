@@ -16,6 +16,7 @@ import icon4 from "@/assets/Services/icon4.png";
 import icon5 from "@/assets/Services/icon5.png";
 import Calculator from "../components/ui/Calculator";
 import Currency from "../components/ui/Currency";
+import AccordionMenu from '../components/ui/AcordionMenu'
 
 
 
@@ -93,6 +94,7 @@ function Home() {
           <div className="max-w-sm px-4 md:px-0 md:max-w-[100%] container mx-auto ">
             <Info />
             <Comments />
+            <AccordionMenu/>
             <Contact />
           </div>
         </main>

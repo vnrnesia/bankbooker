@@ -167,7 +167,7 @@ const Footer = () => {
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className={`fixed bottom-5 left-1/2 z-50
+        className={`fixed bottom-0 left-1/2 z-50
     bg-blue-600 hover:bg-blue-700
     text-white p-3 rounded-full
     shadow-lg

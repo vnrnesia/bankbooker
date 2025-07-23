@@ -62,9 +62,19 @@ export default function Chatbot() {
   const [loading, setLoading] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [autoOpened, setAutoOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // 🔧 mobil kontrolü
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -173,8 +183,8 @@ export default function Chatbot() {
         onClick={() => setOpen((o) => !o)}
         style={{
           position: "fixed",
-          bottom: 24,
-          right: 24,
+          bottom: isMobile ? 78 : 20 , 
+          right: 18,
           width: 56,
           height: 56,
           borderRadius: "50%",
@@ -218,7 +228,7 @@ export default function Chatbot() {
         <div
           style={{
             position: "fixed",
-            bottom: 150,
+            bottom: isMobile ? 150 : 100, // 🔧 burada düzeltildi
             right: 24,
             width: 360,
             height: 500,
@@ -233,6 +243,8 @@ export default function Chatbot() {
           aria-live="polite"
           aria-label="Chatbot window"
         >
+          {/* içeriğin geri kalanı aynı */}
+
           <div
             style={{
               background: "white",
