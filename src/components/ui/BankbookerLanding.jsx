@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className="flex justify-end items-center py-4"></div>
         </nav>
 
-        <div className="md:mt-10 flex flex-col lg:flex-row gap-8 h-full">
+        <div className="md:mt-10 flex flex-col lg:flex-row gap-8  h-full">
           {/* Left Section */}
           <div className="flex-1">
             <div>

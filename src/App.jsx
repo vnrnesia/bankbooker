@@ -12,6 +12,7 @@ import About from "@/pages/About.jsx";
 import FixedIcons from "@/components/layout/FixedIcons.jsx";
 import Partner from "@/pages/Partner.jsx";
 import Navbar from "./components/layout/Navbar/Navbar";
+import Chatbot from "./components/layout/Chatbot";
 
 function App() {
   const location = useLocation();
@@ -38,7 +39,7 @@ function App() {
       </main>
 
       {location.pathname !== "/contact" && <Footer />}
-      
+      <Chatbot/>
       <FixedIcons />
     </div>
   );

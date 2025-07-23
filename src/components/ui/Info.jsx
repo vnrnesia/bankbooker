@@ -66,7 +66,7 @@ const Info = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope]">
+    <section className="max-w-7xl mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope]">
       {/* Left Side */}
       <div>
         <h4 className="text-gray-600 text-md font-medium mb-2">About Bankbooker</h4>

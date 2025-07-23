@@ -65,7 +65,7 @@ const Comments = () => {
   };
 
   return (
-    <section className="font-[Manrope] bg-white py-16 px-4 md:px-8">
+    <section className="font-[Manrope] bg-white py-16  ">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Content */}
         <div className="max-w-lg">

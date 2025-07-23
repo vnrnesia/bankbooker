@@ -13,7 +13,7 @@ const icons = [
 
 const Brands = () => {
   return (
-    <div className="px-4 mx-auto pt-24">
+    <div className="mx-auto mb-36">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
         <div>
           <h2 className="text-base font text-gray-500">Partner</h2>

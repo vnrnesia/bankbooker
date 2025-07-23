@@ -8,15 +8,15 @@ const Calculator = () => {
     return (
         <div>
             <div>
-                <h2 className="text-base font text-gray-500">Calculate</h2>
-                <h3 className="text-4xl font-bold text-gray-900 mt-2">
+                <h2 className="text-base text-center font text-gray-500">Calculate</h2>
+                <h3 className="text-4xl text-center font-bold text-gray-900 mt-2">
                     Calculate the cost of the transfer
                 </h3>
             </div>
             <div className="flex items-center justify-center py-10">
                 <div className="max-w-7xl w-full flex flex-col md:flex-row gap-6">
                     {/* Left Panel */}
-                    <div className="bg-gray-100 rounded-2xl shadow-md md:w-1/3 p-6 md:p-10">
+                    <div className="bg-gray-100 rounded-2xl shadow-md md:w-1/3 p-10">
                         <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-6">
                             Calculate the Transfer Amount
                         </h2>

@@ -52,9 +52,9 @@ const homeServices = [
 
 function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen  flex flex-col max-w-xs md:max-w-[100%] mx-auto">
       <main className="flex-grow">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto  max-w-7xl">
 
 
           <div className="mb-8 md:mb-12">
@@ -64,7 +64,9 @@ function Home() {
             <Brands />
           </div>
           <div className="mb-16 md:mb-24">
-           <Calculator/>
+           <div className="max-w-5xl mx-auto">
+            <Calculator/>
+           </div>
            <OffersGrid/>
           </div>
           <div className="mb-16 md:mb-24">
@@ -80,7 +82,7 @@ function Home() {
           <CtaCard />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 max-w-xs md:max-w-7xl ">
           <Info />
           <Comments />
           <Contact />
