@@ -14,6 +14,8 @@ import icon2 from "@/assets/Services/icon2.png";
 import icon3 from "@/assets/Services/icon3.png";
 import icon4 from "@/assets/Services/icon4.png";
 import icon5 from "@/assets/Services/icon5.png";
+import Calculator from "../components/ui/Calculator";
+
 
 const homeServices = [
   {
@@ -53,10 +55,10 @@ function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          
+
 
           <div className="mb-8 md:mb-12">
-            <HeroSection/>
+            <HeroSection />
           </div>
           <div className="mb-8 md:mb-16">
             <Brands />
@@ -68,10 +70,10 @@ function Home() {
               description="Discover service excellence. We craft tailored solutions to meet your unique needs and fuel success"
               services={homeServices}
             />
-            <OffersGrid />
+           <Calculator/>
           </div>
           <div className="mb-16 md:mb-24">
-            <Info />
+
           </div>
         </div>
 
@@ -84,7 +86,7 @@ function Home() {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <Pricing />
+          <Info />
           <Comments />
           <Contact />
         </div>

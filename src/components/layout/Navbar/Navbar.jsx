@@ -23,26 +23,26 @@ const Navbar = () => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     if (!mobileMenuOpen) setMobileProductsOpen(false);
   }, [mobileMenuOpen]);
-
+// top-0 left-0 w-full h-full bg-black/10 backdrop-blur-xs z-40
   return (
     <>
       {bannerOpen && <Banner onClose={() => setBannerOpen(false)} />}
 
       {(mobileMenuOpen || mobileProductsOpen || desktopProductsOpen) && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black/10 backdrop-blur-xs z-40" />
+        <div className="fixed " />
       )}
 
       <nav
         className={`fixed w-full bg-white/70 backdrop-blur-xs shadow-sm z-50 transition-all duration-300 ease-in-out ${bannerOpen ? "top-11" : "top-0"
           }`}
       >
-        <div className="mx-auto max-w-10/12 flex items-center justify-between p-4">
+        <div className="mx-auto max-w-7xl px-4 flex items-center justify-between p-4">
           <div className="flex items-center">
             <Link to="/">
               <img
                 src="/bankbooker.png"
                 alt="BankBooker Logo"
-                width={200}
+                width={170}
                 height={50}
               />
             </Link>

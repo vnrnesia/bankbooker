@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { StickyBanner } from "@/components/ui/sticky-banner";
+import { StickyBanner } from "../../ui/sticky-banner";
 import { MoveRight } from "lucide-react";
 
 interface BannerProps {
@@ -18,7 +18,7 @@ export default function Banner({ onClose }: BannerProps) {
           <div className="h-px w-2 bg-white self-center hidden md:block " />
 
           <span className="text-[#A3A3A3]  text-xs md:text-base  whitespace-nowrap">
-            Let BB handle your financial situation <span className="hidden md:block">, so you don’t have to.</span>
+            Let BB handle your financial situation 
           </span>
 
           <div className="h-px w-2 bg-white self-center hidden md:block" />

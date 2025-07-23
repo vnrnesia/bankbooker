@@ -97,7 +97,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
             <motion.div
               ref={dropdownRef}
               className={`fixed left-0 w-screen ${
-                bannerOpen ? "top-[80px]" : "top-[86px]"
+                bannerOpen ? "top-[110px]" : "top-[75px]"
               } bg-white shadow-lg rounded p-6 z-40`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -107,7 +107,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
               exit="exit"
               transition={{ duration: 0.25, ease: "easeInOut" }}
             >
-              <div className="mx-auto w-full max-w-10/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="mx-auto w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Products Column */}
                 <div>
                   <SectionHeader title="Products" />
