@@ -64,13 +64,8 @@ function Home() {
             <Brands />
           </div>
           <div className="mb-16 md:mb-24">
-            <ServicesMain
-              title="Financial Consulting Services"
-              subtitle="Our Services"
-              description="Discover service excellence. We craft tailored solutions to meet your unique needs and fuel success"
-              services={homeServices}
-            />
            <Calculator/>
+           <OffersGrid/>
           </div>
           <div className="mb-16 md:mb-24">
 
