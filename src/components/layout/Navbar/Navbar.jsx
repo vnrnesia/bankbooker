@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
 import ProductsDropdown from "./ProductsDropdown";
@@ -10,6 +10,8 @@ const Navbar = () => {
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [desktopProductsOpen, setDesktopProductsOpen] = useState(false);
 
+  const desktopProductsRef = useRef(null);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen((v) => !v);
     if (mobileProductsOpen) setMobileProductsOpen(false);
@@ -20,40 +22,62 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    const handlePointerOver = (e) => {
+      if (desktopProductsRef.current?.contains(e.target)) {
+        setDesktopProductsOpen(true);
+      } else {
+        setDesktopProductsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointermove", handlePointerOver);
+    return () => {
+      document.removeEventListener("pointermove", handlePointerOver);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Body overflow kontrolü aynen devam eder
+    document.body.style.overflow = mobileMenuOpen || desktopProductsOpen ? "hidden" : "";
     if (!mobileMenuOpen) setMobileProductsOpen(false);
-  }, [mobileMenuOpen]);
-// top-0 left-0 w-full h-full bg-black/10 backdrop-blur-xs z-40
+  }, [mobileMenuOpen, desktopProductsOpen]);
+
+  const closeAllMenus = () => {
+    setDesktopProductsOpen(false);
+    setMobileMenuOpen(false);
+    setMobileProductsOpen(false);
+  };
+
+  const isBackdropVisible = mobileMenuOpen || mobileProductsOpen || desktopProductsOpen;
+
   return (
     <>
       {bannerOpen && <Banner onClose={() => setBannerOpen(false)} />}
 
-      {(mobileMenuOpen || mobileProductsOpen || desktopProductsOpen) && (
-        <div className="fixed " />
-      )}
+      <div
+        className="fixed top-0 left-0 w-full h-full  z-40 transition-none"
+        style={{
+          opacity: isBackdropVisible ? 1 : 0,
+          pointerEvents: isBackdropVisible ? "auto" : "none",
+          transition: "none", // geçiş iptal edildi
+        }}
+        onClick={closeAllMenus}
+        aria-hidden={!isBackdropVisible}
+      />
 
       <nav
         className={`fixed w-full bg-white/70 backdrop-blur-xs shadow-sm z-50 transition-all duration-300 ease-in-out ${bannerOpen ? "top-11" : "top-0"
           }`}
       >
-        <div className="mx-auto max-w-md px-4 md:px-0 md:max-w-7xl flex items-center justify-between py-4">
-          <div className="flex items-cenmd:max-w-[100%]ter">
+        <div className="mx-auto max-w-md md:px-0 md:max-w-7xl flex items-center justify-between py-4 px-4">
+          <div className="flex items-center">
             <Link to="/">
-              <img
-                src="/bankbooker.png"
-                alt="BankBooker Logo"
-                width={170}
-                height={50}
-              />
+              <img src="/bankbooker.png" alt="BankBooker Logo" width={170} height={50} />
             </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
-            <div
-              onMouseEnter={() => setDesktopProductsOpen(true)}
-              onMouseLeave={() => setDesktopProductsOpen(false)}
-            >
+            <div ref={desktopProductsRef}>
               <ProductsDropdown bannerOpen={bannerOpen} />
             </div>
             <Link to="/solutions" className="text-black font-medium">
@@ -67,7 +91,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Right Buttons */}
           <div className="hidden md:flex space-x-4 items-center">
             <a href="#" className="text-black my-auto font-medium">
               Sign In
@@ -80,7 +103,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Hamburger */}
           <button
             aria-label="Toggle menu"
             className="md:hidden flex flex-col justify-center items-center w-14 h-16 space-y-1 overflow-hidden focus:outline-none z-50"
@@ -89,19 +111,18 @@ const Navbar = () => {
             <span
               className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
                 }`}
-            ></span>
+            />
             <span
               className={`block h-0.5 w-7 bg-black rounded transition duration-300 ease-in-out ${mobileMenuOpen ? "opacity-0" : "opacity-100"
                 }`}
-            ></span>
+            />
             <span
               className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
                 }`}
-            ></span>
+            />
           </button>
         </div>
 
-        {/* Mobil Menü */}
         {mobileMenuOpen && (
           <div className="absolute left-0 w-full bg-white shadow-md z-40 md:hidden">
             <div className="pt-4 pb-6 space-y-6">
@@ -121,59 +142,46 @@ const Navbar = () => {
                     strokeWidth={2}
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
                 {mobileProductsOpen && (
-                  <div
-                    id="mobile-products-menu"
-                    className="md:pl-4 md:border-l border-gray-300"
-                  >
-                    <MobileDropdownProductsFull
-                      onClose={() => setMobileMenuOpen(false)}
-                    />
+                  <div id="mobile-products-menu" className="md:pl-4 md:border-l border-gray-300">
+                    <MobileDropdownProductsFull onClose={() => setMobileMenuOpen(false)} />
                   </div>
                 )}
 
                 <Link
                   to="/solutions"
                   className="block text-black hover:text-blue-600"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeAllMenus}
                 >
                   Solutions
                 </Link>
                 <Link
                   to="/partner"
                   className="block text-black hover:text-blue-600"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeAllMenus}
                 >
                   Partners
                 </Link>
                 <Link
                   to="/contact"
                   className="block text-black hover:text-blue-600"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeAllMenus}
                 >
                   Contact
                 </Link>
 
                 <div className="pt-6 space-y-4 border-t border-gray-200">
-                  <a
-                    href="#"
-                    className="block text-center font-medium text-black"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <a href="#" className="block text-center font-medium text-black" onClick={closeAllMenus}>
                     Sign In
                   </a>
                   <a
                     href="#"
                     className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={closeAllMenus}
                   >
                     See a demo
                   </a>
