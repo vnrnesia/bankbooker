@@ -10,12 +10,12 @@ import {
 export default function AccordionMenu() {
   return (
     <>
-     <div className="flex flex-col items-center mx-auto">
+     <div className="flex flex-col items-center text-center mx-auto">
         <h3 className="text-gray-500 text-lg mb-1">Have a question?</h3>
-      <h2 className="text-4xl font-medium ">Frequently Asked Questions</h2>
+      <h2 className="text-4xl text-center font-medium ">Frequently Asked Questions</h2>
     
      </div>
-      <div className="grid max-w-6xl md:px-10 mx-auto mt-10">
+      <div className="grid max-w-6xl md:px-2 mx-auto mt-10">
 
 
         <Accordion defaultValue={['item-1']} multiple>

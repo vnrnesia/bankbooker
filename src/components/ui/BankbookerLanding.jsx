@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import GetStarted from './GetStarted';
 
 const HeroSection = () => {
   return (
@@ -27,16 +28,8 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-4">
-              <button className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] text-white font-medium px-6 py-2 rounded hover:from-[#0786E2] hover:to-[#0FA9E9] transition-all duration-500">
-                Get Started
-              </button>
-              <button className="border border-gray-300 px-6 py-2 rounded font-medium text-gray-700 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white transition duration-300">
-                Our Services
-              </button>
-            </div>
-
-            <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[82px]">
+            <GetStarted />
+            <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">
               {/* Card 1 */}
               <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
                 <div className="flex flex-col items-center gap-2">

@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 const AccordionContext = React.createContext({
   isActive: false,
   value: '',
-  onChangeIndex: () => {},
+  onChangeIndex: () => { },
 });
 const useAccordion = () => React.useContext(AccordionContext);
 export function AccordionContainer({ children, className }) {
@@ -60,11 +60,10 @@ export function AccordionItem({ children, value }) {
   return (
     <div
       data-active={isActive || undefined}
-      className={`rounded-3xl overflow-hidden mb-2  ${
-        isActive
+      className={`rounded-3xl overflow-hidden mb-2  ${isActive
           ? 'active border-2   border-[#F2F2F2] dark:bg-[#E0ECFB] bg-[#F2F2F2]'
           : 'bg-transparent border-2 '
-      }
+        }
     `}
       data-value={value}
     >
@@ -77,11 +76,10 @@ export function AccordionHeader({ children, customIcon, className }) {
   return (
     <motion.div
       data-active={isActive || undefined}
-      className={`group p-4 cursor-pointer transition-all font-semibold    dark:text-white text-black dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${
-        isActive
-          ? 'active  dark:bg-blue-600 bg-[#F2F2F2] '
-          : 'dark:bg-blue-700 bg-white'
-      }
+      className={`group p-4 cursor-pointer transition-all dark:text-black text-black dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${isActive
+          ? 'active  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] bg-[#F2F2F2] '
+          : 'bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] bg-white'
+        }
       `}
       onClick={() => onChangeIndex(value)}
     >
