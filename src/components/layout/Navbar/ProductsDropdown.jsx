@@ -106,7 +106,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
               exit="exit"
               transition={{ duration: 0.25, ease: "easeInOut" }}
             >
-              <div className="mx-auto w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="mx-auto w-full max-w-[90%] xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Products Column */}
                 <div>
                   <SectionHeader title="Products" />
