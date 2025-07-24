@@ -22,7 +22,7 @@ function Home() {
 
   return (
     <>
-      <div className="min-h-screen  flex flex-col md:max-w-[100%] mx-auto">
+      <div className="min-h-screen  flex flex-col md:max-w-[90%] mx-auto">
         <main className="flex-grow">
           <div className="container mx-auto  max-w-7xl">
             <div className="mb-8 pt-10 md:pt-0  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
@@ -41,6 +41,9 @@ function Home() {
             </div>
             <div className="mb-16 md:mb-24"></div>
           </div>
+          </main>
+
+          </div>
 
           <div className="w-full bg-gray-50">
             <Steps />
@@ -53,7 +56,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="max-w-sm px-4 md:px-0 md:max-w-[100%] container mx-auto ">
+          <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] container mx-auto ">
             <Info />
             <Comments />
             <div className="py-16">
@@ -61,8 +64,8 @@ function Home() {
             </div>
             <Contact />
           </div>
-        </main>
-      </div>
+        
+      
     </>
   );
 }
