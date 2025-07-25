@@ -31,7 +31,11 @@ const HeroSection = ({ onGetStartedClick }) => {
             </div>
 
             <button onClick={onGetStartedClick}>
-              <ToGetStarted />
+              <ToGetStarted text="Get Started" />
+            </button>
+            {/*Director to form for Chatbot */}
+            <button className="fixed bottom-5 right-[85px]" onClick={onGetStartedClick}>
+              <ToGetStarted text="Reach us!" />
             </button>
             <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">
               {/* Card 1 */}

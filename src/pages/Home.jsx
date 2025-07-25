@@ -28,16 +28,16 @@ function Home() {
             <div className="mb-8 pt-10 md:pt-0  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
               <HeroSection onGetStartedClick={scrollToGetStarted} />{" "}
             </div>
-            <div className="mx-auto px-4 md:px-0 max-w-sm md:max-w-[100%] mb-8 md:mb-16">
-              <Brands />
-            </div>
+
+            <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-[100%]">
+                <OffersGrid />
+              </div>
+            
             <div className="mb-16 md:mb-24">
               <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
                 <Calculator />
               </div>
-              <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-[100%]">
-                <OffersGrid />
-              </div>
+              
             </div>
             <div className="mb-16 md:mb-24"></div>
           </div>
@@ -51,6 +51,9 @@ function Home() {
 
           <div className="mb-16 md:mb-24">
             <CtaCard />
+            <div className="mx-auto px-4 md:px-0 max-w-sm md:max-w-[67%] pt-24 mb-8 md:mb-16">
+              <Brands />
+            </div>
             <div ref={getStartedRef} className="scroll-mt-[250px]">
               <GetStarted />
             </div>

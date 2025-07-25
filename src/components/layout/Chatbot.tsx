@@ -4,6 +4,7 @@ import {
   ChevronDown,
   MessageSquareMore,
   DoorOpen,
+  SquarePen,
 } from "lucide-react";
 import React, {
   useState,
@@ -13,6 +14,7 @@ import React, {
   useRef,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ToGetStarted from "../ui/ToGetStarted";
 
 type ChatMessage = {
   id: number;
@@ -53,7 +55,7 @@ const OPTIONS_MAIN = [
   "Schedule to Demo",
 ] as const;
 
-export default function Chatbot() {
+export default function Chatbot({ onGetStartedClick }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputEmail, setInputEmail] = useState("");
@@ -90,14 +92,16 @@ export default function Chatbot() {
 
   useEffect(() => {
     if (!open || messages.length > 0) return;
-    addBotMessageWithLoading("Welcome to Bankbooker, how can I help you today?");
+    addBotMessageWithLoading(
+      "Welcome to Bankbooker, how can I help you today?"
+    );
   }, [open]);
 
   useEffect(() => {
     const last = messages[messages.length - 1];
     if (last?.from === "bot" && audioRef.current) {
       audioRef.current.volume = 0.5;
-      audioRef.current.play().catch(() => { });
+      audioRef.current.play().catch(() => {});
     }
     if (
       last?.from === "bot" &&
@@ -112,13 +116,16 @@ export default function Chatbot() {
   useEffect(() => {
     if (autoOpened && audioRef.current) {
       audioRef.current.volume = 0.5;
-      audioRef.current.play().catch(() => { });
+      audioRef.current.play().catch(() => {});
       setAutoOpened(false);
     }
   }, [autoOpened]);
 
   const addUserMessage = (text: string) => {
-    setMessages((msgs) => [...msgs, { id: msgs.length + 1, from: "user", text }]);
+    setMessages((msgs) => [
+      ...msgs,
+      { id: msgs.length + 1, from: "user", text },
+    ]);
   };
 
   const addBotMessageWithLoading = (text: ReactNode) => {
@@ -130,10 +137,7 @@ export default function Chatbot() {
     setTimeout(() => {
       setMessages((msgs) => {
         const cleaned = msgs.filter((m) => m.from !== "loading");
-        return [
-          ...cleaned,
-          { id: cleaned.length + 1, from: "bot", text },
-        ];
+        return [...cleaned, { id: cleaned.length + 1, from: "bot", text }];
       });
       setLoading(false);
     }, 2000);
@@ -149,11 +153,14 @@ export default function Chatbot() {
       option === "Talk to Sales" ||
       option === "Schedule to Demo";
     if (option === "No thanks, not applying for now.") {
-      addBotMessageWithLoading("Thanks for stopping by! Feel free to reach out anytime.");
+      addBotMessageWithLoading(
+        "Thanks for stopping by! Feel free to reach out anytime."
+      );
     } else if (isEmailFollowup) {
       addBotMessageWithLoading(
         <>
-          Great to hear! <br /> In case we get disconnected, <b>mind if we grab your email?</b>
+          Great to hear! <br /> In case we get disconnected,{" "}
+          <b>mind if we grab your email?</b>
         </>
       );
       setTimeout(() => setShowEmailInput(true), 2100);
@@ -166,7 +173,9 @@ export default function Chatbot() {
     addUserMessage(inputEmail);
     setShowEmailInput(false);
     setEmailSubmitted(true);
-    addBotMessageWithLoading("Thanks! Someone from our team will be in touch soon.");
+    addBotMessageWithLoading(
+      "Thanks! Someone from our team will be in touch soon."
+    );
     setInputEmail("");
   };
 
@@ -180,10 +189,11 @@ export default function Chatbot() {
     <>
       <audio ref={audioRef} src="/notification.mp3" preload="auto" />
       <button
+        className="bg-gradient-to-r from-[#0273DE] to-[#10B0EB] rounded-lg shadow-lg flex flex-col"
         onClick={() => setOpen((o) => !o)}
         style={{
           position: "fixed",
-          bottom: isMobile ? 78 : 20 , 
+          bottom: isMobile ? 78 : 20,
           right: 18,
           width: 56,
           height: 56,
@@ -226,15 +236,14 @@ export default function Chatbot() {
       </button>
       {open && (
         <div
+          className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] rounded-lg shadow-lg flex flex-col"
           style={{
             position: "fixed",
-            bottom: isMobile ? 150 : 100, // 🔧 burada düzeltildi
+            bottom: isMobile ? 150 : 100,
             right: 24,
             width: 360,
             height: 500,
-            background: "white",
-            borderRadius: 8,
-            boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.25)", // İstersen burada kalabilir ya da Tailwind shadow-lg kullanabilirsin
             display: "flex",
             flexDirection: "column",
             zIndex: 1000,
@@ -243,8 +252,6 @@ export default function Chatbot() {
           aria-live="polite"
           aria-label="Chatbot window"
         >
-          {/* içeriğin geri kalanı aynı */}
-
           <div
             style={{
               background: "white",
@@ -259,7 +266,9 @@ export default function Chatbot() {
               boxShadow: "0 px 6px rgba(0, 0, 0, 0.15)",
             }}
           >
-            <span className="text-blue-500">BANK<span className="text-black">BOOKER</span></span>
+            <span className="text-blue-500">
+              BANK<span className="text-black">BOOKER</span>
+            </span>
           </div>
           <div
             style={{
@@ -297,14 +306,14 @@ export default function Chatbot() {
                         from === "user"
                           ? "#0070f3"
                           : from === "loading"
-                            ? "#cbd3df"
-                            : "#e4e9f2",
+                          ? "#cbd3df"
+                          : "#e4e9f2",
                       color:
                         from === "user"
                           ? "white"
                           : from === "loading"
-                            ? "#222"
-                            : "#222",
+                          ? "#222"
+                          : "#222",
                       padding: "10px 16px",
                       borderRadius: 5,
                       fontSize: 14,

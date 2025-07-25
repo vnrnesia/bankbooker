@@ -27,7 +27,7 @@ const GetStarted = () => {
             </div>
             <button
               type="button"
-              className="bg-gradient-to-l  w-36 text-center my-2 from-[#0273DE] to-[#10B0EB] text-white px-4 py-5 rounded-full hover:scale-105 transition duration-300 font-medium"
+              className="bg-gradient-to-l  w-36 text-center my-2 from-[#0273DE] to-[#10B0EB] text-white px-2 py-4 rounded-full hover:scale-105 transition duration-300 font-medium"
             >
               Submit
             </button>
@@ -44,7 +44,6 @@ const GetStarted = () => {
           </form>
         </div>
 
-        {/* Sağ taraf: resim */}
         <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
           <img
             src="/order.svg"

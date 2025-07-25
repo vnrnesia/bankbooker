@@ -41,12 +41,9 @@ const offers = [
 
 export default function OffersGrid() {
   return (
-    <section className="bg-white py-12 font-[Manrope] pt-24">
+    <section className="bg-white py-12 font-[Manrope] ">
       <div>
-        {/* Başlık ve Açıklama Grid'i */}
-        {/* Başlık ve Açıklama Grid'i */}
         <div className="grid md:grid-cols-2 gap-6 mb-12 items-start justify-between">
-          {/* Sol başlık kısmı */}
           <div>
             <h2 className="text-lg font-medium text-neutral-600 tracking-wide mb-1">
               Pricing
