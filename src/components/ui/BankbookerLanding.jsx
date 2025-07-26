@@ -6,7 +6,7 @@ import ToGetStarted from "./ToGetStarted";
 
 const HeroSection = ({ onGetStartedClick }) => {
   return (
-    <div className="px-4 md:px-0 w-full min-h-screen bg-white max-w-7xl">
+    <div className="px-4 md:px-0 w-full pb-24 bg-white max-w-7xl">
       <div className="mx-auto ">
         <nav className="md:pt-0">
           <div className="flex justify-end items-center py-4"></div>
@@ -34,7 +34,7 @@ const HeroSection = ({ onGetStartedClick }) => {
               <ToGetStarted text="Get Started" />
             </button>
             {/*Director to form for Chatbot */}
-            <button className="fixed bottom-5 right-[85px]" onClick={onGetStartedClick}>
+            <button className="hidden md:block fixed bottom-5 right-[85px]" onClick={onGetStartedClick}>
               <ToGetStarted text="Reach us!" />
             </button>
             <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">

@@ -9,7 +9,6 @@ import Footer from "@/components/layout/Footer.jsx";
 import ScrollToTop from "@/components/layout/ScrollToTop.jsx";
 import Contact from "@/pages/Contact.jsx";
 import About from "@/pages/About.jsx";
-import FixedIcons from "@/components/layout/FixedIcons.jsx";
 import Partner from "@/pages/Partner.jsx";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Chatbot from "./components/layout/Chatbot";
@@ -41,7 +40,6 @@ function App() {
 
       {location.pathname !== "/contact" && <Footer />}
       <Chatbot/>
-      <FixedIcons />
       <ToolbarMobile/>
     </div>
   );

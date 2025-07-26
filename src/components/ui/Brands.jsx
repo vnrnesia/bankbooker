@@ -35,7 +35,7 @@ const Brands = () => {
             <img
               src={icon.src}
               alt={`Company logo ${index + 1}`}
-              className={`object-contain grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ease-in-out ${icon.width}`}
+              className={`object-contain  group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ease-in-out ${icon.width}`}
             />
           </div>
         ))}

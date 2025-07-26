@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -84,8 +84,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
         Products
         <ChevronDown
           size={20}
-          className={`ml-1 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180 text-blue-700" : ""
-            }`}
+          className={`ml-1 transition-transform duration-300 ease-in-out ${
+            isOpen ? "rotate-180 text-blue-700" : ""
+          }`}
         />
       </button>
 
@@ -96,8 +97,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
             <motion.div
               ref={dropdownRef}
-              className={`fixed left-0 w-screen ${bannerOpen ? "top-[77px]" : "top-[75px]"
-                } bg-white shadow-lg rounded pt-6 z-40`}
+              className={`fixed left-0 w-screen ${
+                bannerOpen ? "top-[77px]" : "top-[75px]"
+              } bg-white shadow-lg rounded pt-6 z-40`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               variants={dropdownVariants}
@@ -115,7 +117,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                     {
                       href: "/products/invoice",
                       imageSrc: "/productsdropdown/invoice.png",
-                      title: "Invoice Payment",
+                      title: "Оплата инвойсов",
                       description: "Pay vendors faster and safer",
                       imageWidth: 30,
                       imageHeight: 30,
@@ -124,20 +126,11 @@ const ProductsDropdown = ({ bannerOpen }) => {
                     {
                       href: "/products/banking",
                       imageSrc: "/productsdropdown/banking.png",
-                      title: "Banking Product",
+                      title: "Возврат валютной выручки",
                       description: "Bank smarter with up to 4.36%",
                       imageWidth: 30,
                       imageHeight: 36,
                       imageClassName: "object-contain",
-                    },
-                    {
-                      href: "/products/accounting",
-                      imageSrc: "/productsdropdown/invoice.png",
-                      title: "Accounting Outsourcing",
-                      description: "Simplify close and earn rewards",
-                      imageWidth: 30,
-                      imageHeight: 28,
-                      imageClassName: "object-contain mr-1",
                     },
                   ].map((item, i) => (
                     <div
@@ -239,9 +232,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
               <div className="pt-4">
                 <Currency />
               </div>
-
             </motion.div>
-
           </>
         )}
       </AnimatePresence>

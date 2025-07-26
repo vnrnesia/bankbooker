@@ -25,50 +25,50 @@ function Home() {
       <div className="min-h-screen  flex flex-col md:max-w-[90%] 3xl:max-w-[100%] mx-auto">
         <main className="flex-grow">
           <div className="container mx-auto  max-w-7xl">
-            <div className="mb-8 pt-10 md:pt-0  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
+            <div className=" md:pt-8  max-w-sm md:max-w-[100%] mx-auto md:mb-12">
               <HeroSection onGetStartedClick={scrollToGetStarted} />{" "}
             </div>
 
-            <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-[100%]">
-                <OffersGrid />
-              </div>
-            
-            <div className="mb-16 md:mb-24">
+            <div className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]">
+              <OffersGrid />
+            </div>
+
+            <div className="mb-16 md:mb-36">
               <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
                 <Calculator />
               </div>
-              
             </div>
             <div className="mb-16 md:mb-24"></div>
           </div>
-          </main>
+        </main>
+      </div>
 
-          </div>
+      <div className="w-full bg-gray-50">
+        <Steps />
+      </div>
 
-          <div className="w-full bg-gray-50">
-            <Steps />
-          </div>
+      <div className="mb-16 md:mb-24">
+        <CtaCard />
+        <div className="mx-auto px-4 md:px-0 max-w-sm lg:max-w-[90%] 2xl:max-w-7xl pt-24 md:pt-36 md:mb-8 md:pb-3">
+          <Brands />
+        </div>
+        <div ref={getStartedRef} className="scroll-mt-[250px] ">
+          <GetStarted />
+        </div>
+      </div>
 
-          <div className="mb-16 md:mb-24">
-            <CtaCard />
-            <div className="mx-auto px-4 md:px-0 max-w-sm md:max-w-[67%] pt-24 mb-8 md:mb-16">
-              <Brands />
-            </div>
-            <div ref={getStartedRef} className="scroll-mt-[250px]">
-              <GetStarted />
-            </div>
-          </div>
-
-          <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] 3xl:max-w-[100%] container mx-auto ">
-            <Info />
-            <Comments />
-            <div className="py-16">
-              <AccordionMenu />
-            </div>
-            <Contact />
-          </div>
-        
-      
+      <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] 3xl:max-w-[100%] container mx-auto ">
+        <div className=" md:pb-24">
+          <Info />
+        </div>
+      <div className="max-w-7xl mx-auto">
+          <Comments />
+      </div>
+        <div className="mb-16 md:pb-0 md:pt-24 md:py-16">
+          <AccordionMenu />
+        </div>
+        <Contact />
+      </div>
     </>
   );
 }

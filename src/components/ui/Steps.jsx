@@ -39,8 +39,8 @@ export default function Steps() {
   }, [visibleCount, controls]);
 
   return (
-    <section className="bg-gray-100 py-16 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-gray-100 py-16 ">
+      <div className="max-w-5xl mx-auto text-center">
         <div className="text-center mb-12 md:mb-16">
           <h3 className="text-gray-600 mb-2">Our Process</h3>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
@@ -77,7 +77,7 @@ export default function Steps() {
               />
             </div>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10 px-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10 ">
             {steps.map((step, index) => (
               <motion.div
                 key={index}

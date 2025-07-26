@@ -47,8 +47,7 @@ export default function Contact() {
 
   return (
     <>
-      <Navbar />
-      <div className="flex gap-10  justify-center flex-col md:flex-row font-[Manrope] max-w-6xl mx-auto py-12 px-4 md:px-8">
+      <div className="flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%]  xl:max-w-[80%] 2xl:max-w-7xl md:pt-24  mx-auto ">
         {/* Left Form */}
         <div className="w-full md:w-[470px] space-y-6">
           <h2 className="text-3xl font-semibold text-gray-800">
@@ -163,7 +162,10 @@ export default function Contact() {
 
           <div className="py-7">
             <h4 className="font-semibold text-gray-800">Follow Us</h4>
-            <p className="text-gray-400 text-sm mb-2"> Stay connected for our latest updates.</p>
+            <p className="text-gray-400 text-sm mb-2">
+              {" "}
+              Stay connected for our latest updates.
+            </p>
             <div className="flex items-center space-x-4">
               {socialIcons.map((icon, idx) => (
                 <img

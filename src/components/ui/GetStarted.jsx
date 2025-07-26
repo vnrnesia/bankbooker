@@ -2,12 +2,12 @@ import React from "react";
 
 const GetStarted = () => {
   return (
-    <div className="flex flex-col gap-10 py-16 items-center justify-center bg-gray-100 p-6">
+    <div className="flex flex-col gap-10 py-24 items-center justify-center bg-gray-100 p-6">
       <h1 className="font-bold text-3xl text-center">
         Оставьте заявку — поможем провести валютный платеж
       </h1>
 
-      <div className=" rounded-3xl bg-white flex flex-col md:flex-row justify-between items-center shadow-lg p-6 w-full max-w-7xl">
+      <div className=" rounded-3xl bg-white flex flex-col md:flex-row justify-between items-center shadow-lg p-6 w-full max-w-sm lg:max-w-[90%] 2xl:max-w-7xl">
         <div className="w-full md:w-1/2 pr-0 md:pr-8">
           <h2 className="text-2xl font-bold mb-6">Оставьте заявку</h2>
           <form>

@@ -74,7 +74,7 @@ const Comments = () => {
             Client Experiences That <br />
             Speak for Themselves
           </h2>
-          <button className="mt-16 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full transition">
+          <button className="cursor-pointer mt-10 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-full hover:scale-105 transition duration-300 font-medium inline-block">
             Read All Testimonials
           </button>
         </div>

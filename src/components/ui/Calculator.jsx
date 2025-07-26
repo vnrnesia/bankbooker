@@ -113,7 +113,7 @@ const Calculator = () => {
 
                         {/* Submit button aligned left, size based on content */}
                         <div>
-                            <button className="mt-10 bg-blue-400 hover:bg-blue-500 transition text-white font-semibold py-3 px-8 rounded-full">
+                            <button className="mcursor-pointer mt-10 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-full hover:scale-105 transition duration-300 font-medium inline-block">
                                 Submit Request
                             </button>
                         </div>
