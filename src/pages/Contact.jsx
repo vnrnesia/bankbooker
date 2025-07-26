@@ -48,7 +48,6 @@ export default function Contact() {
   return (
     <>
       <div className="flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%]  xl:max-w-[80%] 2xl:max-w-7xl md:pt-24  mx-auto ">
-        {/* Left Form */}
         <div className="w-full md:w-[470px] space-y-6">
           <h2 className="text-3xl font-semibold text-gray-800">
             Talk To Our Friendly Sales Team

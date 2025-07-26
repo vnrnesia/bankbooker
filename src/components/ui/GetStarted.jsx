@@ -41,8 +41,8 @@ const GetStarted = () => {
 
       <div className="rounded-3xl bg-white flex flex-col md:flex-row justify-between items-center shadow-lg p-6 w-full max-w-sm lg:max-w-[90%] 2xl:max-w-7xl">
         <div className="flex flex-col items-center justify-center md:w-1/2 pr-0 md:pr-8 w-full">
-          <h2 className="pb-4 text-xl font-semibold">
-            Начните сотрудничество с нами{" "}
+          <h2 className="text-left pr-[67px] pb-4 text-xl font-semibold">
+            Начните сотрудничество с нами
           </h2>
 
           <form
