@@ -9,7 +9,7 @@ const GetStarted = () => {
 
       <div className=" rounded-3xl bg-white flex flex-col md:flex-row justify-between items-center shadow-lg p-6 w-full max-w-sm lg:max-w-[90%] 2xl:max-w-7xl">
         <div className="w-full md:w-1/2 pr-0 md:pr-8">
-          <h2 className="text-2xl font-bold mb-6">Оставьте заявку</h2>
+          
           <form>
             <div className="mb-4">
               <input
@@ -46,9 +46,9 @@ const GetStarted = () => {
 
         <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
           <img
-            src="/order.svg"
+            src="/order.png"
             alt="Order Illustration"
-            className="max-w-full h-auto"
+            className="w-[80%] h-[80%] rounded-xl"
           />
         </div>
       </div>
