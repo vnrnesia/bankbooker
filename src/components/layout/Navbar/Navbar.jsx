@@ -5,7 +5,7 @@ import ProductsDropdown from "./ProductsDropdown";
 import MobileDropdownProductsFull from "./MobileProductsDropdown";
 import Currency from "../../ui/Currency";
 
-const Navbar = () => {
+const Navbar = ({ onLearnMoreClick }) => {
   const [bannerOpen, setBannerOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
@@ -38,7 +38,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Body overflow kontrolü aynen devam eder
     document.body.style.overflow = mobileMenuOpen || desktopProductsOpen ? "hidden" : "";
     if (!mobileMenuOpen) setMobileProductsOpen(false);
   }, [mobileMenuOpen, desktopProductsOpen]);
@@ -51,27 +50,27 @@ const Navbar = () => {
 
   const isBackdropVisible = mobileMenuOpen || mobileProductsOpen || desktopProductsOpen;
 
-  // bannerOpen durumuna göre padding-top'u belirliyoruz
   const currencyPaddingClass = bannerOpen ? "pt-[140px] md:pt-[122px]" : "pt-[95px] md:pt-[78px]";
 
   return (
     <>
-      {bannerOpen && <Banner onClose={() => setBannerOpen(false)} />}
+      {bannerOpen && <Banner onClose={() => setBannerOpen(false)} onLearnMoreClick={onLearnMoreClick} />}
 
       <div
         className="fixed top-0 left-0 w-full h-full z-40 transition-none"
         style={{
           opacity: isBackdropVisible ? 1 : 0,
           pointerEvents: isBackdropVisible ? "auto" : "none",
-          transition: "none", // geçiş iptal edildi
+          transition: "none",
         }}
         onClick={closeAllMenus}
         aria-hidden={!isBackdropVisible}
       />
 
       <nav
-        className={`fixed w-full bg-white/70 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 ease-in-out ${bannerOpen ? "top-11" : "top-0"
-          }`}
+        className={`fixed w-full bg-white/70 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 ease-in-out ${
+          bannerOpen ? "top-11" : "top-0"
+        }`}
       >
         <div className="mx-auto max-w-sm md:px-0  md:max-w-[90%]   xl:max-w-[90%] 2xl:max-w-7xl  flex items-center justify-between py-4 px-4">
           <div className="flex items-center">
@@ -109,20 +108,23 @@ const Navbar = () => {
 
           <button
             aria-label="Toggle menu"
-            className="md:hidden flex flex-col justify-center items-center w-14 h-16 space-y-1 overflow-hidden focus:outline-none z-50"
+            className="bg-gray-100 rounded-lg md:hidden flex flex-col justify-center items-center w-14 h-14 mt-2 space-y-1 overflow-hidden focus:outline-none z-50"
             onClick={toggleMobileMenu}
           >
             <span
-              className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
-                }`}
+              className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${
+                mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
+              }`}
             />
             <span
-              className={`block h-0.5 w-7 bg-black rounded transition duration-300 ease-in-out ${mobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
+              className={`block h-0.5 w-7 bg-black rounded transition duration-300 ease-in-out ${
+                mobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
             />
             <span
-              className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
-                }`}
+              className={`block h-0.5 w-7 bg-black rounded transform transition duration-300 ease-in-out origin-center ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+              }`}
             />
           </button>
         </div>
@@ -139,8 +141,9 @@ const Navbar = () => {
                 >
                   Products
                   <svg
-                    className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileProductsOpen ? "rotate-180" : ""
-                      }`}
+                    className={`w-5 h-5 ml-2 transition-transform duration-300 ${
+                      mobileProductsOpen ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -156,25 +159,13 @@ const Navbar = () => {
                   </div>
                 )}
 
-                <Link
-                  to="/solutions"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
+                <Link to="/solutions" className="block text-black hover:text-blue-600" onClick={closeAllMenus}>
                   Solutions
                 </Link>
-                <Link
-                  to="/partner"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
+                <Link to="/partner" className="block text-black hover:text-blue-600" onClick={closeAllMenus}>
                   Partners
                 </Link>
-                <Link
-                  to="/contact"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
+                <Link to="/contact" className="block text-black hover:text-blue-600" onClick={closeAllMenus}>
                   Contact
                 </Link>
 

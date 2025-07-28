@@ -75,7 +75,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                 />
               </g>
             </svg>
-            <span className="mt-[2px]">Заявка</span>
+            <span className="pt-[3px]">Заявка</span>
           </button>
           <SlideOverForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </li>
@@ -83,7 +83,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
         <li>
           <a
             href="tel:+79178899457"
-            className="flex flex-col  -mr-2 items-center text-gray-600 mt-[-4px]"
+            className="flex flex-col -mr-2 items-center text-gray-600 mt-[-4px]"
           >
             <svg
               viewBox="0 0 48 48"
@@ -91,6 +91,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               fill="#000000"
               width="30px"
               height="30px"
+            
             >
               <g strokeWidth="0"></g>
               <g strokeLinecap="round" strokeLinejoin="round"></g>
@@ -104,7 +105,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                 />
               </g>
             </svg>
-            <span className="mt-[px]">Звонок</span>
+            <span className="mt-[4px]">Звонок</span>
           </a>
         </li>
 
@@ -114,7 +115,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             className="h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
           >
             <img src={chatbubble} alt="" className="w-7 h-7" />
-            <p className="w-24 text-gray-400  mb-[2px]">Сообщение</p>
+            <p className="w-24  mb-[-2px]">Сообщение</p>
           </button>
         </li>
 
@@ -182,7 +183,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               </g>
             </svg>
 
-            <span className="mt-[2px] py-[px]">Меню</span>
+            <span className="mt-[4px] py-[px]">Меню</span>
           </button>
         </li>
 

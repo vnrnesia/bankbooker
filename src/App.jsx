@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "@/pages/Home.jsx";
 import Legal from "@/pages/Legal.jsx";
@@ -16,17 +17,23 @@ import ToolbarMobile from "./components/layout/ToolbarMobile";
 
 function App() {
   const location = useLocation();
+  const getStartedRef = useRef(null);
+
+  const scrollToGetStarted = () => {
+    getStartedRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Navbar/>
-     
-  
+      <Navbar onLearnMoreClick={scrollToGetStarted} />
 
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home getStartedRef={getStartedRef} onGetStartedClick={scrollToGetStarted} />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/accounting" element={<Accounting />} />
           <Route path="/consulting" element={<Consulting />} />
@@ -39,8 +46,8 @@ function App() {
       </main>
 
       {location.pathname !== "/contact" && <Footer />}
-      <Chatbot/>
-      <ToolbarMobile/>
+      <Chatbot />
+      <ToolbarMobile />
     </div>
   );
 }

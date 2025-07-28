@@ -123,9 +123,9 @@ const GetStarted = () => {
 
             <button
               type="submit"
-              className="bg-gradient-to-l w-full text-center from-[#0273DE] to-[#10B0EB] text-white py-3 rounded-full hover:scale-105 transition duration-300 font-medium text-sm"
+              className="bg-gradient-to-l w-full text-center from-[#0273DE] to-[#10B0EB] text-white py-3 rounded-md hover:scale-105 transition duration-300 font-medium text-sm"
             >
-              Submit
+              See a demo
             </button>
 
             <div className="mt-2 text-sm text-gray-600 space-y-2 w-full">

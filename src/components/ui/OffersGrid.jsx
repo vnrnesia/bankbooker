@@ -37,9 +37,10 @@ const offers = [
     duration: "3–5 Дней",
     commission: "2,5%",
   },
+  
 ];
 
-export default function OffersGrid() {
+export default function OffersGrid({ onGetStartedClick }) {
   return (
     <section className="bg-white py-12 font-[Manrope] ">
       <div>
@@ -53,7 +54,6 @@ export default function OffersGrid() {
             </h1>
           </div>
 
-          {/* Sağ açıklama kısmı — TAM SAĞA YASLI */}
           <div className="flex justify-end text-right">
             <p className="text-left text-gray-500 font-medium font-[Manrope] max-w-md text-md leading-relaxed">
               У нас есть решения для бизнеса любого масштаба —<br />
@@ -64,14 +64,12 @@ export default function OffersGrid() {
           </div>
         </div>
 
-        {/* Kartlar */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {offers.map((offer, idx) => (
             <div
               key={idx}
               className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col justify-between"
             >
-              {/* Üst bölüm: bayrak + ülke */}
               <div className="flex items-center space-x-3 mb-6">
                 <img
                   src={tr}
@@ -83,7 +81,6 @@ export default function OffersGrid() {
                 </h3>
               </div>
 
-              {/* Alt bilgiler */}
               <div className="flex justify-between text-sm text-gray-600 border-t pt-4">
                 <div>
                   <p className="text-gray-400">Курс</p>
@@ -100,11 +97,14 @@ export default function OffersGrid() {
               </div>
               <div className="pt-2 min-w-full">
                 <div className="pt-2 w-full">
-                  <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm">
-                    <div className="flex-grow px-4 py-2 text-sm text-gray-400 bg-gray-100">
-                      На Сбер или в другой банк
+                  <div
+                    onClick={onGetStartedClick}
+                    className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer"
+                  >
+                    <div className="flex-grow px-4 py-2 text-base bg-gray-100">
+                      Оставьте заявку
                     </div>
-                    <div className="flex items-center justify-center px-4 bg-green-600 hover:bg-green-700 transition-colors">
+                    <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-150 transition duration-300">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-5 h-5 text-white"

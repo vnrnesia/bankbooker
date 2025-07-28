@@ -6,9 +6,10 @@ import { MoveRight } from "lucide-react";
 
 interface BannerProps {
   onClose?: () => void;
+  onLearnMoreClick?: () => void;
 }
 
-export default function Banner({ onClose }: BannerProps) {
+export default function Banner({ onClose, onLearnMoreClick }: BannerProps) {
   return (
     <div className="relative flex w-full flex-col items-center overflow-y-auto">
       <StickyBanner className="bg-black w-full" onClose={onClose} hideOnScroll>
@@ -17,13 +18,23 @@ export default function Banner({ onClose }: BannerProps) {
 
           <div className="h-px w-2 bg-white self-center hidden md:block " />
 
-          <span className="text-[#A3A3A3]  text-xs md:text-base  whitespace-nowrap">
+          <span className="text-[#A3A3A3] text-xs md:text-base whitespace-nowrap">
             Let BB handle your financial situation 
           </span>
 
           <div className="h-px w-2 bg-white self-center hidden md:block" />
 
-          <span className="whitespace-nowrap  text-xs md:text-base font-medium inline-flex items-center group cursor-pointer">
+          <span
+            className="whitespace-nowrap text-xs md:text-base font-medium inline-flex items-center group cursor-pointer"
+            onClick={onLearnMoreClick}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                onLearnMoreClick && onLearnMoreClick();
+              }
+            }}
+          >
             Learn more
             <MoveRight
               className="ml-1 w-3 md:w-5 mt-[2px] transition-transform duration-200 ease-in-out group-hover:translate-x-1"

@@ -69,13 +69,15 @@ const Info = () => {
     <section className="max-w-7xl mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope]">
       {/* Left Side */}
       <div>
-        <h4 className="text-gray-600 text-md font-medium mb-2">About Bankbooker</h4>
+        <h4 className="text-gray-600 text-md font-medium mb-2">
+          About Bankbooker
+        </h4>
         <h2 className="text-3xl lg:text-4xl font-semibold text-neutral-900 mb-4 leading-tight">
           Innovative Financial Solutions
           <br />
           Changing Business Landscape
         </h2>
-        <p className="text-gray-500 mb-6 max-w-2xl py-10">
+        <p className="text-gray-500 mb-6 max-w-2xl py-14">
           Transform your business with Bankbooker specialized financial
           solutions crafted to propel your journey to success. Our deep industry
           knowledge and strategic approach ensure we guide organizations through
@@ -83,43 +85,49 @@ const Info = () => {
           outcomes.
         </p>
 
-        <button className="hidden lg:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
+        <button className="hidden lg:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-4 rounded-lg">
           Discover More
         </button>
 
-        <div className=" mt-10 grid grid-cols-3 divide-x divide-gray-200 text-center">
+        <div className=" md:mt-20 grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
-            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">24+</p>
-            <p className="text-md text-gray-500 mt-1">Years of collective experience</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+              24+
+            </p>
+            <p className="text-md text-gray-500 mt-1">
+              Years of collective experience
+            </p>
           </div>
           <div className="px-4">
-            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">95%</p>
-            <p className="text-md text-gray-500 mt-1">Remarkable client satisfaction rate</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+              95%
+            </p>
+            <p className="text-md text-gray-500 mt-1">
+              Remarkable client satisfaction rate
+            </p>
           </div>
           <div>
-            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">500+</p>
-            <p className="text-md text-gray-500 mt-1">Successfully created projects</p>
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+              500+
+            </p>
+            <p className="text-md text-gray-500 mt-1">
+              Successfully created projects
+            </p>
           </div>
         </div>
-       <div className="pt-10 justify-center items-center flex">
+        <div className="pt-10 justify-center items-center flex">
           <button className="block lg:hidden bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
-          Discover More
-        </button>
-       </div>
+            Discover More
+          </button>
+        </div>
       </div>
 
       {/* Right Side */}
       <div className="space-y-6">
         {/* Background image card */}
-        <div
-          className="relative rounded-xl overflow-hidden h-72 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${handshake})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
-            <h3 className="text-lg font-semibold">Your Goals Are Our Top Priority</h3>
-            <p className="text-sm">Ivan Surname – CEO Bankbooker</p>
+        <div>
+          <div className="bg-gradient-to-r from-[#006FDC] rounded-lg flex items-center justify-center p-10 to-[#11B4EC]">
+            <img src="/world.png" alt="" className="w-[300px]" />
           </div>
         </div>
 
