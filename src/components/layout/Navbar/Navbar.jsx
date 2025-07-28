@@ -95,9 +95,7 @@ const Navbar = ({ onLearnMoreClick }) => {
           </div>
 
           <div className="hidden md:flex space-x-4 items-center">
-            <a href="#" className="text-black my-auto font-medium">
-              Sign In
-            </a>
+          
             <a
               href="#"
               className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-4 py-2 rounded font-medium"

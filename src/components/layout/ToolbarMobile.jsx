@@ -105,7 +105,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                 />
               </g>
             </svg>
-            <span className="mt-[4px]">Звонок</span>
+            <span className="mt-[3px]">Звонок</span>
           </a>
         </li>
 
