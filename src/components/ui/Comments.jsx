@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 import brand1 from "@/assets/Comment/brand1.png";
 import brand2 from "@/assets/Comment/brand2.png";
 import brand3 from "@/assets/Comment/brand3.png";
@@ -12,6 +11,7 @@ import brand6 from "@/assets/Comment/brand6.png";
 import avatar1 from "@/assets/Avatar/avatar1.png";
 import avatar2 from "@/assets/Avatar/avatar2.png";
 import avatar3 from "@/assets/Avatar/avatar3.png";
+import ToGetStarted from "./ToGetStarted";
 
 const testimonials = [
   {
@@ -36,7 +36,7 @@ const testimonials = [
 
 const brandImages = [brand1, brand2, brand3, brand4, brand5, brand6];
 
-const Comments = () => {
+const Comments = ({ onGetStartedClick }) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
@@ -74,8 +74,8 @@ const Comments = () => {
             Client Experiences That <br />
             Speak for Themselves
           </h2>
-          <button className="cursor-pointer mt-10 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-full hover:scale-105 transition duration-300 font-medium inline-block">
-            Read All Testimonials
+          <button onClick={onGetStartedClick}>
+            <ToGetStarted text="Свяжитесь с нами" />
           </button>
         </div>
 

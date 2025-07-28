@@ -74,7 +74,7 @@ const Footer = () => {
     <>
       <footer className="w-full min-h-[610px] bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] text-gray-800 font-manrope overflow-hidden">
         <div className="w-full">
-          <div className="max-w-sm md:max-w-7xl mx-auto pb-8 md:pb-12">
+          <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto pb-8 md:pb-12">
             <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
               <div className="footer-left max-w-xl py-8 md:py-24">
                 <Link to="/" className="flex items-center gap-2 mb-4">
@@ -130,17 +130,8 @@ const Footer = () => {
         </div>
       </footer>
 
-      <div className="w-full border-t border-gray-300 bg-white mb-10 md:mb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="footer-menu flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-[142px] text-gray-600 text-sm font-semibold text-center">
-            <Link to="#">Services</Link>
-            <Link to="#">Who We Are</Link>
-            <Link to="#">Insights</Link>
-            <Link to="#">Careers</Link>
-            <Link to="#">Team</Link>
-            <Link to="#">Contact Us</Link>
-          </div>
-        </div>
+      <div className="w-full border-t border-gray-300 bg-white mb-1 ">
+       
 
         <div className="hidden md:block w-full max-w-[1270px] mx-auto border-t border-gray-300" />
 
@@ -154,12 +145,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex gap-6 pb-10 md:pb-0">
-              <Link to="#"><img src="/social/icon1.png" alt="X" width={24} height={24} /></Link>
-              <Link to="#"><img src="/social/icon2.png" alt="LinkedIn" width={24} height={24} /></Link>
-              <Link to="#"><img src="/social/icon3.png" alt="Facebook" width={24} height={24} /></Link>
-              <Link to="#"><img src="/social/icon4.png" alt="Instagram" width={24} height={24} /></Link>
-            </div>
+          
           </div>
         </div>
       </div>

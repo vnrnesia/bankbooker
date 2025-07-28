@@ -1,48 +1,63 @@
-import tr from "@/assets/tr.png";
-
 const offers = [
   {
-    country: "Турция",
+    country: "Россия",
+    flag: "/flags/russia.svg",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-13",
+    flagHeight: "h-10",
   },
   {
     country: "Турция",
+    flag: "/flags/turkey.svg",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-14",
+    flagHeight: "h-10",
   },
   {
-    country: "Турция",
+    country: "Бразилия",
+    flag: "/flags/brazil.svg",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-14",
+    flagHeight: "h-10",
   },
   {
-    country: "Турция",
+    country: "Китай",
+    flag: "/flags/china.svg",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-14",
+    flagHeight: "h-10",
   },
   {
-    country: "Турция",
+    country: "ОАЭ",
+    flag: "/flags/uae.svg",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-14",
+    flagHeight: "h-10",
   },
   {
-    country: "Турция",
+    country: "Узбекистан",
+    flag: "/flags/uzbekistan.png",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
+    flagWidth: "w-14",
+    flagHeight: "h-1*",
   },
-  
 ];
 
 export default function OffersGrid({ onGetStartedClick }) {
   return (
-    <section className="bg-white py-12 font-[Manrope] ">
+    <section className="bg-white py-12 font-[Manrope]">
       <div>
         <div className="grid md:grid-cols-2 gap-6 mb-12 items-start justify-between">
           <div>
@@ -72,9 +87,9 @@ export default function OffersGrid({ onGetStartedClick }) {
             >
               <div className="flex items-center space-x-3 mb-6">
                 <img
-                  src={tr}
-                  alt="TR"
-                  className="w-10 h-10 rounded-full object-cover"
+                  src={offer.flag}
+                  alt={offer.country}
+                  className={`${offer.flagWidth} ${offer.flagHeight} rounded-md shadow-md`}
                 />
                 <h3 className="text-xl font-medium text-gray-800">
                   {offer.country}
@@ -95,6 +110,7 @@ export default function OffersGrid({ onGetStartedClick }) {
                   <p className="font-medium">{offer.commission}</p>
                 </div>
               </div>
+
               <div className="pt-2 min-w-full">
                 <div className="pt-2 w-full">
                   <div

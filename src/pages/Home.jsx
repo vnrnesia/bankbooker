@@ -50,10 +50,10 @@ function Home({ getStartedRef, onGetStartedClick }) {
 
       <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] 3xl:max-w-[100%] container mx-auto ">
         <div className="md:pb-24">
-          <Info />
+          <Info onGetStartedClick={onGetStartedClick} />
         </div>
         <div className="max-w-7xl mx-auto">
-          <Comments />
+          <Comments onGetStartedClick={onGetStartedClick}  />
         </div>
         <div className="mb-16 md:pb-0 md:pt-24 md:py-16">
           <AccordionMenu />

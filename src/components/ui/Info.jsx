@@ -2,7 +2,7 @@ import { useState } from "react";
 import handshake from "@/assets/handshake.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
+import ToGetStarted from "./ToGetStarted";
 const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="bg-white rounded-xl shadow p-6">
@@ -41,7 +41,7 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   );
 };
 
-const Info = () => {
+const Info = ({ onGetStartedClick }) => {
   const [isVisionOpen, setVisionOpen] = useState(true);
   const [isMissionOpen, setMissionOpen] = useState(false);
 
@@ -72,7 +72,7 @@ const Info = () => {
         <h4 className="text-gray-600 text-md font-medium mb-2">
           About Bankbooker
         </h4>
-        <h2 className="text-3xl lg:text-4xl font-semibold text-neutral-900 mb-4 leading-tight">
+        <h2 className="text-3xl lg:text-4xl font-semibold text-neutral-900 md:mb-24 leading-tight">
           Innovative Financial Solutions
           <br />
           Changing Business Landscape
@@ -84,10 +84,6 @@ const Info = () => {
           complexities, enabling them to achieve impactful growth and enduring
           outcomes.
         </p>
-
-        <button className="hidden lg:block bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-4 rounded-lg">
-          Discover More
-        </button>
 
         <div className=" md:mt-20 grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
@@ -116,9 +112,7 @@ const Info = () => {
           </div>
         </div>
         <div className="pt-10 justify-center items-center flex">
-          <button className="block lg:hidden bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] hover:bg-blue-700 text-white font-medium px-9 py-3 rounded-lg">
-            Discover More
-          </button>
+         
         </div>
       </div>
 
