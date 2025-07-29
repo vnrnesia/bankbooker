@@ -142,7 +142,6 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   ))}
                 </div>
 
-                {/* Connect with Bankbooker Column */}
                 <div>
                   <SectionHeader title="Connect Bankbooker" />
                   <Divider />

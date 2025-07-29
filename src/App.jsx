@@ -30,10 +30,12 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Navbar onLearnMoreClick={scrollToGetStarted} />
-
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home getStartedRef={getStartedRef} onGetStartedClick={scrollToGetStarted} />} />
+          <Route
+            path="/"
+            element={<Home getStartedRef={getStartedRef} onGetStartedClick={scrollToGetStarted} />}
+          />
           <Route path="/legal" element={<Legal />} />
           <Route path="/accounting" element={<Accounting />} />
           <Route path="/consulting" element={<Consulting />} />
@@ -44,10 +46,9 @@ function App() {
           <Route path="/partner" element={<Partner />} />
         </Routes>
       </main>
-
       {location.pathname !== "/contact" && <Footer />}
       <Chatbot />
-      <ToolbarMobile />
+      <ToolbarMobile scrollToGetStarted={scrollToGetStarted} />
     </div>
   );
 }

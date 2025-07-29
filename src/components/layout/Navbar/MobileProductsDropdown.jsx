@@ -20,15 +20,7 @@ const products = [
     imageHeight: 36,
     imageClassName: "object-contain mr-2",
   },
-  {
-    href: "/products/accounting",
-    title: "Accounting Outsourcing",
-    description: "Simplify close and earn rewards",
-    imageSrc: "/productsdropdown/invoice.png",
-    imageWidth: 30,
-    imageHeight: 28,
-    imageClassName: "object-contain mr-2",
-  },
+  
 ];
 
 const connectWithBankbooker = [

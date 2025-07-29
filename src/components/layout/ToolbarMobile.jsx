@@ -1,32 +1,22 @@
-
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
-import Modal from "react";
 import chatbubble from "@/assets/chatbubble.png";
 import bankbooker from "@/assets/bankbooker.png";
 
 const icons = {
   whatsapp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-  telegram:
-    "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+  telegram: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
   gmail: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png",
   phone: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
 };
 
-export default function ToolbarMobile({ setMobileMenuOpen }) {
+export default function ToolbarMobile({ scrollToGetStarted }) {
   const [showMessageMenu, setShowMessageMenu] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false);
   const toggleMessageMenu = () => {
     setShowMessageMenu((prev) => !prev);
   };
-
-  useEffect(() => {
-    console.log("isOpen değişti:", isOpen);
-  }, [isOpen]);
 
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-gray-100 border-t z-50 md:hidden">
@@ -43,7 +33,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
 
         <li>
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={scrollToGetStarted}
             className="flex pl- flex-col items-center text-gray-600"
           >
             <svg
@@ -77,7 +67,6 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             </svg>
             <span className="pt-[3px]">Заявка</span>
           </button>
-          <SlideOverForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </li>
 
         <li>
@@ -91,7 +80,6 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               fill="#000000"
               width="30px"
               height="30px"
-            
             >
               <g strokeWidth="0"></g>
               <g strokeLinecap="round" strokeLinejoin="round"></g>
@@ -115,7 +103,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             className="h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
           >
             <img src={chatbubble} alt="" className="w-7 h-7" />
-            <p className="w-24  mb-[-2px]">Сообщение</p>
+            <p className="w-24 mb-[-2px]">Сообщение</p>
           </button>
         </li>
 
@@ -182,7 +170,6 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                 </g>
               </g>
             </svg>
-
             <span className="mt-[4px] py-[px]">Меню</span>
           </button>
         </li>
@@ -261,9 +248,6 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                   />
                 </svg>
               </a>
-
-             
-             
             </motion.div>
           )}
         </AnimatePresence>

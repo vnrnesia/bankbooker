@@ -74,7 +74,7 @@ const Footer = () => {
     <>
       <footer className="w-full min-h-[610px] bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] text-gray-800 font-manrope overflow-hidden">
         <div className="w-full">
-          <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto pb-8 md:pb-12">
+          <div className="px-4 md:px-0 max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto pb-8 md:pb-12">
             <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
               <div className="footer-left max-w-xl py-8 md:py-24">
                 <Link to="/" className="flex items-center gap-2 mb-4">
@@ -87,17 +87,17 @@ const Footer = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
                   Ready to Take Control Of <br className="hidden sm:block" /> Your Finances?
                 </h2>
-                <p className="text-gray-400 font-sans font-light mb-5">
+                <p className="text-gray-600 font-sans font-light mb-5">
                   We look forward to learning about your financial goals.
                 </p>
-                <div className="pt-8 md:pt-16">
-                  <button className="bg-[#047EDF] hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-full transition-colors duration-300">
+                <div className="pt-4 md:pt-16">
+                  <button className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300">
                     Free Consultation
                   </button>
                 </div>
               </div>
 
-              <div className="footer-right grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm pt-8 md:pt-48 text-gray-600">
+              <div className="footer-right grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm md:pt-48 text-gray-600">
                 <div className="space-y-4">
                   <h4 className="text-base font-semibold text-gray-800 tracking-wide mb-4">
                     CONTACT US
@@ -135,7 +135,7 @@ const Footer = () => {
 
         <div className="hidden md:block w-full max-w-[1270px] mx-auto border-t border-gray-300" />
 
-        <div className="footer-bottom max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="footer-bottom max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-4 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <div className="text-gray-600 flex flex-wrap items-center justify-center gap-4">
               <span>2025 Bankbooker. All rights reserved.</span>
