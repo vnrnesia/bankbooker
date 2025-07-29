@@ -1,57 +1,51 @@
 const offers = [
-  {
-    country: "Россия",
-    flag: "/flags/russia.svg",
-    course: "Инвестинг",
-    duration: "3–5 Дней",
-    commission: "2,5%",
-    flagWidth: "w-13",
-    flagHeight: "h-10",
-  },
-  {
-    country: "Турция",
-    flag: "/flags/turkey.svg",
-    course: "Инвестинг",
-    duration: "3–5 Дней",
-    commission: "2,5%",
-    flagWidth: "w-14",
-    flagHeight: "h-10",
-  },
-  {
-    country: "Бразилия",
-    flag: "/flags/brazil.svg",
-    course: "Инвестинг",
-    duration: "3–5 Дней",
-    commission: "2,5%",
-    flagWidth: "w-14",
-    flagHeight: "h-10",
-  },
-  {
+    {
     country: "Китай",
-    flag: "/flags/china.svg",
+    flag: "/flags/china.png",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
-    flagWidth: "w-14",
-    flagHeight: "h-10",
+    offsetClass: "left-[5px] top-[1px]",
   },
   {
     country: "ОАЭ",
-    flag: "/flags/uae.svg",
+    flag: "/flags/uae.png",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
-    flagWidth: "w-14",
-    flagHeight: "h-10",
+    offsetClass: "left-[0px] top-[0px]",
   },
   {
-    country: "Узбекистан",
-    flag: "/flags/uzbekistan.png",
+    country: "Турция",
+    flag: "/flags/turkey.png",
     course: "Инвестинг",
     duration: "3–5 Дней",
     commission: "2,5%",
-    flagWidth: "w-14",
-    flagHeight: "h-1*",
+    offsetClass: "left-[-1px] top-[1px]",
+  },
+  {
+    country: "Германия",
+    flag: "/flags/germany.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[0px] top-[1px]",
+  },
+  {
+    country: "Индия",
+    flag: "/flags/india.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[0px] top-[0px]",
+  },
+  {
+    country: "США",
+    flag: "/flags/usa.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[1px] top-[1px]",
   },
 ];
 
@@ -86,11 +80,15 @@ export default function OffersGrid({ onGetStartedClick }) {
               className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col justify-between"
             >
               <div className="flex items-center space-x-3 mb-6">
-                <img
-                  src={offer.flag}
-                  alt={offer.country}
-                  className={`${offer.flagWidth} ${offer.flagHeight} rounded-md shadow-md`}
-                />
+                <div className="relative w-10 h-10 shrink-0">
+                  <img
+                    src={offer.flag}
+                    alt={offer.country}
+                    className={`absolute w-full h-full object-cover rounded-full ${
+                      offer.offsetClass || ""
+                    }`}
+                  />
+                </div>
                 <h3 className="text-xl font-medium text-gray-800">
                   {offer.country}
                 </h3>
