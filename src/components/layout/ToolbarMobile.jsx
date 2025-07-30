@@ -28,7 +28,7 @@ export default function ToolbarMobile({ scrollToGetStarted }) {
             className="flex flex-col items-center text-gray-600 mt-[-2px]"
           >
             <img src={bankbooker} className="w-[46px] mt-[-2px]" />
-            <span className="mt-[-6.6px]">Главная</span>
+            <span className="mt-[-9px]">Главная</span>
           </Link>
         </li>
 
