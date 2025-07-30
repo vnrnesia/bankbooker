@@ -8,7 +8,7 @@ const Contact = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto ">
         {/* Telegram Card */}
-        <div className="bg-gray-100 group rounded-2xl p-6 h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
+        <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 group-hover:text-white mb-1 transition duration-300">
             Work With Us
           </p>
@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
 
         {/* Visit Office Card */}
-        <div className="bg-gray-100 group rounded-2xl p-6 h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
+        <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 mb-1 transition duration-300 group-hover:text-white">
             Get Closer
           </p>
@@ -67,7 +67,7 @@ const Contact = () => {
         </div>
 
         {/* Get In Touch Card */}
-        <div className="bg-gray-100 group rounded-2xl p-6 h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
+        <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 mb-1 transition duration-300 group-hover:text-white">
             For Consulting
           </p>

@@ -6,7 +6,8 @@ import bankbooker from "@/assets/bankbooker.png";
 
 const icons = {
   whatsapp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-  telegram: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+  telegram:
+    "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
   gmail: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png",
   phone: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
 };
@@ -26,8 +27,8 @@ export default function ToolbarMobile({ scrollToGetStarted }) {
             to="/"
             className="flex flex-col items-center text-gray-600 mt-[-2px]"
           >
-            <img src={bankbooker} className="w-[39px] mt-[-2px]" />
-            <span className="mt-[-4px]">Главная</span>
+            <img src={bankbooker} className="w-[46px] mt-[-2px]" />
+            <span className="mt-[-6.6px]">Главная</span>
           </Link>
         </li>
 
@@ -100,9 +101,13 @@ export default function ToolbarMobile({ scrollToGetStarted }) {
         <li className="">
           <button
             onClick={toggleMessageMenu}
-            className="h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
+            className=" h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
           >
             <img src={chatbubble} alt="" className="w-7 h-7" />
+            <h3 className="absolute top-1 right-7 flex items-center justify-center rounded-full bg-red-600 w-4 h-4 text-white text-xs">
+              1
+            </h3>
+
             <p className="w-24 mb-[-2px]">Сообщение</p>
           </button>
         </li>

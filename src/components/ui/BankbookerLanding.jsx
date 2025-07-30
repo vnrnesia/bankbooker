@@ -88,39 +88,26 @@ const HeroSection = ({ onGetStartedClick }) => {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
-                <div>
+              <div className=" bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
+                <div className="">
                   <div className="font-medium text-lg">
-                    Proven Business & Financial Expertise
+                    Лучшие условия по оплате инвойсов
                   </div>
                   <div className="text-sm mt-1 leading-snug py-4">
-                    Bankbooker Reliable seeds for business & financial growth.
-                    Our consultants are the Best Today
+                    оплата за один день ЕС, Китай, США
                   </div>
-                  <button className="border mt-4 border-gray-300 px-5 py-2 rounded-lg text-xs text-white hover:bg-white hover:text-black transition duration-300">
-                    Learn More
-                  </button>
-                </div>
-                <div className="mt-6">
-                  <div className="flex items-center gap-2 mt-3 text-white">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-[#00A3FF] flex items-center justify-center">
-                      <svg
-                        className="w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <span className="text-sm">
-                      How does it work?
-                      <br />
-                      <span className="text-[13px] text-white/80">
-                        Play video
-                      </span>
-                    </span>
+                  <div className="flex gap-4">
+                    <button className="border mt-4 border-gray-300 px-5 py-2 rounded-lg text-xs text-white hover:bg-white hover:text-black transition duration-300">
+                      Свзтся с нами
+                    </button>
+                    <h2 className="pt-4  my-auto">от 1.5%</h2>
                   </div>
                 </div>
+                <img
+                  src="/illustration.png"
+                  alt="illustration"
+                  className="flex  ml-2 md:ml-10 w-[85%] md:w-[70%]"
+                />
               </div>
             </div>
           </div>
