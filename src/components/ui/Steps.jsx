@@ -4,24 +4,24 @@ import { useEffect, useRef, useState } from "react";
 export default function Steps() {
   const steps = [
     {
-      title: "Initial Consultation",
+      title: "Инвойс",
       description:
-        "We begin by understanding your business, industry challenges, and financial goals.",
+        "Вы присылаете Инвойс",
     },
     {
-      title: "Strategic Planning",
+      title: "Договор",
       description:
-        "We develop a personalized strategy to meet your specific business objectives.",
+        "Мы оставляем вам счет в рублях от нашего 000 или ИП по курсу ЦБ",
     },
     {
-      title: "Execution",
+      title: "Оплата",
       description:
-        "Our team implements the strategies with attention to detail and efficiency.",
+        "OВы осуществляете оплату по выставленному счету на наши реквизиты",
     },
     {
-      title: "Review & Support",
+      title: "Перевод",
       description:
-        "We monitor progress and provide ongoing support to ensure continued success.",
+        "Мы в тот же день производим оплату по вашему поручению нашей зарубежной компании.",
     },
   ];
 
@@ -44,7 +44,7 @@ export default function Steps() {
         <div className="max-w-sm md:max-w-5xl mx-auto text-center mb-12 md:mb-16">
           <h3 className="text-gray-600 mb-2">Our Process</h3>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-            4 Easy Steps To Achieve Your Goals
+            4 этапа оплаты вашего инвойса
           </h2>
           <p className="text-gray-500 mb-16 max-w-2xl mx-auto">
             Our consulting process is structured to ensure comprehensive

@@ -72,26 +72,21 @@ const Info = ({ onGetStartedClick }) => {
         <h4 className="text-gray-600 text-md font-medium mb-2">
           About Bankbooker
         </h4>
-        <h2 className="text-3xl lg:text-4xl font-semibold text-neutral-900 md:mb-24 leading-tight">
-          Innovative Financial Solutions
-          <br />
-          Changing Business Landscape
+        <h2 className="text-3xl pb-10 md:pb-0 lg:text-4xl font-semibold text-neutral-900 md:mb-20 leading-tight">
+          Международные переводы в любую точку мира
         </h2>
-        <p className="text-gray-500 mb-6 max-w-2xl py-14">
-          Transform your business with Bankbooker specialized financial
-          solutions crafted to propel your journey to success. Our deep industry
-          knowledge and strategic approach ensure we guide organizations through
-          complexities, enabling them to achieve impactful growth and enduring
-          outcomes.
+        <p className="text-gray-500 mb-6 max-w-2xl pb-10">
+          Мы международный плательный агент, осуществляющий платежи по вашему
+          поручению в любую страну.
         </p>
 
-        <div className=" md:mt-20 grid grid-cols-3 divide-x divide-gray-200 text-center">
+        <div className=" grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
             <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
-              24+
+              38+
             </p>
             <p className="text-md text-gray-500 mt-1">
-              Years of collective experience
+              Стран в которые мы осуществляем переводы
             </p>
           </div>
           <div className="px-4">
@@ -99,7 +94,7 @@ const Info = ({ onGetStartedClick }) => {
               95%
             </p>
             <p className="text-md text-gray-500 mt-1">
-              Remarkable client satisfaction rate
+              Платежей проходят День в день
             </p>
           </div>
           <div>
@@ -107,12 +102,10 @@ const Info = ({ onGetStartedClick }) => {
               500+
             </p>
             <p className="text-md text-gray-500 mt-1">
-              Successfully created projects
+              Довольных клиентов сервиса Регулярно проводят свои платежи через
+              нас
             </p>
           </div>
-        </div>
-        <div className="pt-10 justify-center items-center flex">
-         
         </div>
       </div>
 
@@ -120,8 +113,8 @@ const Info = ({ onGetStartedClick }) => {
       <div className="space-y-6">
         {/* Background image card */}
         <div>
-          <div className="bg-gradient-to-r from-[#006FDC] rounded-lg flex items-center justify-center p-10 to-[#11B4EC]">
-            <img src="/world.png" alt="" className="w-[300px]" />
+          <div className="bg-gradient-to-r from-[#006FDC] rounded-lg flex items-center justify-center p-10 to-[#11B4EC] h-[200px]">
+            <img src="/world.png" alt="" className="w-[280px] " />
           </div>
         </div>
 

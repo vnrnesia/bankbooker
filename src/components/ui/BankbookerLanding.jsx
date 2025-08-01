@@ -45,7 +45,8 @@ const HeroSection = ({ onGetStartedClick }) => {
                   <div className="flex items-center gap-4 text-center">
                     <div className="text-3xl sm:text-4xl font-sans">120+</div>
                     <div className="text-sm leading-snug max-w-[220px] text-left">
-                      Grow Smarter, Faster With Bankbooker Financial Solutions
+                      Агентов и Брокеров оплачивают инвойсы своих клиентов через
+                      наш сервис{" "}
                     </div>
                   </div>
                   <div className="h-[1px] w-full bg-gray-300 mt-2" />

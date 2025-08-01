@@ -3,6 +3,7 @@ import icon1 from "@/assets/LeftPanel/icon1.png";
 import icon2 from "@/assets/LeftPanel/icon2.png";
 import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
+import { Check } from "lucide-react";
 const WhyChooseUs = () => {
   return (
     <section className="m max-w- mx-auto font-[Manrope] min-h-[550px] bg-gradient-to-r from-sky-500 to-blue-600 px-4 flex items-center">
@@ -10,7 +11,7 @@ const WhyChooseUs = () => {
         {/* Left Card */}
         <div className="rounded-xl border-4 h-[500px] w-auto 3xl:min-w-[900px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none">
           <p className="text-gray-700 font-medium text-md text-center mb-2">
-            There Are Some Results We Have <br /> Already Achieved Together
+            Финансовые консалтинг и услуги международных переводов для B2B
           </p>
           <div className="w-[220px] h-[220px] rounded-full overflow-hidden ">
             <img
@@ -51,33 +52,60 @@ const WhyChooseUs = () => {
         {/* Right Card */}
         <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl text-center lg:text-start">
           <div>
-            <p className="text-white text-sm font-light mb-2">Why Choose Us</p>
+            <p className="text-white text-sm font-light mb-2">
+              Почему выбирают нас
+            </p>
             <h2 className="text-2xl lg:text-3xl font-semibold leading-snug mb-4">
-              We Will Help You Achieve All Your Business Goals
+              Предоставляем сервис безопасной сделки и хеджируем все риски
             </h2>
             <p className="text-white/80 text-sm mb-6 max-w-lg">
-              Choosing us means partnering with a team dedicated to helping you
-              navigate complex business challenges with confidence. We're here
-              to drive your success every step of the way.
+              Обесчиваем юридическую чистоту проводимых операций Производим
+              предварительную оценку рисков всего контура сделки и
+              предварительный скоринг всех документов по операциям.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm mb-6">
-            <p>✔ Expertise in Various Industries</p>
-            <p>✔ Experienced Team of Professionals</p>
-            <p>✔ Customized Solutions</p>
-            <p>✔ Efficient Implementation Support</p>
-            <p>✔ Data-Driven Insights</p>
-            <p>✔ Focus on ROI and Growth</p>
-            <p>✔ Commitment to Client Success</p>
-            <p>✔ Consultant Experts In Their Field</p>
+            <p className="flex">
+              {" "}
+              <Check /> юридическое сопровождение всего контура сделки{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> предварительная проверка комплаенс банка в РФ и
+              Зарубежом{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> сервис эскроул агента{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> международный факторинг{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> отсутствие скрытых комиссий{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> оперативное рассмотрение заявки{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> отсутствие блокировок{" "}
+            </p>
+            <p className="flex">
+              {" "}
+              <Check /> оплата день в день
+            </p>
           </div>
 
-        <div className="flex lg:block justify-center lg:items-start ">
+          <div className="flex lg:block justify-center lg:items-start ">
             <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit  ">
-            Contact With Us
-          </button>
-        </div>
+              Contact With Us
+            </button>
+          </div>
         </div>
       </div>
     </section>

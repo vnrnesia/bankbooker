@@ -17,7 +17,7 @@ function Home({ getStartedRef, onGetStartedClick }) {
       <div className="min-h-screen flex flex-col md:max-w-[90%] 3xl:max-w-[100%] mx-auto">
         <main className="flex-grow">
           <div className="container mx-auto max-w-7xl">
-            <div className="md:pt-8 max-w-sm md:max-w-[100%] mx-auto md:mb-12">
+            <div className="max-w-sm md:max-w-[100%] mx-auto md:mb-12">
               <HeroSection onGetStartedClick={onGetStartedClick} />
             </div>
 

@@ -64,7 +64,7 @@ export default function Chatbot({ onGetStartedClick }) {
   const [loading, setLoading] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [autoOpened, setAutoOpened] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // 🔧 mobil kontrolü
+  const [isMobile, setIsMobile] = useState(false); 
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -236,7 +236,7 @@ export default function Chatbot({ onGetStartedClick }) {
       </button>
       {open && (
         <div
-          className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] rounded-lg shadow-lg flex flex-col"
+          className="bg-gray-200 ounded-lg shadow-lg flex flex-col"
           style={{
             position: "fixed",
             bottom: isMobile ? 150 : 100,
