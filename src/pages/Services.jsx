@@ -94,7 +94,7 @@ const Services = () => {
 
       <div
         ref={scrollContainerRef}
-        className="flex w-full md:max-w-5xl md:flex-nowrap overflow-x-auto md:overflow-visible px-4 md:px-0 scroll-smooth no-scrollbar"
+        className="flex w-full md:max-w-5xl md:flex-nowrap overflow-x-auto md:overflow-visible px-4 md:px-0 pt-14 scroll-smooth no-scrollbar"
       >
         <div
           onClick={handleCardClick}
