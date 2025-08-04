@@ -115,7 +115,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   <Divider />
                   {[
                     {
-                      href: "/products/invoice",
+                      href: "/services",
                       imageSrc: "/productsdropdown/invoice.png",
                       title: "Оплата инвойсов",
                       description: "Pay vendors faster and safer",
@@ -124,7 +124,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                       imageClassName: "object-contain mr-1",
                     },
                     {
-                      href: "/products/banking",
+                      href: "/services",
                       imageSrc: "/productsdropdown/banking.png",
                       title: "Возврат валютной выручки",
                       description: "Bank smarter with up to 4.36%",

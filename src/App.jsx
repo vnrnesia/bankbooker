@@ -14,6 +14,7 @@ import Partner from "@/pages/Partner.jsx";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Chatbot from "./components/layout/Chatbot";
 import ToolbarMobile from "./components/layout/ToolbarMobile";
+import Services from "./pages/Services";
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,9 @@ function App() {
     });
   };
 
+  // Footer'ın görünmemesini istediğimiz sayfalar
+  const hideFooterRoutes = ["/contact", "/services"];
+
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
@@ -34,7 +38,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home getStartedRef={getStartedRef} onGetStartedClick={scrollToGetStarted} />}
+            element={
+              <Home
+                getStartedRef={getStartedRef}
+                onGetStartedClick={scrollToGetStarted}
+              />
+            }
           />
           <Route path="/legal" element={<Legal />} />
           <Route path="/accounting" element={<Accounting />} />
@@ -44,9 +53,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/partner" element={<Partner />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </main>
-      {location.pathname !== "/contact" && <Footer />}
+      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
       <Chatbot />
       <ToolbarMobile scrollToGetStarted={scrollToGetStarted} />
     </div>
