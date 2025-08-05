@@ -85,8 +85,8 @@ const Footer = () => {
                   />
                 </Link>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Готовы взять контроль над своими финансами?{" "}
-                  <br className="hidden sm:block" /> своими финансами?
+                  Готовы взять контроль
+                  <br className="hidden sm:block" /> над своими финансами?
                 </h2>
                 <p className="text-gray-600 font-sans font-light mb-5">
                   Нам интересно узнать о ваших финансовых планах и предложить
@@ -101,7 +101,7 @@ const Footer = () => {
 
               <div className="footer-right grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm md:pt-48 text-gray-600">
                 <div className="space-y-4">
-                  <h4 className="text-base font-semibold text-gray-800 tracking-wide mb-4">
+                  <h4 className="text-xl font-semibold text-gray-800 tracking-wide mb-4">
                     Контакты
                   </h4>
                   <div>

@@ -120,10 +120,9 @@ const Comments = ({ onGetStartedClick }) => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Content */}
         <div className="max-w-lg">
-          <h4 className="text-gray-500 text-lg mb-2">Testimonials</h4>
+          <h4 className="text-gray-500 text-lg mb-2">Отзывы клиентов</h4>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
-            Client Experiences That <br />
-            Speak for Themselves
+            Опыт клиентов, который <br /> говорит сам за себя
           </h2>
           <button onClick={onGetStartedClick}>
             <ToGetStarted text="Свяжитесь с нами" />

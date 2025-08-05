@@ -15,8 +15,8 @@ import Navbar from "./components/layout/Navbar/Navbar";
 import Chatbot from "./components/layout/Chatbot";
 import ToolbarMobile from "./components/layout/ToolbarMobile";
 import Services from "./pages/Services";
-
-function App() {
+import ToGetStarted from "./components/ui/ToGetStarted";
+function App({  onGetStartedClick }) {
   const location = useLocation();
   const getStartedRef = useRef(null);
 
@@ -32,7 +32,10 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Navbar onLearnMoreClick={scrollToGetStarted} />
+      <Navbar
+        onLearnMoreClick={scrollToGetStarted}
+        onGetStartedClick={onGetStartedClick}
+      />
       <main className="flex-grow">
         <Routes>
           <Route

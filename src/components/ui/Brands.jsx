@@ -75,7 +75,7 @@ const Brands = () => {
         <div className="left-header">
           <h2 className="text-base font text-gray-500">Наши Партнёры</h2>
           <h3 className="text-4xl font-bold text-gray-900 mt-2">
-            Нам доверяют более +550 компаний по всему миру
+            Нам доверяют более +550 <br /> компаний по всему миру
           </h3>
         </div>
 

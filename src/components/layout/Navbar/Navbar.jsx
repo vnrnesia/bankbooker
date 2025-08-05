@@ -61,6 +61,10 @@ const Navbar = ({ onLearnMoreClick }) => {
     ? "pt-[140px] md:pt-[122px]"
     : "pt-[95px] md:pt-[78px]";
 
+  const scrollToDemo = () => {
+    window.scrollTo({ top: 4450, behavior: "smooth" });
+  };
+
   return (
     <>
       {bannerOpen && (
@@ -114,12 +118,12 @@ const Navbar = ({ onLearnMoreClick }) => {
           </div>
 
           <div className="hidden md:flex space-x-4 items-center">
-            <a
-              href="#"
+            <button
+              onClick={scrollToDemo}
               className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-4 py-2 rounded font-medium"
             >
-              See a demo
-            </a>
+              Оставить заявку
+            </button>
           </div>
 
           <button
@@ -207,13 +211,15 @@ const Navbar = ({ onLearnMoreClick }) => {
                 </Link>
 
                 <div className="pt-6 space-y-4 border-t border-gray-200">
-                  <a
-                    href="#"
-                    className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium"
-                    onClick={closeAllMenus}
+                  <button
+                    onClick={() => {
+                      scrollToDemo();
+                      closeAllMenus();
+                    }}
+                    className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium w-full"
                   >
                     See a demo
-                  </a>
+                  </button>
                 </div>
               </nav>
             </div>

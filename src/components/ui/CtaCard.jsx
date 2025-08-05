@@ -147,7 +147,7 @@ const WhyChooseUs = () => {
 
           <div className="flex lg:block justify-center lg:items-start ">
             <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit">
-              Contact With Us
+              Связатя с нами
             </button>
           </div>
         </div>

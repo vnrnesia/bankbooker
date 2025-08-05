@@ -1,5 +1,4 @@
 import React from "react";
-import ToGetStarted from "./ToGetStarted";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
