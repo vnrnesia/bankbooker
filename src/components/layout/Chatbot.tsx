@@ -50,7 +50,7 @@ const OPTIONS_MAIN = [
   "Бесплатная консультация",
 ] as const;
 
-export default function Chatbot() {
+export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputEmail, setInputEmail] = useState("");
@@ -81,12 +81,13 @@ export default function Chatbot() {
   }, [messages, showEmailInput, showPhoneInput, showOptions]);
 
   useEffect(() => {
+    if (!autoOpen) return;
     const timer = setTimeout(() => {
       setOpen(true);
       setAutoOpened(true);
     }, 1000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [autoOpen]);
 
   useEffect(() => {
     if (!open || messages.length > 0) return;
@@ -373,7 +374,12 @@ export default function Chatbot() {
           {showEmailInput && (
             <form
               onSubmit={handleEmailSubmit}
-              style={{ display: "flex", padding: 12, gap: 8, background: "#e4e9f2", }}
+              style={{
+                display: "flex",
+                padding: 12,
+                gap: 8,
+                background: "#e4e9f2",
+              }}
             >
               <input
                 type="email"
@@ -386,7 +392,6 @@ export default function Chatbot() {
                   padding: 10,
                   borderRadius: 8,
                   border: "1px solid #ccc",
-                  
                 }}
                 aria-label="Email input"
               />

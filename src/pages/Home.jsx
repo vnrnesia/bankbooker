@@ -112,7 +112,7 @@ function Home({ getStartedRef, onGetStartedClick }) {
               <div className="text-center text-gray-400">Загрузка...</div>
             }
           >
-            <Chatbot />
+            <Chatbot autoOpen={hasChatbotShown} />
           </Suspense>
         )}
 
