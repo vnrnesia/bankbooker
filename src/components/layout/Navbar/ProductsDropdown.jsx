@@ -256,7 +256,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                         <div
                           key={idx}
                           ref={(el) => (cardsRef.current[idx] = el)}
-                          className="bg-white border  border-gray-200 rounded-xl shadow-sm px-11 py-1 flex flex-col justify-between"
+                          className="bg-white border  border-gray-200 rounded-lg shadow-sm px-11 py-1 flex flex-col justify-between"
                         >
                           <div className="flex items-center space-x-3 ">
                             <div className="relative w-10 h-10 shrink-0">

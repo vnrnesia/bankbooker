@@ -34,7 +34,7 @@ const HeroSection = ({ onGetStartedClick }) => {
             </div>
 
             <div className="pt-4">
-              <div className="pt-2 w-[400px]">
+              <div className="pt-2 md:w-[400px]">
                 <div
                   onClick={onGetStartedClick}
                   className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer"

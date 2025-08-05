@@ -54,7 +54,7 @@ const Currency = () => {
                 width: `${rate.iconWidth}px`,
                 height: `${rate.iconHeight}px`,
               }}
-              className="object-contain shrink-0"
+              className="object-contain shrink-0 hidden md:block"
             />
             <div className="flex flex-col items-start md:flex-row md:items-center gap-1">
               <div className="flex items-center gap-1">
