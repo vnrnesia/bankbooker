@@ -74,13 +74,13 @@ const Brands = () => {
         {/* Sol başlık */}
         <div className="left-header">
           <h2 className="text-base font text-gray-500">Наши Партнёры</h2>
-          <h3 className="text-4xl font-bold text-gray-900 mt-2">
+          <h3 className="text-4xl font-medium text-gray-900 mt-2">
             Нам доверяют более +550 <br /> компаний по всему миру
           </h3>
         </div>
 
         {/* Sağ paragraf */}
-        <p className="right-header text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md text-right md:text-left md:max-w-xs">
+        <p className="right-header text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md mdtext-right md:text-left md:max-w-xs">
           Вот некоторые из компаний, которым Bankbooker помог уверенно двигаться
           вперёд.
         </p>

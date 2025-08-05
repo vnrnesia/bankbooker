@@ -124,7 +124,7 @@ export default function OffersGrid({ onGetStartedClick }) {
   return (
     <section
       ref={containerRef}
-      className="bg-white py-12 font-[Manrope] px-4 max-w-7xl mx-auto"
+      className="bg-white py-12 font-[Manrope] max-w-7xl mx-auto"
     >
       <div className="grid md:grid-cols-2 gap-6 mb-12 items-start justify-between">
         {/* Sol başlık */}

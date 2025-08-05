@@ -76,9 +76,9 @@ export function AccordionHeader({ children, customIcon, className }) {
   return (
     <motion.div
       data-active={isActive || undefined}
-      className={`group p-4 cursor-pointer transition-all dark:text-black text-black dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${isActive
-          ? 'active  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] bg-[#F2F2F2] '
-          : 'bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] bg-white'
+      className={`group p-4 cursor-pointer transition-all  text-white dark:hover:bg-[#1e2a78] hover:bg-[#F2F2F2] dark:hover:text-white hover:text-black flex justify-between items-center ${isActive
+          ? 'active  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] bg-[#F2F2F2] text-white '
+          : 'bg-gradient-to-r from-[#0273DE] to-[#10B0EB] bg-white text-white'
         }
       `}
       onClick={() => onChangeIndex(value)}
