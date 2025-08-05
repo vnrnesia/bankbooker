@@ -1,6 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const offers = [
+  {
+    country: "Китай",
+    flag: "/flags/china.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[5px] top-[1px]",
+  },
+  {
+    country: "ОАЭ",
+    flag: "/flags/uae.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[0px] top-[0px]",
+  },
+  {
+    country: "Турция",
+    flag: "/flags/turkey.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[-1px] top-[1px]",
+  },
+];
+
 const products = [
   {
     href: "/services?details=true",
@@ -124,7 +151,61 @@ const MobileDropdownProductsFull = ({ onClose }) => {
       <Section title="Connect with Bankbooker" items={connectWithBankbooker} />
       <Section title="Resource Center" items={resourceCenter} />
       <section className="bg-gray-100 rounded p-4">
-        <h3 className="text-lg font-semibold text-center mb-2">Best Offer</h3>
+        <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center mx-auto text-center">
+          <h3 className="text-center">Лучшие Предложения</h3>
+          <div className="text-lg font-medium text-center pt-5">
+            <div className="flex flex-col gap-5">
+              {offers.map((offer, idx) => (
+                <div
+                  key={idx}
+                  ref={(el) => (cardsRef.current[idx] = el)}
+                  className="bg-white border  border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
+                >
+                  <div className="flex items-center space-x-3 ">
+                    <div className="relative w-5 h-5 shrink-0">
+                      <img
+                        src={offer.flag}
+                        alt={offer.country}
+                        className={`absolute w-full h-full object-cover rounded-full ${offer.offsetClass}`}
+                      />
+                    </div>
+                    <h3 className="text-base font-medium text-gray-800">
+                      {offer.country}
+                    </h3>
+                    <div>
+                      <p className="text-gray-400 text-xs text-en">Курс</p>
+                      <p className="text-xs">{offer.course}</p>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 w-full">
+                    <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
+                      <div className="flex-grow py-1 px-1  text-sm bg-gray-100">
+                        Оставьте заявку
+                      </div>
+                      <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5 text-white"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>{" "}
       </section>
     </div>
   );

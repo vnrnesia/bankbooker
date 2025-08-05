@@ -14,12 +14,14 @@ export default function Banner({ onClose, onLearnMoreClick }: BannerProps) {
     <div className="relative flex w-full flex-col items-center overflow-y-auto">
       <StickyBanner className="bg-black w-full" onClose={onClose} hideOnScroll>
         <div className="max-w-fit mx-auto pr-7 md:pr-0 text-white drop-shadow-md flex items-center justify-center text-center space-x-2">
-          <span className="hidden md:block font-medium whitespace-nowrap">Meet the team</span>
+          <span className="hidden md:block font-medium whitespace-nowrap">
+            Познакомьтесь с командой{" "}
+          </span>
 
           <div className="h-px w-2 bg-white self-center hidden md:block " />
 
           <span className="text-[#A3A3A3] text-xs md:text-base whitespace-nowrap">
-            Let BB handle your financial situation 
+            доверьте BB решение ваших финансовых вопросов
           </span>
 
           <div className="h-px w-2 bg-white self-center hidden md:block" />
@@ -35,7 +37,7 @@ export default function Banner({ onClose, onLearnMoreClick }: BannerProps) {
               }
             }}
           >
-            Learn more
+           узнайте больше
             <MoveRight
               className="ml-1 w-3 md:w-5 mt-[2px] transition-transform duration-200 ease-in-out group-hover:translate-x-1"
               aria-hidden="true"

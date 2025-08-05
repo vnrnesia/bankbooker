@@ -103,13 +103,13 @@ const Navbar = ({ onLearnMoreClick }) => {
               <ProductsDropdown bannerOpen={bannerOpen} />
             </div>
             <Link to="/solutions" className="text-black font-medium">
-              Solutions
+              ⁠О Компания
             </Link>
             <Link to="/partner" className="text-black font-medium">
-              Partners
+              ⁠Партнеры
             </Link>
             <Link to="/contact" className="text-black font-medium">
-              Contact
+              ⁠Контакт
             </Link>
           </div>
 
@@ -155,7 +155,7 @@ const Navbar = ({ onLearnMoreClick }) => {
                   aria-expanded={mobileProductsOpen}
                   aria-controls="mobile-products-menu"
                 >
-                  Products
+                  Наши Услуги
                   <svg
                     className={`w-5 h-5 ml-2 transition-transform duration-300 ${
                       mobileProductsOpen ? "rotate-180" : ""
@@ -189,21 +189,21 @@ const Navbar = ({ onLearnMoreClick }) => {
                   className="block text-black hover:text-blue-600"
                   onClick={closeAllMenus}
                 >
-                  Solutions
+                  ⁠О Компания
                 </Link>
                 <Link
                   to="/partner"
                   className="block text-black hover:text-blue-600"
                   onClick={closeAllMenus}
                 >
-                  Partners
+                  Партнеры
                 </Link>
                 <Link
                   to="/contact"
                   className="block text-black hover:text-blue-600"
                   onClick={closeAllMenus}
                 >
-                  Contact
+                  Контакт
                 </Link>
 
                 <div className="pt-6 space-y-4 border-t border-gray-200">

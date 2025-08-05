@@ -108,7 +108,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        Products
+        Наши Услуги
         <ChevronDown
           size={20}
           className={`ml-1 transition-transform duration-300 ease-in-out ${
@@ -249,17 +249,18 @@ const ProductsDropdown = ({ bannerOpen }) => {
                 </div>
 
                 {/* Offers */}
-                <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center">
-                  <div className="text-lg font-medium text-center">
+                <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center mx-auto text-center">
+                  <h3 className="text-center">Лучшие Предложения</h3>
+                  <div className="text-lg font-medium text-center pt-5">
                     <div className="flex flex-col gap-5">
                       {offers.map((offer, idx) => (
                         <div
                           key={idx}
                           ref={(el) => (cardsRef.current[idx] = el)}
-                          className="bg-white border  border-gray-200 rounded-lg shadow-sm px-11 py-1 flex flex-col justify-between"
+                          className="bg-white border  border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
                         >
                           <div className="flex items-center space-x-3 ">
-                            <div className="relative w-10 h-10 shrink-0">
+                            <div className="relative w-5 h-5 shrink-0">
                               <img
                                 src={offer.flag}
                                 alt={offer.country}
@@ -277,7 +278,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
                           <div className="pt-2 w-full">
                             <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
-                              <div className="flex-grow py-1 px-1  text-base bg-gray-100">
+                              <div className="flex-grow py-1 px-1  text-sm bg-gray-100">
                                 Оставьте заявку
                               </div>
                               <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">
