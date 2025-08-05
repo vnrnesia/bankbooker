@@ -16,10 +16,10 @@ const HeroSection = ({ onGetStartedClick }) => {
           <div className="flex justify-end items-center py-4"></div>
         </nav>
 
-        <div className="md:mt-10 flex flex-col lg:flex-row gap-8  h-full">
+        <div className="mt-20 flex flex-col lg:flex-row gap-8  h-full">
           <div className="flex-1">
             <div>
-              <div className="text-sm font-medium text-gray-700">
+              <div className="text-sm  font-medium text-gray-700">
                 Welcome To Bankbooker
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">
