@@ -202,7 +202,7 @@ const Calculator = () => {
               </div>
 
               {/* Contact Inputs */}
-              <div className="flex flex-col sm:flex-row gap-4 scale-x-95">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
                   placeholder="Name"
@@ -238,7 +238,7 @@ const Calculator = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="cursor-pointer w-full sm:w-fit bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-md hover:scale-105 transition duration-300 font-medium"
+                className="cursor-pointer w-full bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-md hover:scale-105 transition duration-300 font-medium"
               >
                 See a Demo
               </button>

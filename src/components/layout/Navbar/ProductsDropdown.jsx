@@ -44,7 +44,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
   const closeTimeout = useRef(null);
   const dropdownRef = useRef(null);
   const triggerRef = useRef(null);
-  const cardsRef = useRef([]); 
+  const cardsRef = useRef([]);
 
   const handleMouseEnter = () => {
     if (closeTimeout.current) {
@@ -84,7 +84,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
         href="#"
         className="font-medium flex items-center gap-2 text-sm text-blue-600 group"
       >
-        View All
+        Смотреть всё
         <MoveRight
           width={15}
           className="transition-transform duration-200 ease-in-out group-hover:translate-x-1"
@@ -138,7 +138,10 @@ const ProductsDropdown = ({ bannerOpen }) => {
               <div className="mx-auto w-full max-w-[90%] xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Products */}
                 <div>
-                  <SectionHeader title="Products" />
+                  <SectionHeader
+                    title="Услуги
+"
+                  />
                   <Divider />
                   {[
                     {
@@ -171,30 +174,33 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
                 {/* Contact */}
                 <div>
-                  <SectionHeader title="Connect Bankbooker" />
+                  <SectionHeader
+                    title="Связь с Bankbooker
+"
+                  />
                   <Divider />
                   {[
                     {
                       href: "/contact/agent",
                       imageSrc: "/productsdropdown/talk.png",
-                      title: "Talk with agent",
-                      description: "Get free consultancy",
+                      title: "Связаться с агентом",
+                      description: " Получите бесплатную консультацию",
                       imageWidth: 30,
                       imageHeight: 30,
                     },
                     {
                       href: "/contact/chat",
                       imageSrc: "/productsdropdown/chat.png",
-                      title: "Chat with us",
-                      description: "Connect with support team",
+                      title: "⁠Чат с поддержкой",
+                      description: "Свяжитесь с командой поддержки",
                       imageWidth: 30,
                       imageHeight: 30,
                     },
                     {
                       href: "/contact/telegram",
                       imageSrc: "/productsdropdown/telegram.png",
-                      title: "Telegram Community",
-                      description: "Benefit from privileges",
+                      title: "⁠Сообщество в Telegram",
+                      description: "Воспользуйтесь привилегиями",
                       imageWidth: 30,
                       imageHeight: 30,
                       imageClassName: "mr-1",
@@ -211,7 +217,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
                 {/* Resources */}
                 <div>
-                  <SectionHeader title="Resource Center" />
+                  <SectionHeader title="Центр ресурсов" />
                   <Divider />
                   {[
                     {
@@ -250,7 +256,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
                 {/* Offers */}
                 <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center mx-auto text-center">
-                  <h3 className="text-center">Лучшие Предложения</h3>
+                  <h3 className="text-center font-bold text-black">
+                    Лучшие Предложения
+                  </h3>
                   <div className="text-lg font-medium text-center pt-5">
                     <div className="flex flex-col gap-5">
                       {offers.map((offer, idx) => (
@@ -271,7 +279,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
                               {offer.country}
                             </h3>
                             <div>
-                              <p className="text-gray-400 text-xs text-en">Курс</p>
+                              <p className="text-gray-400 text-xs text-left">
+                                Курс
+                              </p>
                               <p className="text-xs">{offer.course}</p>
                             </div>
                           </div>

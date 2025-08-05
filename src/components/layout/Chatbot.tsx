@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  ChevronDown,
-  MessageSquareMore,
-  DoorOpen,
-  SquarePen,
-} from "lucide-react";
+import { ChevronDown, MessageSquareMore, DoorOpen } from "lucide-react";
 import React, {
   useState,
   ReactNode,
@@ -14,7 +9,7 @@ import React, {
   useRef,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ToGetStarted from "../ui/ToGetStarted";
+import InputMask from "react-input-mask";
 
 type ChatMessage = {
   id: number;
@@ -55,16 +50,19 @@ const OPTIONS_MAIN = [
   "Бесплатная консультация",
 ] as const;
 
-export default function Chatbot({ onGetStartedClick }) {
+export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputEmail, setInputEmail] = useState("");
+  const [inputPhone, setInputPhone] = useState("");
   const [showEmailInput, setShowEmailInput] = useState(false);
+  const [showPhoneInput, setShowPhoneInput] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [loading, setLoading] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [phoneSubmitted, setPhoneSubmitted] = useState(false);
   const [autoOpened, setAutoOpened] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); 
+  const [isMobile, setIsMobile] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -80,7 +78,7 @@ export default function Chatbot({ onGetStartedClick }) {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, showEmailInput, showOptions]);
+  }, [messages, showEmailInput, showPhoneInput, showOptions]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -92,9 +90,7 @@ export default function Chatbot({ onGetStartedClick }) {
 
   useEffect(() => {
     if (!open || messages.length > 0) return;
-    addBotMessageWithLoading(
-      "Здравствуйте Какие услуги Вас интересуют ? "
-    );
+    addBotMessageWithLoading("Здравствуйте! Какие услуги вас интересуют?");
   }, [open]);
 
   useEffect(() => {
@@ -111,7 +107,7 @@ export default function Chatbot({ onGetStartedClick }) {
     ) {
       setShowOptions(true);
     }
-  }, [messages, showEmailInput, emailSubmitted]);
+  }, [messages]);
 
   useEffect(() => {
     if (autoOpened && audioRef.current) {
@@ -148,19 +144,13 @@ export default function Chatbot({ onGetStartedClick }) {
     addUserMessage(option);
     setShowOptions(false);
     setShowEmailInput(false);
-    const isEmailFollowup =
-      option === "Оплатить инвойс" ||
-      option === "Вернуть валютную выручку" ||
-      option === "Бесплатная консультация";
-    if (option === "No thanks, not applying for now.") {
-      addBotMessageWithLoading(
-        "Thanks for stopping by! Feel free to reach out anytime."
-      );
-    } else if (isEmailFollowup) {
+    setShowPhoneInput(false);
+    const isEmailFollowup = OPTIONS_MAIN.includes(option);
+    if (isEmailFollowup) {
       addBotMessageWithLoading(
         <>
-          Great to hear! <br /> In case we get disconnected,{" "}
-          <b>mind if we grab your email?</b>
+          Отличный выбор! <br /> Пожалуйста, укажите ваш{" "}
+          <b>электронный адрес</b>, чтобы мы могли связаться с вами.
         </>
       );
       setTimeout(() => setShowEmailInput(true), 2100);
@@ -174,22 +164,37 @@ export default function Chatbot({ onGetStartedClick }) {
     setShowEmailInput(false);
     setEmailSubmitted(true);
     addBotMessageWithLoading(
-      "Thanks! Someone from our team will be in touch soon."
+      <>
+        Спасибо! <br /> Теперь, пожалуйста, укажите ваш <b>номер телефона</b> в
+        формате +7 (XXX) XXX-XX-XX.
+      </>
     );
+    setTimeout(() => setShowPhoneInput(true), 2100);
     setInputEmail("");
+  };
+
+  const handlePhoneSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!inputPhone.trim() || loading || inputPhone.includes("_")) return;
+    addUserMessage(inputPhone);
+    setShowPhoneInput(false);
+    setPhoneSubmitted(true);
+    addBotMessageWithLoading(
+      "Благодарим! Мы свяжемся с вами в ближайшее время."
+    );
+    setInputPhone("");
   };
 
   const lastBotMessage = [...messages].reverse().find((m) => m.from === "bot");
   const showLeave =
     lastBotMessage?.from === "bot" &&
     typeof lastBotMessage.text === "string" &&
-    lastBotMessage.text.includes("Someone from our team");
+    lastBotMessage.text.includes("в ближайшее время");
 
   return (
     <>
       <audio ref={audioRef} src="/notification.mp3" preload="auto" />
       <button
-        className="bg-gradient-to-r from-[#0273DE] to-[#10B0EB] rounded-lg shadow-lg flex flex-col"
         onClick={() => setOpen((o) => !o)}
         style={{
           position: "fixed",
@@ -208,7 +213,7 @@ export default function Chatbot({ onGetStartedClick }) {
           justifyContent: "center",
           zIndex: 1000,
         }}
-        aria-label={open ? "Close chat" : "Open chat"}
+        aria-label={open ? "Закрыть чат" : "Открыть чат"}
       >
         <AnimatePresence mode="wait" initial={false}>
           {open ? (
@@ -236,26 +241,22 @@ export default function Chatbot({ onGetStartedClick }) {
       </button>
       {open && (
         <div
-          className="bg-gray-200 ounded-lg shadow-lg flex flex-col"
           style={{
             position: "fixed",
             bottom: isMobile ? 150 : 100,
             right: 24,
             width: 360,
             height: 500,
-            boxShadow: "0 10px 25px rgba(0,0,0,0.25)", // İstersen burada kalabilir ya da Tailwind shadow-lg kullanabilirsin
+            boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
             display: "flex",
             flexDirection: "column",
             zIndex: 1000,
             fontFamily: "Manrope, sans-serif",
           }}
-          aria-live="polite"
-          aria-label="Chatbot window"
         >
           <div
             style={{
               background: "white",
-              color: "white",
               padding: "12px 16px",
               fontWeight: 700,
               display: "flex",
@@ -291,7 +292,7 @@ export default function Chatbot({ onGetStartedClick }) {
                     paddingLeft: from === "bot" ? 8 : 0,
                   }}
                 >
-                  {from === "user" ? "You" : "Bankbooker"}
+                  {from === "user" ? "Вы" : "Bankbooker"}
                 </div>
                 <div
                   style={{
@@ -308,12 +309,7 @@ export default function Chatbot({ onGetStartedClick }) {
                           : from === "loading"
                           ? "#cbd3df"
                           : "#e4e9f2",
-                      color:
-                        from === "user"
-                          ? "white"
-                          : from === "loading"
-                          ? "#222"
-                          : "#222",
+                      color: from === "user" ? "white" : "#222",
                       padding: "10px 16px",
                       borderRadius: 5,
                       fontSize: 14,
@@ -345,7 +341,7 @@ export default function Chatbot({ onGetStartedClick }) {
                         marginBottom: 4,
                       }}
                     >
-                      You
+                      Вы
                     </div>
                     {OPTIONS_MAIN.map((opt) => (
                       <button
@@ -363,7 +359,6 @@ export default function Chatbot({ onGetStartedClick }) {
                           fontWeight: 500,
                           minWidth: 160,
                         }}
-                        aria-label={opt}
                       >
                         {opt}
                       </button>
@@ -374,22 +369,24 @@ export default function Chatbot({ onGetStartedClick }) {
             ))}
             <div ref={messagesEndRef} />
           </div>
+
           {showEmailInput && (
             <form
               onSubmit={handleEmailSubmit}
-              style={{ display: "flex", padding: 12, gap: 8 }}
+              style={{ display: "flex", padding: 12, gap: 8, background: "#e4e9f2", }}
             >
               <input
                 type="email"
                 required
                 value={inputEmail}
                 onChange={(e) => setInputEmail(e.target.value)}
-                placeholder="Your email"
+                placeholder="Ваш e-mail"
                 style={{
                   flex: 1,
                   padding: 10,
                   borderRadius: 8,
                   border: "1px solid #ccc",
+                  
                 }}
                 aria-label="Email input"
               />
@@ -398,18 +395,61 @@ export default function Chatbot({ onGetStartedClick }) {
                 style={{
                   background: "#0070f3",
                   color: "white",
-                  padding: "10px 16px",
+                  padding: "10px 9px",
                   border: "none",
                   borderRadius: 6,
                   fontWeight: 600,
                   cursor: "pointer",
                 }}
-                aria-label="Send email"
               >
-                Send
+                Отправить
               </button>
             </form>
           )}
+
+          {showPhoneInput && (
+            <form
+              onSubmit={handlePhoneSubmit}
+              style={{ display: "flex", padding: 12, gap: 8 }}
+            >
+              <InputMask
+                mask="+7 (999) 999-99-99"
+                value={inputPhone}
+                onChange={(e) => setInputPhone(e.target.value)}
+              >
+                {(inputProps) => (
+                  <input
+                    {...inputProps}
+                    type="tel"
+                    required
+                    placeholder="Ваш номер"
+                    style={{
+                      flex: 1,
+                      padding: 10,
+                      borderRadius: 8,
+                      border: "1px solid #ccc",
+                    }}
+                    aria-label="Phone input"
+                  />
+                )}
+              </InputMask>
+              <button
+                type="submit"
+                style={{
+                  background: "#0070f3",
+                  color: "white",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: 6,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Отправить
+              </button>
+            </form>
+          )}
+
           {showLeave && (
             <button
               onClick={() => setOpen(false)}
@@ -427,9 +467,8 @@ export default function Chatbot({ onGetStartedClick }) {
                 borderBottomLeftRadius: 8,
                 borderBottomRightRadius: 8,
               }}
-              aria-label="Leave chat"
             >
-              <DoorOpen size={18} /> Leave Chat
+              <DoorOpen size={18} /> Выйти из чата
             </button>
           )}
         </div>

@@ -21,21 +21,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    text: "Bankbooker has been instrumental in our growth. Their team took the time to to truly understand our needs and helped us eliminate inefficiencies.",
-    name: "Carlos Martines",
-    position: "ABD - CEO",
+    text: "С Bankbooker оплата инвойсов стала намного проще и безопаснее. Теперь мы экономим время и уверены в каждой сделке.",
+    name: "Марина Волкова",
+    position: "финансовый директор, ООО «ВестаТех»",
     image: avatar1,
   },
   {
-    text: "Thanks to Bankbooker, we've experienced a major transformation in our financial processes. Their professional approach and quick solutions saved us a great deal of time.",
-    name: "Elif Yıldız",
-    position: "NovaTech - CFO",
+    text: "Возврат валютной выручки через Bankbooker — удобный и выгодный сервис. Рекомендую всем, кто ценит надёжность и прозрачность.",
+    name: "Алексей Морозов",
+    position: "руководитель закупок, ЗАО «ГринФилд»",
     image: avatar2,
   },
   {
     text: "They worked closely with our team and delivered solutions tailored to our specific needs. Bankbooker is definitely a trusted partner in business.",
-    name: "Mert Demir",
-    position: "BetaSoft - Operations Manager",
+    name: "Ольга Смирнова",
+    position: " генеральный директор, ООО «ПромВектор»r",
     image: avatar3,
   },
 ];

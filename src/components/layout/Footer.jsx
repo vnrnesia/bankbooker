@@ -85,14 +85,16 @@ const Footer = () => {
                   />
                 </Link>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Ready to Take Control Of <br className="hidden sm:block" /> Your Finances?
+                  Готовы взять контроль над своими финансами?{" "}
+                  <br className="hidden sm:block" /> своими финансами?
                 </h2>
                 <p className="text-gray-600 font-sans font-light mb-5">
-                  We look forward to learning about your financial goals.
+                  Нам интересно узнать о ваших финансовых планах и предложить
+                  лучшее решение.
                 </p>
                 <div className="pt-4 md:pt-16">
                   <button className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300">
-                    Free Consultation
+                    Бесплатная консультация
                   </button>
                 </div>
               </div>
@@ -100,27 +102,41 @@ const Footer = () => {
               <div className="footer-right grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm md:pt-48 text-gray-600">
                 <div className="space-y-4">
                   <h4 className="text-base font-semibold text-gray-800 tracking-wide mb-4">
-                    CONTACT US
+                    Контакты
                   </h4>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Our Phone</p>
-                    <p className="text-base md:text-lg text-gray-600">+7 (917) 889 94–54</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Номер Телефона
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      +7 (917) 889 94–54
+                    </p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Our Email</p>
-                    <p className="text-base md:text-lg text-gray-600">info@bankbooker.com</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Почту
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      info@bankbooker.com
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Mon– Fri:</p>
-                    <p className="text-base md:text-lg text-gray-600">8:30am – 5:30pm</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Mon– Fri:
+                    </p>
+                    <p className="text-base md:text-lg text-gray-600">
+                      8:30am – 5:30pm
+                    </p>
                   </div>
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">Moscow:</p>
+                    <p className="text-base md:text-lg font-medium text-gray-700">
+                      Подписывайтесь на наш Telegram-канал
+                    </p>
                     <p className="text-base md:text-lg text-gray-600">
-                      1140 Kremlin St, RU 13131
+                      t.me/bankbooker
                     </p>
                   </div>
                 </div>
@@ -131,8 +147,6 @@ const Footer = () => {
       </footer>
 
       <div className="w-full border-t border-gray-300 bg-white mb-1 ">
-       
-
         <div className="hidden md:block w-full max-w-[1270px] mx-auto border-t border-gray-300" />
 
         <div className="footer-bottom max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-4 md:py-6">
@@ -144,8 +158,6 @@ const Footer = () => {
                 <Link to="#">Privacy Policy</Link>
               </div>
             </div>
-
-          
           </div>
         </div>
       </div>
@@ -161,14 +173,17 @@ const Footer = () => {
     w-10 h-10
     pointer-events-auto
     transition-all duration-300 ease-in-out
-    ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}
+    ${
+      visible
+        ? "opacity-100 scale-100"
+        : "opacity-0 scale-75 pointer-events-none"
+    }
     transform -translate-x-1/2 -translate-y-1/2
   `}
         style={{ willChange: "opacity, transform" }}
       >
         <FiChevronUp size={24} />
       </button>
-
     </>
   );
 };

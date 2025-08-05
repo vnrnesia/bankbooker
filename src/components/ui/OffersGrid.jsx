@@ -71,7 +71,7 @@ export default function OffersGrid({ onGetStartedClick }) {
           trigger: containerRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          markers: false, 
+          markers: false,
         },
       });
 
@@ -187,16 +187,16 @@ function OfferCard({ offer, onGetStartedClick }) {
         <h3 className="text-xl font-medium text-gray-800">{offer.country}</h3>
       </div>
 
-      <div className="flex justify-between text-sm text-gray-600 border-t pt-4">
-        <div>
-          <p className="text-gray-400">Курс</p>
+      <div className="flex text-sm text-gray-600 border-t pt-4">
+        <div className="flex flex-col w-1/3 items-start text-left">
+          <p className="text-gray-400">     Курс</p>
           <p className="font-medium">{offer.course}</p>
         </div>
-        <div>
+        <div className="flex flex-col w-1/3 items-start text-left">
           <p className="text-gray-400">Срок</p>
           <p className="font-medium">{offer.duration}</p>
         </div>
-        <div>
+        <div className="flex flex-col w-1/3 items-start text-left">
           <p className="text-gray-400">Комиссия</p>
           <p className="font-medium">{offer.commission}</p>
         </div>

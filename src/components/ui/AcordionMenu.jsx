@@ -11,9 +11,9 @@ export default function AccordionMenu() {
   return (
     <>
       <div className="flex flex-col items-center text-center mx-auto">
-        <h3 className="text-gray-500 text-lg mb-1">Have a question?</h3>
+        <h3 className="text-gray-500 text-lg mb-1">Есть вопрос?</h3>
         <h2 className="text-4xl text-center font-medium ">
-          Frequently Asked Questions
+          Часто задаваемые вопросы
         </h2>
       </div>
       <div className="grid max-w-7xl  mx-auto mt-10">

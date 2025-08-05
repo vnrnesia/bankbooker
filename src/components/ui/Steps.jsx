@@ -42,7 +42,7 @@ export default function Steps() {
     <section className="bg-gray-100 py-16 ">
       <div className="max-w-5xl mx-auto text-center">
         <div className="max-w-sm md:max-w-5xl mx-auto text-center mb-12 md:mb-16">
-          <h3 className="text-gray-600 mb-2">Our Process</h3>
+          <h3 className="text-gray-600 mb-2">Процесс работы</h3>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
             4 этапа оплаты вашего инвойса
           </h2>

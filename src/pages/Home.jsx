@@ -129,7 +129,7 @@ function Home({ getStartedRef, onGetStartedClick }) {
             onClick={onGetStartedClick}
             style={{ willChange: "transform, opacity" }}
           >
-            <ToGetStarted text="Reach us!" />
+            <ToGetStarted text="Свяжитесь с нами!" />
           </button>
         )}
       </div>

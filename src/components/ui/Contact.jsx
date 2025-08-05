@@ -3,17 +3,17 @@ import { PhoneIcon } from "@heroicons/react/24/solid";
 const Contact = () => {
   return (
     <section className="font-[Manrope] md:py-16 mb-24 text-center">
-      <h3 className="text-gray-500 text-lg mb-1">Let’s Collaborate</h3>
-      <h2 className="text-4xl font-medium mb-12">Ready To Work With Us</h2>
+      <h3 className="text-gray-500 text-lg mb-1">Давайте сотрудничать</h3>
+      <h2 className="text-4xl font-medium mb-12">Готовы работать с нами?</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto ">
         {/* Telegram Card */}
         <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 group-hover:text-white mb-1 transition duration-300">
-            Work With Us
+            новости и акции!
           </p>
           <h3 className="text-xl font-medium mb-4 group-hover:text-white">
-            Join To Telegram Channel
+            Бесплатная консультация
           </h3>
           <a
             href="https://t.me/bankbooker"
@@ -69,10 +69,10 @@ const Contact = () => {
         {/* Get In Touch Card */}
         <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 mb-1 transition duration-300 group-hover:text-white">
-            For Consulting
+            Бесплатная консультация
           </p>
           <h3 className="text-xl font-medium mb-4 group-hover:text-white">
-            Get In Touch
+            Свяжитесь с нами{" "}
           </h3>
           <div className="flex items-center space-x-2 font-medium transition duration-300 group-hover:text-white">
             <PhoneIcon className="w-5 h-5 transition group-hover:text-white" />

@@ -73,16 +73,16 @@ const Brands = () => {
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
         {/* Sol başlık */}
         <div className="left-header">
-          <h2 className="text-base font text-gray-500">Partner</h2>
+          <h2 className="text-base font text-gray-500">Наши Партнёры</h2>
           <h3 className="text-4xl font-bold text-gray-900 mt-2">
-            Trusted By +550 Companies Worldwide
+            Нам доверяют более +550 компаний по всему миру
           </h3>
         </div>
 
         {/* Sağ paragraf */}
         <p className="right-header text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md text-right md:text-left md:max-w-xs">
-          Here are some of the companies that have been empowered by Bankbooker
-          to move forward with confidence.
+          Вот некоторые из компаний, которым Bankbooker помог уверенно двигаться
+          вперёд.
         </p>
       </div>
 
