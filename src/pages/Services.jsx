@@ -125,14 +125,14 @@ const Services = () => {
 
       {showDetails && (
         <div id="service-details" className="w-full mt-24">
-          <div className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]">
-            <div className="max-w-7xl mx-auto">
+          <div className=" md:mb-24 md:px-0 mx-auto md:max-w-[100%]">
+            <div className=" max-w-sm md:max-w-7xl mx-auto">
               <OffersGrid />
             </div>
             <div className="w-full bg-gray-50">
               <Steps />
             </div>
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl  mx-auto">
               <Comments />
             </div>
             <div>

@@ -86,20 +86,20 @@ const Footer = () => {
                 </Link>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
                   Готовы взять контроль
-                  <br className="hidden sm:block" /> над своими финансами?
+                  над своими финансами?
                 </h2>
-                <p className="text-gray-600 font-sans font-light mb-5">
+                <p className="text-gray-600 font-sans font-light mb-4">
                   Нам интересно узнать о ваших финансовых планах и предложить
                   лучшее решение.
                 </p>
-                <div className="pt-4 md:pt-16">
-                  <button className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300">
+                <div className=" ">
+                  <button className="bg-gradient-to-l text-xs from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300">
                     Бесплатная консультация
                   </button>
                 </div>
               </div>
 
-              <div className="footer-right grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm md:pt-48 text-gray-600">
+              <div className="footer-right  grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm md:pt-[110px] text-gray-600">
                 <div className="space-y-4">
                   <h4 className="text-xl font-semibold text-gray-800 tracking-wide mb-4">
                     Контакты
@@ -122,9 +122,9 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 py-11 -mt-11">
                   <div>
-                    <p className="text-base md:text-lg font-medium text-gray-700">
+                    <p className="text-base md:text-lg  font-medium text-gray-700">
                       Mon– Fri:
                     </p>
                     <p className="text-base md:text-lg text-gray-600">
@@ -133,7 +133,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <p className="text-base md:text-lg font-medium text-gray-700">
-                      Подписывайтесь на наш Telegram-канал
+                      Подписывайтесь на наш <br /> Telegram-канал
                     </p>
                     <p className="text-base md:text-lg text-gray-600">
                       t.me/bankbooker

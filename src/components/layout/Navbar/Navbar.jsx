@@ -62,7 +62,10 @@ const Navbar = ({ onLearnMoreClick }) => {
     : "pt-[95px] md:pt-[78px]";
 
   const scrollToDemo = () => {
-    window.scrollTo({ top: 4450, behavior: "smooth" });
+    const isMobile = window.innerWidth < 768;
+    const scrollPosition = isMobile ? 7750 : 4450;
+
+    window.scrollTo({ top: scrollPosition, behavior: "smooth" });
   };
 
   return (
@@ -218,7 +221,7 @@ const Navbar = ({ onLearnMoreClick }) => {
                     }}
                     className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium w-full"
                   >
-                    See a demo
+                    Оставить заявку
                   </button>
                 </div>
               </nav>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 const offers = [
@@ -52,8 +52,8 @@ const products = [
 const connectWithBankbooker = [
   {
     href: "/contact/agent",
-    title: "Talk with agent",
-    description: "Get free consultancy",
+    title: "- Связаться с агентом",
+    description: "Получите бесплатную консультацию",
     imageSrc: "/productsdropdown/talk.png",
     imageWidth: 30,
     imageHeight: 30,
@@ -61,8 +61,8 @@ const connectWithBankbooker = [
   },
   {
     href: "/contact/chat",
-    title: "Chat with us",
-    description: "Connect with support team",
+    title: "Чат с поддержкой",
+    description: "Свяжитесь с командой поддержки",
     imageSrc: "/productsdropdown/chat.png",
     imageWidth: 30,
     imageHeight: 30,
@@ -70,8 +70,8 @@ const connectWithBankbooker = [
   },
   {
     href: "/contact/telegram",
-    title: "Telegram Community",
-    description: "Benefit from privileges",
+    title: "⁠Сообщество в Telegram",
+    description: "Воспользуйтесь привилегиями",
     imageSrc: "/productsdropdown/telegram.png",
     imageWidth: 30,
     imageHeight: 30,
@@ -110,6 +110,7 @@ const resourceCenter = [
 ];
 
 const MobileDropdownProductsFull = ({ onClose }) => {
+  const cardsRef = useRef([]);
   const Section = ({ title, items, scrollable = false }) => (
     <section className="mb-6">
       {title && <h3 className="text-lg font-semibold mb-2">{title}</h3>}
