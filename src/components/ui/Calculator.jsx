@@ -189,13 +189,13 @@ const Calculator = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center">
                   <p className="text-gray-500 text-sm">Total Cost</p>
-                  <p className="text-2xl sm:text-3xl font-bold text-blue-500">
+                  <p className="text-xl sm:text-3xl font-bold text-blue-500">
                     7,891,290 ₽
                   </p>
                 </div>
                 <div className="flex flex-col items-center">
                   <p className="text-gray-500 text-sm">Service Fee*</p>
-                  <p className="text-2xl sm:text-3xl font-semibold text-gray-900">
+                  <p className="text-xl sm:text-3xl font-semibold text-gray-900">
                     60,000 ₽
                   </p>
                 </div>

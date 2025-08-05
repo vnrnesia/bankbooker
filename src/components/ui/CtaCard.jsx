@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Card */}
-        <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl text-center lg:text-start">
+        <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl lg:text-start">
           <div>
             <p className="text-white text-sm font-light mb-2">
               Почему выбирают нас
@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
             <p className="flex">
               {" "}
               <Check /> предварительная проверка комплаенс банка в РФ и
-              Зарубежом{" "}
+              Зарубежом
             </p>
             <p className="flex">
               {" "}

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const products = [
   {
-    href: "/products/invoice",
-    title: "Invoice Payment",
+    href: "/services?details=true",
+    title: "Оплата инвойсов",
     description: "Pay vendors faster and safer",
     imageSrc: "/productsdropdown/invoice.png",
     imageWidth: 30,
@@ -12,15 +12,14 @@ const products = [
     imageClassName: "object-contain mr-2",
   },
   {
-    href: "/products/banking",
-    title: "Banking Product",
+    href: "/services?details=true",
+    title: "Возврат валютной выручки",
     description: "Bank smarter with up to 4.36%",
     imageSrc: "/productsdropdown/banking.png",
     imageWidth: 30,
     imageHeight: 36,
     imageClassName: "object-contain mr-2",
   },
-  
 ];
 
 const connectWithBankbooker = [
@@ -88,8 +87,9 @@ const MobileDropdownProductsFull = ({ onClose }) => {
     <section className="mb-6">
       {title && <h3 className="text-lg font-semibold mb-2">{title}</h3>}
       <div
-        className={`flex flex-col space-y-4 ${scrollable ? "max-h-48 overflow-y-auto pr-2" : ""
-          }`}
+        className={`flex flex-col space-y-4 ${
+          scrollable ? "max-h-48 overflow-y-auto pr-2" : ""
+        }`}
       >
         {items.map((item) => (
           <Link
@@ -116,7 +116,10 @@ const MobileDropdownProductsFull = ({ onClose }) => {
   );
 
   return (
-    <div className="px-4 pb-6 overflow-y-auto max-h-[70vh]" style={{ WebkitOverflowScrolling: "touch" }}>
+    <div
+      className="px-4 pb-6 overflow-y-auto max-h-[70vh]"
+      style={{ WebkitOverflowScrolling: "touch" }}
+    >
       <Section title="" items={products} scrollable={true} />
       <Section title="Connect with Bankbooker" items={connectWithBankbooker} />
       <Section title="Resource Center" items={resourceCenter} />

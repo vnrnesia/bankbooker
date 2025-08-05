@@ -6,6 +6,33 @@ import ProductsItem from "./ProductsItem";
 import { MoveRight, ChevronDown } from "lucide-react";
 import Currency from "../../ui/Currency";
 
+const offers = [
+  {
+    country: "Китай",
+    flag: "/flags/china.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[5px] top-[1px]",
+  },
+  {
+    country: "ОАЭ",
+    flag: "/flags/uae.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[0px] top-[0px]",
+  },
+  {
+    country: "Турция",
+    flag: "/flags/turkey.png",
+    course: "Инвестинг",
+    duration: "3–5 Дней",
+    commission: "2,5%",
+    offsetClass: "left-[-1px] top-[1px]",
+  },
+];
+
 const dropdownVariants = {
   hidden: { opacity: 0, y: -10 },
   visible: { opacity: 1, y: 0 },
@@ -13,10 +40,11 @@ const dropdownVariants = {
 };
 
 const ProductsDropdown = ({ bannerOpen }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const closeTimeout = useRef(null);
   const dropdownRef = useRef(null);
   const triggerRef = useRef(null);
+  const cardsRef = useRef([]); // 💡 Eksik olan tanım
 
   const handleMouseEnter = () => {
     if (closeTimeout.current) {
@@ -34,13 +62,12 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const target = event.target;
       if (
         isOpen &&
         dropdownRef.current &&
         triggerRef.current &&
-        !dropdownRef.current.contains(target) &&
-        !triggerRef.current.contains(target)
+        !dropdownRef.current.contains(event.target) &&
+        !triggerRef.current.contains(event.target)
       ) {
         setIsOpen(false);
       }
@@ -71,8 +98,8 @@ const ProductsDropdown = ({ bannerOpen }) => {
   return (
     <div
       className="relative inline-block"
-      onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         ref={triggerRef}
@@ -109,7 +136,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
               transition={{ duration: 0.25, ease: "easeInOut" }}
             >
               <div className="mx-auto w-full max-w-[90%] xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Products Column */}
+                {/* Products */}
                 <div>
                   <SectionHeader title="Products" />
                   <Divider />
@@ -142,6 +169,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   ))}
                 </div>
 
+                {/* Contact */}
                 <div>
                   <SectionHeader title="Connect Bankbooker" />
                   <Divider />
@@ -153,7 +181,6 @@ const ProductsDropdown = ({ bannerOpen }) => {
                       description: "Get free consultancy",
                       imageWidth: 30,
                       imageHeight: 30,
-                      imageClassName: "object-contain",
                     },
                     {
                       href: "/contact/chat",
@@ -182,7 +209,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   ))}
                 </div>
 
-                {/* Resource Center Column */}
+                {/* Resources */}
                 <div>
                   <SectionHeader title="Resource Center" />
                   <Divider />
@@ -221,10 +248,59 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   ))}
                 </div>
 
-                {/* Best Offer Column */}
-                <div className="bg-gray-100 rounded-lg py-4 px-2 flex justify-center items-center">
+                {/* Offers */}
+                <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center">
                   <div className="text-lg font-medium text-center">
-                    Best Offer
+                    <div className="flex flex-col gap-5">
+                      {offers.map((offer, idx) => (
+                        <div
+                          key={idx}
+                          ref={(el) => (cardsRef.current[idx] = el)}
+                          className="bg-white border  border-gray-200 rounded-xl shadow-sm px-11 py-1 flex flex-col justify-between"
+                        >
+                          <div className="flex items-center space-x-3 ">
+                            <div className="relative w-10 h-10 shrink-0">
+                              <img
+                                src={offer.flag}
+                                alt={offer.country}
+                                className={`absolute w-full h-full object-cover rounded-full ${offer.offsetClass}`}
+                              />
+                            </div>
+                            <h3 className="text-base font-medium text-gray-800">
+                              {offer.country}
+                            </h3>
+                            <div>
+                              <p className="text-gray-400 text-xs text-en">Курс</p>
+                              <p className="text-xs">{offer.course}</p>
+                            </div>
+                          </div>
+
+                          <div className="pt-2 w-full">
+                            <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
+                              <div className="flex-grow py-1 px-1  text-base bg-gray-100">
+                                Оставьте заявку
+                              </div>
+                              <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="w-5 h-5 text-white"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  strokeWidth={2}
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

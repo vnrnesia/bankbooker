@@ -135,6 +135,9 @@ const Services = () => {
             <div className="max-w-7xl mx-auto">
               <Comments />
             </div>
+            <div>
+              <GetStarted/>
+            </div>
           </div>
           <Footer />
         </div>
