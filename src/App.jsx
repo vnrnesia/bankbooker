@@ -57,7 +57,6 @@ function App() {
         </Routes>
       </main>
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
-      <Chatbot />
       <ToolbarMobile scrollToGetStarted={scrollToGetStarted} />
     </div>
   );

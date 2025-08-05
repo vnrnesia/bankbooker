@@ -92,7 +92,7 @@ const Navbar = ({ onLearnMoreClick }) => {
               <img
                 src="/bankbooker.png"
                 alt="BankBooker Logo"
-                width={170}
+                width={190}
                 height={50}
               />
             </Link>

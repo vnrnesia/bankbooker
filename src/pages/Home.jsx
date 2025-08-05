@@ -10,6 +10,7 @@ import Calculator from "../components/ui/Calculator";
 import AccordionMenu from "../components/ui/AcordionMenu";
 import GetStarted from "../components/ui/GetStarted";
 import Info from "../components/ui/Info";
+import Chatbot from "../components/layout/Chatbot";
 
 function Home({ getStartedRef, onGetStartedClick }) {
   return (
@@ -53,12 +54,13 @@ function Home({ getStartedRef, onGetStartedClick }) {
           <Info onGetStartedClick={onGetStartedClick} />
         </div>
         <div className="max-w-7xl mx-auto">
-          <Comments onGetStartedClick={onGetStartedClick}  />
+          <Comments onGetStartedClick={onGetStartedClick} />
         </div>
         <div className="mb-16 md:pb-0 md:pt-24 md:py-16">
           <AccordionMenu />
         </div>
         <Contact />
+        
       </div>
     </>
   );

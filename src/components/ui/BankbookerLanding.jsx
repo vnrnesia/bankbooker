@@ -1,8 +1,13 @@
 import React from "react";
 import ToGetStarted from "./ToGetStarted";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faStarHalfAlt,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 import GetStarted from "./GetStarted";
+
 const HeroSection = ({ onGetStartedClick }) => {
   return (
     <div className="px-4 md:px-0 w-full pb-24 bg-white max-w-7xl">
@@ -28,9 +33,34 @@ const HeroSection = ({ onGetStartedClick }) => {
               </p>
             </div>
 
-            <button onClick={onGetStartedClick} className="w-full md:w-auto">
-              <ToGetStarted text="See a demo" />
-            </button>
+            <div className="pt-4">
+              <div className="pt-2 w-[400px]">
+                <div
+                  onClick={onGetStartedClick}
+                  className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer"
+                >
+                  <div className="flex-grow px-4 py-2 text-base bg-gray-100">
+                    Оставьте заявку
+                  </div>
+                  <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <button
               className="hidden md:block fixed bottom-5 right-[85px]"
@@ -40,7 +70,7 @@ const HeroSection = ({ onGetStartedClick }) => {
             </button>
             <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">
               {/* Card 1 */}
-              <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
+              <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">
                 <div className="flex flex-col items-center gap-2">
                   <div className="flex items-center gap-4 text-center">
                     <div className="text-3xl sm:text-4xl font-sans">120+</div>
@@ -89,7 +119,7 @@ const HeroSection = ({ onGetStartedClick }) => {
               </div>
 
               {/* Card 2 */}
-              <div className=" bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between">
+              <div className=" bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">
                 <div className="">
                   <div className="font-medium text-lg">
                     Лучшие условия по оплате инвойсов
@@ -104,10 +134,30 @@ const HeroSection = ({ onGetStartedClick }) => {
                     <h2 className="pt-4  my-auto">от 1.5%</h2>
                   </div>
                 </div>
+                <div className="flex flex-row">
+                  <div className="flex items-center mr-2 justify-center gap-2 mt-6 text-white">
+                    <div className="w-8 h-8 p sm:w-10 sm:h-10 rounded-full bg-white text-[#00A3FF] flex items-center justify-center">
+                      <svg
+                        className="w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm">
+                      How does it work?
+                      <br />
+                      <span className="text-[13px] text-white/80">
+                        Play video
+                      </span>
+                    </span>
+                  </div>
+                </div>
                 <img
                   src="/illustration.png"
                   alt="illustration"
-                  className="flex  ml-2 md:ml-10 w-[85%] md:w-[70%]"
+                  className=" mt-[-60px] ml-24 md:ml-32 w-[75%] md:w-[70%]"
                 />
               </div>
             </div>

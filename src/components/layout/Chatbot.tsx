@@ -86,7 +86,7 @@ export default function Chatbot({ onGetStartedClick }) {
     const timer = setTimeout(() => {
       setOpen(true);
       setAutoOpened(true);
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 

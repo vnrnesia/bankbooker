@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Chatbot'u lazy-load olarak import et
+const Chatbot = lazy(() => import("../layout/Chatbot"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,36 +60,59 @@ const offers = [
 
 export default function OffersGrid({ onGetStartedClick }) {
   const cardsRef = useRef([]);
+  const sectionRef = useRef(null);
+  const [showChatbot, setShowChatbot] = useState(false);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+    if (!prefersReducedMotion) {
+      cardsRef.current.forEach((card, idx) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: idx * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+    }
+  }, []);
 
-    if (prefersReducedMotion) return;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowChatbot(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.2, // %20'den fazlası görünürse tetiklenir
+      }
+    );
 
-    cardsRef.current.forEach((card, idx) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          delay: idx * 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
-    <section className="bg-white py-12 font-[Manrope]">
+    <section ref={sectionRef} className="bg-white py-12 font-[Manrope]">
       <div>
         <div className="grid md:grid-cols-2 gap-6 mb-12 items-start justify-between">
           <div>
@@ -97,9 +123,8 @@ export default function OffersGrid({ onGetStartedClick }) {
               Лучшие Предложения
             </h1>
           </div>
-
           <div className="flex justify-end text-right">
-            <p className="text-left text-gray-500 font-medium font-[Manrope] max-w-md text-md leading-relaxed">
+            <p className="text-left text-gray-500 font-medium max-w-md text-md leading-relaxed">
               Выбирайте среди популярных направлений и совершайте платежи через
               наш сервис по оптимальной стоимости без скрытых комиссий и
               переплат.
@@ -151,7 +176,7 @@ export default function OffersGrid({ onGetStartedClick }) {
                     <div className="flex-grow px-4 py-2 text-base bg-gray-100">
                       Оставьте заявку
                     </div>
-                    <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-105 transition-transform duration-300">
+                    <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-5 h-5 text-white"
@@ -174,6 +199,16 @@ export default function OffersGrid({ onGetStartedClick }) {
           ))}
         </div>
       </div>
+
+      {showChatbot && (
+        <Suspense
+          fallback={
+            <div className="text-center mt-8 text-gray-400">Загрузка...</div>
+          }
+        >
+          <Chatbot />
+        </Suspense>
+      )}
     </section>
   );
 }
