@@ -27,7 +27,6 @@ function App() {
     });
   };
 
-  // Footer'ın görünmemesini istediğimiz sayfalar
   const hideFooterRoutes = ["/contact", "/services"];
 
   return (

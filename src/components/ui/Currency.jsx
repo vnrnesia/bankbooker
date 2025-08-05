@@ -24,14 +24,14 @@ const Currency = () => {
       iconHeight: 20,
     },
     {
-      currency: "TRY",
+      currency: "AED",
       rate: 98.1234,
       icon: "/currency/dirham.png",
       iconWidth: 12,
       iconHeight: 18,
     },
     {
-      currency: "AED",
+      currency: "TRY",
       rate: 0.5678,
       icon: "/currency/tl.svg",
       iconWidth: 12,

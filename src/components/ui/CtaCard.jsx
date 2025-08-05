@@ -1,15 +1,64 @@
+import React, { useEffect, useRef } from "react";
 import ivan from "@/assets/ivan.png";
 import icon1 from "@/assets/LeftPanel/icon1.png";
 import icon2 from "@/assets/LeftPanel/icon2.png";
 import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
 import { Check } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const WhyChooseUs = () => {
+  const sectionRef = useRef(null);
+  const leftCardRef = useRef(null);
+  const rightCardRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Soldaki kart animasyonu: yukarıdan aşağıya ve opacity
+      gsap.from(leftCardRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%", // Bölüm görünmeye başlayınca
+          toggleActions: "play none none none",
+        },
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // Sağdaki kart animasyonu: sağdan sola ve opacity
+      gsap.from(rightCardRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.3,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert(); // cleanup
+  }, []);
+
   return (
-    <section className="m max-w- mx-auto font-[Manrope] min-h-[550px] bg-gradient-to-r from-sky-500 to-blue-600 px-4 flex items-center">
+    <section
+      ref={sectionRef}
+      className="m max-w- mx-auto font-[Manrope] min-h-[550px] bg-gradient-to-r from-sky-500 to-blue-600 px-4 flex items-center"
+    >
       <div className="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-4 md:pt-0 gap-8 justify-center items-center ">
         {/* Left Card */}
-        <div className="rounded-xl border-4 h-[500px] w-auto 3xl:min-w-[900px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none">
+        <div
+          ref={leftCardRef}
+          className="rounded-xl border-4 h-[500px] w-auto 3xl:min-w-[900px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none"
+        >
           <p className="text-gray-700 font-medium text-md text-center mb-2">
             Финансовые консалтинг и услуги международных переводов для B2B
           </p>
@@ -50,7 +99,10 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Card */}
-        <div className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl lg:text-start">
+        <div
+          ref={rightCardRef}
+          className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl lg:text-start"
+        >
           <div>
             <p className="text-white text-sm font-light mb-2">
               Почему выбирают нас
@@ -67,42 +119,34 @@ const WhyChooseUs = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm mb-6">
             <p className="flex">
-              {" "}
-              <Check /> юридическое сопровождение всего контура сделки{" "}
+              <Check /> юридическое сопровождение всего контура сделки
             </p>
             <p className="flex">
-              {" "}
               <Check /> предварительная проверка комплаенс банка в РФ и
               Зарубежом
             </p>
             <p className="flex">
-              {" "}
-              <Check /> сервис эскроул агента{" "}
+              <Check /> сервис эскроул агента
             </p>
             <p className="flex">
-              {" "}
-              <Check /> международный факторинг{" "}
+              <Check /> международный факторинг
             </p>
             <p className="flex">
-              {" "}
-              <Check /> отсутствие скрытых комиссий{" "}
+              <Check /> отсутствие скрытых комиссий
             </p>
             <p className="flex">
-              {" "}
-              <Check /> оперативное рассмотрение заявки{" "}
+              <Check /> оперативное рассмотрение заявки
             </p>
             <p className="flex">
-              {" "}
-              <Check /> отсутствие блокировок{" "}
+              <Check /> отсутствие блокировок
             </p>
             <p className="flex">
-              {" "}
               <Check /> оплата день в день
             </p>
           </div>
 
           <div className="flex lg:block justify-center lg:items-start ">
-            <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit  ">
+            <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit">
               Contact With Us
             </button>
           </div>

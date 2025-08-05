@@ -50,9 +50,9 @@ const LoadingDots = () => (
 );
 
 const OPTIONS_MAIN = [
-  "Apply for Bankbooker",
-  "Talk to Sales",
-  "Schedule to Demo",
+  "Оплатить инвойс",
+  "Вернуть валютную выручкуs",
+  "Бесплатная консультация",
 ] as const;
 
 export default function Chatbot({ onGetStartedClick }) {
@@ -93,7 +93,7 @@ export default function Chatbot({ onGetStartedClick }) {
   useEffect(() => {
     if (!open || messages.length > 0) return;
     addBotMessageWithLoading(
-      "Welcome to Bankbooker, how can I help you today?"
+      "Здравствуйте Какие услуги Вас интересуют ? "
     );
   }, [open]);
 
@@ -149,9 +149,9 @@ export default function Chatbot({ onGetStartedClick }) {
     setShowOptions(false);
     setShowEmailInput(false);
     const isEmailFollowup =
-      option === "Apply for Bankbooker" ||
-      option === "Talk to Sales" ||
-      option === "Schedule to Demo";
+      option === "Оплатить инвойс" ||
+      option === "Вернуть валютную выручку" ||
+      option === "Бесплатная консультация";
     if (option === "No thanks, not applying for now.") {
       addBotMessageWithLoading(
         "Thanks for stopping by! Feel free to reach out anytime."

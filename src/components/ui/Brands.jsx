@@ -1,3 +1,9 @@
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const icons = [
   { src: "/assets/brands/brand1.png", width: "w-[80%] md:w-[60%]" },
   { src: "/assets/brands/brand2.png", width: "w-[70%] md:w-[50%]" },
@@ -12,17 +18,71 @@ const icons = [
 ];
 
 const Brands = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const leftHeader = containerRef.current.querySelector(".left-header");
+    const rightHeader = containerRef.current.querySelector(".right-header");
+    const brandItems = containerRef.current.querySelectorAll(".brand-item");
+
+    // Başlangıç pozisyonları:
+    gsap.set(leftHeader, { opacity: 0, x: -100 });
+    gsap.set(rightHeader, { opacity: 0, x: 100 });
+    gsap.set(brandItems, { opacity: 0, y: 40 });
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    timeline
+      .to(leftHeader, {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      })
+      .to(
+        rightHeader,
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        },
+        "-=0.4" // Sağ başlık biraz overlap ile başlasın
+      )
+      .to(brandItems, {
+        opacity: 1,
+        y: 0,
+        duration: 0.01,
+        ease: "power3.out",
+        stagger: 0.1,
+      });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="mx-auto mb-36">
+    <div ref={containerRef} className="mx-auto mb-36 px-4">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-        <div>
+        {/* Sol başlık */}
+        <div className="left-header">
           <h2 className="text-base font text-gray-500">Partner</h2>
           <h3 className="text-4xl font-bold text-gray-900 mt-2">
             Trusted By +550 Companies Worldwide
           </h3>
         </div>
-        <p className="text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md">
-          Here are some of the companies that have been empowered by Bankbooker to move forward with confidence.
+
+        {/* Sağ paragraf */}
+        <p className="right-header text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md text-right md:text-left md:max-w-xs">
+          Here are some of the companies that have been empowered by Bankbooker
+          to move forward with confidence.
         </p>
       </div>
 
@@ -30,12 +90,12 @@ const Brands = () => {
         {icons.map((icon, index) => (
           <div
             key={index}
-            className="group bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 shadow-sm hover:shadow-md transition"
+            className="brand-item group bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 shadow-sm hover:shadow-md transition"
           >
             <img
               src={icon.src}
               alt={`Company logo ${index + 1}`}
-              className={`object-contain  group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ease-in-out ${icon.width}`}
+              className={`object-contain group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ease-in-out ${icon.width}`}
             />
           </div>
         ))}

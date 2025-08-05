@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
 import HeroSection from "@/components/ui/BankbookerLanding.jsx";
 import Brands from "@/components/ui/Brands.jsx";
 import Steps from "@/components/ui/Steps.jsx";
@@ -10,9 +10,51 @@ import Calculator from "../components/ui/Calculator";
 import AccordionMenu from "../components/ui/AcordionMenu";
 import GetStarted from "../components/ui/GetStarted";
 import Info from "../components/ui/Info";
-import Chatbot from "../components/layout/Chatbot";
+import ToGetStarted from "../components/ui/ToGetStarted";
+
+const Chatbot = lazy(() => import("../components/layout/Chatbot"));
 
 function Home({ getStartedRef, onGetStartedClick }) {
+  const offersRef = useRef(null);
+  const [hasChatbotShown, setHasChatbotShown] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasChatbotShown) {
+          setHasChatbotShown(true);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.2,
+      }
+    );
+
+    if (offersRef.current) {
+      observer.observe(offersRef.current);
+    }
+
+    return () => {
+      if (offersRef.current) {
+        observer.unobserve(offersRef.current);
+      }
+    };
+  }, [hasChatbotShown]);
+
+  useEffect(() => {
+    let timer;
+    if (hasChatbotShown) {
+      timer = setTimeout(() => {
+        setShowButton(true);
+      }, 1000);
+    } else {
+      setShowButton(false);
+    }
+    return () => clearTimeout(timer);
+  }, [hasChatbotShown]);
+
   return (
     <>
       <div className="min-h-screen flex flex-col md:max-w-[90%] 3xl:max-w-[100%] mx-auto">
@@ -22,7 +64,10 @@ function Home({ getStartedRef, onGetStartedClick }) {
               <HeroSection onGetStartedClick={onGetStartedClick} />
             </div>
 
-            <div className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]">
+            <div
+              ref={offersRef}
+              className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]"
+            >
               <OffersGrid onGetStartedClick={onGetStartedClick} />
             </div>
 
@@ -60,7 +105,33 @@ function Home({ getStartedRef, onGetStartedClick }) {
           <AccordionMenu />
         </div>
         <Contact />
-        
+
+        {hasChatbotShown && (
+          <Suspense
+            fallback={
+              <div className="text-center text-gray-400">Загрузка...</div>
+            }
+          >
+            <Chatbot />
+          </Suspense>
+        )}
+
+        {hasChatbotShown && (
+          <button
+            className={`hidden md:block fixed bottom-5 right-[85px] z-50
+              transition-transform duration-500 ease-in-out
+              ${
+                showButton
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-20 opacity-0"
+              }
+            `}
+            onClick={onGetStartedClick}
+            style={{ willChange: "transform, opacity" }}
+          >
+            <ToGetStarted text="Reach us!" />
+          </button>
+        )}
       </div>
     </>
   );

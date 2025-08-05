@@ -1,8 +1,11 @@
-import { useState } from "react";
-import handshake from "@/assets/handshake.png";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import ToGetStarted from "./ToGetStarted";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="bg-white rounded-xl shadow p-6">
@@ -45,30 +48,75 @@ const Info = ({ onGetStartedClick }) => {
   const [isVisionOpen, setVisionOpen] = useState(true);
   const [isMissionOpen, setMissionOpen] = useState(false);
 
+  const leftSideRef = useRef(null);
+  const rightSideRef = useRef(null);
+
   const handleVisionToggle = () => {
     if (isVisionOpen) {
       setVisionOpen(false);
-      setMissionOpen(true); // Vision kapanırsa Mission açılsın
+      setMissionOpen(true);
     } else {
       setVisionOpen(true);
-      setMissionOpen(false); // Vision açılırsa Mission kapanabilir
+      setMissionOpen(false);
     }
   };
 
   const handleMissionToggle = () => {
     if (isMissionOpen) {
       setMissionOpen(false);
-      setVisionOpen(true); // Mission kapanırsa Vision açılsın
+      setVisionOpen(true);
     } else {
       setMissionOpen(true);
-      setVisionOpen(false); // Mission açılırsa Vision kapanabilir
+      setVisionOpen(false);
     }
   };
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      // Soldan gelen animasyon
+      gsap.fromTo(
+        leftSideRef.current,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: leftSideRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Sağdan gelen animasyon
+      gsap.fromTo(
+        rightSideRef.current,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: rightSideRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, [leftSideRef, rightSideRef]);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="max-w-7xl mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope]">
-      {/* Left Side */}
-      <div>
+    <section className="max-w-7xl mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 font-[Manrope] px-4">
+      {/* Soldaki metin ve istatistikler */}
+      <div ref={leftSideRef}>
         <h4 className="text-gray-600 text-md font-medium mb-2">
           About Bankbooker
         </h4>
@@ -80,7 +128,7 @@ const Info = ({ onGetStartedClick }) => {
           поручению в любую страну.
         </p>
 
-        <div className=" grid grid-cols-3 divide-x divide-gray-200 text-center">
+        <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
             <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
               38+
@@ -102,22 +150,20 @@ const Info = ({ onGetStartedClick }) => {
               500+
             </p>
             <p className="text-md text-gray-500 mt-1">
-            Клиенты регулярно платят через нас
+              Клиенты регулярно платят через нас
             </p>
           </div>
         </div>
       </div>
 
-      {/* Right Side */}
-      <div className="space-y-6">
-        {/* Background image card */}
+      {/* Sağdaki resim + accordion */}
+      <div ref={rightSideRef} className="space-y-6">
         <div>
           <div className="bg-gradient-to-r from-[#006FDC] rounded-lg flex items-center justify-center p-10 to-[#11B4EC] h-[200px]">
-            <img src="/world.png" alt="" className="w-[280px] " />
+            <img src="/world.png" alt="world" className="w-[280px]" />
           </div>
         </div>
 
-        {/* Accordion Sections */}
         <AccordionItem
           title="Vision"
           content="Our vision is empowering organizations and individuals to achieve sustainable growth, financial stability, and operational excellence."

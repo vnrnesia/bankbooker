@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import brand1 from "@/assets/Comment/brand1.png";
@@ -11,7 +11,13 @@ import brand6 from "@/assets/Comment/brand6.png";
 import avatar1 from "@/assets/Avatar/avatar1.png";
 import avatar2 from "@/assets/Avatar/avatar2.png";
 import avatar3 from "@/assets/Avatar/avatar3.png";
+
 import ToGetStarted from "./ToGetStarted";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -40,6 +46,51 @@ const Comments = ({ onGetStartedClick }) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  const testimonialRef = useRef(null);
+  const brandsRef = useRef(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        testimonialRef.current,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: testimonialRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      const logos = brandsRef.current.querySelectorAll("img");
+      gsap.fromTo(
+        logos,
+        { opacity: 0, x: 0 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: brandsRef.current,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, [testimonialRef, brandsRef]);
+
+    return () => ctx.revert();
+  }, []);
+
   const nextTestimonial = () => {
     setDirection(1);
     setIndex((prev) => (prev + 1) % testimonials.length);
@@ -65,7 +116,7 @@ const Comments = ({ onGetStartedClick }) => {
   };
 
   return (
-    <section className="font-[Manrope] bg-white py-16  ">
+    <section className="font-[Manrope] bg-white py-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Content */}
         <div className="max-w-lg">
@@ -80,7 +131,10 @@ const Comments = ({ onGetStartedClick }) => {
         </div>
 
         {/* Testimonial Card */}
-        <div className="relative bg-gray-100 rounded-2xl w-full md:w-1/2 mt-10 md:mt-0 min-h-[280px] overflow-hidden">
+        <div
+          ref={testimonialRef}
+          className="relative bg-gray-100 rounded-2xl w-full md:w-1/2 mt-10 md:mt-0 min-h-[280px] overflow-hidden"
+        >
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={index}
@@ -166,29 +220,29 @@ const Comments = ({ onGetStartedClick }) => {
       <div className="w-full border-t border-gray-300 mt-14" />
 
       {/* Brand Logos */}
-      <div className="mt-6">
-        {/* Mobile: auto-scroll slider */}
-        <div className="overflow-hidden md:hidden">
-          <div className="comments-brand-slider">
-            {[...brandImages, ...brandImages].map((brand, i) => (
-              <img
-                key={i}
-                src={brand}
-                alt={`Brand ${i + 1}`}
-                className="h-12 mx-4 flex-shrink-0 grayscale hover:grayscale-0 transition-transform duration-300 hover:scale-105"
-              />
-            ))}
-          </div>
-        </div>
+      <div
+        ref={brandsRef}
+        className="mt-6 hidden md:flex justify-center items-center gap-4 md:gap-16 px-4"
+      >
+        {brandImages.map((brand, i) => (
+          <img
+            key={i}
+            src={brand}
+            alt={`Brand ${i + 1}`}
+            className="h-8 md:h-[42px] gap-4 w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+          />
+        ))}
+      </div>
 
-        {/* Desktop: static logos */}
-        <div className="hidden md:flex justify-center items-center gap-4 md:gap-16 px-4">
-          {brandImages.map((brand, i) => (
+      {/* Mobile slider stays the same */}
+      <div className="overflow-hidden md:hidden mt-6">
+        <div className="comments-brand-slider flex gap-4">
+          {[...brandImages, ...brandImages].map((brand, i) => (
             <img
               key={i}
               src={brand}
               alt={`Brand ${i + 1}`}
-              className="h-8 md:h-[42px] gap-4 w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+              className="h-12 mx-4 flex-shrink-0 grayscale hover:grayscale-0 transition-transform duration-300 hover:scale-105"
             />
           ))}
         </div>

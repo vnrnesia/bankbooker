@@ -52,7 +52,7 @@ const Services = () => {
   }, [searchParams]);
 
   return (
-    <section className="bg-gradient-to-r md:pt-10 flex flex-col items-center justify-start overflow-hidden relative">
+    <section className="bg-gradient-to-r pt-10 flex flex-col items-center justify-start overflow-hidden relative">
       <div className="absolute top-4 right-4 flex gap-2 md:hidden z-10">
         <button
           onClick={scrollLeft}

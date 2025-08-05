@@ -62,12 +62,7 @@ const HeroSection = ({ onGetStartedClick }) => {
               </div>
             </div>
 
-            <button
-              className="hidden md:block fixed bottom-5 right-[85px]"
-              onClick={onGetStartedClick}
-            >
-              <ToGetStarted text="Reach us!" />
-            </button>
+        
             <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">
               {/* Card 1 */}
               <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">

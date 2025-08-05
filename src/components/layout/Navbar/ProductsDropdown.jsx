@@ -40,11 +40,11 @@ const dropdownVariants = {
 };
 
 const ProductsDropdown = ({ bannerOpen }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const closeTimeout = useRef(null);
   const dropdownRef = useRef(null);
   const triggerRef = useRef(null);
-  const cardsRef = useRef([]); // 💡 Eksik olan tanım
+  const cardsRef = useRef([]); 
 
   const handleMouseEnter = () => {
     if (closeTimeout.current) {
