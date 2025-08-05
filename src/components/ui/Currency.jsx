@@ -61,7 +61,7 @@ const Currency = () => {
                 <p className="text-blue-600 text-[10px] md:text-base ml-[8px] font-semibold">{rate.currency}</p>
                 <p className="text-gray-700 text-[10px] hidden md:block">ЦБ</p>
               </div>
-              <p className="text-[10px]">{rate.rate}</p>
+              <p className="text-[10px] md:text-sm">{rate.rate}</p>
             </div>
           </div>
         ))}
