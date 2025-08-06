@@ -111,6 +111,7 @@ const resourceCenter = [
 
 const MobileDropdownProductsFull = ({ onClose }) => {
   const cardsRef = useRef([]);
+
   const Section = ({ title, items }) => (
     <section className="mb-6">
       {title && <h3 className="text-lg font-semibold mb-2">{title}</h3>}
@@ -147,8 +148,9 @@ const MobileDropdownProductsFull = ({ onClose }) => {
       <Section title="" items={products} />
       <Section title="Connect with Bankbooker" items={connectWithBankbooker} />
       <Section title="Resource Center" items={resourceCenter} />
+
       <section className="bg-gray-100 rounded p-4">
-        <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center mx-auto text-center">
+        <div className="bg-gray-100 rounded-lg py-4 px-2 text-center">
           <h3 className="text-center">Лучшие Предложения</h3>
           <div className="text-lg font-medium text-center pt-5">
             <div className="flex flex-col gap-5">
@@ -158,7 +160,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
                   ref={(el) => (cardsRef.current[idx] = el)}
                   className="bg-white border border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
                 >
-                  <div className="flex items-center space-x-3 ">
+                  <div className="flex items-center space-x-3">
                     <div className="relative w-5 h-5 shrink-0">
                       <img
                         src={offer.flag}
