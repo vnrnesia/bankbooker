@@ -47,9 +47,9 @@ export default function Steps() {
             4 этапа оплаты вашего инвойса
           </h2>
           <p className="text-gray-500 mb-16 max-w-2xl mx-auto">
-            Our consulting process is structured to ensure comprehensive
-            analysis, strategic planning, and effective implementation for
-            lasting results.
+            Обеспечиваем оперативную обработку вашего платежа, скоринг всех
+            документов по операциям и предварительную проверку комплаентс банка
+            в рф и зарубежом.
           </p>
         </div>
 

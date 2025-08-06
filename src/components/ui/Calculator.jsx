@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import InputMask from "react-input-mask";
+import "react-toastify/dist/ReactToastify.css";
 
 const currencyList = [
   { code: "AED", name: "Дирхам ОАЭ" },
@@ -322,36 +324,116 @@ const Calculator = () => {
   const [error, setError] = useState("");
   const [openDropdown, setOpenDropdown] = useState("");
 
-  const handleSliderChange = (e) => setAmount(e.target.value);
+  const [contactMethod, setContactMethod] = useState("WhatsApp");
+  const [email, setEmail] = useState("");
+  const [telegram, setTelegram] = useState("");
+  const [maskedTelegram, setMaskedTelegram] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [useMask, setUseMask] = useState(false);
+
+  useEffect(() => {
+    if (contactMethod === "Telegram") {
+      toast.info(
+        "⚠️ Обратите внимание: ваш Telegram должен быть доступен для сообщений. Укажите корректный номер или никнейм, иначе мы не сможем отправить вам сообщение.",
+        {
+          autoClose: 7000,
+          position: "bottom-center",
+          theme: "light",
+          transition: Slide,
+          style: {
+            width: "400px",
+            height: "120px",
+            background: "#E6F0FF",
+            color: "#000000",
+            borderLeft: "6px solid #0273DE",
+            fontSize: "14px",
+            borderRadius: "10px",
+          },
+        }
+      );
+    }
+  }, [contactMethod]);
+
+  const handleTelegramChange = (e) => {
+    const value = e.target.value;
+    if (value.length === 1) {
+      if (/^[0-9]$/.test(value)) {
+        setUseMask(true);
+        setMaskedTelegram(value);
+        setTelegram("");
+      } else {
+        setUseMask(false);
+        if (value !== "@") {
+          setTelegram("@" + value);
+        } else {
+          setTelegram(value);
+        }
+        setMaskedTelegram("");
+      }
+    } else {
+      if (useMask) {
+        setMaskedTelegram(value);
+      } else {
+        if (!value.startsWith("@")) {
+          setTelegram("@" + value);
+        } else {
+          setTelegram(value);
+        }
+      }
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const rawPhone = phone.replace(/\D/g, "");
-    if (!rawPhone.startsWith("7") || rawPhone.length !== 11) {
-      setError("Номер телефона должен состоять из 11 цифр и начинаться с 7.");
-      return;
+    const amt = parseFloat(amount) || 0;
+
+    // Validasyon
+    if (contactMethod === "Email") {
+      if (!email) {
+        setError("Пожалуйста, введите корректный email.");
+        return;
+      }
+      console.log("Отправка Email:", email);
+    } else if (contactMethod === "Telegram") {
+      if (useMask && maskedTelegram.includes("_")) {
+        setError("Пожалуйста, введите полный номер телефона.");
+        return;
+      }
+      if (!telegram && !maskedTelegram) {
+        setError("Пожалуйста, введите ваш Telegram username или номер.");
+        return;
+      }
+      console.log("Отправка Telegram:", useMask ? maskedTelegram : telegram);
+    } else if (contactMethod === "WhatsApp") {
+      if (!whatsapp || whatsapp.includes("_")) {
+        setError("Пожалуйста, введите полный номер WhatsApp.");
+        return;
+      }
+      console.log("Отправка WhatsApp:", whatsapp);
     }
+
     setError("");
-    console.log("Отправка данных. Телефон:", phone);
+    console.log("Сумма перевода:", amt);
   };
+
+  const handleSliderChange = (e) => setAmount(e.target.value);
 
   const filteredCurrencies = currencyList.filter(
     (c) =>
       c.code.toLowerCase().includes(searchCurrency.toLowerCase()) ||
       c.name.toLowerCase().includes(searchCurrency.toLowerCase())
   );
-
   const filteredCountries = countryList.filter((c) =>
     c.toLowerCase().includes(searchCountry.toLowerCase())
   );
 
-  // Расчет итогов
   const amt = parseFloat(amount) || 0;
   const serviceFee = calculateServiceFee(amt);
   const totalCost = amt + serviceFee;
 
   return (
     <div className="max-w-md md:max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <ToastContainer />
       <div className="text-center mt-10">
         <h2 className="text-base text-left md:text-center font-medium text-gray-500">
           Калькулятор
@@ -373,7 +455,7 @@ const Calculator = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Левая часть */}
             <div className="space-y-5">
-              {/* Выбор валюты */}
+              {/* Валюта */}
               <div className="relative">
                 <label className="block text-gray-600 mb-1">
                   Выберите валюту
@@ -435,7 +517,7 @@ const Calculator = () => {
                 )}
               </div>
 
-              {/* Выбор страны */}
+              {/* Страна */}
               <div className="relative">
                 <label className="block text-gray-600 mb-1">
                   Рассчитайте сумму перевода
@@ -496,7 +578,7 @@ const Calculator = () => {
                 )}
               </div>
 
-              {/* Ввод суммы */}
+              {/* Сумма */}
               <div>
                 <label htmlFor="amount" className="block text-gray-600 mb-1">
                   Сумма перевода
@@ -527,72 +609,150 @@ const Calculator = () => {
             </div>
 
             {/* Правая часть */}
-            <div className="space-y-6">
-              {/* Итог */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col ">
-                  <p className="text-gray-500 text-sm">Итого</p>
-                  <p className="text-xl sm:text-3xl font-bold text-blue-500">
-                    {totalCost.toLocaleString()} ₽
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-gray-500 text-sm">Комиссия*</p>
-                  <p className="text-xl sm:text-3xl font-semibold text-gray-900">
-                    {serviceFee.toLocaleString()} ₽
-                  </p>
-                </div>
-              </div>
+        <div className="space-y-6">
+  {/* Итог */}
+  <div className="grid grid-cols-2 gap-4">
+    <div className="flex flex-col ">
+      <p className="text-gray-500 text-sm">Итого</p>
+      <p className="text-xl sm:text-3xl font-bold text-blue-500">
+        {totalCost.toLocaleString()} ₽
+      </p>
+    </div>
+    <div className="flex flex-col">
+      <p className="text-gray-500 text-sm">Комиссия*</p>
+      <p className="text-xl sm:text-3xl font-semibold text-gray-900">
+        {serviceFee.toLocaleString()} ₽
+      </p>
+    </div>
+  </div>
 
-              {/* Контактные данные */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="text"
-                  placeholder="Имя"
-                  className="px-3 py-3 rounded-lg bg-white placeholder-gray-500 focus:outline-none w-full sm:w-1/2"
-                />
-                <InputMask
-                  mask="+7 (999) 999-99-99"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                >
-                  {(inputProps) => (
-                    <input
-                      {...inputProps}
-                      type="tel"
-                      placeholder="Номер телефона"
-                      className="px-3 py-3 rounded-lg bg-white placeholder-gray-500 focus:outline-none w-full sm:w-1/2"
-                    />
-                  )}
-                </InputMask>
-              </div>
-              {error && <p className="text-red-500 text-sm">{error}</p>}
+  {/* Контактные данные */}
+  <div>
+    <label className="block mb-1 text-sm font-medium text-gray-700">
+      Как связаться?
+    </label>
 
-              {/* Кнопка */}
-              <button
-                type="submit"
-                className="cursor-pointer w-full bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-md hover:scale-105 transition duration-300 font-medium"
+    <div className="flex flex-col sm:flex-row gap-4">
+      {/* Dropdown */}
+      <div className="relative w-full sm:w-1/3">
+        <select
+          value={contactMethod}
+          onChange={(e) => {
+            setContactMethod(e.target.value);
+            setError("");
+            setTelegram("");
+            setMaskedTelegram("");
+            setUseMask(false);
+            setWhatsapp("");
+            setEmail("");
+          }}
+          className="w-full appearance-none border bg-white rounded-md p-3 pr-10 text-sm"
+        >
+          <option>WhatsApp</option>
+          <option>Telegram</option>
+          <option>Email</option>
+        </select>
+        <svg
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          width={16}
+          height={16}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      {/* İlgili input */}
+      <div className="w-full sm:w-2/3">
+        {contactMethod === "Email" && (
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-2.5 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        )}
+
+        {contactMethod === "Telegram" && (
+          <>
+            {useMask ? (
+              <InputMask
+                mask="+7 (999) 999-99-99"
+                value={maskedTelegram}
+                onChange={handleTelegramChange}
               >
-                отправить заявку
-              </button>
+                {(inputProps) => (
+                  <input
+                    {...inputProps}
+                    type="text"
+                    placeholder="Phone Number"
+                    className="w-full p-3 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                )}
+              </InputMask>
+            ) : (
+              <input
+                type="text"
+                placeholder="Пример: @username или +79991234567"
+                value={telegram}
+                onChange={handleTelegramChange}
+                className="w-full p-3 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            )}
+          </>
+        )}
 
-              {/* Согласие */}
-              <div className="space-y-2 text-sm">
-                <label className="flex items-start space-x-2">
-                  <input type="checkbox" className="mt-1" />
-                  <span>
-                    Даю своё <span className="text-blue-500">согласие</span> на
-                    обработку, хранение и передачу персональных данных
-                  </span>
-                </label>
-                <label className="flex items-start space-x-2">
-                  <input type="checkbox" className="mt-1" />
-                  <span>
-                    Согласен получать информационные и рекламные письма
-                  </span>
-                </label>
-              </div>
-            </div>
+        {contactMethod === "WhatsApp" && (
+          <InputMask
+            mask="+7 (999) 999-99-99"
+            value={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.value)}
+          >
+            {(inputProps) => (
+              <input
+                {...inputProps}
+                type="text"
+                placeholder="WhatsApp Number"
+                className="w-full p-3 bg-white border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            )}
+          </InputMask>
+        )}
+      </div>
+    </div>
+  </div>
+
+  {error && <p className="text-red-500 text-sm">{error}</p>}
+
+  {/* Кнопка */}
+  <button
+    type="submit"
+    className="cursor-pointer w-full bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-4 rounded-md hover:scale-105 transition duration-300 font-medium"
+  >
+    отправить заявку
+  </button>
+
+  {/* Согласие */}
+  <div className="space-y-2 text-sm">
+    <label className="flex items-start space-x-2">
+      <input type="checkbox" className="mt-1" />
+      <span>
+        Даю своё <span className="text-blue-500">согласие</span> на обработку,
+        хранение и передачу персональных данных
+      </span>
+    </label>
+    <label className="flex items-start space-x-2">
+      <input type="checkbox" className="mt-1" />
+      <span>Согласен получать информационные и рекламные письма</span>
+    </label>
+  </div>
+</div>
+
           </div>
         </div>
       </form>

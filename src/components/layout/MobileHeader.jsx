@@ -100,7 +100,7 @@ export default function MobileHeader() {
           {/* Alt Menü */}
           <div
             className={`overflow-hidden transition-all duration-300 ease-in-out flex flex-col space-y-3 pl-4 mt-2 text-base ${
-              showServices ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              showServices ? "min-h-[600px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
             <Link

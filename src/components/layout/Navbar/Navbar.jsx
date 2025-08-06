@@ -219,7 +219,9 @@ const Navbar = ({ onLearnMoreClick }) => {
                       scrollToDemo();
                       closeAllMenus();
                     }}
-                    className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium w-full"
+                    className={`block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium w-full ${
+                      mobileProductsOpen ? "mb-36" : ""
+                    }`}
                   >
                     Оставить заявку
                   </button>

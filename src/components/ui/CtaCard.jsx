@@ -147,7 +147,7 @@ const WhyChooseUs = () => {
 
           <div className="flex lg:block justify-center lg:items-start ">
             <button
-              className="bg-white text-black font-medium px-[140px] md:px-6 py-1 rounded-md w-fit"
+              className="bg-white text-black font-medium px-[105px] md:px-6 py-1 rounded-md w-fit whitespace-nowrap"
               onClick={() => {
                 const scrollAmount = window.innerWidth <= 768 ? 7700 : 4350;
                 window.scrollTo({

@@ -72,7 +72,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="w-full min-h-[610px] bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] text-gray-800 font-manrope overflow-hidden">
+      <footer className="w-full min-h-[210px] bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] text-gray-800 font-manrope overflow-hidden">
         <div className="w-full">
           <div className="px-4 md:px-0 max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto pb-8 md:pb-12">
             <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">

@@ -174,7 +174,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
                     </div>
                   </div>
 
-                  <div className="pt-2 w-full">
+                  <div className="pt-4 w-full">
                     <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
                       <div className="flex-grow py-1  px-1 text-sm bg-gray-100">
                         Оставьте заявку

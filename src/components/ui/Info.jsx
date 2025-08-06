@@ -130,19 +130,19 @@ const Info = ({ onGetStartedClick }) => {
 
         <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
           <div>
-            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+            <p className="text-xs md:text-4xl font-semibold text-neutral-900">
               38+
             </p>
-            <p className="text-md text-gray-500 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Стран в которые мы осущ3ествляем переводы
             </p>
           </div>
           <div className="px-4">
-            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+            <p className="text-2xl md:text-xl font-semibold text-neutral-900">
               95%
             </p>
-            <p className="text-md text-gray-500 mt-1">
-              Платежей проходят День в день
+            <p className="text-[] text-gray-500 mt-1">
+              Платежей проходят День в ден
             </p>
           </div>
           <div>
