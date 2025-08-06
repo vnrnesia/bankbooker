@@ -95,9 +95,7 @@ function Home({ getStartedRef, onGetStartedClick }) {
       </div>
 
       <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] 3xl:max-w-[100%] container mx-auto ">
-        <div className="md:pb-24">
-          <Info onGetStartedClick={onGetStartedClick} />
-        </div>
+       
         <div className="max-w-7xl mx-auto">
           <Comments onGetStartedClick={onGetStartedClick} />
         </div>
@@ -106,17 +104,10 @@ function Home({ getStartedRef, onGetStartedClick }) {
         </div>
         <Contact />
 
-        {hasChatbotShown && (
-          <Suspense
-            fallback={
-              <div className="text-center text-gray-400">Загрузка...</div>
-            }
-          >
-            <Chatbot autoOpen={hasChatbotShown} />
-          </Suspense>
-        )}
-
-        {hasChatbotShown && (
+       
+            <Chatbot />
+       
+        
           <button
             className={`hidden md:block fixed bottom-5 right-[85px] z-50
               transition-transform duration-500 ease-in-out
@@ -131,7 +122,7 @@ function Home({ getStartedRef, onGetStartedClick }) {
           >
             <ToGetStarted text="Свяжитесь с нами!" />
           </button>
-        )}
+        
       </div>
     </>
   );

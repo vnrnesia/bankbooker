@@ -33,10 +33,10 @@ const Calculator = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className=" max-w-md md:max-w-7xl mx-auto  sm:px-6 lg:px-8">
       <div className="text-center mt-10">
-        <h2 className="text-base font-medium text-gray-500">Calculate</h2>
-        <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
+        <h2 className="text-base text-left md:text-center font-medium text-gray-500">Calculate</h2>
+        <h3 className="text-3xl sm:text-4xl text-left md:text-center font-bold text-gray-900 mt-2">
           Calculate the cost of the transfer
         </h3>
       </div>

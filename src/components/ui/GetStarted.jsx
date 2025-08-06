@@ -239,11 +239,15 @@ const GetStarted = () => {
         </div>
 
         <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
-          <img
-            src="/order.png"
-            alt="Order Illustration"
-            className="md:w-[80%] md:h-[80%] md:-mr-16"
-          />
+          <div>
+            <div className="bg-gradient-to-r from-[#006FDC] rounded-md flex items-center justify-center h-[300px] w-[350px] md:w-[500px] to-[#11B4EC]">
+              <img
+                src="/world.png"
+                alt="world"
+                className="w-full absolute max-w-[300px] md:max-w-[280px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

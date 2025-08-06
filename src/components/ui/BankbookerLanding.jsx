@@ -15,20 +15,17 @@ const HeroSection = ({ onGetStartedClick }) => {
           <div className="flex justify-end items-center py-4"></div>
         </nav>
 
-        <div className="mt-20 flex flex-col lg:flex-row gap-8  h-full">
+        <div className="pt-10 md:mt-20 flex flex-col lg:flex-row gap-8  h-full">
           <div className="flex-1">
             <div>
-              <div className="text-sm  font-medium text-gray-700">
-                Welcome To Bankbooker
-              </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">
                 Международные платежи в любую точку мира с комиссией от 1%
                 <br className="hidden sm:block" />
               </h1>
               <p className="text-sm text-gray-600 mt-4 max-w-[500px]">
-                At Bankbooker, we embrace innovation as the driving force behind
-                every solution. Our commitment to staying ahead of industry
-                trends ensures that your business.
+                Ваш международный платежный агент. Профессиональный B2B сервис
+                международных переводов. Оплата санкционных товаров и возврат
+                валютной выручки.
               </p>
             </div>
 
@@ -61,7 +58,6 @@ const HeroSection = ({ onGetStartedClick }) => {
               </div>
             </div>
 
-        
             <div className="flex flex-col lg:flex-row gap-4 mt-4 md:mt-[42px]">
               {/* Card 1 */}
               <div className="bg-[#0D7ECF] rounded-xl p-4 sm:p-6 w-full lg:w-[400px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">
@@ -140,10 +136,10 @@ const HeroSection = ({ onGetStartedClick }) => {
                       </svg>
                     </div>
                     <span className="text-sm">
-                      How does it work?
+                      Как это работает?
                       <br />
                       <span className="text-[13px] text-white/80">
-                        Play video
+                        Смотреть видео
                       </span>
                     </span>
                   </div>

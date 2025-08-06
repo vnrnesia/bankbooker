@@ -50,7 +50,7 @@ const OPTIONS_MAIN = [
   "Бесплатная консультация",
 ] as const;
 
-export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
+export default function Chatbot({ onGetStartedClick }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputEmail, setInputEmail] = useState("");
@@ -80,18 +80,22 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, showEmailInput, showPhoneInput, showOptions]);
 
+  // Scroll ile chatbot açılması
   useEffect(() => {
-    if (!autoOpen) return;
-    const timer = setTimeout(() => {
-      setOpen(true);
-      setAutoOpened(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [autoOpen]);
+    const handleScroll = () => {
+      if (window.scrollY >= 1000 && !open && messages.length === 0) {
+        setOpen(true);
+        setAutoOpened(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open, messages]);
 
   useEffect(() => {
     if (!open || messages.length > 0) return;
-    addBotMessageWithLoading("Здравствуйте! Какие услуги вас интересуют?");
+    addBotMessageWithLoading("Здравствуйте! Какие услуги Вас интересуют?");
   }, [open]);
 
   useEffect(() => {
@@ -108,7 +112,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
     ) {
       setShowOptions(true);
     }
-  }, [messages]);
+  }, [messages, showEmailInput, emailSubmitted]);
 
   useEffect(() => {
     if (autoOpened && audioRef.current) {
@@ -145,13 +149,14 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
     addUserMessage(option);
     setShowOptions(false);
     setShowEmailInput(false);
-    setShowPhoneInput(false);
-    const isEmailFollowup = OPTIONS_MAIN.includes(option);
+    const isEmailFollowup =
+      option === "Оплатить инвойс" ||
+      option === "Вернуть валютную выручку" ||
+      option === "Бесплатная консультация";
     if (isEmailFollowup) {
       addBotMessageWithLoading(
         <>
-          Отличный выбор! <br /> Пожалуйста, укажите ваш{" "}
-          <b>электронный адрес</b>, чтобы мы могли связаться с вами.
+          Отличный выбор! <br /> Пожалуйста, <b>оставьте свой e-mail.</b>
         </>
       );
       setTimeout(() => setShowEmailInput(true), 2100);
@@ -166,8 +171,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
     setEmailSubmitted(true);
     addBotMessageWithLoading(
       <>
-        Спасибо! <br /> Теперь, пожалуйста, укажите ваш <b>номер телефона</b> в
-        формате +7 (XXX) XXX-XX-XX.
+        Спасибо! <br /> Теперь укажите, пожалуйста, <b>номер телефона (+7).</b>
       </>
     );
     setTimeout(() => setShowPhoneInput(true), 2100);
@@ -176,12 +180,12 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
 
   const handlePhoneSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!inputPhone.trim() || loading || inputPhone.includes("_")) return;
+    if (!inputPhone.trim() || loading) return;
     addUserMessage(inputPhone);
     setShowPhoneInput(false);
     setPhoneSubmitted(true);
     addBotMessageWithLoading(
-      "Благодарим! Мы свяжемся с вами в ближайшее время."
+      "Спасибо! Наш специалист скоро с вами свяжется."
     );
     setInputPhone("");
   };
@@ -190,12 +194,13 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
   const showLeave =
     lastBotMessage?.from === "bot" &&
     typeof lastBotMessage.text === "string" &&
-    lastBotMessage.text.includes("в ближайшее время");
+    lastBotMessage.text.includes("Наш специалист скоро");
 
   return (
     <>
       <audio ref={audioRef} src="/notification.mp3" preload="auto" />
       <button
+        className="bg-gradient-to-r from-[#0273DE] to-[#10B0EB] rounded-lg shadow-lg flex flex-col"
         onClick={() => setOpen((o) => !o)}
         style={{
           position: "fixed",
@@ -242,6 +247,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
       </button>
       {open && (
         <div
+          className="bg-gray-200 rounded-lg shadow-lg flex flex-col"
           style={{
             position: "fixed",
             bottom: isMobile ? 150 : 100,
@@ -254,10 +260,13 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
             zIndex: 1000,
             fontFamily: "Manrope, sans-serif",
           }}
+          aria-live="polite"
+          aria-label="Окно чата"
         >
           <div
             style={{
               background: "white",
+              color: "white",
               padding: "12px 16px",
               fontWeight: 700,
               display: "flex",
@@ -310,7 +319,12 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                           : from === "loading"
                           ? "#cbd3df"
                           : "#e4e9f2",
-                      color: from === "user" ? "white" : "#222",
+                      color:
+                        from === "user"
+                          ? "white"
+                          : from === "loading"
+                          ? "#222"
+                          : "#222",
                       padding: "10px 16px",
                       borderRadius: 5,
                       fontSize: 14,
@@ -360,6 +374,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                           fontWeight: 500,
                           minWidth: 160,
                         }}
+                        aria-label={opt}
                       >
                         {opt}
                       </button>
@@ -374,12 +389,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
           {showEmailInput && (
             <form
               onSubmit={handleEmailSubmit}
-              style={{
-                display: "flex",
-                padding: 12,
-                gap: 8,
-                background: "#e4e9f2",
-              }}
+              style={{ display: "flex", padding: 12, gap: 8 }}
             >
               <input
                 type="email"
@@ -393,19 +403,20 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                   borderRadius: 8,
                   border: "1px solid #ccc",
                 }}
-                aria-label="Email input"
+                aria-label="Поле ввода e-mail"
               />
               <button
                 type="submit"
                 style={{
                   background: "#0070f3",
                   color: "white",
-                  padding: "10px 9px",
+                  padding: "10px 6px",
                   border: "none",
                   borderRadius: 6,
                   fontWeight: 600,
                   cursor: "pointer",
                 }}
+                aria-label="Отправить e-mail"
               >
                 Отправить
               </button>
@@ -427,14 +438,14 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                     {...inputProps}
                     type="tel"
                     required
-                    placeholder="Ваш номер"
+                    placeholder="Ваш телефон"
                     style={{
                       flex: 1,
                       padding: 10,
                       borderRadius: 8,
                       border: "1px solid #ccc",
                     }}
-                    aria-label="Phone input"
+                    aria-label="Поле ввода телефона"
                   />
                 )}
               </InputMask>
@@ -443,12 +454,13 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                 style={{
                   background: "#0070f3",
                   color: "white",
-                  padding: "10px 20px",
+                  padding: "10px 6px",
                   border: "none",
                   borderRadius: 6,
                   fontWeight: 600,
                   cursor: "pointer",
                 }}
+                aria-label="Отправить телефон"
               >
                 Отправить
               </button>
@@ -472,6 +484,7 @@ export default function Chatbot({ autoOpen }: { autoOpen?: boolean }) {
                 borderBottomLeftRadius: 8,
                 borderBottomRightRadius: 8,
               }}
+              aria-label="Выйти из чата"
             >
               <DoorOpen size={18} /> Выйти из чата
             </button>

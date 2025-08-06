@@ -36,33 +36,14 @@ const Contact = () => {
         {/* Visit Office Card */}
         <div className="bg-gray-100 group rounded-2xl p-6 md:h-72 flex flex-col items-center justify-center transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer">
           <p className="text-gray-500 mb-1 transition duration-300 group-hover:text-white">
-            Get Closer
+            По всем вопросам пишите на почту
           </p>
           <h3 className="text-xl font-medium mb-4 group-hover:text-white">
-            Come Visit Our Office
+            Мы ответим в ближайшее время:
+
           </h3>
           <div className="flex items-center gap-2 font-medium transition duration-300 group-hover:text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-              />
-            </svg>
-            Office Address
+           <h3>info@bankbooker.com</h3>
           </div>
         </div>
 

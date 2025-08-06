@@ -71,18 +71,15 @@ const Brands = () => {
   return (
     <div ref={containerRef} className="mx-auto mb-36 px-4">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-        {/* Sol başlık */}
         <div className="left-header">
           <h2 className="text-base font text-gray-500">Наши Партнёры</h2>
           <h3 className="text-4xl font-medium text-gray-900 mt-2">
-            Нам доверяют более +550 <br /> компаний по всему миру
+            Банки Партнеры Сервиса
           </h3>
         </div>
 
-        {/* Sağ paragraf */}
         <p className="right-header text-gray-500 text-sm md:text-base mt-4 md:mt-0 max-w-md mdtext-right md:text-left md:max-w-xs">
-          Вот некоторые из компаний, которым Bankbooker помог уверенно двигаться
-          вперёд.
+          Партнерские программы с системообразующими банками
         </p>
       </div>
 

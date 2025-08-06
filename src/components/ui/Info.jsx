@@ -134,7 +134,7 @@ const Info = ({ onGetStartedClick }) => {
               38+
             </p>
             <p className="text-md text-gray-500 mt-1">
-              Стран в которые мы осуществляем переводы
+              Стран в которые мы осущ3ествляем переводы
             </p>
           </div>
           <div className="px-4">

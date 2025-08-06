@@ -20,14 +20,14 @@ export default function Banner({ onClose, onLearnMoreClick }: BannerProps) {
 
           <div className="h-px w-2 bg-white self-center hidden md:block " />
 
-          <span className="text-[#A3A3A3] text-xs md:text-base whitespace-nowrap">
+          <span className="text-[#A3A3A3] pl-6 md:pl-0 text-[10px] md:text-base whitespace-nowrap">
             доверьте BB решение ваших финансовых вопросов
           </span>
 
           <div className="h-px w-2 bg-white self-center hidden md:block" />
 
           <span
-            className="whitespace-nowrap text-xs md:text-base font-medium inline-flex items-center group cursor-pointer"
+            className="whitespace-nowrap text-xs md:text-base  font-medium inline-flex items-center group cursor-pointer"
             onClick={onLearnMoreClick}
             role="button"
             tabIndex={0}
@@ -37,7 +37,7 @@ export default function Banner({ onClose, onLearnMoreClick }: BannerProps) {
               }
             }}
           >
-           узнайте больше
+           <div className="text-[10px] md:text-base">узнайте больше</div>
             <MoveRight
               className="ml-1 w-3 md:w-5 mt-[2px] transition-transform duration-200 ease-in-out group-hover:translate-x-1"
               aria-hidden="true"

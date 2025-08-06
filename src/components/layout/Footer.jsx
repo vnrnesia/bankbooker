@@ -85,8 +85,7 @@ const Footer = () => {
                   />
                 </Link>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-3">
-                  Готовы взять контроль
-                  над своими финансами?
+                  Готовы взять контроль над своими финансами?
                 </h2>
                 <p className="text-gray-600 font-sans font-light mb-4">
                   Нам интересно узнать о ваших финансовых планах и предложить
@@ -125,10 +124,10 @@ const Footer = () => {
                 <div className="space-y-4 py-11 -mt-11">
                   <div>
                     <p className="text-base md:text-lg  font-medium text-gray-700">
-                      Mon– Fri:
+                      Пн–Пт:
                     </p>
                     <p className="text-base md:text-lg text-gray-600">
-                      8:30am – 5:30pm
+                      8:30 – 17:30
                     </p>
                   </div>
                   <div>

@@ -146,7 +146,7 @@ const WhyChooseUs = () => {
           </div>
 
           <div className="flex lg:block justify-center lg:items-start ">
-            <button className="bg-white text-black font-medium px-5 py-2 rounded-md w-fit">
+            <button className="bg-white text-black font-medium px-[140px] md:px-6 py-1 rounded-md w-fit">
               Связатя с нами
             </button>
           </div>

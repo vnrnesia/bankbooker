@@ -124,9 +124,32 @@ const Comments = ({ onGetStartedClick }) => {
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
             Опыт клиентов, который <br /> говорит сам за себя
           </h2>
-          <button onClick={onGetStartedClick}>
-            <ToGetStarted text="Свяжитесь с нами" />
-          </button>
+          <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
+            <div>
+              <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+                38+
+              </p>
+              <p className="text-md text-gray-500 mt-1">
+                Стран в которые мы осуществляем переводы
+              </p>
+            </div>
+            <div className="px-4">
+              <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+                95%
+              </p>
+              <p className="text-md text-gray-500 mt-1">
+                Платежей проходят День в день
+              </p>
+            </div>
+            <div>
+              <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
+                500+
+              </p>
+              <p className="text-md text-gray-500 mt-1">
+                Клиенты регулярно платят через нас
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Testimonial Card */}
