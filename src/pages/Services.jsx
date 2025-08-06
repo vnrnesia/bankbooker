@@ -113,9 +113,9 @@ const Services = () => {
           className="min-w-[300px] md:w-[500px] h-[300px] flex-1 bg-gray-100 group rounded-2xl m-4 p-6 flex flex-col items-center justify-center text-center transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 hover:text-white cursor-pointer gap-8"
         >
           <img
-            src="/productsdropdown/banking.png"
-            alt="Services Logo"
-            className="w-24 transition duration-300 transform group-hover:scale-110 group-hover:filter group-hover:brightness-0 group-hover:invert"
+            src="/earnings.png"
+            alt="Payment Logo"
+            className="w-24 transition duration-300 transform group-hover:scale-110"
           />
           <p className="text-2xl md:text-2xl font-semibold">
             Возврат валютной выручки
