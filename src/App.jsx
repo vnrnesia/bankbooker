@@ -15,8 +15,9 @@ import Navbar from "./components/layout/Navbar/Navbar";
 import Chatbot from "./components/layout/Chatbot";
 import ToolbarMobile from "./components/layout/ToolbarMobile";
 import Services from "./pages/Services";
-import Solutions from "./pages/Solutions"
-function App({  onGetStartedClick }) {
+import Solutions from "./pages/Solutions";
+
+function App({ onGetStartedClick }) {
   const location = useLocation();
   const getStartedRef = useRef(null);
 
@@ -59,7 +60,9 @@ function App({  onGetStartedClick }) {
           <Route path="/solutions" element={<Solutions />} />
         </Routes>
       </main>
-      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
+      {!hideFooterRoutes.includes(location.pathname) && (
+        <Footer key={location.pathname} />
+      )}
       <ToolbarMobile scrollToGetStarted={scrollToGetStarted} />
     </div>
   );

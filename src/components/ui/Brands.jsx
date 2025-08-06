@@ -53,7 +53,7 @@ const Brands = () => {
           duration: 0.6,
           ease: "power3.out",
         },
-        "-=0.4" // Sağ başlık biraz overlap ile başlasın
+        "-=0.4" 
       )
       .to(brandItems, {
         opacity: 1,
@@ -69,7 +69,7 @@ const Brands = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="mx-auto mb-36 px-4">
+    <div ref={containerRef} className="mx-auto mb-36 px-4 md:px-0">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
         <div className="left-header">
           <h2 className="text-base font text-gray-500">Наши Партнёры</h2>

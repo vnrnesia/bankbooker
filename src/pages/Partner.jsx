@@ -5,13 +5,15 @@ import icon1 from "@/assets/LeftPanel/icon1.png";
 import icon2 from "@/assets/LeftPanel/icon2.png";
 import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
+import Comments from "../components/ui/Comments";
+import Info from "../components/ui/Info";
 
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Partner() {
   return (
     <>
-      <section className="flex flex-col max-w-xs justify-center items-center md:flex-row pt-24 md:max-w-7xl mx-auto min-h-screen  gap-x-8">
+      <section className="flex flex-col max-w-xs justify-center items-center md:flex-row  md:max-w-7xl mx-auto pt-24 md:pb-24  gap-x-8">
         {/* Sol taraf */}
         <div className="md:w-1/2  flex max-w-l flex-col justify-between h-full">
           <div>
@@ -99,7 +101,7 @@ export default function Partner() {
 
         {/* Sağ taraf */}
         <div className="md:w-1/2 py-10 md:py-0 flex h-full">
-          <div className="rounded-xl w-[360px] md:w-1/2 border-4 flex-1 h-[508px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center ">
+          <div className="rounded-xl w-[360px] md:w-1/2 flex-1 h-[508px]  bg-gray-200 shadow-md hover:scale-105 transform duration-300 flex flex-col items-center justify-center p-8 text-center ">
             <p className="text-gray-700 font-medium text-md text-center mb-2">
               Финансовые консалтинг и услуги международных переводов для B2B
             </p>
@@ -140,6 +142,12 @@ export default function Partner() {
           </div>
         </div>
       </section>
+      <div className=" max-w-sm px-4 md:px-0 md:max-w-7xl mx-auto">
+        <Comments />
+      </div>
+      <div className=" pb-16 max-w-sm px-4 md:px-0 md:max-w-7xl mx-auto">
+        <Info />
+      </div>
     </>
   );
 }
