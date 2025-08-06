@@ -15,7 +15,7 @@ import Navbar from "./components/layout/Navbar/Navbar";
 import Chatbot from "./components/layout/Chatbot";
 import ToolbarMobile from "./components/layout/ToolbarMobile";
 import Services from "./pages/Services";
-import ToGetStarted from "./components/ui/ToGetStarted";
+import Solutions from "./pages/Solutions"
 function App({  onGetStartedClick }) {
   const location = useLocation();
   const getStartedRef = useRef(null);
@@ -56,6 +56,7 @@ function App({  onGetStartedClick }) {
           <Route path="/about" element={<About />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/solutions" element={<Solutions />} />
         </Routes>
       </main>
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
