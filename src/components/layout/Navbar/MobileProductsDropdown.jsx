@@ -141,10 +141,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
   );
 
   return (
-    <div
-      className="px-4 pb-6 overflow-y-auto max-h-[100vh]"
-      style={{ WebkitOverflowScrolling: "touch" }}
-    >
+    <div className="px-4 pb-6" style={{ WebkitOverflowScrolling: "touch" }}>
       <Section title="" items={products} />
       <Section title="Connect with Bankbooker" items={connectWithBankbooker} />
       <Section title="Resource Center" items={resourceCenter} />
