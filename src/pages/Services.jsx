@@ -18,7 +18,6 @@ const Services = () => {
       id: "invoice",
       title: "Оплата инвойсов",
       img: "/paymentLogo.png",
-      desc: null, // Bu kısımda gerekirse açıklama eklenebilir
     },
     {
       id: "currency-return",
@@ -80,11 +79,7 @@ const Services = () => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
@@ -98,11 +93,7 @@ const Services = () => {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
@@ -132,9 +123,7 @@ const Services = () => {
                   : "group-hover:scale-110"
               }`}
             />
-            <p className="text-2xl md:text-2xl font-semibold">
-              {service.title}
-            </p>
+            <p className="text-2xl md:text-2xl font-semibold">{service.title}</p>
           </div>
         ))}
       </div>
@@ -150,18 +139,16 @@ const Services = () => {
                     Возврат валютной выручки без лишних комиссий и задержек
                   </h2>
                   <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                    Предоставляем сервис по возврату вашей валютной выручки
-                    из-за рубежа. Подписываем контракт с вашим покупателем
-                    зарубежом и как ваш агент принимаем валютную выручку по
-                    вашим контрактам — конвертируем по выгодному курсу и вы
-                    получаете выручку в российском рубле ко курсу ЦБ на день
-                    перевода, минуя скрытые комиссии и долгие трансграничные
+                    Предоставляем сервис по возврату вашей валютной выручки из-за рубежа.
+                    Подписываем контракт с вашим покупателем зарубежом и как ваш агент
+                    принимаем валютную выручку по вашим контрактам — конвертируем по
+                    выгодному курсу и вы получаете выручку в российском рубле ко курсу ЦБ
+                    на день перевода, минуя скрытые комиссии и долгие трансграничные
                     переводы.
                   </p>
                   <button
                     onClick={() => {
-                      const scrollAmount =
-                        window.innerWidth <= 768 ? 1500 : 2500;
+                      const scrollAmount = window.innerWidth <= 768 ? 1500 : 2500;
                       window.scrollTo({
                         top: window.scrollY + scrollAmount,
                         behavior: "smooth",

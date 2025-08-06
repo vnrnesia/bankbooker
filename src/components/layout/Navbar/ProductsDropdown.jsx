@@ -138,27 +138,24 @@ const ProductsDropdown = ({ bannerOpen }) => {
               <div className="mx-auto w-full max-w-[90%] xl:max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {/* Products */}
                 <div>
-                  <SectionHeader
-                    title="Услуги
-"
-                  />
+                  <SectionHeader title="Услуги" />
                   <Divider />
                   {[
                     {
-                      href: "/services?details=true",
-                      imageSrc: "/productsdropdown/invoice.png",
+                      href: "/services?details=invoice",
+                      imageSrc: "/paymentLogo.png",
                       title: "Оплата инвойсов",
                       description: "Pay vendors faster and safer",
-                      imageWidth: 30,
+                      imageWidth: 40,
                       imageHeight: 30,
-                      imageClassName: "object-contain mr-1",
+                      imageClassName: "object-contain",
                     },
                     {
-                      href: "/services?details=true",
-                      imageSrc: "/productsdropdown/banking.png",
+                      href: "/services?details=currency-return",
+                      imageSrc: "/earnings.png",
                       title: "Возврат валютной выручки",
                       description: "Bank smarter with up to 4.36%",
-                      imageWidth: 30,
+                      imageWidth: 40,
                       imageHeight: 36,
                       imageClassName: "object-contain",
                     },
@@ -174,10 +171,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
 
                 {/* Contact */}
                 <div>
-                  <SectionHeader
-                    title="Связь с Bankbooker
-"
-                  />
+                  <SectionHeader title="Связь с Bankbooker" />
                   <Divider />
                   {[
                     {
@@ -189,7 +183,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                       imageHeight: 30,
                     },
                     {
-                      href: "/contact/chat",
+                      href: "k/contact/chat",
                       imageSrc: "/productsdropdown/chat.png",
                       title: "⁠Чат с поддержкой",
                       description: "Свяжитесь с командой поддержки",
@@ -265,9 +259,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
                         <div
                           key={idx}
                           ref={(el) => (cardsRef.current[idx] = el)}
-                          className="bg-white border  border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
+                          className="bg-white border border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
                         >
-                          <div className="flex items-center space-x-3 ">
+                          <div className="flex items-center space-x-3">
                             <div className="relative w-5 h-5 shrink-0">
                               <img
                                 src={offer.flag}
@@ -285,10 +279,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
                               <p className="text-xs">{offer.course}</p>
                             </div>
                           </div>
-
                           <div className="pt-2 w-full">
                             <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
-                              <div className="flex-grow py-1 px-1  text-sm bg-gray-100">
+                              <div className="flex-grow py-1 px-1 text-sm bg-gray-100">
                                 Оставьте заявку
                               </div>
                               <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">

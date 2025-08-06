@@ -30,19 +30,19 @@ const offers = [
 
 const products = [
   {
-    href: "/services?details=true",
+    href: "/services?details=invoice",
     title: "Оплата инвойсов",
     description: "Pay vendors faster and safer",
-    imageSrc: "/productsdropdown/invoice.png",
+    imageSrc: "/paymentLogo.png",
     imageWidth: 30,
     imageHeight: 30,
     imageClassName: "object-contain mr-2",
   },
   {
-    href: "/services?details=true",
+    href: "/services?details=currency-return",
     title: "Возврат валютной выручки",
     description: "Bank smarter with up to 4.36%",
-    imageSrc: "/productsdropdown/banking.png",
+    imageSrc: "/earnings.png",
     imageWidth: 30,
     imageHeight: 36,
     imageClassName: "object-contain mr-2",
