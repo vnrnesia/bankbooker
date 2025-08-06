@@ -14,17 +14,15 @@ import contactIcon5 from "@/assets/Contactimage/icon5.png";
 
 const services = [
   { id: 1, label: "Оплата инвойсов" },
-  { id: 2, label: "Аутсорсинг Бухгалтерии" },
-  { id: 3, label: "Юридический департамент" },
-  { id: 4, label: "Налоговый консалтинг" },
+  { id: 2, label: "Возврат валютной выручки" },
 ];
 
 const contactBenefits = [
-  { icon: contactIcon1, text: "Secure payments through reliable partners" },
-  { icon: contactIcon2, text: "Fast transfers" },
-  { icon: contactIcon3, text: "Fair commissions" },
-  { icon: contactIcon4, text: "Best available rates" },
-  { icon: contactIcon5, text: "Convenience" },
+  { icon: contactIcon1, text: "Безопасные платежи через надёжных партнёров" },
+  { icon: contactIcon2, text: "Быстрые переводы" },
+  { icon: contactIcon3, text: "Честные комиссии" },
+  { icon: contactIcon4, text: "Выгодные курсы обмена" },
+  { icon: contactIcon5, text: "Удобство и простота использования" },
 ];
 
 const socialIcons = [Socialicon1, Socialicon2, Socialicon3, Socialicon4];
@@ -47,26 +45,25 @@ export default function Contact() {
 
   return (
     <>
-      <div className="flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%]  xl:max-w-[80%] 2xl:max-w-7xl md:pt-24  mx-auto ">
+      <div className="flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-7xl md:pt-24 mx-auto ">
         <div className="w-full md:w-[470px] space-y-6">
           <h2 className="text-3xl font-semibold text-gray-800">
-            Talk To Our Friendly Sales Team
+            Свяжитесь с нами — мы всегда на связи!
           </h2>
           <p className="text-gray-500">
-            We’ll help you to find the perfect plan, no matter your business
-            size.
+            Мы подберём лучшее решение именно для вас — независимо от масштаба вашего бизнеса.
           </p>
 
           <form className="space-y-4">
             <div>
               <Label>
-                Full Name <span className="text-red-500">*</span>
+                ФИО <span className="text-red-500">*</span>
               </Label>
-              <Input placeholder="Your Name" />
+              <Input placeholder="Ваше имя" />
             </div>
 
             <div>
-              <Label>How to Contact?</Label>
+              <Label>Как связаться</Label>
               <div className="relative">
                 <select
                   value={contactMethod}
@@ -76,7 +73,7 @@ export default function Contact() {
                   <option>WhatsApp</option>
                   <option>Telegram</option>
                   <option>Email</option>
-                  <option>Phone</option>
+                  <option>Телефон</option>
                 </select>
                 <svg
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-transform duration-300"
@@ -99,13 +96,13 @@ export default function Contact() {
 
             <div>
               <Label>
-                Phone Number <span className="text-red-500">*</span>
+                Номер телефона <span className="text-red-500">*</span>
               </Label>
               <Input type="tel" placeholder="+7 (917) 889-94-57" />
             </div>
 
             <div>
-              <Label>Select Service</Label>
+              <Label>Выберите услугу</Label>
               <div className="flex flex-wrap gap-2 mt-1">
                 {services.map(({ id, label }) => (
                   <button
@@ -128,7 +125,7 @@ export default function Contact() {
                   onClick={() => setSelectedService(null)}
                   className="text-sm text-red-500 underline mt-2"
                 >
-                  Clear selection
+                  Очистить выбор
                 </button>
               )}
             </div>
@@ -137,17 +134,16 @@ export default function Contact() {
               type="submit"
               className="w-full bg-gray-900 text-white py-2 rounded-md hover:opacity-90 transition"
             >
-              Continue
+              Продолжить
             </button>
           </form>
         </div>
 
-        {/* Right Info */}
+        {/* Правая панель информации */}
         <div className="rounded-sm bg-gray-100 shadow-md w-full md:w-1/2 mt-10 md:mt-0 px-6 md:px-8 py-8 text-gray-700 flex flex-col gap-10 justify-between">
           <div>
             <h3 className="text-2xl font-extrabold text-gray-800 leading-snug pb-10">
-              International Payment Solutions <br />
-              and Complex Services for Businesses
+              Эффективные международные платежи и бизнес-решения под ключ
             </h3>
             <ul className="mt-6 space-y-4 text-gray-600">
               {contactBenefits.map(({ icon, text }, idx) => (
@@ -160,25 +156,11 @@ export default function Contact() {
           </div>
 
           <div className="py-7">
-            <h4 className="font-semibold text-gray-800">Follow Us</h4>
-            <p className="text-gray-400 text-sm mb-2">
-              {" "}
-              Stay connected for our latest updates.
-            </p>
-            <div className="flex items-center space-x-4">
-              {socialIcons.map((icon, idx) => (
-                <img
-                  key={idx}
-                  src={icon}
-                  alt={`social-${idx}`}
-                  className="w-5 h-5"
-                />
-              ))}
-            </div>
+            <h3 className="font-bold pb-2">Подписывайтесь на наш Telegram-канал</h3>
+            <p className="text-gray-400">t.me/bankbooker</p>
           </div>
         </div>
       </div>
     </>
   );
 }
-//update2

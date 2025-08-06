@@ -92,7 +92,17 @@ const Footer = () => {
                   лучшее решение.
                 </p>
                 <div className=" ">
-                  <button className="bg-gradient-to-l text-xs from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300">
+                  <button
+                    className="bg-gradient-to-l text-xs from-[#0273DE] to-[#10B0EB] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300"
+                    onClick={() => {
+                      const scrollAmount =
+                        window.innerWidth <= 768 ? 7700 : 4400;
+                      window.scrollTo({
+                        top: scrollAmount,
+                        behavior: "smooth",
+                      });
+                    }}
+                  >
                     Бесплатная консультация
                   </button>
                 </div>
