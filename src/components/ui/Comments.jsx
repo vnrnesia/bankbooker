@@ -121,10 +121,10 @@ const Comments = ({ onGetStartedClick }) => {
         {/* Left Content */}
         <div className="max-w-lg">
           <h4 className="text-gray-500 text-lg mb-2">Отзывы клиентов</h4>
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
-            Опыт клиентов, который <br /> говорит сам за себя
+          <h2 className="text-3xl md:text-3xl font-semibold text-gray-900 mb-6 leading-tight">
+            Опыт клиентов, который  говорит сам за себя
           </h2>
-          <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
+          <div className="pt-4  grid grid-cols-3 divide-x divide-gray-200 text-center">
             <div>
               <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
                 38+

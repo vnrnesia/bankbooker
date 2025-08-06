@@ -1,4 +1,5 @@
 import { PhoneIcon } from "@heroicons/react/24/solid";
+import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -40,10 +41,10 @@ const Contact = () => {
           </p>
           <h3 className="text-xl font-medium mb-4 group-hover:text-white">
             Мы ответим в ближайшее время:
-
           </h3>
           <div className="flex items-center gap-2 font-medium transition duration-300 group-hover:text-white">
-           <h3>info@bankbooker.com</h3>
+            <Mail className="w-5 h-5" />
+            <p>info@bankbooker.com</p>
           </div>
         </div>
 
@@ -53,7 +54,7 @@ const Contact = () => {
             Бесплатная консультация
           </p>
           <h3 className="text-xl font-medium mb-4 group-hover:text-white">
-            Свяжитесь с нами{" "}
+            Свяжитесь с нами
           </h3>
           <div className="flex items-center space-x-2 font-medium transition duration-300 group-hover:text-white">
             <PhoneIcon className="w-5 h-5 transition group-hover:text-white" />

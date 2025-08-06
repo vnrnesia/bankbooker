@@ -176,7 +176,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
 
                   <div className="pt-2 w-full">
                     <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
-                      <div className="flex-grow py-1 px-1 text-sm bg-gray-100">
+                      <div className="flex-grow py-1  px-1 text-sm bg-gray-100">
                         Оставьте заявку
                       </div>
                       <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">

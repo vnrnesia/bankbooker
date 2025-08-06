@@ -22,7 +22,9 @@ export default function AccordionMenu() {
             <AccordionHeader>
               В какие страны вы сопровождаете платежи?
             </AccordionHeader>
-            <AccordionPanel>В любые страны мира</AccordionPanel>
+            <AccordionPanel>
+              Мы проводим платежи в любую страну мира по вашему поручению.{" "}
+            </AccordionPanel>
           </AccordionItem>
 
           <AccordionItem value="item-2">
@@ -30,15 +32,15 @@ export default function AccordionMenu() {
               Какую валюту для платежа можно использовать?
             </AccordionHeader>
             <AccordionPanel>
-              Основными валютами платежей являются: Китайские юани, Доллары США,
-              ЕВРО, Дирхамы ОАЭ. С дополнительной проработкой возможна отправка
-              платежа в любой валюте{" "}
+              включая криптовалюту (дописать это к основному ответу)
             </AccordionPanel>
           </AccordionItem>
 
           <AccordionItem value="item-3">
             <AccordionHeader>Какой срок прохождения платежа?</AccordionHeader>
-            <AccordionPanel>Проведем платеж день в день</AccordionPanel>
+            <AccordionPanel>
+              проведём Ваш платеж день в день или на след день.{" "}
+            </AccordionPanel>
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionHeader>
@@ -46,8 +48,7 @@ export default function AccordionMenu() {
               Чем у вас обеспечивается безопасность проведения платежей?{" "}
             </AccordionHeader>
             <AccordionPanel>
-              Собственной обширной международной инфраструктурой платежей и
-              большим объемом ликвидности в разных валютах ей?
+              ⁠⁠Обеспечиваем оплаты своей ликвидностью зарубежом.
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
