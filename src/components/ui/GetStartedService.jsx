@@ -172,7 +172,7 @@ const GetStartedService = () => {
               >
                 {idx + 1}
               </div>
-              <span className="text-xs mt-1 text-center whitespace-nowrap">{label}</span>
+              <span className="text-[9px] md:text-xs mt-1 text-center whitespace-nowrap">{label}</span>
             </div>
           ))}
         </div>
