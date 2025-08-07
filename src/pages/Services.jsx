@@ -160,7 +160,9 @@ const Services = () => {
                   </button>
                 </div>
               )}
-              <OffersGrid />
+
+              {/* Render OffersGrid only if service is not "currency-return" */}
+              {selectedService !== "currency-return" && <OffersGrid />}
             </div>
             <div className="w-full bg-gray-50">
               <Steps />

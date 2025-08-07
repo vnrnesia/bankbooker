@@ -12,7 +12,6 @@ const Solutions = () => {
         
           
         </div>
-          <GetStartedService/>
       </section>
     </>
   );

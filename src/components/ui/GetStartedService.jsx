@@ -53,8 +53,8 @@ const GetStartedService = () => {
     const handleClickOutside = () => {
       setSelectFocused(false);
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
   const handleTelegramChange = (e) => {
@@ -141,7 +141,7 @@ const GetStartedService = () => {
     "Партнерство",
     "Объем заявок",
     "Юр. форма",
-    "Готово"
+    "Готово",
   ];
   const getProgress = () => {
     if (formCompleted) return 4;
@@ -166,20 +166,24 @@ const GetStartedService = () => {
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-2 ${
                   getProgress() >= idx
-                    ? 'bg-blue-500 border-blue-500 text-white'
-                    : 'bg-gray-200 border-gray-300 text-gray-500'
+                    ? "bg-blue-500 border-blue-500 text-white"
+                    : "bg-gray-200 border-gray-300 text-gray-500"
                 }`}
               >
                 {idx + 1}
               </div>
-              <span className="text-[9px] md:text-xs mt-1 text-center whitespace-nowrap">{label}</span>
+              <span className="text-[9px] md:text-xs mt-1 text-center whitespace-nowrap">
+                {label}
+              </span>
             </div>
           ))}
         </div>
         <div className="w-full h-2 bg-gray-200 rounded-full relative">
           <div
             className="h-2 bg-blue-500 rounded-full transition-all duration-300"
-            style={{ width: `${(getProgress() / (stepsArr.length - 1)) * 100}%` }}
+            style={{
+              width: `${(getProgress() / (stepsArr.length - 1)) * 100}%`,
+            }}
           ></div>
         </div>
       </div>
@@ -226,7 +230,9 @@ const GetStartedService = () => {
                       <ChevronDown
                         size={22}
                         className={`transition-transform duration-300 ${
-                          selectFocused ? 'rotate-180 text-blue-600' : 'text-gray-400'
+                          selectFocused
+                            ? "rotate-180 text-blue-600"
+                            : "text-gray-400"
                         }`}
                       />
                     </span>
@@ -328,7 +334,8 @@ const GetStartedService = () => {
             {step >= 2 && (
               <div className="w-full">
                 <label className="block mb-1 text-sm font-medium">
-                  Какой ориентировочный объем заявок клиентов проходит через вас ежемесячно?
+                  Какой ориентировочный объем заявок клиентов проходит через вас
+                  ежемесячно?
                 </label>
                 <select
                   value={question2}
@@ -370,7 +377,7 @@ const GetStartedService = () => {
             {formCompleted && (
               <div className="mt-6 w-full text-center space-y-4">
                 <div className="text-green-600 font-medium text-sm">
-                  Спасибо за ваши ответы!
+                  Спасибо! Мы свяжемся с вами в ближайшее время.{" "}
                 </div>
                 <button
                   type="submit"

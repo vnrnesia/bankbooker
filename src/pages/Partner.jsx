@@ -8,6 +8,7 @@ import icon4 from "@/assets/LeftPanel/icon4.png";
 import Comments from "../components/ui/Comments";
 import Info from "../components/ui/Info";
 import Brands from "../components/ui/Brands";
+import GetStartedService from "../components/ui/GetStartedService";
 
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -143,12 +144,14 @@ export default function Partner() {
           </div>
         </div>
       </section>
-      <div className=" max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto">
-        <div className="pt-10"><Brands /></div>
+      <GetStartedService />
+      <div className="pt-24 max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto">
+        <div className="pt-10">
+          <Brands />
+        </div>
         <Comments />
       </div>
-      <div className=" pb-16 max-w-sm  md:px-0 md:max-w-7xl mx-auto">
-      </div>
+      <div className=" pb-24 max-w-sm  md:px-0 md:max-w-7xl mx-auto"></div>
     </>
   );
 }

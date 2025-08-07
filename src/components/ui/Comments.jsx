@@ -251,7 +251,7 @@ const Comments = ({ onGetStartedClick }) => {
             key={i}
             src={brand}
             alt={`Brand ${i + 1}`}
-            className="h-8 md:h-[42px] gap-4 w-auto transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0"
+            className="h-8 md:h-[42px] gap-4 w-auto transition-transform duration-300 hover:scale-105 "
           />
         ))}
       </div>
