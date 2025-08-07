@@ -142,10 +142,10 @@ export default function Partner() {
           </div>
         </div>
       </section>
-      <div className=" max-w-sm px-4 md:px-0 md:max-w-7xl mx-auto">
+      <div className=" max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto">
         <Comments />
       </div>
-      <div className=" pb-16 max-w-sm px-4 md:px-0 md:max-w-7xl mx-auto">
+      <div className=" pb-16 max-w-sm  md:px-0 md:max-w-7xl mx-auto">
         <Info />
       </div>
     </>
