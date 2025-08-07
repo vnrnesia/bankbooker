@@ -138,10 +138,10 @@ const Info = ({ onGetStartedClick }) => {
             </p>
           </div>
           <div className="px-4">
-            <p className="text-2xl md:text-xl font-semibold text-neutral-900">
+            <p className="text-2xl md:text-4xl font-semibold text-neutral-900">
               95%
             </p>
-            <p className="text-[13px] text-gray-500 mt-1">
+            <p className="text-[13px] md:text-ba text-gray-500 mt-1">
               Платежей проходят День в ден
             </p>
           </div>
