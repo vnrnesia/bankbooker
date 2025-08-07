@@ -7,13 +7,14 @@ import icon3 from "@/assets/LeftPanel/icon3.png";
 import icon4 from "@/assets/LeftPanel/icon4.png";
 import Comments from "../components/ui/Comments";
 import Info from "../components/ui/Info";
+import Brands from "../components/ui/Brands";
 
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Partner() {
   return (
     <>
-      <section className="flex flex-col max-w-xs justify-center items-center md:flex-row  md:max-w-7xl mx-auto pt-24 md:pb-24  gap-x-8">
+      <section className="flex flex-col max-w-xs justify-center items-center md:flex-row  md:max-w-7xl mx-auto pt-24 md:pt-36 md:pb-24  gap-x-8">
         {/* Sol taraf */}
         <div className="md:w-1/2  flex max-w-l flex-col justify-between h-full">
           <div>
@@ -143,6 +144,7 @@ export default function Partner() {
         </div>
       </section>
       <div className=" max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto">
+        <div className="pt-10"><Brands /></div>
         <Comments />
       </div>
       <div className=" pb-16 max-w-sm  md:px-0 md:max-w-7xl mx-auto">

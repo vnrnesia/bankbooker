@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "@/pages/Home.jsx";
 import Legal from "@/pages/Legal.jsx";
 import Accounting from "@/pages/Accounting.jsx";
@@ -28,15 +29,27 @@ function App({ onGetStartedClick }) {
     });
   };
 
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: location.state.scrollTo, behavior: "smooth" });
+        });
+      });
+    }
+  }, [location]);
+
   const hideFooterRoutes = ["/contact", "/services"];
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+
       <Navbar
         onLearnMoreClick={scrollToGetStarted}
         onGetStartedClick={onGetStartedClick}
       />
+
       <main className="flex-grow">
         <Routes>
           <Route
@@ -57,12 +70,14 @@ function App({ onGetStartedClick }) {
           <Route path="/about" element={<About />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/about-company" element={<Solutions />} />
+          <Route path="/about-services" element={<Solutions />} />
         </Routes>
       </main>
+
       {!hideFooterRoutes.includes(location.pathname) && (
         <Footer key={location.pathname} />
       )}
+
       <ToolbarMobile scrollToGetStarted={scrollToGetStarted} />
     </div>
   );

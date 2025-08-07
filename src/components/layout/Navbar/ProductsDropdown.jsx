@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ProductsItem from "./ProductsItem";
 import { MoveRight, ChevronDown } from "lucide-react";
 import Currency from "../../ui/Currency";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const offers = [
   {
@@ -45,6 +46,26 @@ const ProductsDropdown = ({ bannerOpen }) => {
   const dropdownRef = useRef(null);
   const triggerRef = useRef(null);
   const cardsRef = useRef([]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const getScrollTarget = () => (window.innerWidth <= 768 ? 5000 : 4400);
+
+  const scrollToTarget = () => {
+    window.scrollTo({ top: getScrollTarget(), behavior: "smooth" });
+  };
+
+  // Handler for the button
+  const handleApplyClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      scrollToTarget();
+    } else {
+      navigate("/", { state: { scrollTo: getScrollTarget() } });
+    }
+    setIsOpen(false);
+  };
 
   const handleMouseEnter = () => {
     if (closeTimeout.current) {
@@ -169,13 +190,12 @@ const ProductsDropdown = ({ bannerOpen }) => {
                   ))}
                 </div>
 
-                {/* Contact */}
                 <div>
                   <SectionHeader title="Связь с Bankbooker" />
                   <Divider />
                   {[
                     {
-                      href: "/contact/agent",
+                      href: "/contact",
                       imageSrc: "/productsdropdown/talk.png",
                       title: "Связаться с агентом",
                       description: " Получите бесплатную консультацию",
@@ -183,7 +203,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                       imageHeight: 30,
                     },
                     {
-                      href: "k/contact/chat",
+                      href: "/contactt",
                       imageSrc: "/productsdropdown/chat.png",
                       title: "⁠Чат с поддержкой",
                       description: "Свяжитесь с командой поддержки",
@@ -249,7 +269,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                 </div>
 
                 {/* Offers */}
-                <div className="bg-gray-100 rounded-lg py-4 px-2 justify-center items-center mx-auto text-center">
+                <div className="bg-gray-100 rounded-lg py-4 px-6 justify-center items-center mx-auto text-center">
                   <h3 className="text-center font-bold text-black">
                     Лучшие Предложения
                   </h3>
@@ -259,7 +279,7 @@ const ProductsDropdown = ({ bannerOpen }) => {
                         <div
                           key={idx}
                           ref={(el) => (cardsRef.current[idx] = el)}
-                          className="bg-white border border-gray-200 rounded-lg shadow-sm px-11 py-3 flex flex-col justify-between"
+                          className="bg-white border border-gray-200 rounded-lg shadow-sm px-6 py-3 flex flex-col justify-between"
                         >
                           <div className="flex items-center space-x-3">
                             <div className="relative w-5 h-5 shrink-0">
@@ -279,9 +299,9 @@ const ProductsDropdown = ({ bannerOpen }) => {
                               <p className="text-xs">{offer.course}</p>
                             </div>
                           </div>
-                          <div className="pt-2 w-full">
-                            <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
-                              <div className="flex-grow py-1 px-1 text-sm bg-gray-100">
+                            <div className="pt-2  w-[200px]">
+                            <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer" onClick={handleApplyClick}>
+                              <div className="flex-grow py-1 px-1 text-sm bg-gray-100 cursor-pointer">
                                 Оставьте заявку
                               </div>
                               <div className="flex items-center justify-center px-4 bg-gradient-to-l from-[#0273DE] to-[#10B0EB] hover:scale-125 transition-transform duration-300">

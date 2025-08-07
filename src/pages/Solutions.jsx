@@ -1,6 +1,6 @@
 import WhyChooseUsCompany from "../components/ui/WhyChooseUsCompany"
 import Brands from "../components/ui/Brands"
-import GetStarted from "../components/ui/GetStarted"
+import GetStartedService from "../components/ui/GetStartedService"
 
 const Solutions = () => {
   return (
@@ -12,7 +12,7 @@ const Solutions = () => {
         
           
         </div>
-          <GetStarted/>
+          <GetStartedService/>
       </section>
     </>
   );

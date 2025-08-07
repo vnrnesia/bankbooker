@@ -43,7 +43,15 @@ const Contact = () => {
             Мы ответим в ближайшее время:
           </h3>
           <div className="flex items-center gap-2 font-medium transition duration-300 group-hover:text-white">
-            <Mail className="w-5 h-5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 28"
+              className="w-5 h-5"
+            >
+              <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1.586a1 1 0 01-.293.707l-9 9a1 1 0 01-1.414 0l-9-9A1 1 0 012 5.586V4zm0 4.414l7.293 7.293a3 3 0 004.414 0L22 8.414V20a2 2 0 01-2 2H4a2 2 0 01-2-2V8.414z" />
+            </svg>
+
             <p>info@bankbooker.com</p>
           </div>
         </div>

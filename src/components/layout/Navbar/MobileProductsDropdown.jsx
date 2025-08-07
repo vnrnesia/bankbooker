@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const offers = [
   {
@@ -112,6 +112,8 @@ const resourceCenter = [
 const MobileDropdownProductsFull = ({ onClose }) => {
   const menuRef = useRef(null);
   const cardsRef = useRef([]);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -123,6 +125,20 @@ const MobileDropdownProductsFull = ({ onClose }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose]);
+
+  const getScrollTarget = () => 7700;
+  const scrollToTarget = () => {
+    window.scrollTo({ top: getScrollTarget(), behavior: "smooth" });
+  };
+  const handleApplyClick = (e) => {
+    e.preventDefault();
+    if (onClose) onClose();
+    if (location.pathname === "/") {
+      scrollToTarget();
+    } else {
+      navigate("/", { state: { scrollTo: getScrollTarget() } });
+    }
+  };
 
   const Section = ({ title, items }) => (
     <section className="mb-6">
@@ -191,7 +207,7 @@ const MobileDropdownProductsFull = ({ onClose }) => {
                   </div>
 
                   <div className="pt-4 w-full">
-                    <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
+                    <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer" onClick={handleApplyClick}>
                       <div className="flex-grow py-1 px-1 text-sm bg-gray-100">
                         Оставьте заявку
                       </div>

@@ -109,8 +109,8 @@ const Navbar = ({ onLearnMoreClick }) => {
             <div ref={desktopProductsRef}>
               <ProductsDropdown bannerOpen={bannerOpen} />
             </div>
-            <Link to="/about-company" className="text-black font-medium">
-              ⁠О Компания
+            <Link to="/about-services" className="text-black font-medium">
+              О сервисе
             </Link>
             <Link to="/partner" className="text-black font-medium">
               ⁠Партнеры
@@ -186,17 +186,17 @@ const Navbar = ({ onLearnMoreClick }) => {
                     className="pl-4 border-l border-gray-300"
                   >
                     <MobileDropdownProductsFull
-                      onClose={() => setMobileMenuOpen(false)}
+                      onClose={closeAllMenus}
                     />
                   </div>
                 )}
 
                 <Link
-                  to="/about-company"
+                  to="/about-services"
                   className="block text-black hover:text-blue-600"
                   onClick={closeAllMenus}
                 >
-                  ⁠О Компания
+                  О сервисе
                 </Link>
                 <Link
                   to="/partner"
