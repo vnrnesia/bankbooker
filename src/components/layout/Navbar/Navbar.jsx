@@ -109,7 +109,7 @@ const Navbar = ({ onLearnMoreClick }) => {
             <div ref={desktopProductsRef}>
               <ProductsDropdown bannerOpen={bannerOpen} />
             </div>
-            <Link to="/solutions" className="text-black font-medium">
+            <Link to="/about-company" className="text-black font-medium">
               ⁠О Компания
             </Link>
             <Link to="/partner" className="text-black font-medium">
@@ -192,7 +192,7 @@ const Navbar = ({ onLearnMoreClick }) => {
                 )}
 
                 <Link
-                  to="/solutions"
+                  to="/about-company"
                   className="block text-black hover:text-blue-600"
                   onClick={closeAllMenus}
                 >

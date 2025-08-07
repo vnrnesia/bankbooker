@@ -129,7 +129,7 @@ const Comments = ({ onGetStartedClick }) => {
               <p className="text-lg md:text-4xl font-semibold text-neutral-900">
                 38+
               </p>
-              <p className="text-[13px]  md:text-base text-gray-500 mt-1">
+              <p className="text-[14px]  md:text-base text-gray-500 mt-1">
                 Стран в которые мы  <br /> осуществляем переводы
               </p>
             </div>

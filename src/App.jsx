@@ -57,7 +57,7 @@ function App({ onGetStartedClick }) {
           <Route path="/about" element={<About />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/about-company" element={<Solutions />} />
         </Routes>
       </main>
       {!hideFooterRoutes.includes(location.pathname) && (

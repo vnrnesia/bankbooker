@@ -45,7 +45,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-7xl md:pt-24 mx-auto ">
+      <div className="max-w-sm px-4 md:px-0 flex md:gap-36 justify-center items-center flex-col md:flex-row font-[Manrope] py-16 pb-24 md:max-w-[90%] xl:max-w-[80%] 2xl:max-w-7xl md:pt-24 mx-auto ">
         <div className="w-full md:w-[470px] space-y-6">
           <h2 className="text-3xl font-semibold text-gray-800">
             Свяжитесь с нами — мы всегда на связи!
