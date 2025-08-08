@@ -15,7 +15,7 @@ import ToGetStarted from "../components/ui/ToGetStarted";
 const Chatbot = lazy(() => import("../components/layout/Chatbot"));
 
 function Home({ getStartedRef, onGetStartedClick }) {
-  const offersRef = useRef(null);
+  const calculatorRef = useRef(null);
   const [hasChatbotShown, setHasChatbotShown] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
@@ -28,17 +28,17 @@ function Home({ getStartedRef, onGetStartedClick }) {
       },
       {
         root: null,
-        threshold: 0.2,
+        threshold: 0.3, 
       }
     );
 
-    if (offersRef.current) {
-      observer.observe(offersRef.current);
+    if (calculatorRef.current) {
+      observer.observe(calculatorRef.current);
     }
 
     return () => {
-      if (offersRef.current) {
-        observer.unobserve(offersRef.current);
+      if (calculatorRef.current) {
+        observer.unobserve(calculatorRef.current);
       }
     };
   }, [hasChatbotShown]);
@@ -64,17 +64,18 @@ function Home({ getStartedRef, onGetStartedClick }) {
               <HeroSection onGetStartedClick={onGetStartedClick} />
             </div>
 
-            <div
-              ref={offersRef}
-              className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]"
-            >
+            <div className="max-w-sm px-4 md:mb-24 md:px-0 mx-auto md:max-w-[100%]">
               <OffersGrid onGetStartedClick={onGetStartedClick} />
             </div>
+          </div>
 
-            <div className="mb-16 md:mb-36">
-              <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
-                <Calculator />
-              </div>
+          <div className="w-full bg-gray-50">
+            <Steps />
+          </div>
+
+          <div className="mb-16 pt-14 md:mb-36" ref={calculatorRef}>
+            <div className="max-w-sm px-4 md:px-0 mx-auto md:max-w-5xl ">
+              <Calculator />
             </div>
           </div>
         </main>
@@ -95,7 +96,6 @@ function Home({ getStartedRef, onGetStartedClick }) {
       </div>
 
       <div className="max-w-sm px-4 md:px-0 md:max-w-[90%] 3xl:max-w-[100%] container mx-auto ">
-       
         <div className="max-w-7xl mx-auto">
           <Comments onGetStartedClick={onGetStartedClick} />
         </div>
@@ -104,12 +104,14 @@ function Home({ getStartedRef, onGetStartedClick }) {
         </div>
         <Contact />
 
-       
+        {hasChatbotShown && (
+          <Suspense fallback={null}>
             <Chatbot />
-       
-        
-          <button
-            className={`hidden md:block fixed bottom-5 right-[85px] z-50
+          </Suspense>
+        )}
+
+        <button
+          className={`hidden md:block fixed bottom-5 right-[85px] z-50
               transition-transform duration-500 ease-in-out
               ${
                 showButton
@@ -117,12 +119,11 @@ function Home({ getStartedRef, onGetStartedClick }) {
                   : "translate-x-20 opacity-0"
               }
             `}
-            onClick={onGetStartedClick}
-            style={{ willChange: "transform, opacity" }}
-          >
-            <ToGetStarted text="Свяжитесь с нами!" />
-          </button>
-        
+          onClick={onGetStartedClick}
+          style={{ willChange: "transform, opacity" }}
+        >
+          <ToGetStarted text="Свяжитесь с нами!" />
+        </button>
       </div>
     </>
   );

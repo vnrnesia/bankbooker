@@ -17,6 +17,8 @@ import Chatbot from "./components/layout/Chatbot";
 import ToolbarMobile from "./components/layout/ToolbarMobile";
 import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
+import InvoicePayment from "./pages/InvoicePayment";
+import RevenueReturn from "./pages/RevenueReturn";
 
 function App({ onGetStartedClick }) {
   const location = useLocation();
@@ -39,7 +41,7 @@ function App({ onGetStartedClick }) {
     }
   }, [location]);
 
-  const hideFooterRoutes = ["/contact", "/services"];
+  const hideFooterRoutes = ["/contact", "/services", "/invoice-payment", "revenue-return"];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -71,6 +73,8 @@ function App({ onGetStartedClick }) {
           <Route path="/partner" element={<Partner />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about-services" element={<Solutions />} />
+          <Route path="/invoice-payment" element={<InvoicePayment />} />
+          <Route path="/revenue-return" element={<RevenueReturn />} />
         </Routes>
       </main>
 
