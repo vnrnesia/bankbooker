@@ -2,6 +2,7 @@ import WhyChooseUsCompany from "../components/ui/WhyChooseUsCompany"
 import Brands from "../components/ui/Brands"
 import GetStarted from "../components/ui/GetStarted"
 import Steps from "../components/ui/Steps"
+import Comments from "../components/ui/Comments"
 
 const Solutions = () => {
   return (
@@ -14,8 +15,9 @@ const Solutions = () => {
             <Steps/>
             <GetStarted/>
           </div>
-         <div className="max-w-sm md:max-w-7xl pt-24 flex flex-col justify-center mx-auto">
+         <div className="max-w-sm md:max-w-7xl pt-24 pb-24 flex flex-col justify-center mx-auto">
            <Brands/>
+           <Comments/>
          </div>
         
           

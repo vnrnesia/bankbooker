@@ -11,7 +11,7 @@ const RevenuePayment = () => {
     <section className="bg-gradient-to-r pt-10 flex flex-col items-center justify-start overflow-hidden relative">
       <div className="w-full py-16 max-w-sm mx-auto  md:max-w-7xl flex flex-col md:flex-row justify-between items-start gap-10 ">
         {/* Sağ taraf */}
-        <div className="w-full md:w-1/2 flex   ">
+        <div className="w-full md:w-1/2 flex order-1  ">
           <div className="rounded-xl w-full  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] shadow-md hover:scale-105 transform duration-300 flex flex-col items-center justify-center p-8 text-center">
             <div className="w-[250px] h-[250px] rounded-full overflow-hidden mb-4">
               <img
@@ -87,14 +87,14 @@ const RevenuePayment = () => {
         <div className="w-full bg-gray-50">
           <Steps />
         </div>
-        <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto">
-          <Comments />
-        </div>
+
         <div>
           <GetStarted />
         </div>
+        <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto">
+          <Comments />
+        </div>
       </div>
-
     </section>
   );
 };

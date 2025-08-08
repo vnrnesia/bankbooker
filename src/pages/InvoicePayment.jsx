@@ -19,9 +19,8 @@ const InvoicePayment = () => {
     <section className="bg-gradient-to-r pt-10  flex flex-col items-center overflow-hidden relative">
       <div className="w-full py-16 max-w-sm mx-auto  md:max-w-7xl flex flex-col md:flex-row justify-between items-start gap-10 ">
         {/* Sağ taraf */}
-        <div className="w-full md:w-1/2 flex   ">
+        <div className="w-full md:w-1/2 flex order-1 md:order-0   ">
           <div className="rounded-xl w-full  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] shadow-md hover:scale-105 transform duration-300 flex flex-col items-center justify-center p-8 text-center">
-           
             <div className="w-[250px] h-[250px] rounded-full overflow-hidden mb-4">
               <img
                 src="/paymentLogo.png"
@@ -29,9 +28,6 @@ const InvoicePayment = () => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-          
-
-            
           </div>
         </div>
 
@@ -78,11 +74,12 @@ const InvoicePayment = () => {
         <div className="w-full bg-gray-50">
           <Steps />
         </div>
+
+        <div className="">
+          <GetStarted />
+        </div>
         <div className="max-w-sm md:max-w-[90%] 3xl:max-w-7xl mx-auto py-16">
           <Comments />
-        </div>
-        <div className=""> 
-          <GetStarted  />
         </div>
       </div>
 
