@@ -3,19 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faStarHalfAlt,
-  faPlay,
 } from "@fortawesome/free-solid-svg-icons";
+import Spline from "@splinetool/react-spline";
 import GetStarted from "./GetStarted";
 
 const HeroSection = ({ onGetStartedClick }) => {
   return (
     <div className="px-4 md:px-0 w-full pb-24 bg-white max-w-7xl">
-      <div className="mx-auto ">
+      <div className="mx-auto">
         <nav className="md:pt-0">
           <div className="flex justify-end items-center py-4"></div>
         </nav>
 
-        <div className="pt-10 md:mt-20 flex flex-col lg:flex-row gap-8  h-full">
+        <div className="pt-10 md:mt-20 flex flex-col lg:flex-row gap-8 h-full">
           <div className="flex-1">
             <div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 font-medium">
@@ -109,7 +109,7 @@ const HeroSection = ({ onGetStartedClick }) => {
               </div>
 
               {/* Card 2 */}
-              <div className=" bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">
+              <div className="bg-gradient-to-b from-[#0FA9E9] to-[#0786E2] rounded-xl p-4 sm:p-6 w-full lg:w-[393px] h-auto lg:h-[300px] text-white flex flex-col justify-between transform transition duration-300 hover:scale-105">
                 <div className="">
                   <div className="font-medium text-lg">
                     Лучшие условия по оплате инвойсов
@@ -147,14 +147,15 @@ const HeroSection = ({ onGetStartedClick }) => {
                 <img
                   src="/illustration.png"
                   alt="illustration"
-                  className=" mt-[-60px] ml-24 md:ml-32 w-[75%] md:w-[70%]"
+                  className="mt-[-60px] ml-24 md:ml-32 w-[75%] md:w-[70%]"
                 />
               </div>
             </div>
           </div>
 
+          {/* Spline Viewer Section */}
           <div className="hidden lg:block flex-1 bg-gray-200 rounded-xl max-w-2xl p-6">
-            <p className="text-gray-700">Content</p>
+            <Spline scene="https://prod.spline.design/UYGWGYvSosl8f0H8/scene.splinecode" />
           </div>
         </div>
       </div>
@@ -163,3 +164,4 @@ const HeroSection = ({ onGetStartedClick }) => {
 };
 
 export default HeroSection;
+
