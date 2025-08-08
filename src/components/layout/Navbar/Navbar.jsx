@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Banner from "./Banner";
 import Currency from "../../ui/Currency";
 
 const Navbar = ({ onLearnMoreClick }) => {
   const [bannerOpen, setBannerOpen] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((v) => !v);
@@ -34,6 +35,16 @@ const Navbar = ({ onLearnMoreClick }) => {
     const scrollPosition = isMobile ? 7750 : 4450;
     window.scrollTo({ top: scrollPosition, behavior: "smooth" });
   };
+
+  const navLinks = [
+    { path: "/invoice-payment", label: "Оплата инвойсов" },
+    { path: "/revenue-return", label: "Возврат валютной выручки" },
+    { path: "/about-services", label: "О сервисе" },
+    { path: "/partner", label: "Партнеры" },
+    { path: "/contact", label: "Контакт" },
+  ];
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -72,22 +83,19 @@ const Navbar = ({ onLearnMoreClick }) => {
             </Link>
           </div>
 
+          {/* Desktop nav */}
           <div className="hidden md:flex space-x-8 items-center">
-            <Link to="/invoice-payment" className="text-black font-medium">
-              Оплата инвойсов
-            </Link>
-            <Link to="/revenue-return" className="text-black font-medium">
-              Возврат валютной выручки
-            </Link>
-            <Link to="/about-services" className="text-black font-medium">
-              О сервисе
-            </Link>
-            <Link to="/partner" className="text-black font-medium">
-              ⁠Партнеры
-            </Link>
-            <Link to="/contact" className="text-black font-medium">
-              ⁠Контакт
-            </Link>
+            {navLinks.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`font-medium ${
+                  isActive(path) ? "text-blue-600" : "text-black"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden md:flex space-x-4 items-center">
@@ -99,6 +107,7 @@ const Navbar = ({ onLearnMoreClick }) => {
             </button>
           </div>
 
+          {/* Mobile menu toggle */}
           <button
             aria-label="Toggle menu"
             className="bg-gray-100 rounded-lg md:hidden flex flex-col justify-center items-center w-14 h-14 mt-2 space-y-1 overflow-hidden focus:outline-none z-50"
@@ -122,45 +131,23 @@ const Navbar = ({ onLearnMoreClick }) => {
           </button>
         </div>
 
+        {/* Mobile menu content */}
         {mobileMenuOpen && (
           <div className="fixed left-0 top-[80px] w-full bg-white shadow-md z-40 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="pt-4 pb-6 space-y-6">
               <nav className="flex flex-col space-y-4 font-medium text-lg px-6">
-                <Link
-                  to="/invoice-payment"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
-                  Оплата инвойсов
-                </Link>
-                <Link
-                  to="/revenue-return"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
-                  Возврат валютной выручки
-                </Link>
-                <Link
-                  to="/about-services"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
-                  О сервисе
-                </Link>
-                <Link
-                  to="/partner"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
-                  Партнеры
-                </Link>
-                <Link
-                  to="/contact"
-                  className="block text-black hover:text-blue-600"
-                  onClick={closeAllMenus}
-                >
-                  Контакт
-                </Link>
+                {navLinks.map(({ path, label }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={`block hover:text-blue-600 ${
+                      isActive(path) ? "text-blue-600" : "text-black"
+                    }`}
+                    onClick={closeAllMenus}
+                  >
+                    {label}
+                  </Link>
+                ))}
 
                 <div className="pt-6 space-y-4 border-t border-gray-200">
                   <button

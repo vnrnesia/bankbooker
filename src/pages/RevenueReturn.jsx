@@ -11,8 +11,8 @@ const RevenuePayment = () => {
     <section className="bg-gradient-to-r pt-10 flex flex-col items-center justify-start overflow-hidden relative">
       <div className="w-full py-16 max-w-sm mx-auto  md:max-w-7xl flex flex-col md:flex-row justify-between items-start gap-10 ">
         {/* Sağ taraf */}
-        <div className="w-full md:w-1/2 flex order-1  ">
-          <div className="rounded-xl w-full  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] shadow-md hover:scale-105 transform duration-300 flex flex-col items-center justify-center p-8 text-center">
+        <div className="w-full md:w-1/2 flex order-1 md:h-[380px] ">
+          <div className="rounded-xl w-full  bg-gradient-to-l from-[#0273DE] to-[#10B0EB] shadow-md hover:scale-105 transform duration-300 flex flex-col items-center justify-center p-11 text-center">
             <div className="w-[250px] h-[250px] rounded-full overflow-hidden mb-4">
               <img
                 src="/earnings.png"
@@ -26,12 +26,15 @@ const RevenuePayment = () => {
         {/* Sol taraf */}
         <div className="w-full md:w-1/2">
           <h1 className="text-4xl md:text-5xl text-gray-800 pb-6">
-            Международные платежи в любую точку мира с комиссией от 1%
+            Возврат валютной выручки без лишних комиссий и задержек
           </h1>
           <h3 className="text-gray-700 pb-10">
-            Ваш международный платежный агент. Профессиональный B2B сервис
-            международных переводов. Оплата санкционных товаров и возврат
-            валютной выручки.
+            Предоставляем сервис по возврату вашей валютной выручки из-за
+            рубежа. Подписываем контракт с вашим покупателем зарубежом и как ваш
+            агент принимаем валютную выручку по вашим контрактам — конвертируем
+            по выгодному курсу и вы получаете выручку в российском рубле ко
+            курсу ЦБ на день перевода, минуя скрытые комиссии и долгие
+            трансграничные переводы.
           </h3>
 
           <div className="flex w-full lg:w-[400px] mt-2 bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer mb-10">
@@ -57,31 +60,7 @@ const RevenuePayment = () => {
           </div>
         </div>
       </div>
-      <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl font-bold mb-4">
-          Возврат валютной выручки без лишних комиссий и задержек
-        </h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          Предоставляем сервис по возврату вашей валютной выручки из-за рубежа.
-          Подписываем контракт с вашим покупателем зарубежом и как ваш агент
-          принимаем валютную выручку по вашим контрактам — конвертируем по
-          выгодному курсу и вы получаете выручку в российском рубле ко курсу ЦБ
-          на день перевода, минуя скрытые комиссии и долгие трансграничные
-          переводы.
-        </p>
-        <button
-          onClick={() => {
-            const scrollAmount = window.innerWidth <= 768 ? 1500 : 1800;
-            window.scrollTo({
-              top: window.scrollY + scrollAmount,
-              behavior: "smooth",
-            });
-          }}
-          className="mt-6 bg-gradient-to-l hover:scale-105 transition duration-300 from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded-lg font-medium"
-        >
-          Бесплатная консультация
-        </button>
-      </div>
+   
 
       <div className="w-full">
         <div className="w-full bg-gray-50">
@@ -100,4 +79,3 @@ const RevenuePayment = () => {
 };
 
 export default RevenuePayment;
-//test

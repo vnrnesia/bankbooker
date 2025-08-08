@@ -10,13 +10,14 @@ const Solutions = () => {
       <section>
         <div className="max-w-sm md:max-w-7xl flex flex-col justify-center mx-auto">
           <WhyChooseUsCompany/>
+           <Brands/>
           </div>
           <div>
             <Steps/>
             <GetStarted/>
           </div>
          <div className="max-w-sm md:max-w-7xl pt-24 pb-24 flex flex-col justify-center mx-auto">
-           <Brands/>
+          
            <Comments/>
          </div>
         

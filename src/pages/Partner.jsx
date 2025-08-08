@@ -144,11 +144,11 @@ export default function Partner() {
           </div>
         </div>
       </section>
+      <div className="pt-10  max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto ">
+        <Brands />
+      </div>
       <GetStartedService />
       <div className="pt-24 max-w-sm px-2 md:px-0 md:max-w-7xl mx-auto">
-        <div className="pt-10">
-          <Brands />
-        </div>
         <Comments />
       </div>
       <div className=" pb-24 max-w-sm  md:px-0 md:max-w-7xl mx-auto"></div>
