@@ -12,6 +12,10 @@ const GetStarted = () => {
   const [error, setError] = useState("");
   const [useMask, setUseMask] = useState(false);
 
+  // Yeni state: seçilen işlem
+  const [selectedService, setSelectedService] = useState("");
+  const [showServices, setShowServices] = useState(false);
+
   useEffect(() => {
     if (contactMethod === "Telegram") {
       toast.info(
@@ -63,6 +67,33 @@ const GetStarted = () => {
         }
       }
     }
+
+    // Kullanıcı veri girerse seçenekleri göster
+    if (value.trim().length > 0) {
+      setShowServices(true);
+    } else {
+      setShowServices(false);
+    }
+  };
+
+  const handleWhatsappChange = (e) => {
+    const value = e.target.value;
+    setWhatsapp(value);
+    if (value.trim().length > 0 && !value.includes("_")) {
+      setShowServices(true);
+    } else {
+      setShowServices(false);
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    if (value.trim().length > 0) {
+      setShowServices(true);
+    } else {
+      setShowServices(false);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -94,7 +125,13 @@ const GetStarted = () => {
       console.log("Submitting WhatsApp:", whatsapp);
     }
 
+    if (!selectedService) {
+      setError("Please select a service.");
+      return;
+    }
+
     setError("");
+    console.log("Selected Service:", selectedService);
   };
 
   return (
@@ -129,6 +166,7 @@ const GetStarted = () => {
                     setUseMask(false);
                     setWhatsapp("");
                     setEmail("");
+                    setShowServices(false);
                   }}
                   className="w-full appearance-none border bg-gray-100 rounded-md p-3 pr-10 text-sm"
                 >
@@ -161,7 +199,7 @@ const GetStarted = () => {
                   type="email"
                   placeholder="Email Address"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   className="w-full p-2.5 bg-gray-100 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
               </div>
@@ -201,7 +239,7 @@ const GetStarted = () => {
                 <InputMask
                   mask="+7 (999) 999-99-99"
                   value={whatsapp}
-                  onChange={(e) => setWhatsapp(e.target.value)}
+                  onChange={handleWhatsappChange}
                 >
                   {(inputProps) => (
                     <input
@@ -212,6 +250,27 @@ const GetStarted = () => {
                     />
                   )}
                 </InputMask>
+              </div>
+            )}
+
+            {showServices && (
+              <div className="flex gap-4 w-full pt-2">
+                {["Оплата инвойсов", "Возврат валютной выручки"].map(
+                  (service) => (
+                    <button
+                      key={service}
+                      type="button"
+                      onClick={() => setSelectedService(service)}
+                      className={`flex-1 p-3 rounded-lg border transition-all duration-300 text-sm font-medium ${
+                        selectedService === service
+                          ? "bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white border-blue-500"
+                          : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-blue-100"
+                      }`}
+                    >
+                      {service}
+                    </button>
+                  )
+                )}
               </div>
             )}
 
@@ -240,7 +299,7 @@ const GetStarted = () => {
 
         <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
           <div>
-            <div className="bg-gradient-to-r from-[#006FDC] rounded-md flex items-center justify-center h-[300px] w-[350px] md:w-[500px] to-[#11B4EC]">
+            <div className="bg-gradient-to-r from-[#006FDC] rounded-md flex items-center justify-center h-[300px] w-[350px] md:w-[500px] to-[#11B4EC] relative">
               <img
                 src="/world.png"
                 alt="world"

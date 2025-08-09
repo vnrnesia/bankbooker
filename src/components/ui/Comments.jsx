@@ -42,6 +42,16 @@ const testimonials = [
 
 const brandImages = [brand1, brand2, brand3, brand4, brand5, brand6];
 
+// Her logoya özel boyutlandırma
+const brandSizes = [
+  "h-10 md:h-10",
+  "h-9 md:h-10",
+  "h-16 md:h-[80px]",
+  "h-9 md:h-11",
+  "h-12 md:h-14",
+  "h-20 md:h-20",
+];
+
 const Comments = ({ onGetStartedClick }) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -244,30 +254,16 @@ const Comments = ({ onGetStartedClick }) => {
       {/* Brand Logos */}
       <div
         ref={brandsRef}
-        className="mt-6 hidden md:flex justify-center items-center gap-4 md:gap-16 px-4"
+        className="mt-6 grid grid-cols-2 md:flex justify-center items-center gap-6 md:gap-16 px-4"
       >
         {brandImages.map((brand, i) => (
           <img
             key={i}
             src={brand}
             alt={`Brand ${i + 1}`}
-            className="h-8 md:h-[42px] gap-4 w-auto transition-transform duration-300 hover:scale-105 "
+            className={`${brandSizes[i]} w-auto transition-transform duration-300 hover:scale-105`}
           />
         ))}
-      </div>
-
-      {/* Mobile slider stays the same */}
-      <div className="overflow-hidden md:hidden mt-6">
-        <div className="comments-brand-slider flex gap-4">
-          {[...brandImages, ...brandImages].map((brand, i) => (
-            <img
-              key={i}
-              src={brand}
-              alt={`Brand ${i + 1}`}
-              className="h-12 mx-4 flex-shrink-0 grayscale hover:grayscale-0 transition-transform duration-300 hover:scale-105"
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

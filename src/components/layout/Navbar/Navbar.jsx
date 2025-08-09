@@ -133,9 +133,9 @@ const Navbar = ({ onLearnMoreClick }) => {
 
         {/* Mobile menu content */}
         {mobileMenuOpen && (
-          <div className="fixed left-0 top-[80px] w-full bg-white shadow-md z-40 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="fixed left-0 top-[80px]  w-full bg-white shadow-md z-40 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="pt-4 pb-6 space-y-6">
-              <nav className="flex flex-col space-y-4 font-medium text-lg px-6">
+              <nav className="flex flex-col space-y-4 font-medium text-lg pl-[80px] pr-6">
                 {navLinks.map(({ path, label }) => (
                   <Link
                     key={path}
@@ -155,7 +155,7 @@ const Navbar = ({ onLearnMoreClick }) => {
                       scrollToDemo();
                       closeAllMenus();
                     }}
-                    className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-6 py-3 rounded font-medium w-full"
+                    className="block text-center bg-gradient-to-l from-[#0273DE] to-[#10B0EB] text-white px-24 py-3 rounded font-medium mx-auto ml-1"
                   >
                     Оставить заявку
                   </button>
